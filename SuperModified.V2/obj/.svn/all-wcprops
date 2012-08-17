@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj
+END
+zoSystemTimer.lst
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoSystemTimer.lst
+END
+zoAdc.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoAdc.lst
+END
+zoError.lst
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoError.lst
+END
+zoSpi.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoSpi.lst
+END
+zoProtocolUart.lst
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoProtocolUart.lst
+END
+zoProtocolI2c.lst
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoProtocolI2c.lst
+END
+zoMotor.lst
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoMotor.lst
+END
+zoProtocol.lst
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoProtocol.lst
+END
+zoCommands.lst
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoCommands.lst
+END
+zoSms.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoSms.lst
+END
+zoProtocolRcServo.lst
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoProtocolRcServo.lst
+END
+zoBuffer.lst
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoBuffer.lst
+END
+main.lst
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/main.lst
+END
+zoUart.lst
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoUart.lst
+END
+zoIcp.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoIcp.lst
+END
+zoPid.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoPid.lst
+END
+zoSmsError.lst
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoSmsError.lst
+END
+zoI2c.lst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoI2c.lst
+END
+zoEncoder.lst
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/13/trunk/SuperModified.V2/obj/zoEncoder.lst
+END

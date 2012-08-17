@@ -1,0 +1,1667 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                              obj/zoSms.o (__subsf3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o) (__addsf3x)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                              obj/zoEncoder.o (__divsf3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o) (__divsf3x)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                              obj/zoEncoder.o (__fixsfsi)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o) (__fixunssfsi)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                              obj/zoProtocolRcServo.o (__floatunsisf)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_inf)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_nan)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_pscA)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_pscB)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o) (__fp_round)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_split3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o) (__fp_zero)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                              obj/zoEncoder.o (__mulsf3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o) (__mulsf3x)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+                              obj/zoCommands.o (sqrt)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+                              obj/zoSms.o (square)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o) (__fp_mpack)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o) (__fp_norm2)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                              obj/zoPid.o (__mulsi3)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                              obj/zoSms.o (__udivmodhi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              obj/zoProtocolI2c.o (__udivmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                              obj/zoCommands.o (__divmodsi4)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o (exit)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              obj/zoSystemTimer.o (__do_copy_data)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              obj/zoSystemTimer.o (__do_clear_bss)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+                              obj/zoBuffer.o (calloc)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o) (malloc)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o) (memset)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+                              obj/zoSms.o (__eerd_byte_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+                              obj/zoSms.o (__eerd_dword_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+                              obj/zoSms.o (__eerd_word_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+                              obj/zoSms.o (__eewr_byte_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+                              obj/zoSms.o (__eewr_dword_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+                              obj/zoSms.o (__eewr_word_m328p)
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o) (__eerd_blraw_m328p)
+
+Allocating common symbols
+Common symbol       size              file
+
+__brkval            0x2               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__flp               0x2               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+LOAD obj/zoError.o
+LOAD obj/zoSystemTimer.o
+LOAD obj/zoProtocol.o
+LOAD obj/zoEncoder.o
+LOAD obj/zoMotor.o
+LOAD obj/zoPid.o
+LOAD obj/zoSms.o
+LOAD obj/zoSmsError.o
+LOAD obj/zoCommands.o
+LOAD obj/zoAdc.o
+LOAD obj/zoSpi.o
+LOAD obj/zoI2c.o
+LOAD obj/zoProtocolI2c.o
+LOAD obj/zoUart.o
+LOAD obj/zoProtocolUart.o
+LOAD obj/zoBuffer.o
+LOAD obj/zoIcp.o
+LOAD obj/zoProtocolRcServo.o
+LOAD obj/main.o
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x4dc2
+ *(.vectors)
+ .vectors       0x00000000       0x68 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
+ *(.dtors)
+                0x00000068                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x00000068                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000068        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000074       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009a        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ *(.init9)
+ *(.text)
+ .text          0x000000a2        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x000000a2                __vector_22
+                0x000000a2                __vector_1
+                0x000000a2                __vector_12
+                0x000000a2                __bad_interrupt
+                0x000000a2                __vector_3
+                0x000000a2                __vector_23
+                0x000000a2                __vector_25
+                0x000000a2                __vector_11
+                0x000000a2                __vector_17
+                0x000000a2                __vector_7
+                0x000000a2                __vector_5
+                0x000000a2                __vector_4
+                0x000000a2                __vector_9
+                0x000000a2                __vector_2
+                0x000000a2                __vector_15
+                0x000000a2                __vector_8
+                0x000000a2                __vector_14
+ .text          0x000000a6      0x17a obj/zoError.o
+                0x0000016a                zoErrorGet
+                0x0000010c                zoErrorPutIsr
+                0x000000c0                zoErrorGetIsr
+                0x000000a6                zoErrorInit
+                0x000001c4                zoErrorPut
+                0x0000015a                zoErrorIsEmpty
+ .text          0x00000220      0x160 obj/zoSystemTimer.o
+                0x0000024c                zoSystemTimerWatchDogEnable
+                0x0000029e                zoSystemTimerMeasureStart
+                0x00000310                __vector_6
+                0x00000270                zoSystemTimerWatchDogReset
+                0x000002f0                zoSystemTimerTimeOutExpired
+                0x0000025e                zoSystemTimerWatchDogDisable
+                0x00000238                zoSystemTimerWatchDogInit
+                0x00000220                zoSystemTimerInit
+                0x000002b8                zoSystemTimerMeasureGet
+                0x00000284                zoSystemTimerTimeOutInit
+ .text          0x00000380      0x322 obj/zoProtocol.o
+                0x000005f0                zoProtocolInit
+                0x00000380                zoProtocolLRC
+                0x00000480                zoProtocolParse
+                0x000003a0                zoProtocolCommandResponse
+                0x000004e4                zoProtocolCommand
+ .text          0x000006a2      0x37c obj/zoEncoder.o
+                0x00000778                zoEncoderPollUnderFlowError
+                0x00000866                zoEncoderGetPosAbsolute
+                0x000006e8                zoEncoderSetVel
+                0x0000074c                zoEncoderPollOverFlowError
+                0x000007f2                zoEncoderReset
+                0x000006a2                zoEncoderGetVel
+                0x000009a2                zoEncoderInit
+                0x0000086c                zoEncoderGetPos
+                0x000007a4                zoEncoderGetPosSpi
+ .text          0x00000a1e      0x188 obj/zoMotor.o
+                0x00000b28                zoMotorGetState
+                0x00000ab4                zoMotorSet
+                0x00000a1e                zoMotorSetTimedEventHandler
+                0x00000a28                zoMotorInit
+                0x00000afc                zoMotorSetState
+                0x00000b38                __vector_16
+ .text          0x00000ba6      0x13a obj/zoPid.o
+                0x00000ba6                zoPidDoPid
+ .text          0x00000ce0      0x6ee obj/zoSms.o
+                0x00000de4                constantVelocityCompletedCriterion
+                0x00000cfc                accelerationCompleteCriterion
+                0x00000ce0                zoSmsPinsInit
+                0x00000ec4                zoSmsRestoreDefaults
+                0x00001034                zoSmsInit
+                0x00000d96                positionReachedCriterion
+                0x00001130                zoSmsControlLoop
+                0x00000f62                zoSmsInitSettingsFromEeprom
+                0x00000e32                deccelRecalc
+ .text          0x000013ce      0x2f2 obj/zoSmsError.o
+                0x000016a2                zoSmsErrorInit
+                0x000014c2                zoSmsErrorHandleServiceCommandFailure
+                0x000013ce                zoSmsMotorStalled
+                0x0000163a                zoSmsErrorPoll
+                0x000015a0                zoSmsErrorHandleParseFailure
+                0x00001508                zoSmsErrorHandleCommandResponseFailure
+ .text          0x000016c0     0x150e obj/zoCommands.o
+                0x0000249a                zoCommandGetCurrent
+                0x00001954                zoCommandGetDigitalIoConfiguration
+                0x0000178c                zoCommandSetRelativePositionSetpoint
+                0x0000258c                zoCommandConfigureDigitalIO
+                0x000026b0                zoCommandSetCurrentLimit
+                0x000017b8                zoCommandSetProfiledVelocitySetpoint
+                0x00002516                zoCommandSetErrorReportingLevel
+                0x00001962                zoCommandGetLocalAcceptanceMask
+                0x000016ec                zoCommandRelativePositionMove
+                0x000027f4                zoCommandsServiceCommand
+                0x000018fa                zoCommandGetProfileVelocity
+                0x00001840                zoCommandSetDigitalOut
+                0x00002730                zoCommandSetProfileAcceleration
+                0x00001730                zoCommandSetVelocitySetpoint
+                0x00002650                zoCommandSetBaudUart
+                0x000018dc                zoCommandGetProfileAcceleration
+                0x00002416                zoCommandProfiledRelativePositionMove
+                0x00001c1c                zoCommandProfiledVelocityMove
+                0x00001936                zoCommandGetCurrentLimitDuration
+                0x00001ce2                zoProfiledMoveAbsolute
+                0x00001882                zoCommandGetGainP
+                0x0000264a                zoCommandResetPosition
+                0x00001760                zoCommandSetAbsolutePositionSetpoint
+                0x00002770                zoCommandSetGainD
+                0x000026f0                zoCommandSetProfileVelocity
+                0x000022d8                zoCommandDoMove
+                0x00001c48                zoCommandHalt
+                0x00002446                zoCommandProfiledAbsolutePositionMove
+                0x00002456                zoCommandGetWarning
+                0x000017e8                zoCommandSetProfiledAbsolutePositionSetpoint
+                0x000019ba                zoProfiledVelocity
+                0x0000256e                zoCommandSetNodeID
+                0x0000279c                zoCommandSetGainI
+                0x000024b8                zoCommandGetAnalogIn
+                0x00002550                zoCommandSetLocalAcceptanceMask
+                0x00002684                zoCommandSetCurrentLimitDuration
+                0x00001918                zoCommandGetCurrentLimit
+                0x00001c28                zoCommandGetPosition
+                0x000016c0                zoCommandAbsolutePositionMove
+                0x000025fa                zoCommandStart
+                0x000024fa                zoCommandGetAbsolutePosition
+                0x000025e4                zoCommandStop
+                0x00001814                zoCommandSetProfiledRelativePositionSetpoint
+                0x0000290a                zoCommandsInit
+                0x0000199e                zoCommandGetVelocity
+                0x000027c8                zoCommandSetGainP
+                0x000018be                zoCommandGetGainD
+                0x000018a0                zoCommandGetGainI
+                0x00001970                zoCommandGetDigitalIn
+                0x00001c6e                zoCommandVelocityMove
+ .text          0x00002bce      0x1ae obj/zoAdc.o
+                0x00002c74                zoAdcChannelEnable
+                0x00002c8c                zoAdcChannelDisable
+                0x00002c46                zoAdcSetReference
+                0x00002c62                zoAdcOff
+                0x00002ca2                zoAdcRead
+                0x00002cc0                __vector_21
+                0x00002bce                zoAdcInit
+                0x00002c54                zoAdcSetTrigger
+                0x00002c38                zoAdcSetPrescaler
+ .text          0x00002d7c       0x3a obj/zoSpi.o
+                0x00002d7c                zoSpiInit
+                0x00002daa                zoSpiTransferByte
+ .text          0x00002db6      0x65e obj/zoI2c.o
+                0x00002e46                zoI2cSendStop
+                0x0000335a                zoI2cFunctorSrDataNack
+                0x00002f06                zoI2cFunctorMtAck
+                0x00003000                zoI2cFunctorStDataAck
+                0x00002e10                zoI2cSetWaitOnTransmitTimeOut
+                0x00002e90                __vector_24
+                0x00002e1a                zoI2cSetWaitOnReceiveTimeOut
+                0x0000304e                zoI2cFunctorNull
+                0x00002e06                zoI2cSetWaitOnBusReadyTimeOut
+                0x000031be                zoI2cFunctorMasterNAck
+                0x00003050                zoI2cFunctorInit
+                0x00002f46                zoI2cFunctorMrDataNAck
+                0x000031f6                zoI2cMasterSend
+                0x00002ef0                zoI2cFunctorStart
+                0x00002e54                zoI2cWaitForComplete
+                0x00003310                zoI2cInit
+                0x000031da                zoI2cFunctorBusError
+                0x00002e5e                zoI2cSendByte
+                0x00002de4                zoI2cSetLocalDeviceAddr
+                0x00002f70                zoI2cFunctorSrAck
+                0x000033d0                zoI2cFunctorMrDataAck
+                0x00003196                zoI2cFunctorNoInfo
+                0x00002e38                zoI2cSendStart
+                0x000031a2                zoI2cFunctorArbitrationLost
+                0x00002fb0                zoI2cFunctorStAck
+                0x00003368                zoI2cFunctorMrSlaveAck
+                0x00002e70                zoI2cAcknowledgeRx
+                0x00002f88                zoI2cFunctorStop
+                0x0000303c                zoI2cFunctorStDataNAck
+                0x000032a2                zoI2cMasterSendBlocking
+                0x00003398                zoI2cFunctorSrDataAck
+                0x00002e24                zoI2cSetSlaveReceiveHandler
+                0x00002db6                zoI2cSetBitrate
+                0x00002e2e                zoI2cSetSlaveTransmitHandler
+ .text          0x00003414      0x1fa obj/zoProtocolI2c.o
+                0x0000341e                zoProtocolI2cSetBitrate
+                0x000034aa                zoProtocolI2cPutPacket
+                0x00003414                zoProtocolI2cSetLAM
+                0x00003434                zoProtocolI2cGetPacket
+                0x00003532                zoProtocolI2cInit
+ .text          0x0000360e      0x46e obj/zoUart.o
+                0x00003726                zoUartRxBufferIsEmpty
+                0x000038a8                zoUartPutChar
+                0x000039b6                zoUartSetBuffersSize
+                0x00003998                zoUartRxFlush
+                0x00003730                __vector_19
+                0x0000360e                zoUartSetBaud
+                0x000037c0                zoUartTxBufferIsFull
+                0x00003874                zoUartGetChar
+                0x00003690                zoUartInitRs485
+                0x00003674                zoUartSetParity
+                0x000039ea                zoUartInit
+                0x00003682                zoUartSetStopBits
+                0x000036ce                zoUartSetTransmitTimeOut
+                0x00003652                zoUartSetDataBits
+                0x00003932                zoUartPutData
+                0x00003972                zoUartPutString
+                0x000037ca                __vector_18
+                0x000036d8                __vector_20
+ .text          0x00003a7c      0x1e0 obj/zoProtocolUart.o
+                0x00003ba6                zoProtocolUartPutPacket
+                0x00003a88                zoProtocolUartGetPacket
+                0x00003a7c                zoProtocolUartSetLAM
+                0x00003a82                zoProtocolUartSetBitrate
+                0x00003c0c                zoProtocolUartInit
+ .text          0x00003c5c      0x27c obj/zoBuffer.o
+                0x00003c5c                zoBufferIsEmpty
+                0x00003e14                zoBufferPut
+                0x00003c6c                zoBufferIsFull
+                0x00003e74                zoBufferGet
+                0x00003d46                zoBufferReadIsr
+                0x00003d80                zoBufferRead
+                0x00003c9e                zoBufferGetIsr
+                0x00003cf4                zoBufferPutIsr
+                0x00003c7e                zoBufferFlush
+                0x00003dc4                zoBufferInit
+ .text          0x00003ed8      0x2ce obj/zoIcp.o
+                0x00003ef0                zoIcpSetMode
+                0x00003f5e                zoIcpIsrEnable
+                0x00003fec                zoIcpOverFlowIsrDisable
+                0x00003f4a                zoIcpAttachUserFunctionOnCaptureFailure
+                0x00003f86                zoIcpInit
+                0x00004154                __vector_13
+                0x00003f22                zoIcpAttachUserFunctionOnCapture
+                0x00003ff8                zoIcpGetPulseWidh
+                0x00003fe0                zoIcpOverFlowIsrEnable
+                0x00003ed8                zoIcpSetPrescaler
+                0x0000401c                __vector_10
+                0x00003fb8                zoIcpIsrDisable
+                0x00003f36                zoIcpAttachUserFunctionOnOverFlow
+ .text          0x000041a6      0x282 obj/zoProtocolRcServo.o
+                0x000041b0                icpTimerOverFlowInterruptHandler
+                0x0000435c                zoProtocolRcServoInit
+                0x000041a6                icpFailedInterruptHandler
+                0x000041ba                zoProtocolRcServoParse
+                0x000043a6                icpInterruptHandler
+ .text          0x00004428      0x156 obj/main.o
+                0x00004428                main
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+ .text          0x0000457e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+                0x0000457e                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc.fplib
+                0x0000457e        0xa c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x0000457e                __subsf3
+                0x00004580                __addsf3
+ .text.avr-libc.fplib
+                0x00004588       0xc0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x000045a2                __addsf3x
+ .text.avr-libc.fplib
+                0x00004648        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                0x00004648                __divsf3
+ .text.avr-libc.fplib
+                0x0000464c       0xcc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                0x00004662                __divsf3x
+                0x00004666                __divsf3_pse
+ .text.avr-libc.fplib
+                0x00004718        0xa c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                0x00004718                __fixsfsi
+ .text.avr-libc.fplib
+                0x00004722       0x58 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x00004722                __fixunssfsi
+ .text.avr-libc.fplib
+                0x0000477a       0x7a c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x0000477e                __floatsisf
+                0x0000477a                __floatunsisf
+ .text.avr-libc.fplib
+                0x000047f4        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x000047f4                __fp_inf
+ .text.avr-libc.fplib
+                0x00004800        0x6 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x00004800                __fp_nan
+ .text.avr-libc.fplib
+                0x00004806        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x00004806                __fp_pscA
+ .text.avr-libc.fplib
+                0x00004814        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x00004814                __fp_pscB
+ .text.avr-libc.fplib
+                0x00004822       0x22 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x00004822                __fp_round
+ .text.avr-libc.fplib
+                0x00004844       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x00004844                __fp_split3
+                0x00004854                __fp_splitA
+ .text.avr-libc.fplib
+                0x00004888        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x00004888                __fp_zero
+                0x0000488a                __fp_szero
+ .text.avr-libc.fplib
+                0x00004896        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x00004896                __mulsf3
+ .text.avr-libc.fplib
+                0x0000489a       0xc2 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x000048b2                __mulsf3_pse
+                0x000048ae                __mulsf3x
+ .text.avr-libc.fplib
+                0x0000495c       0x84 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+                0x00004964                sqrt
+ .text.avr-libc.fplib
+                0x000049e0        0x6 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+                0x000049e0                square
+ .text.avr-libc.fplib
+                0x000049e6       0x1c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+                0x000049ea                __fp_mpack_finite
+                0x000049e6                __fp_mpack
+ .text.avr-libc.fplib
+                0x00004a02        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+                0x00004a02                __fp_norm2
+ .text.libgcc   0x00004a10       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00004a10                __mulsi3
+ .text.libgcc   0x00004a4e       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00004a4e                __udivmodhi4
+ .text.libgcc   0x00004a76       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00004a76                __udivmodsi4
+ .text.libgcc   0x00004aba       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                0x00004aba                __divmodsi4
+ .text.libgcc   0x00004af0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00004af0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00004af0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00004af0       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+                0x00004af0                calloc
+ .text.avr-libc
+                0x00004b28      0x20a c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00004b28                malloc
+                0x00004c82                free
+ .text.avr-libc
+                0x00004d32        0xe c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x00004d32                memset
+ .text.avr-libc
+                0x00004d40       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+                0x00004d40                __eerd_byte_m328p
+ .text.avr-libc
+                0x00004d50        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+                0x00004d50                __eerd_float_m328p
+                0x00004d50                __eerd_dword_m328p
+ .text.avr-libc
+                0x00004d5c        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+                0x00004d5c                __eerd_word_m328p
+ .text.avr-libc
+                0x00004d68       0x1c c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+                0x00004d68                __eewr_byte_m328p
+                0x00004d6a                __eewr_r18_m328p
+ .text.avr-libc
+                0x00004d84       0x10 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+                0x00004d84                __eewr_float_m328p
+                0x00004d84                __eewr_dword_m328p
+ .text.avr-libc
+                0x00004d94        0xa c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+                0x00004d94                __eewr_word_m328p
+ .text.avr-libc
+                0x00004d9e       0x20 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+                0x00004d9e                __eerd_block_m328p
+                0x00004da2                __eerd_blraw_m328p
+                0x00004dbe                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00004dbe        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00004dbe                exit
+                0x00004dbe                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00004dbe        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00004dc2                _etext = .
+
+.data           0x00800100       0x76 load address 0x00004dc2
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .data          0x00800100        0x0 obj/zoError.o
+ .data          0x00800100        0x2 obj/zoSystemTimer.o
+ .data          0x00800102        0x0 obj/zoProtocol.o
+ .data          0x00800102        0x1 obj/zoEncoder.o
+ .data          0x00800103        0x0 obj/zoMotor.o
+ .data          0x00800103        0x0 obj/zoPid.o
+ .data          0x00800103       0x5f obj/zoSms.o
+                0x00800103                Sms
+ .data          0x00800162        0x0 obj/zoSmsError.o
+ .data          0x00800162        0x0 obj/zoCommands.o
+ .data          0x00800162        0x0 obj/zoAdc.o
+ .data          0x00800162        0x0 obj/zoSpi.o
+ .data          0x00800162        0x6 obj/zoI2c.o
+ .data          0x00800168        0x2 obj/zoProtocolI2c.o
+                0x00800168                zoProtocolI2cError
+ .data          0x0080016a        0x2 obj/zoUart.o
+ .data          0x0080016c        0x3 obj/zoProtocolUart.o
+                0x0080016c                zoProtocolUartError
+ .data          0x0080016f        0x0 obj/zoBuffer.o
+ .data          0x0080016f        0x0 obj/zoIcp.o
+ .data          0x0080016f        0x0 obj/zoProtocolRcServo.o
+ .data          0x0080016f        0x0 obj/main.o
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x0080016f        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+ .data          0x0080016f        0x6 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00800171                __malloc_heap_start
+                0x00800173                __malloc_heap_end
+                0x0080016f                __malloc_margin
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+ .data          0x00800175        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800176                . = ALIGN (0x2)
+ *fill*         0x00800175        0x1 00
+                0x00800176                _edata = .
+                0x00800176                PROVIDE (__data_end, .)
+
+.bss            0x00800176      0x1dc
+                0x00800176                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800176        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .bss           0x00800176        0x0 obj/zoError.o
+ .bss           0x00800176        0x5 obj/zoSystemTimer.o
+ .bss           0x0080017b        0x0 obj/zoProtocol.o
+ .bss           0x0080017b       0x16 obj/zoEncoder.o
+ .bss           0x00800191        0x5 obj/zoMotor.o
+ .bss           0x00800196        0x0 obj/zoPid.o
+ .bss           0x00800196        0x0 obj/zoSms.o
+ .bss           0x00800196       0x20 obj/zoSmsError.o
+                0x00800196                zoSmsError
+                0x008001a3                zoSmsWarning
+ .bss           0x008001b6       0x8c obj/zoCommands.o
+                0x008001b6                zoCommandsError
+ .bss           0x00800242       0x22 obj/zoAdc.o
+ .bss           0x00800264        0x0 obj/zoSpi.o
+ .bss           0x00800264       0x97 obj/zoI2c.o
+                0x00800264                zoI2cError
+ .bss           0x008002fb       0x16 obj/zoProtocolI2c.o
+ .bss           0x00800311       0x21 obj/zoUart.o
+                0x00800311                zoUartError
+ .bss           0x00800332        0x3 obj/zoProtocolUart.o
+ .bss           0x00800335        0x0 obj/zoBuffer.o
+ .bss           0x00800335        0xe obj/zoIcp.o
+ .bss           0x00800343        0xb obj/zoProtocolRcServo.o
+ .bss           0x0080034e        0x0 obj/main.o
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+ .bss           0x0080034e        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0080034e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x0080034e                __brkval
+                0x00800350                __flp
+                0x00800352                PROVIDE (__bss_end, .)
+                0x00004dc2                __data_load_start = LOADADDR (.data)
+                0x00004e38                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800352        0x0
+                0x00800352                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800352                PROVIDE (__noinit_end, .)
+                0x00800352                _end = .
+                0x00800352                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x260
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 obj/zoError.o
+ .debug_aranges
+                0x00000020       0x20 obj/zoSystemTimer.o
+ .debug_aranges
+                0x00000040       0x20 obj/zoProtocol.o
+ .debug_aranges
+                0x00000060       0x20 obj/zoEncoder.o
+ .debug_aranges
+                0x00000080       0x20 obj/zoMotor.o
+ .debug_aranges
+                0x000000a0       0x20 obj/zoPid.o
+ .debug_aranges
+                0x000000c0       0x20 obj/zoSms.o
+ .debug_aranges
+                0x000000e0       0x20 obj/zoSmsError.o
+ .debug_aranges
+                0x00000100       0x20 obj/zoCommands.o
+ .debug_aranges
+                0x00000120       0x20 obj/zoAdc.o
+ .debug_aranges
+                0x00000140       0x20 obj/zoSpi.o
+ .debug_aranges
+                0x00000160       0x20 obj/zoI2c.o
+ .debug_aranges
+                0x00000180       0x20 obj/zoProtocolI2c.o
+ .debug_aranges
+                0x000001a0       0x20 obj/zoUart.o
+ .debug_aranges
+                0x000001c0       0x20 obj/zoProtocolUart.o
+ .debug_aranges
+                0x000001e0       0x20 obj/zoBuffer.o
+ .debug_aranges
+                0x00000200       0x20 obj/zoIcp.o
+ .debug_aranges
+                0x00000220       0x20 obj/zoProtocolRcServo.o
+ .debug_aranges
+                0x00000240       0x20 obj/main.o
+
+.debug_pubnames
+                0x00000000     0x15aa
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x77 obj/zoError.o
+ .debug_pubnames
+                0x00000077      0x12c obj/zoSystemTimer.o
+ .debug_pubnames
+                0x000001a3       0x7f obj/zoProtocol.o
+ .debug_pubnames
+                0x00000222       0xe5 obj/zoEncoder.o
+ .debug_pubnames
+                0x00000307       0x89 obj/zoMotor.o
+ .debug_pubnames
+                0x00000390       0x21 obj/zoPid.o
+ .debug_pubnames
+                0x000003b1       0xff obj/zoSms.o
+ .debug_pubnames
+                0x000004b0       0xe4 obj/zoSmsError.o
+ .debug_pubnames
+                0x00000594      0x604 obj/zoCommands.o
+ .debug_pubnames
+                0x00000b98       0xba obj/zoAdc.o
+ .debug_pubnames
+                0x00000c52       0x36 obj/zoSpi.o
+ .debug_pubnames
+                0x00000c88      0x368 obj/zoI2c.o
+ .debug_pubnames
+                0x00000ff0       0xa9 obj/zoProtocolI2c.o
+ .debug_pubnames
+                0x00001099      0x18c obj/zoUart.o
+ .debug_pubnames
+                0x00001225       0xaf obj/zoProtocolUart.o
+ .debug_pubnames
+                0x000012d4       0xc7 obj/zoBuffer.o
+ .debug_pubnames
+                0x0000139b      0x152 obj/zoIcp.o
+ .debug_pubnames
+                0x000014ed       0xa2 obj/zoProtocolRcServo.o
+ .debug_pubnames
+                0x0000158f       0x1b obj/main.o
+
+.debug_info     0x00000000     0x6f59
+ *(.debug_info)
+ .debug_info    0x00000000      0x276 obj/zoError.o
+ .debug_info    0x00000276      0x274 obj/zoSystemTimer.o
+ .debug_info    0x000004ea      0x57a obj/zoProtocol.o
+ .debug_info    0x00000a64      0x6ea obj/zoEncoder.o
+ .debug_info    0x0000114e      0x593 obj/zoMotor.o
+ .debug_info    0x000016e1      0x18c obj/zoPid.o
+ .debug_info    0x0000186d      0x5ba obj/zoSms.o
+ .debug_info    0x00001e27      0x7f5 obj/zoSmsError.o
+ .debug_info    0x0000261c     0x1af3 obj/zoCommands.o
+ .debug_info    0x0000410f      0x40e obj/zoAdc.o
+ .debug_info    0x0000451d       0xb3 obj/zoSpi.o
+ .debug_info    0x000045d0      0x84e obj/zoI2c.o
+ .debug_info    0x00004e1e      0x35d obj/zoProtocolI2c.o
+ .debug_info    0x0000517b      0x5e2 obj/zoUart.o
+ .debug_info    0x0000575d      0x38f obj/zoProtocolUart.o
+ .debug_info    0x00005aec      0x3be obj/zoBuffer.o
+ .debug_info    0x00005eaa      0x378 obj/zoIcp.o
+ .debug_info    0x00006222      0x5ce obj/zoProtocolRcServo.o
+ .debug_info    0x000067f0      0x769 obj/main.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000     0x1e11
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x1ae obj/zoError.o
+ .debug_abbrev  0x000001ae      0x14a obj/zoSystemTimer.o
+ .debug_abbrev  0x000002f8      0x1da obj/zoProtocol.o
+ .debug_abbrev  0x000004d2      0x1e6 obj/zoEncoder.o
+ .debug_abbrev  0x000006b8      0x16e obj/zoMotor.o
+ .debug_abbrev  0x00000826       0xb1 obj/zoPid.o
+ .debug_abbrev  0x000008d7      0x151 obj/zoSms.o
+ .debug_abbrev  0x00000a28      0x1ba obj/zoSmsError.o
+ .debug_abbrev  0x00000be2      0x2c6 obj/zoCommands.o
+ .debug_abbrev  0x00000ea8      0x18f obj/zoAdc.o
+ .debug_abbrev  0x00001037       0x88 obj/zoSpi.o
+ .debug_abbrev  0x000010bf      0x23f obj/zoI2c.o
+ .debug_abbrev  0x000012fe      0x144 obj/zoProtocolI2c.o
+ .debug_abbrev  0x00001442      0x24f obj/zoUart.o
+ .debug_abbrev  0x00001691      0x163 obj/zoProtocolUart.o
+ .debug_abbrev  0x000017f4      0x1df obj/zoBuffer.o
+ .debug_abbrev  0x000019d3      0x159 obj/zoIcp.o
+ .debug_abbrev  0x00001b2c      0x14e obj/zoProtocolRcServo.o
+ .debug_abbrev  0x00001c7a      0x197 obj/main.o
+
+.debug_line     0x00000000     0x4751
+ *(.debug_line)
+ .debug_line    0x00000000      0x22e obj/zoError.o
+ .debug_line    0x0000022e      0x25d obj/zoSystemTimer.o
+ .debug_line    0x0000048b      0x387 obj/zoProtocol.o
+ .debug_line    0x00000812      0x350 obj/zoEncoder.o
+ .debug_line    0x00000b62      0x259 obj/zoMotor.o
+ .debug_line    0x00000dbb       0xf2 obj/zoPid.o
+ .debug_line    0x00000ead      0x462 obj/zoSms.o
+ .debug_line    0x0000130f      0x34e obj/zoSmsError.o
+ .debug_line    0x0000165d     0x1215 obj/zoCommands.o
+ .debug_line    0x00002872      0x25c obj/zoAdc.o
+ .debug_line    0x00002ace      0x127 obj/zoSpi.o
+ .debug_line    0x00002bf5      0x709 obj/zoI2c.o
+ .debug_line    0x000032fe      0x29b obj/zoProtocolI2c.o
+ .debug_line    0x00003599      0x479 obj/zoUart.o
+ .debug_line    0x00003a12      0x27c obj/zoProtocolUart.o
+ .debug_line    0x00003c8e      0x2e1 obj/zoBuffer.o
+ .debug_line    0x00003f6f      0x3ad obj/zoIcp.o
+ .debug_line    0x0000431c      0x27c obj/zoProtocolRcServo.o
+ .debug_line    0x00004598      0x1b9 obj/main.o
+
+.debug_frame    0x00000000      0xe00
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 obj/zoError.o
+ .debug_frame   0x00000070       0xb0 obj/zoSystemTimer.o
+ .debug_frame   0x00000120       0x60 obj/zoProtocol.o
+ .debug_frame   0x00000180       0xa0 obj/zoEncoder.o
+ .debug_frame   0x00000220       0x70 obj/zoMotor.o
+ .debug_frame   0x00000290       0x20 obj/zoPid.o
+ .debug_frame   0x000002b0       0xa0 obj/zoSms.o
+ .debug_frame   0x00000350       0x70 obj/zoSmsError.o
+ .debug_frame   0x000003c0      0x330 obj/zoCommands.o
+ .debug_frame   0x000006f0       0xa0 obj/zoAdc.o
+ .debug_frame   0x00000790       0x30 obj/zoSpi.o
+ .debug_frame   0x000007c0      0x230 obj/zoI2c.o
+ .debug_frame   0x000009f0       0x70 obj/zoProtocolI2c.o
+ .debug_frame   0x00000a60      0x130 obj/zoUart.o
+ .debug_frame   0x00000b90       0x60 obj/zoProtocolUart.o
+ .debug_frame   0x00000bf0       0xb0 obj/zoBuffer.o
+ .debug_frame   0x00000ca0       0xe0 obj/zoIcp.o
+ .debug_frame   0x00000d80       0x60 obj/zoProtocolRcServo.o
+ .debug_frame   0x00000de0       0x20 obj/main.o
+
+.debug_str      0x00000000     0x2a10
+ *(.debug_str)
+ .debug_str     0x00000000       0xfe obj/zoError.o
+                                0x139 (size before relaxing)
+ .debug_str     0x000000fe      0x163 obj/zoSystemTimer.o
+                                0x23e (size before relaxing)
+ .debug_str     0x00000261      0x1d3 obj/zoProtocol.o
+                                0x2be (size before relaxing)
+ .debug_str     0x00000434      0x515 obj/zoEncoder.o
+                                0x6b3 (size before relaxing)
+ .debug_str     0x00000949       0xe1 obj/zoMotor.o
+                                0x62c (size before relaxing)
+ .debug_str     0x00000a2a       0x13 obj/zoPid.o
+                                0x14b (size before relaxing)
+ .debug_str     0x00000a3d      0x283 obj/zoSms.o
+                                0x7ce (size before relaxing)
+ .debug_str     0x00000cc0      0x12f obj/zoSmsError.o
+                                0x7a0 (size before relaxing)
+ .debug_str     0x00000def      0xc5a obj/zoCommands.o
+                               0x1304 (size before relaxing)
+ .debug_str     0x00001a49      0x1d5 obj/zoAdc.o
+                                0x46f (size before relaxing)
+ .debug_str     0x00001c1e       0x24 obj/zoSpi.o
+                                 0xf4 (size before relaxing)
+ .debug_str     0x00001c42      0x459 obj/zoI2c.o
+                                0x578 (size before relaxing)
+ .debug_str     0x0000209b       0xd0 obj/zoProtocolI2c.o
+                                0x243 (size before relaxing)
+ .debug_str     0x0000216b      0x2c0 obj/zoUart.o
+                                0x3ed (size before relaxing)
+ .debug_str     0x0000242b      0x15c obj/zoProtocolUart.o
+                                0x378 (size before relaxing)
+ .debug_str     0x00002587       0x9e obj/zoBuffer.o
+                                0x196 (size before relaxing)
+ .debug_str     0x00002625      0x284 obj/zoIcp.o
+                                0x36d (size before relaxing)
+ .debug_str     0x000028a9      0x109 obj/zoProtocolRcServo.o
+                                0x715 (size before relaxing)
+ .debug_str     0x000029b2       0x5e obj/main.o
+                                0x6ce (size before relaxing)
+
+.debug_loc      0x00000000     0x1fa0
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xf0 obj/zoError.o
+ .debug_loc     0x000000f0       0xf0 obj/zoSystemTimer.o
+ .debug_loc     0x000001e0      0x3d5 obj/zoProtocol.o
+ .debug_loc     0x000005b5       0x8a obj/zoEncoder.o
+ .debug_loc     0x0000063f       0x3c obj/zoMotor.o
+ .debug_loc     0x0000067b       0x38 obj/zoPid.o
+ .debug_loc     0x000006b3      0x25f obj/zoSmsError.o
+ .debug_loc     0x00000912      0xb79 obj/zoCommands.o
+ .debug_loc     0x0000148b       0x3e obj/zoAdc.o
+ .debug_loc     0x000014c9       0x13 obj/zoSpi.o
+ .debug_loc     0x000014dc      0x1f2 obj/zoI2c.o
+ .debug_loc     0x000016ce      0x1d7 obj/zoProtocolI2c.o
+ .debug_loc     0x000018a5      0x1a6 obj/zoUart.o
+ .debug_loc     0x00001a4b      0x265 obj/zoProtocolUart.o
+ .debug_loc     0x00001cb0      0x202 obj/zoBuffer.o
+ .debug_loc     0x00001eb2       0x8e obj/zoIcp.o
+ .debug_loc     0x00001f40       0x60 obj/zoProtocolRcServo.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x180
+ .debug_ranges  0x00000000       0x48 obj/zoError.o
+ .debug_ranges  0x00000048       0xf0 obj/zoProtocol.o
+ .debug_ranges  0x00000138       0x48 obj/zoBuffer.o
+
+Cross Reference Table
+
+Symbol                                            File
+Sms                                               obj/zoSms.o
+                                                  obj/main.o
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoMotor.o
+                                                  obj/zoEncoder.o
+__addsf3                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                                                  obj/zoSms.o
+__addsf3x                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+__bad_interrupt                                   c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__brkval                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__bss_end                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__bss_start                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+__data_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_load_start                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__data_start                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+__divmodsi4                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                                                  obj/zoCommands.o
+__divsf3                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+                                                  obj/zoEncoder.o
+__divsf3_pse                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+__divsf3x                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+__do_clear_bss                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoIcp.o
+                                                  obj/zoProtocolUart.o
+                                                  obj/zoUart.o
+                                                  obj/zoProtocolI2c.o
+                                                  obj/zoI2c.o
+                                                  obj/zoAdc.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoMotor.o
+                                                  obj/zoEncoder.o
+                                                  obj/zoSystemTimer.o
+__do_copy_data                                    c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  obj/zoProtocolUart.o
+                                                  obj/zoUart.o
+                                                  obj/zoProtocolI2c.o
+                                                  obj/zoI2c.o
+                                                  obj/zoSms.o
+                                                  obj/zoEncoder.o
+                                                  obj/zoSystemTimer.o
+__eerd_block_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+__eerd_blraw_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_block_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+__eerd_byte_m328p                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+                                                  obj/zoSms.o
+__eerd_dword_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+                                                  obj/zoSms.o
+__eerd_float_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_dword_atmega328p.o)
+__eerd_word_m328p                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eerd_word_atmega328p.o)
+                                                  obj/zoSms.o
+__eewr_byte_m328p                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+__eewr_dword_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+__eewr_float_m328p                                c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+__eewr_r18_m328p                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_byte_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+__eewr_word_m328p                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_word_atmega328p.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(eewr_dword_atmega328p.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+__fixsfsi                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+                                                  obj/zoEncoder.o
+__fixunssfsi                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+__floatsisf                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+                                                  obj/zoEncoder.o
+__floatunsisf                                     c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                                                  obj/zoProtocolRcServo.o
+__flp                                             c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__fp_inf                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__fp_mpack                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+__fp_mpack_finite                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_mpack.o)
+__fp_nan                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__fp_norm2                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_norm2.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+__fp_pscA                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__fp_pscB                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__fp_round                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+__fp_split3                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__fp_splitA                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+__fp_szero                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(divsf3x.o)
+__fp_zero                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+__heap_end                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__heap_start                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__init                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__malloc_heap_end                                 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_heap_start                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__malloc_margin                                   c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+__mulsf3                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+                                                  obj/zoEncoder.o
+__mulsf3_pse                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+__mulsf3x                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+__mulsi3                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                                                  obj/zoCommands.o
+                                                  obj/zoPid.o
+__stack                                           c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__subsf3                                          c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                                                  obj/zoSms.o
+__udivmodhi4                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                                                  obj/zoI2c.o
+                                                  obj/zoSms.o
+__udivmodsi4                                      c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_divmodsi4.o)
+                                                  obj/zoUart.o
+                                                  obj/zoProtocolI2c.o
+__vector_1                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_10                                       obj/zoIcp.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_11                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_12                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_13                                       obj/zoIcp.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_14                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_15                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_16                                       obj/zoMotor.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_17                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_18                                       obj/zoUart.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_19                                       obj/zoUart.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_2                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_20                                       obj/zoUart.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_21                                       obj/zoAdc.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_22                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_23                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_24                                       obj/zoI2c.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_25                                       c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_3                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_4                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_5                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_6                                        obj/zoSystemTimer.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_7                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_8                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_9                                        c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vector_default                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+__vectors                                         c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+_exit                                             c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+accelerationCompleteCriterion                     obj/zoSms.o
+calloc                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+                                                  obj/zoBuffer.o
+constantVelocityCompletedCriterion                obj/zoSms.o
+deccelRecalc                                      obj/zoSms.o
+exit                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+free                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+icpFailedInterruptHandler                         obj/zoProtocolRcServo.o
+icpInterruptHandler                               obj/zoProtocolRcServo.o
+icpTimerOverFlowInterruptHandler                  obj/zoProtocolRcServo.o
+main                                              obj/main.o
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+malloc                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(malloc.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+memset                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(memset.o)
+                                                  c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(calloc.o)
+positionReachedCriterion                          obj/zoSms.o
+sqrt                                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(sqrt.o)
+                                                  obj/zoCommands.o
+square                                            c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libm.a(square.o)
+                                                  obj/zoSms.o
+zoAdcChannelDisable                               obj/zoAdc.o
+zoAdcChannelEnable                                obj/zoAdc.o
+                                                  obj/zoSms.o
+zoAdcInit                                         obj/zoAdc.o
+                                                  obj/zoSms.o
+zoAdcOff                                          obj/zoAdc.o
+zoAdcRead                                         obj/zoAdc.o
+                                                  obj/zoCommands.o
+zoAdcSetPrescaler                                 obj/zoAdc.o
+zoAdcSetReference                                 obj/zoAdc.o
+zoAdcSetTrigger                                   obj/zoAdc.o
+                                                  obj/zoSms.o
+zoBufferFlush                                     obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferGet                                       obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferGetIsr                                    obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferInit                                      obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferIsEmpty                                   obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferIsFull                                    obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferPut                                       obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferPutIsr                                    obj/zoBuffer.o
+                                                  obj/zoUart.o
+zoBufferRead                                      obj/zoBuffer.o
+zoBufferReadIsr                                   obj/zoBuffer.o
+zoCommandAbsolutePositionMove                     obj/zoCommands.o
+zoCommandConfigureDigitalIO                       obj/zoCommands.o
+zoCommandDoMove                                   obj/zoCommands.o
+zoCommandGetAbsolutePosition                      obj/zoCommands.o
+zoCommandGetAnalogIn                              obj/zoCommands.o
+zoCommandGetCurrent                               obj/zoCommands.o
+zoCommandGetCurrentLimit                          obj/zoCommands.o
+zoCommandGetCurrentLimitDuration                  obj/zoCommands.o
+zoCommandGetDigitalIn                             obj/zoCommands.o
+zoCommandGetDigitalIoConfiguration                obj/zoCommands.o
+zoCommandGetGainD                                 obj/zoCommands.o
+zoCommandGetGainI                                 obj/zoCommands.o
+zoCommandGetGainP                                 obj/zoCommands.o
+zoCommandGetLocalAcceptanceMask                   obj/zoCommands.o
+zoCommandGetPosition                              obj/zoCommands.o
+zoCommandGetProfileAcceleration                   obj/zoCommands.o
+zoCommandGetProfileVelocity                       obj/zoCommands.o
+zoCommandGetVelocity                              obj/zoCommands.o
+zoCommandGetWarning                               obj/zoCommands.o
+zoCommandHalt                                     obj/zoCommands.o
+zoCommandProfiledAbsolutePositionMove             obj/zoCommands.o
+zoCommandProfiledRelativePositionMove             obj/zoCommands.o
+zoCommandProfiledVelocityMove                     obj/zoCommands.o
+zoCommandRelativePositionMove                     obj/zoCommands.o
+zoCommandResetPosition                            obj/zoCommands.o
+zoCommandSetAbsolutePositionSetpoint              obj/zoCommands.o
+zoCommandSetBaudUart                              obj/zoCommands.o
+zoCommandSetCurrentLimit                          obj/zoCommands.o
+zoCommandSetCurrentLimitDuration                  obj/zoCommands.o
+zoCommandSetDigitalOut                            obj/zoCommands.o
+zoCommandSetErrorReportingLevel                   obj/zoCommands.o
+zoCommandSetGainD                                 obj/zoCommands.o
+zoCommandSetGainI                                 obj/zoCommands.o
+zoCommandSetGainP                                 obj/zoCommands.o
+zoCommandSetLocalAcceptanceMask                   obj/zoCommands.o
+zoCommandSetNodeID                                obj/zoCommands.o
+zoCommandSetProfileAcceleration                   obj/zoCommands.o
+zoCommandSetProfileVelocity                       obj/zoCommands.o
+zoCommandSetProfiledAbsolutePositionSetpoint      obj/zoCommands.o
+zoCommandSetProfiledRelativePositionSetpoint      obj/zoCommands.o
+zoCommandSetProfiledVelocitySetpoint              obj/zoCommands.o
+zoCommandSetRelativePositionSetpoint              obj/zoCommands.o
+zoCommandSetVelocitySetpoint                      obj/zoCommands.o
+zoCommandStart                                    obj/zoCommands.o
+zoCommandStop                                     obj/zoCommands.o
+                                                  obj/zoSmsError.o
+zoCommandVelocityMove                             obj/zoCommands.o
+zoCommandsError                                   obj/zoCommands.o
+                                                  obj/zoSmsError.o
+zoCommandsInit                                    obj/zoCommands.o
+                                                  obj/main.o
+zoCommandsServiceCommand                          obj/zoCommands.o
+                                                  obj/main.o
+zoEncoderGetPos                                   obj/zoEncoder.o
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoSms.o
+zoEncoderGetPosAbsolute                           obj/zoEncoder.o
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+zoEncoderGetPosSpi                                obj/zoEncoder.o
+zoEncoderGetVel                                   obj/zoEncoder.o
+                                                  obj/zoCommands.o
+zoEncoderInit                                     obj/zoEncoder.o
+                                                  obj/zoSms.o
+zoEncoderPollOverFlowError                        obj/zoEncoder.o
+                                                  obj/zoSmsError.o
+zoEncoderPollUnderFlowError                       obj/zoEncoder.o
+                                                  obj/zoSmsError.o
+zoEncoderReset                                    obj/zoEncoder.o
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+zoEncoderSetVel                                   obj/zoEncoder.o
+                                                  obj/zoSms.o
+zoErrorGet                                        obj/zoError.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoProtocol.o
+zoErrorGetIsr                                     obj/zoError.o
+zoErrorInit                                       obj/zoError.o
+                                                  obj/zoUart.o
+                                                  obj/zoI2c.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+zoErrorIsEmpty                                    obj/zoError.o
+                                                  obj/main.o
+                                                  obj/zoUart.o
+                                                  obj/zoProtocolI2c.o
+                                                  obj/zoI2c.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoProtocol.o
+zoErrorPut                                        obj/zoError.o
+                                                  obj/zoUart.o
+                                                  obj/zoI2c.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoProtocol.o
+zoErrorPutIsr                                     obj/zoError.o
+                                                  obj/zoUart.o
+                                                  obj/zoProtocolI2c.o
+zoI2cAcknowledgeRx                                obj/zoI2c.o
+zoI2cError                                        obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cFunctorArbitrationLost                       obj/zoI2c.o
+zoI2cFunctorBusError                              obj/zoI2c.o
+zoI2cFunctorInit                                  obj/zoI2c.o
+zoI2cFunctorMasterNAck                            obj/zoI2c.o
+zoI2cFunctorMrDataAck                             obj/zoI2c.o
+zoI2cFunctorMrDataNAck                            obj/zoI2c.o
+zoI2cFunctorMrSlaveAck                            obj/zoI2c.o
+zoI2cFunctorMtAck                                 obj/zoI2c.o
+zoI2cFunctorNoInfo                                obj/zoI2c.o
+zoI2cFunctorNull                                  obj/zoI2c.o
+zoI2cFunctorSrAck                                 obj/zoI2c.o
+zoI2cFunctorSrDataAck                             obj/zoI2c.o
+zoI2cFunctorSrDataNack                            obj/zoI2c.o
+zoI2cFunctorStAck                                 obj/zoI2c.o
+zoI2cFunctorStDataAck                             obj/zoI2c.o
+zoI2cFunctorStDataNAck                            obj/zoI2c.o
+zoI2cFunctorStart                                 obj/zoI2c.o
+zoI2cFunctorStop                                  obj/zoI2c.o
+zoI2cInit                                         obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cMasterSend                                   obj/zoI2c.o
+zoI2cMasterSendBlocking                           obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cSendByte                                     obj/zoI2c.o
+zoI2cSendStart                                    obj/zoI2c.o
+zoI2cSendStop                                     obj/zoI2c.o
+zoI2cSetBitrate                                   obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cSetLocalDeviceAddr                           obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cSetSlaveReceiveHandler                       obj/zoI2c.o
+                                                  obj/zoProtocolI2c.o
+zoI2cSetSlaveTransmitHandler                      obj/zoI2c.o
+zoI2cSetWaitOnBusReadyTimeOut                     obj/zoI2c.o
+zoI2cSetWaitOnReceiveTimeOut                      obj/zoI2c.o
+zoI2cSetWaitOnTransmitTimeOut                     obj/zoI2c.o
+zoI2cWaitForComplete                              obj/zoI2c.o
+zoIcpAttachUserFunctionOnCapture                  obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoIcpAttachUserFunctionOnCaptureFailure           obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoIcpAttachUserFunctionOnOverFlow                 obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoIcpGetPulseWidh                                 obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoIcpInit                                         obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoIcpIsrDisable                                   obj/zoIcp.o
+zoIcpIsrEnable                                    obj/zoIcp.o
+zoIcpOverFlowIsrDisable                           obj/zoIcp.o
+zoIcpOverFlowIsrEnable                            obj/zoIcp.o
+zoIcpSetMode                                      obj/zoIcp.o
+zoIcpSetPrescaler                                 obj/zoIcp.o
+                                                  obj/zoProtocolRcServo.o
+zoMotorGetState                                   obj/zoMotor.o
+                                                  obj/zoCommands.o
+zoMotorInit                                       obj/zoMotor.o
+                                                  obj/zoSms.o
+zoMotorSet                                        obj/zoMotor.o
+                                                  obj/zoSms.o
+zoMotorSetState                                   obj/zoMotor.o
+                                                  obj/zoProtocolRcServo.o
+                                                  obj/zoCommands.o
+                                                  obj/zoSms.o
+zoMotorSetTimedEventHandler                       obj/zoMotor.o
+                                                  obj/zoSms.o
+zoPidDoPid                                        obj/zoPid.o
+                                                  obj/zoSms.o
+zoProfiledMoveAbsolute                            obj/zoCommands.o
+zoProfiledVelocity                                obj/zoCommands.o
+zoProtocolCommand                                 obj/zoProtocol.o
+zoProtocolCommandResponse                         obj/zoProtocol.o
+                                                  obj/main.o
+                                                  obj/zoSmsError.o
+zoProtocolI2cError                                obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolI2cGetPacket                            obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolI2cInit                                 obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolI2cPutPacket                            obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolI2cSetBitrate                           obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolI2cSetLAM                               obj/zoProtocolI2c.o
+                                                  obj/zoProtocol.o
+zoProtocolInit                                    obj/zoProtocol.o
+                                                  obj/main.o
+zoProtocolLRC                                     obj/zoProtocol.o
+zoProtocolParse                                   obj/zoProtocol.o
+                                                  obj/main.o
+zoProtocolRcServoInit                             obj/zoProtocolRcServo.o
+                                                  obj/main.o
+zoProtocolRcServoParse                            obj/zoProtocolRcServo.o
+                                                  obj/main.o
+zoProtocolUartError                               obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoProtocolUartGetPacket                           obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoProtocolUartInit                                obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoProtocolUartPutPacket                           obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoProtocolUartSetBitrate                          obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoProtocolUartSetLAM                              obj/zoProtocolUart.o
+                                                  obj/zoProtocol.o
+zoSmsControlLoop                                  obj/zoSms.o
+zoSmsError                                        obj/zoSmsError.o
+                                                  obj/main.o
+zoSmsErrorHandleCommandResponseFailure            obj/zoSmsError.o
+                                                  obj/main.o
+zoSmsErrorHandleParseFailure                      obj/zoSmsError.o
+                                                  obj/main.o
+zoSmsErrorHandleServiceCommandFailure             obj/zoSmsError.o
+                                                  obj/main.o
+zoSmsErrorInit                                    obj/zoSmsError.o
+                                                  obj/zoSms.o
+zoSmsErrorPoll                                    obj/zoSmsError.o
+                                                  obj/main.o
+zoSmsInit                                         obj/zoSms.o
+                                                  obj/main.o
+zoSmsInitSettingsFromEeprom                       obj/zoSms.o
+zoSmsMotorStalled                                 obj/zoSmsError.o
+zoSmsPinsInit                                     obj/zoSms.o
+zoSmsRestoreDefaults                              obj/zoSms.o
+zoSmsWarning                                      obj/zoSmsError.o
+                                                  obj/zoCommands.o
+zoSpiInit                                         obj/zoSpi.o
+                                                  obj/zoEncoder.o
+zoSpiTransferByte                                 obj/zoSpi.o
+                                                  obj/zoEncoder.o
+zoSystemTimerInit                                 obj/zoSystemTimer.o
+                                                  obj/zoUart.o
+                                                  obj/zoI2c.o
+                                                  obj/zoSmsError.o
+zoSystemTimerMeasureGet                           obj/zoSystemTimer.o
+zoSystemTimerMeasureStart                         obj/zoSystemTimer.o
+zoSystemTimerTimeOutExpired                       obj/zoSystemTimer.o
+                                                  obj/zoUart.o
+                                                  obj/zoI2c.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoProtocol.o
+zoSystemTimerTimeOutInit                          obj/zoSystemTimer.o
+                                                  obj/zoUart.o
+                                                  obj/zoI2c.o
+                                                  obj/zoSmsError.o
+                                                  obj/zoProtocol.o
+zoSystemTimerWatchDogDisable                      obj/zoSystemTimer.o
+zoSystemTimerWatchDogEnable                       obj/zoSystemTimer.o
+zoSystemTimerWatchDogInit                         obj/zoSystemTimer.o
+zoSystemTimerWatchDogReset                        obj/zoSystemTimer.o
+zoUartError                                       obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartGetChar                                     obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartInit                                        obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartInitRs485                                   obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartPutChar                                     obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartPutData                                     obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartPutString                                   obj/zoUart.o
+zoUartRxBufferIsEmpty                             obj/zoUart.o
+zoUartRxFlush                                     obj/zoUart.o
+zoUartSetBaud                                     obj/zoUart.o
+                                                  obj/zoProtocolUart.o
+zoUartSetBuffersSize                              obj/zoUart.o
+zoUartSetDataBits                                 obj/zoUart.o
+zoUartSetParity                                   obj/zoUart.o
+zoUartSetStopBits                                 obj/zoUart.o
+zoUartSetTransmitTimeOut                          obj/zoUart.o
+zoUartTxBufferIsFull                              obj/zoUart.o

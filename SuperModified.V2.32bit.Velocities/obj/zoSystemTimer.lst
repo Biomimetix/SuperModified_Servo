@@ -1,0 +1,405 @@
+   1               		.file	"zoSystemTimer.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoSystemTimerInit
+  18               	zoSystemTimerInit:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 88ED      		ldi r24,lo8(-40)
+  25 0002 8093 6000 		sts 96,r24
+  26               	.LBB6:
+  27               	.LBB7:
+  28               	.LM3:
+  29               	/* #APP */
+  30               	 ;  38 "zoSystemTimer.c" 1
+  31 0006 0FB6      		in __tmp_reg__, __SREG__
+  32 0008 0F92      		 push __tmp_reg__
+  33 000a F894      		cli
+  34               	 ;  0 "" 2
+  35               	.LM4:
+  36               	/* #NOAPP */
+  37 000c 8FEF      		ldi r24,lo8(-1)
+  38 000e 8093 0000 		sts WatchDogResetEnabled,r24
+  39               	.LM5:
+  40               	/* #APP */
+  41               	 ;  40 "zoSystemTimer.c" 1
+  42 0012 0F90      		pop __tmp_reg__ 
+  43 0014 0FBE      		out __SREG__, __tmp_reg__
+  44               	 ;  0 "" 2
+  45               	/* epilogue start */
+  46               	/* #NOAPP */
+  47               	.LBE7:
+  48               	.LBE6:
+  49               	.LM6:
+  50 0016 0895      		ret
+  51               	.LFE2:
+  53               	.global	zoSystemTimerWatchDogInit
+  55               	zoSystemTimerWatchDogInit:
+  56               	.LFB3:
+  57               	.LM7:
+  58               	.LVL0:
+  59               	/* prologue: function */
+  60               	/* frame size = 0 */
+  61               	.LM8:
+  62               	/* #APP */
+  63               	 ;  24 "zoSystemTimer.c" 1
+  64 0018 0FB6      		in __tmp_reg__, __SREG__
+  65 001a 0F92      		 push __tmp_reg__
+  66 001c F894      		cli
+  67               	 ;  0 "" 2
+  68               	.LM9:
+  69               	/* #NOAPP */
+  70 001e 9093 0000 		sts (WatchDogTimeOut)+1,r25
+  71 0022 8093 0000 		sts WatchDogTimeOut,r24
+  72               	.LM10:
+  73               	/* #APP */
+  74               	 ;  26 "zoSystemTimer.c" 1
+  75 0026 0F90      		pop __tmp_reg__ 
+  76 0028 0FBE      		out __SREG__, __tmp_reg__
+  77               	 ;  0 "" 2
+  78               	/* epilogue start */
+  79               	.LM11:
+  80               	/* #NOAPP */
+  81 002a 0895      		ret
+  82               	.LFE3:
+  84               	.global	zoSystemTimerWatchDogEnable
+  86               	zoSystemTimerWatchDogEnable:
+  87               	.LFB4:
+  88               	.LM12:
+  89               	/* prologue: function */
+  90               	/* frame size = 0 */
+  91               	.LM13:
+  92               	/* #APP */
+  93               	 ;  31 "zoSystemTimer.c" 1
+  94 002c 0FB6      		in __tmp_reg__, __SREG__
+  95 002e 0F92      		 push __tmp_reg__
+  96 0030 F894      		cli
+  97               	 ;  0 "" 2
+  98               	.LM14:
+  99               	/* #NOAPP */
+ 100 0032 8FEF      		ldi r24,lo8(-1)
+ 101 0034 8093 0000 		sts WatchDogResetEnabled,r24
+ 102               	.LM15:
+ 103               	/* #APP */
+ 104               	 ;  33 "zoSystemTimer.c" 1
+ 105 0038 0F90      		pop __tmp_reg__ 
+ 106 003a 0FBE      		out __SREG__, __tmp_reg__
+ 107               	 ;  0 "" 2
+ 108               	/* epilogue start */
+ 109               	.LM16:
+ 110               	/* #NOAPP */
+ 111 003c 0895      		ret
+ 112               	.LFE4:
+ 114               	.global	zoSystemTimerWatchDogDisable
+ 116               	zoSystemTimerWatchDogDisable:
+ 117               	.LFB5:
+ 118               	.LM17:
+ 119               	/* prologue: function */
+ 120               	/* frame size = 0 */
+ 121               	.LM18:
+ 122               	/* #APP */
+ 123               	 ;  38 "zoSystemTimer.c" 1
+ 124 003e 0FB6      		in __tmp_reg__, __SREG__
+ 125 0040 0F92      		 push __tmp_reg__
+ 126 0042 F894      		cli
+ 127               	 ;  0 "" 2
+ 128               	.LM19:
+ 129               	/* #NOAPP */
+ 130 0044 8FEF      		ldi r24,lo8(-1)
+ 131 0046 8093 0000 		sts WatchDogResetEnabled,r24
+ 132               	.LM20:
+ 133               	/* #APP */
+ 134               	 ;  40 "zoSystemTimer.c" 1
+ 135 004a 0F90      		pop __tmp_reg__ 
+ 136 004c 0FBE      		out __SREG__, __tmp_reg__
+ 137               	 ;  0 "" 2
+ 138               	/* epilogue start */
+ 139               	.LM21:
+ 140               	/* #NOAPP */
+ 141 004e 0895      		ret
+ 142               	.LFE5:
+ 144               	.global	zoSystemTimerWatchDogReset
+ 146               	zoSystemTimerWatchDogReset:
+ 147               	.LFB6:
+ 148               	.LM22:
+ 149               	/* prologue: function */
+ 150               	/* frame size = 0 */
+ 151               	.LM23:
+ 152               	/* #APP */
+ 153               	 ;  45 "zoSystemTimer.c" 1
+ 154 0050 0FB6      		in __tmp_reg__, __SREG__
+ 155 0052 0F92      		 push __tmp_reg__
+ 156 0054 F894      		cli
+ 157               	 ;  0 "" 2
+ 158               	.LM24:
+ 159               	/* #NOAPP */
+ 160 0056 1092 0000 		sts (WatchDogMiliseconds)+1,__zero_reg__
+ 161 005a 1092 0000 		sts WatchDogMiliseconds,__zero_reg__
+ 162               	.LM25:
+ 163               	/* #APP */
+ 164               	 ;  47 "zoSystemTimer.c" 1
+ 165 005e 0F90      		pop __tmp_reg__ 
+ 166 0060 0FBE      		out __SREG__, __tmp_reg__
+ 167               	 ;  0 "" 2
+ 168               	/* epilogue start */
+ 169               	.LM26:
+ 170               	/* #NOAPP */
+ 171 0062 0895      		ret
+ 172               	.LFE6:
+ 174               	.global	zoSystemTimerTimeOutInit
+ 176               	zoSystemTimerTimeOutInit:
+ 177               	.LFB7:
+ 178               	.LM27:
+ 179               	.LVL1:
+ 180               	/* prologue: function */
+ 181               	/* frame size = 0 */
+ 182 0064 FC01      		movw r30,r24
+ 183               	.LBB8:
+ 184               	.LBB9:
+ 185               	.LM28:
+ 186               	/* #APP */
+ 187               	 ;  65 "zoSystemTimer.c" 1
+ 188 0066 0FB6      		in __tmp_reg__, __SREG__
+ 189 0068 0F92      		 push __tmp_reg__
+ 190 006a F894      		cli
+ 191               	 ;  0 "" 2
+ 192               	.LM29:
+ 193               	/* #NOAPP */
+ 194 006c 8091 0000 		lds r24,Miliseconds
+ 195 0070 9091 0000 		lds r25,(Miliseconds)+1
+ 196               	.LVL2:
+ 197 0074 9183      		std Z+1,r25
+ 198 0076 8083      		st Z,r24
+ 199               	.LM30:
+ 200               	/* #APP */
+ 201               	 ;  67 "zoSystemTimer.c" 1
+ 202 0078 0F90      		pop __tmp_reg__ 
+ 203 007a 0FBE      		out __SREG__, __tmp_reg__
+ 204               	 ;  0 "" 2
+ 205               	/* epilogue start */
+ 206               	/* #NOAPP */
+ 207               	.LBE9:
+ 208               	.LBE8:
+ 209               	.LM31:
+ 210 007c 0895      		ret
+ 211               	.LFE7:
+ 213               	.global	zoSystemTimerMeasureStart
+ 215               	zoSystemTimerMeasureStart:
+ 216               	.LFB9:
+ 217               	.LM32:
+ 218               	.LVL3:
+ 219               	/* prologue: function */
+ 220               	/* frame size = 0 */
+ 221 007e FC01      		movw r30,r24
+ 222               	.LM33:
+ 223               	/* #APP */
+ 224               	 ;  65 "zoSystemTimer.c" 1
+ 225 0080 0FB6      		in __tmp_reg__, __SREG__
+ 226 0082 0F92      		 push __tmp_reg__
+ 227 0084 F894      		cli
+ 228               	 ;  0 "" 2
+ 229               	.LM34:
+ 230               	/* #NOAPP */
+ 231 0086 8091 0000 		lds r24,Miliseconds
+ 232 008a 9091 0000 		lds r25,(Miliseconds)+1
+ 233               	.LVL4:
+ 234 008e 9183      		std Z+1,r25
+ 235 0090 8083      		st Z,r24
+ 236               	.LM35:
+ 237               	/* #APP */
+ 238               	 ;  67 "zoSystemTimer.c" 1
+ 239 0092 0F90      		pop __tmp_reg__ 
+ 240 0094 0FBE      		out __SREG__, __tmp_reg__
+ 241               	 ;  0 "" 2
+ 242               	/* epilogue start */
+ 243               	.LM36:
+ 244               	/* #NOAPP */
+ 245 0096 0895      		ret
+ 246               	.LFE9:
+ 248               	.global	zoSystemTimerMeasureGet
+ 250               	zoSystemTimerMeasureGet:
+ 251               	.LFB10:
+ 252               	.LM37:
+ 253               	.LVL5:
+ 254               	/* prologue: function */
+ 255               	/* frame size = 0 */
+ 256 0098 FC01      		movw r30,r24
+ 257               	.LM38:
+ 258               	/* #APP */
+ 259               	 ;  74 "zoSystemTimer.c" 1
+ 260 009a 0FB6      		in __tmp_reg__, __SREG__
+ 261 009c 0F92      		 push __tmp_reg__
+ 262 009e F894      		cli
+ 263               	 ;  0 "" 2
+ 264               	.LM39:
+ 265               	/* #NOAPP */
+ 266 00a0 8091 0000 		lds r24,Miliseconds
+ 267 00a4 9091 0000 		lds r25,(Miliseconds)+1
+ 268               	.LVL6:
+ 269               	.LM40:
+ 270               	/* #APP */
+ 271               	 ;  76 "zoSystemTimer.c" 1
+ 272 00a8 0F90      		pop __tmp_reg__ 
+ 273 00aa 0FBE      		out __SREG__, __tmp_reg__
+ 274               	 ;  0 "" 2
+ 275               	.LM41:
+ 276               	/* #NOAPP */
+ 277 00ac 0190      		ld __tmp_reg__,Z+
+ 278 00ae F081      		ld r31,Z
+ 279 00b0 E02D      		mov r30,__tmp_reg__
+ 280               	.LVL7:
+ 281 00b2 8E17      		cp r24,r30
+ 282 00b4 9F07      		cpc r25,r31
+ 283 00b6 00F4      		brsh .L20
+ 284               	.LM42:
+ 285 00b8 9C01      		movw r18,r24
+ 286 00ba 2150      		subi r18,lo8(-(-1))
+ 287 00bc 3040      		sbci r19,hi8(-(-1))
+ 288 00be 2E1B      		sub r18,r30
+ 289 00c0 3F0B      		sbc r19,r31
+ 290               	.LM43:
+ 291 00c2 C901      		movw r24,r18
+ 292               	.LVL8:
+ 293               	/* epilogue start */
+ 294 00c4 0895      		ret
+ 295               	.LVL9:
+ 296               	.L20:
+ 297               	.LM44:
+ 298 00c6 9C01      		movw r18,r24
+ 299 00c8 2E1B      		sub r18,r30
+ 300 00ca 3F0B      		sbc r19,r31
+ 301               	.LM45:
+ 302 00cc C901      		movw r24,r18
+ 303               	.LVL10:
+ 304 00ce 0895      		ret
+ 305               	.LFE10:
+ 307               	.global	zoSystemTimerTimeOutExpired
+ 309               	zoSystemTimerTimeOutExpired:
+ 310               	.LFB8:
+ 311               	.LM46:
+ 312               	.LVL11:
+ 313 00d0 0F93      		push r16
+ 314 00d2 1F93      		push r17
+ 315               	/* prologue: function */
+ 316               	/* frame size = 0 */
+ 317 00d4 8B01      		movw r16,r22
+ 318               	.LM47:
+ 319 00d6 0E94 0000 		call zoSystemTimerMeasureGet
+ 320               	.LVL12:
+ 321 00da 8017      		cp r24,r16
+ 322 00dc 9107      		cpc r25,r17
+ 323 00de 00F4      		brsh .L22
+ 324 00e0 80E0      		ldi r24,lo8(0)
+ 325               	/* epilogue start */
+ 326               	.LM48:
+ 327 00e2 1F91      		pop r17
+ 328 00e4 0F91      		pop r16
+ 329               	.LVL13:
+ 330 00e6 0895      		ret
+ 331               	.LVL14:
+ 332               	.L22:
+ 333               	.LM49:
+ 334 00e8 8FEF      		ldi r24,lo8(-1)
+ 335               	.LM50:
+ 336 00ea 1F91      		pop r17
+ 337 00ec 0F91      		pop r16
+ 338               	.LVL15:
+ 339 00ee 0895      		ret
+ 340               	.LFE8:
+ 342               	.global	__vector_6
+ 344               	__vector_6:
+ 345               	.LFB11:
+ 346               	.LM51:
+ 347 00f0 1F92      		push __zero_reg__
+ 348 00f2 0F92      		push r0
+ 349 00f4 0FB6      		in r0,__SREG__
+ 350 00f6 0F92      		push r0
+ 351 00f8 1124      		clr __zero_reg__
+ 352 00fa 2F93      		push r18
+ 353 00fc 3F93      		push r19
+ 354 00fe 8F93      		push r24
+ 355 0100 9F93      		push r25
+ 356               	/* prologue: Signal */
+ 357               	/* frame size = 0 */
+ 358               	.LM52:
+ 359 0102 8091 0000 		lds r24,Miliseconds
+ 360 0106 9091 0000 		lds r25,(Miliseconds)+1
+ 361 010a 4096      		adiw r24,16
+ 362 010c 9093 0000 		sts (Miliseconds)+1,r25
+ 363 0110 8093 0000 		sts Miliseconds,r24
+ 364               	.LM53:
+ 365 0114 8091 0000 		lds r24,WatchDogMiliseconds
+ 366 0118 9091 0000 		lds r25,(WatchDogMiliseconds)+1
+ 367 011c 4096      		adiw r24,16
+ 368 011e 9093 0000 		sts (WatchDogMiliseconds)+1,r25
+ 369 0122 8093 0000 		sts WatchDogMiliseconds,r24
+ 370               	.LM54:
+ 371 0126 2091 0000 		lds r18,WatchDogMiliseconds
+ 372 012a 3091 0000 		lds r19,(WatchDogMiliseconds)+1
+ 373 012e 8091 0000 		lds r24,WatchDogTimeOut
+ 374 0132 9091 0000 		lds r25,(WatchDogTimeOut)+1
+ 375 0136 8217      		cp r24,r18
+ 376 0138 9307      		cpc r25,r19
+ 377 013a 00F4      		brsh .L26
+ 378 013c 8091 0000 		lds r24,WatchDogResetEnabled
+ 379 0140 8823      		tst r24
+ 380 0142 01F4      		brne .L28
+ 381               	.L26:
+ 382               	.LM55:
+ 383 0144 8091 6000 		lds r24,96
+ 384 0148 8065      		ori r24,lo8(80)
+ 385 014a 8093 6000 		sts 96,r24
+ 386               	.L28:
+ 387               	/* epilogue start */
+ 388               	.LM56:
+ 389 014e 9F91      		pop r25
+ 390 0150 8F91      		pop r24
+ 391 0152 3F91      		pop r19
+ 392 0154 2F91      		pop r18
+ 393 0156 0F90      		pop r0
+ 394 0158 0FBE      		out __SREG__,r0
+ 395 015a 0F90      		pop r0
+ 396 015c 1F90      		pop __zero_reg__
+ 397 015e 1895      		reti
+ 398               	.LFE11:
+ 400               		.lcomm Miliseconds,2
+ 401               		.lcomm WatchDogMiliseconds,2
+ 402               		.data
+ 405               	WatchDogTimeOut:
+ 406 0000 FFFF      		.word	-1
+ 407               		.lcomm WatchDogResetEnabled,1
+ 504               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoSystemTimer.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:18     .text:00000000 zoSystemTimerInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:401    .bss:00000004 WatchDogResetEnabled
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:55     .text:00000018 zoSystemTimerWatchDogInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:405    .data:00000000 WatchDogTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:86     .text:0000002c zoSystemTimerWatchDogEnable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:116    .text:0000003e zoSystemTimerWatchDogDisable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:146    .text:00000050 zoSystemTimerWatchDogReset
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:400    .bss:00000002 WatchDogMiliseconds
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:176    .text:00000064 zoSystemTimerTimeOutInit
+                             .bss:00000000 Miliseconds
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:215    .text:0000007e zoSystemTimerMeasureStart
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:250    .text:00000098 zoSystemTimerMeasureGet
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:309    .text:000000d0 zoSystemTimerTimeOutExpired
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccYaVSdg.s:344    .text:000000f0 __vector_6
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

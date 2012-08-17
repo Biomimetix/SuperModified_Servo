@@ -1,0 +1,403 @@
+   1               		.file	"zoProtocolRcServo.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	icpFailedInterruptHandler
+  18               	icpFailedInterruptHandler:
+  19               	.LFB16:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 1092 0000 		sts IsRcServoStarted,__zero_reg__
+  25               	.LM3:
+  26 0004 1092 0000 		sts ValidCommandCount,__zero_reg__
+  27               	/* epilogue start */
+  28               	.LM4:
+  29 0008 0895      		ret
+  30               	.LFE16:
+  32               	.global	icpTimerOverFlowInterruptHandler
+  34               	icpTimerOverFlowInterruptHandler:
+  35               	.LFB17:
+  36               	.LM5:
+  37               	/* prologue: function */
+  38               	/* frame size = 0 */
+  39               	.LM6:
+  40 000a 1092 0000 		sts IsRcServoStarted,__zero_reg__
+  41               	.LM7:
+  42 000e 1092 0000 		sts ValidCommandCount,__zero_reg__
+  43               	/* epilogue start */
+  44               	.LM8:
+  45 0012 0895      		ret
+  46               	.LFE17:
+  48               	.global	zoProtocolRcServoParse
+  50               	zoProtocolRcServoParse:
+  51               	.LFB20:
+  52               	.LM9:
+  53 0014 DF93      		push r29
+  54 0016 CF93      		push r28
+  55 0018 00D0      		rcall .
+  56 001a CDB7      		in r28,__SP_L__
+  57 001c DEB7      		in r29,__SP_H__
+  58               	/* prologue: function */
+  59               	/* frame size = 2 */
+  60               	.LM10:
+  61 001e 8091 0000 		lds r24,IsRcServoStarted
+  62 0022 8823      		tst r24
+  63 0024 01F0      		breq .L16
+  64 0026 8091 0000 		lds r24,IsNewRcServoSetPoint
+  65 002a 8823      		tst r24
+  66 002c 01F4      		brne .L18
+  67               	.LVL0:
+  68               	.L16:
+  69               	/* epilogue start */
+  70               	.LM11:
+  71 002e 0F90      		pop __tmp_reg__
+  72 0030 0F90      		pop __tmp_reg__
+  73 0032 CF91      		pop r28
+  74 0034 DF91      		pop r29
+  75 0036 0895      		ret
+  76               	.LVL1:
+  77               	.L18:
+  78               	.LM12:
+  79 0038 1092 0000 		sts IsNewRcServoSetPoint,__zero_reg__
+  80               	.LM13:
+  81 003c CE01      		movw r24,r28
+  82 003e 0196      		adiw r24,1
+  83 0040 0E94 0000 		call zoIcpGetPulseWidh
+  84 0044 8823      		tst r24
+  85 0046 01F0      		breq .L16
+  86               	.LM14:
+  87 0048 6981      		ldd r22,Y+1
+  88 004a 7A81      		ldd r23,Y+2
+  89               	.LVL2:
+  90 004c CB01      		movw r24,r22
+  91 004e 815B      		subi r24,lo8(-(-1201))
+  92 0050 9440      		sbci r25,hi8(-(-1201))
+  93 0052 8B5E      		subi r24,lo8(5099)
+  94 0054 9341      		sbci r25,hi8(5099)
+  95 0056 00F4      		brsh .L16
+  96               	.LM15:
+  97 0058 80E0      		ldi r24,lo8(0)
+  98 005a 90E0      		ldi r25,hi8(0)
+  99 005c 0E94 0000 		call __floatunsisf
+ 100 0060 27E1      		ldi r18,lo8(0x3f51b717)
+ 101 0062 37EB      		ldi r19,hi8(0x3f51b717)
+ 102 0064 41E5      		ldi r20,hlo8(0x3f51b717)
+ 103 0066 5FE3      		ldi r21,hhi8(0x3f51b717)
+ 104 0068 0E94 0000 		call __mulsf3
+ 105 006c 0E94 0000 		call __fixsfsi
+ 106               	.LM16:
+ 107 0070 8091 0000 		lds r24,InitialPos
+ 108 0074 9091 0000 		lds r25,(InitialPos)+1
+ 109 0078 8150      		subi r24,lo8(2049)
+ 110 007a 9840      		sbci r25,hi8(2049)
+ 111 007c 00F4      		brsh .+2
+ 112 007e 00C0      		rjmp .L19
+ 113               	.LM17:
+ 114 0080 8091 0000 		lds r24,InitialPos
+ 115 0084 9091 0000 		lds r25,(InitialPos)+1
+ 116 0088 681B      		sub r22,r24
+ 117 008a 790B      		sbc r23,r25
+ 118               	.LVL3:
+ 119 008c 6050      		subi r22,lo8(-(1024))
+ 120 008e 7C4F      		sbci r23,hi8(-(1024))
+ 121               	.L8:
+ 122               	.LM18:
+ 123 0090 8091 0000 		lds r24,PrevPositionCommand
+ 124 0094 9091 0000 		lds r25,(PrevPositionCommand)+1
+ 125 0098 9093 0000 		sts (PrevPrevPositionCommand)+1,r25
+ 126 009c 8093 0000 		sts PrevPrevPositionCommand,r24
+ 127               	.LM19:
+ 128 00a0 8091 0000 		lds r24,PositionCommand
+ 129 00a4 9091 0000 		lds r25,(PositionCommand)+1
+ 130 00a8 9093 0000 		sts (PrevPositionCommand)+1,r25
+ 131 00ac 8093 0000 		sts PrevPositionCommand,r24
+ 132               	.LM20:
+ 133 00b0 8091 0000 		lds r24,PositionCommand
+ 134 00b4 9091 0000 		lds r25,(PositionCommand)+1
+ 135 00b8 680F      		add r22,r24
+ 136 00ba 791F      		adc r23,r25
+ 137 00bc 7595      		asr r23
+ 138 00be 6795      		ror r22
+ 139 00c0 7093 0000 		sts (PositionCommand)+1,r23
+ 140 00c4 6093 0000 		sts PositionCommand,r22
+ 141               	.LM21:
+ 142 00c8 2091 0000 		lds r18,PositionCommand
+ 143 00cc 3091 0000 		lds r19,(PositionCommand)+1
+ 144 00d0 8091 0000 		lds r24,PrevPositionCommand
+ 145 00d4 9091 0000 		lds r25,(PrevPositionCommand)+1
+ 146 00d8 6091 0000 		lds r22,PositionCommand
+ 147 00dc 7091 0000 		lds r23,(PositionCommand)+1
+ 148               	.LVL4:
+ 149 00e0 4091 0000 		lds r20,PrevPrevPositionCommand
+ 150 00e4 5091 0000 		lds r21,(PrevPrevPositionCommand)+1
+ 151 00e8 281B      		sub r18,r24
+ 152 00ea 390B      		sbc r19,r25
+ 153 00ec 37FD      		sbrc r19,7
+ 154 00ee 00C0      		rjmp .L20
+ 155               	.L10:
+ 156 00f0 CB01      		movw r24,r22
+ 157 00f2 841B      		sub r24,r20
+ 158 00f4 950B      		sbc r25,r21
+ 159 00f6 97FD      		sbrc r25,7
+ 160 00f8 00C0      		rjmp .L21
+ 161               	.L11:
+ 162 00fa 8217      		cp r24,r18
+ 163 00fc 9307      		cpc r25,r19
+ 164 00fe 04F0      		brlt .L9
+ 165 0100 2091 0000 		lds r18,PrevPrevPositionCommand
+ 166 0104 3091 0000 		lds r19,(PrevPrevPositionCommand)+1
+ 167 0108 8091 0000 		lds r24,PrevPositionCommand
+ 168 010c 9091 0000 		lds r25,(PrevPositionCommand)+1
+ 169 0110 6091 0000 		lds r22,PositionCommand
+ 170 0114 7091 0000 		lds r23,(PositionCommand)+1
+ 171 0118 4091 0000 		lds r20,PrevPrevPositionCommand
+ 172 011c 5091 0000 		lds r21,(PrevPrevPositionCommand)+1
+ 173 0120 281B      		sub r18,r24
+ 174 0122 390B      		sbc r19,r25
+ 175 0124 37FD      		sbrc r19,7
+ 176 0126 00C0      		rjmp .L22
+ 177               	.L13:
+ 178 0128 CB01      		movw r24,r22
+ 179 012a 841B      		sub r24,r20
+ 180 012c 950B      		sbc r25,r21
+ 181 012e 97FD      		sbrc r25,7
+ 182 0130 00C0      		rjmp .L23
+ 183               	.L14:
+ 184 0132 8217      		cp r24,r18
+ 185 0134 9307      		cpc r25,r19
+ 186 0136 04F4      		brge .L12
+ 187               	.L9:
+ 188               	.LM22:
+ 189 0138 8091 0000 		lds r24,PositionCommand
+ 190 013c 9091 0000 		lds r25,(PositionCommand)+1
+ 191 0140 2091 0000 		lds r18,PrevPrevPositionCommand
+ 192 0144 3091 0000 		lds r19,(PrevPrevPositionCommand)+1
+ 193 0148 280F      		add r18,r24
+ 194 014a 391F      		adc r19,r25
+ 195 014c 37FD      		sbrc r19,7
+ 196 014e 00C0      		rjmp .L24
+ 197               	.L15:
+ 198 0150 3595      		asr r19
+ 199 0152 2795      		ror r18
+ 200 0154 3093 0000 		sts (PrevPositionCommand)+1,r19
+ 201 0158 2093 0000 		sts PrevPositionCommand,r18
+ 202               	.L12:
+ 203               	.LM23:
+ 204 015c 8091 0000 		lds r24,PrevPositionCommand
+ 205 0160 9091 0000 		lds r25,(PrevPositionCommand)+1
+ 206 0164 AA27      		clr r26
+ 207 0166 97FD      		sbrc r25,7
+ 208 0168 A095      		com r26
+ 209 016a BA2F      		mov r27,r26
+ 210 016c 8093 0000 		sts Sms+84,r24
+ 211 0170 9093 0000 		sts (Sms+84)+1,r25
+ 212 0174 A093 0000 		sts (Sms+84)+2,r26
+ 213 0178 B093 0000 		sts (Sms+84)+3,r27
+ 214 017c 00C0      		rjmp .L16
+ 215               	.L19:
+ 216               	.LM24:
+ 217 017e 8091 0000 		lds r24,InitialPos
+ 218 0182 9091 0000 		lds r25,(InitialPos)+1
+ 219 0186 681B      		sub r22,r24
+ 220 0188 790B      		sbc r23,r25
+ 221               	.LVL5:
+ 222 018a 6050      		subi r22,lo8(-(-3072))
+ 223 018c 7C40      		sbci r23,hi8(-(-3072))
+ 224 018e 00C0      		rjmp .L8
+ 225               	.LVL6:
+ 226               	.L21:
+ 227               	.LM25:
+ 228 0190 9095      		com r25
+ 229 0192 8195      		neg r24
+ 230 0194 9F4F      		sbci r25,lo8(-1)
+ 231 0196 00C0      		rjmp .L11
+ 232               	.L20:
+ 233 0198 3095      		com r19
+ 234 019a 2195      		neg r18
+ 235 019c 3F4F      		sbci r19,lo8(-1)
+ 236 019e 00C0      		rjmp .L10
+ 237               	.L24:
+ 238               	.LM26:
+ 239 01a0 2F5F      		subi r18,lo8(-(1))
+ 240 01a2 3F4F      		sbci r19,hi8(-(1))
+ 241 01a4 00C0      		rjmp .L15
+ 242               	.L23:
+ 243               	.LM27:
+ 244 01a6 9095      		com r25
+ 245 01a8 8195      		neg r24
+ 246 01aa 9F4F      		sbci r25,lo8(-1)
+ 247 01ac 00C0      		rjmp .L14
+ 248               	.L22:
+ 249 01ae 3095      		com r19
+ 250 01b0 2195      		neg r18
+ 251 01b2 3F4F      		sbci r19,lo8(-1)
+ 252 01b4 00C0      		rjmp .L13
+ 253               	.LFE20:
+ 255               	.global	zoProtocolRcServoInit
+ 257               	zoProtocolRcServoInit:
+ 258               	.LFB19:
+ 259               	.LM28:
+ 260               	/* prologue: function */
+ 261               	/* frame size = 0 */
+ 262               	.LM29:
+ 263 01b6 0E94 0000 		call zoIcpInit
+ 264               	.LM30:
+ 265 01ba 82E0      		ldi r24,lo8(2)
+ 266 01bc 0E94 0000 		call zoIcpSetPrescaler
+ 267               	.LM31:
+ 268               	/* #APP */
+ 269               	 ;  101 "zoProtocolRcServo.c" 1
+ 270 01c0 0FB6      		in __tmp_reg__, __SREG__
+ 271 01c2 0F92      		 push __tmp_reg__
+ 272 01c4 F894      		cli
+ 273               	 ;  0 "" 2
+ 274               	.LM32:
+ 275               	/* #NOAPP */
+ 276 01c6 1092 0000 		sts (InitialPos)+1,__zero_reg__
+ 277 01ca 1092 0000 		sts InitialPos,__zero_reg__
+ 278               	.LM33:
+ 279 01ce 1092 0000 		sts (PositionCommand)+1,__zero_reg__
+ 280 01d2 1092 0000 		sts PositionCommand,__zero_reg__
+ 281               	.LM34:
+ 282 01d6 1092 0000 		sts ValidCommandCount,__zero_reg__
+ 283               	.LM35:
+ 284 01da 1092 0000 		sts IsRcServoStarted,__zero_reg__
+ 285               	.LM36:
+ 286 01de 1092 0000 		sts IsNewRcServoSetPoint,__zero_reg__
+ 287               	.LM37:
+ 288               	/* #APP */
+ 289               	 ;  107 "zoProtocolRcServo.c" 1
+ 290 01e2 0F90      		pop __tmp_reg__ 
+ 291 01e4 0FBE      		out __SREG__, __tmp_reg__
+ 292               	 ;  0 "" 2
+ 293               	.LM38:
+ 294               	/* #NOAPP */
+ 295 01e6 80E0      		ldi r24,lo8(gs(icpInterruptHandler))
+ 296 01e8 90E0      		ldi r25,hi8(gs(icpInterruptHandler))
+ 297 01ea 0E94 0000 		call zoIcpAttachUserFunctionOnCapture
+ 298               	.LM39:
+ 299 01ee 80E0      		ldi r24,lo8(gs(icpFailedInterruptHandler))
+ 300 01f0 90E0      		ldi r25,hi8(gs(icpFailedInterruptHandler))
+ 301 01f2 0E94 0000 		call zoIcpAttachUserFunctionOnCaptureFailure
+ 302               	.LM40:
+ 303 01f6 80E0      		ldi r24,lo8(gs(icpTimerOverFlowInterruptHandler))
+ 304 01f8 90E0      		ldi r25,hi8(gs(icpTimerOverFlowInterruptHandler))
+ 305 01fa 0E94 0000 		call zoIcpAttachUserFunctionOnOverFlow
+ 306               	/* epilogue start */
+ 307               	.LM41:
+ 308 01fe 0895      		ret
+ 309               	.LFE19:
+ 311               	.global	icpInterruptHandler
+ 313               	icpInterruptHandler:
+ 314               	.LFB18:
+ 315               	.LM42:
+ 316               	.LVL7:
+ 317               	/* prologue: function */
+ 318               	/* frame size = 0 */
+ 319               	.LM43:
+ 320 0200 8091 0000 		lds r24,IsRcServoStarted
+ 321               	.LVL8:
+ 322 0204 8823      		tst r24
+ 323 0206 01F4      		brne .L31
+ 324               	.LM44:
+ 325 0208 8091 0000 		lds r24,ValidCommandCount
+ 326 020c 8F5F      		subi r24,lo8(-(1))
+ 327 020e 8093 0000 		sts ValidCommandCount,r24
+ 328 0212 8150      		subi r24,lo8(-(-1))
+ 329 0214 8A30      		cpi r24,lo8(10)
+ 330 0216 00F4      		brsh .L32
+ 331 0218 0895      		ret
+ 332               	.L31:
+ 333               	.LM45:
+ 334 021a 8FEF      		ldi r24,lo8(-1)
+ 335 021c 8093 0000 		sts IsNewRcServoSetPoint,r24
+ 336 0220 0895      		ret
+ 337               	.L32:
+ 338               	.LM46:
+ 339 0222 1092 0000 		sts Sms+94,__zero_reg__
+ 340               	.LM47:
+ 341 0226 0E94 0000 		call zoEncoderReset
+ 342               	.LM48:
+ 343 022a 1092 0000 		sts Sms+72,__zero_reg__
+ 344 022e 1092 0000 		sts (Sms+72)+1,__zero_reg__
+ 345 0232 1092 0000 		sts (Sms+72)+2,__zero_reg__
+ 346 0236 1092 0000 		sts (Sms+72)+3,__zero_reg__
+ 347               	.LM49:
+ 348 023a 1092 0000 		sts Sms+76,__zero_reg__
+ 349 023e 1092 0000 		sts (Sms+76)+1,__zero_reg__
+ 350 0242 1092 0000 		sts (Sms+76)+2,__zero_reg__
+ 351 0246 1092 0000 		sts (Sms+76)+3,__zero_reg__
+ 352               	.LM50:
+ 353 024a 0E94 0000 		call zoEncoderGetPos
+ 354 024e 6093 0000 		sts Sms+84,r22
+ 355 0252 7093 0000 		sts (Sms+84)+1,r23
+ 356 0256 8093 0000 		sts (Sms+84)+2,r24
+ 357 025a 9093 0000 		sts (Sms+84)+3,r25
+ 358               	.LM51:
+ 359 025e 8FEF      		ldi r24,lo8(-1)
+ 360 0260 0E94 0000 		call zoMotorSetState
+ 361               	.LM52:
+ 362 0264 0E94 0000 		call zoEncoderGetPosAbsolute
+ 363 0268 9093 0000 		sts (InitialPos)+1,r25
+ 364 026c 8093 0000 		sts InitialPos,r24
+ 365               	.LM53:
+ 366 0270 81E0      		ldi r24,lo8(1)
+ 367 0272 8093 0000 		sts Sms,r24
+ 368               	.LM54:
+ 369 0276 8FEF      		ldi r24,lo8(-1)
+ 370 0278 8093 0000 		sts IsRcServoStarted,r24
+ 371               	.LM55:
+ 372 027c 1092 0000 		sts ValidCommandCount,__zero_reg__
+ 373 0280 0895      		ret
+ 374               	.LFE18:
+ 376               		.lcomm IsRcServoStarted,1
+ 377               		.lcomm IsNewRcServoSetPoint,1
+ 378               		.lcomm InitialPos,2
+ 379               		.lcomm PrevPositionCommand,2
+ 380               		.lcomm PrevPrevPositionCommand,2
+ 381               		.lcomm PositionCommand,2
+ 382               		.lcomm ValidCommandCount,1
+ 439               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoProtocolRcServo.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:18     .text:00000000 icpFailedInterruptHandler
+                             .bss:00000000 IsRcServoStarted
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:381    .bss:0000000a ValidCommandCount
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:34     .text:0000000a icpTimerOverFlowInterruptHandler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:50     .text:00000014 zoProtocolRcServoParse
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:376    .bss:00000001 IsNewRcServoSetPoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:377    .bss:00000002 InitialPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:378    .bss:00000004 PrevPositionCommand
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:379    .bss:00000006 PrevPrevPositionCommand
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:380    .bss:00000008 PositionCommand
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:257    .text:000001b6 zoProtocolRcServoInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckIlCCy.s:313    .text:00000200 icpInterruptHandler
+
+UNDEFINED SYMBOLS
+zoIcpGetPulseWidh
+__floatunsisf
+__mulsf3
+__fixsfsi
+Sms
+zoIcpInit
+zoIcpSetPrescaler
+zoIcpAttachUserFunctionOnCapture
+zoIcpAttachUserFunctionOnCaptureFailure
+zoIcpAttachUserFunctionOnOverFlow
+zoEncoderReset
+zoEncoderGetPos
+zoMotorSetState
+zoEncoderGetPosAbsolute
+__do_clear_bss

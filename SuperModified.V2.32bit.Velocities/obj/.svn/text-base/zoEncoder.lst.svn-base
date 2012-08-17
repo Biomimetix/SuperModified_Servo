@@ -1,0 +1,628 @@
+   1               		.file	"zoEncoder.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoEncoderGetPosAbsolute
+  18               	zoEncoderGetPosAbsolute:
+  19               	.LFB23:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24               	/* #APP */
+  25               	 ;  97 "zoEncoder.c" 1
+  26 0000 0FB6      		in __tmp_reg__, __SREG__
+  27 0002 0F92      		 push __tmp_reg__
+  28 0004 F894      		cli
+  29               	 ;  0 "" 2
+  30               	.LM3:
+  31               	/* #NOAPP */
+  32 0006 2091 0000 		lds r18,PositionAbsolute
+  33 000a 3091 0000 		lds r19,(PositionAbsolute)+1
+  34               	.LVL0:
+  35               	.LM4:
+  36               	/* #APP */
+  37               	 ;  99 "zoEncoder.c" 1
+  38 000e 0F90      		pop __tmp_reg__ 
+  39 0010 0FBE      		out __SREG__, __tmp_reg__
+  40               	 ;  0 "" 2
+  41               	.LM5:
+  42               	/* #NOAPP */
+  43 0012 C901      		movw r24,r18
+  44               	.LVL1:
+  45               	/* epilogue start */
+  46 0014 0895      		ret
+  47               	.LFE23:
+  49               	.global	zoEncoderGetVel
+  51               	zoEncoderGetVel:
+  52               	.LFB24:
+  53               	.LM6:
+  54               	/* prologue: function */
+  55               	/* frame size = 0 */
+  56               	.LM7:
+  57               	/* #APP */
+  58               	 ;  108 "zoEncoder.c" 1
+  59 0016 0FB6      		in __tmp_reg__, __SREG__
+  60 0018 0F92      		 push __tmp_reg__
+  61 001a F894      		cli
+  62               	 ;  0 "" 2
+  63               	.LM8:
+  64               	/* #NOAPP */
+  65 001c 6091 0000 		lds r22,DeltaPos
+  66 0020 7091 0000 		lds r23,(DeltaPos)+1
+  67 0024 8091 0000 		lds r24,(DeltaPos)+2
+  68 0028 9091 0000 		lds r25,(DeltaPos)+3
+  69               	.LVL2:
+  70               	.LM9:
+  71               	/* #APP */
+  72               	 ;  110 "zoEncoder.c" 1
+  73 002c 0F90      		pop __tmp_reg__ 
+  74 002e 0FBE      		out __SREG__, __tmp_reg__
+  75               	 ;  0 "" 2
+  76               	.LM10:
+  77               	/* #NOAPP */
+  78 0030 0E94 0000 		call __floatsisf
+  79               	.LVL3:
+  80 0034 2091 0000 		lds r18,Sms+1
+  81 0038 3091 0000 		lds r19,(Sms+1)+1
+  82 003c 4091 0000 		lds r20,(Sms+1)+2
+  83 0040 5091 0000 		lds r21,(Sms+1)+3
+  84 0044 0E94 0000 		call __mulsf3
+  85 0048 20E0      		ldi r18,lo8(0x42c80000)
+  86 004a 30E0      		ldi r19,hi8(0x42c80000)
+  87 004c 48EC      		ldi r20,hlo8(0x42c80000)
+  88 004e 52E4      		ldi r21,hhi8(0x42c80000)
+  89 0050 0E94 0000 		call __divsf3
+  90 0054 0E94 0000 		call __fixsfsi
+  91 0058 9B01      		movw r18,r22
+  92 005a AC01      		movw r20,r24
+  93               	.LM11:
+  94 005c CA01      		movw r24,r20
+  95               	/* epilogue start */
+  96 005e 0895      		ret
+  97               	.LFE24:
+  99               	.global	zoEncoderSetVel
+ 101               	zoEncoderSetVel:
+ 102               	.LFB26:
+ 103               	.LM12:
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	.LM13:
+ 107 0060 8091 0000 		lds r24,NoOfEntriesControlLoopIsr
+ 108 0064 8F5F      		subi r24,lo8(-(1))
+ 109 0066 8093 0000 		sts NoOfEntriesControlLoopIsr,r24
+ 110 006a 8150      		subi r24,lo8(-(-1))
+ 111 006c 8436      		cpi r24,lo8(100)
+ 112 006e 00F0      		brlo .L7
+ 113               	.LM14:
+ 114 0070 81E0      		ldi r24,lo8(1)
+ 115 0072 8093 0000 		sts NoOfEntriesControlLoopIsr,r24
+ 116               	.LM15:
+ 117 0076 8091 0000 		lds r24,EncoderPos
+ 118 007a 9091 0000 		lds r25,(EncoderPos)+1
+ 119 007e A091 0000 		lds r26,(EncoderPos)+2
+ 120 0082 B091 0000 		lds r27,(EncoderPos)+3
+ 121 0086 2091 0000 		lds r18,LastEncoderPos
+ 122 008a 3091 0000 		lds r19,(LastEncoderPos)+1
+ 123 008e 4091 0000 		lds r20,(LastEncoderPos)+2
+ 124 0092 5091 0000 		lds r21,(LastEncoderPos)+3
+ 125 0096 821B      		sub r24,r18
+ 126 0098 930B      		sbc r25,r19
+ 127 009a A40B      		sbc r26,r20
+ 128 009c B50B      		sbc r27,r21
+ 129 009e 8093 0000 		sts DeltaPos,r24
+ 130 00a2 9093 0000 		sts (DeltaPos)+1,r25
+ 131 00a6 A093 0000 		sts (DeltaPos)+2,r26
+ 132 00aa B093 0000 		sts (DeltaPos)+3,r27
+ 133               	.LM16:
+ 134 00ae 8091 0000 		lds r24,EncoderPos
+ 135 00b2 9091 0000 		lds r25,(EncoderPos)+1
+ 136 00b6 A091 0000 		lds r26,(EncoderPos)+2
+ 137 00ba B091 0000 		lds r27,(EncoderPos)+3
+ 138 00be 8093 0000 		sts LastEncoderPos,r24
+ 139 00c2 9093 0000 		sts (LastEncoderPos)+1,r25
+ 140 00c6 A093 0000 		sts (LastEncoderPos)+2,r26
+ 141 00ca B093 0000 		sts (LastEncoderPos)+3,r27
+ 142               	.L7:
+ 143 00ce 0895      		ret
+ 144               	.LFE26:
+ 146               	.global	zoEncoderPollOverFlowError
+ 148               	zoEncoderPollOverFlowError:
+ 149               	.LFB27:
+ 150               	.LM17:
+ 151               	/* prologue: function */
+ 152               	/* frame size = 0 */
+ 153               	.LM18:
+ 154               	/* #APP */
+ 155               	 ;  154 "zoEncoder.c" 1
+ 156 00d0 0FB6      		in __tmp_reg__, __SREG__
+ 157 00d2 0F92      		 push __tmp_reg__
+ 158 00d4 F894      		cli
+ 159               	 ;  0 "" 2
+ 160               	.LM19:
+ 161               	/* #NOAPP */
+ 162 00d6 8091 0000 		lds r24,EncoderPos
+ 163 00da 9091 0000 		lds r25,(EncoderPos)+1
+ 164 00de A091 0000 		lds r26,(EncoderPos)+2
+ 165 00e2 B091 0000 		lds r27,(EncoderPos)+3
+ 166 00e6 8050      		subi r24,lo8(2147482624)
+ 167 00e8 9C4F      		sbci r25,hi8(2147482624)
+ 168 00ea AF4F      		sbci r26,hlo8(2147482624)
+ 169 00ec BF47      		sbci r27,hhi8(2147482624)
+ 170 00ee 04F4      		brge .L13
+ 171 00f0 80E0      		ldi r24,lo8(0)
+ 172               	.LVL4:
+ 173               	.L11:
+ 174               	.LM20:
+ 175               	/* #APP */
+ 176               	 ;  157 "zoEncoder.c" 1
+ 177 00f2 0F90      		pop __tmp_reg__ 
+ 178 00f4 0FBE      		out __SREG__, __tmp_reg__
+ 179               	 ;  0 "" 2
+ 180               	.LVL5:
+ 181               	/* epilogue start */
+ 182               	.LM21:
+ 183               	/* #NOAPP */
+ 184 00f6 0895      		ret
+ 185               	.L13:
+ 186               	.LM22:
+ 187 00f8 8FEF      		ldi r24,lo8(-1)
+ 188               	.LVL6:
+ 189 00fa 00C0      		rjmp .L11
+ 190               	.LFE27:
+ 192               	.global	zoEncoderPollUnderFlowError
+ 194               	zoEncoderPollUnderFlowError:
+ 195               	.LFB28:
+ 196               	.LM23:
+ 197               	/* prologue: function */
+ 198               	/* frame size = 0 */
+ 199               	.LM24:
+ 200               	/* #APP */
+ 201               	 ;  166 "zoEncoder.c" 1
+ 202 00fc 0FB6      		in __tmp_reg__, __SREG__
+ 203 00fe 0F92      		 push __tmp_reg__
+ 204 0100 F894      		cli
+ 205               	 ;  0 "" 2
+ 206               	.LM25:
+ 207               	/* #NOAPP */
+ 208 0102 8091 0000 		lds r24,EncoderPos
+ 209 0106 9091 0000 		lds r25,(EncoderPos)+1
+ 210 010a A091 0000 		lds r26,(EncoderPos)+2
+ 211 010e B091 0000 		lds r27,(EncoderPos)+3
+ 212 0112 8150      		subi r24,lo8(-2147482623)
+ 213 0114 9440      		sbci r25,hi8(-2147482623)
+ 214 0116 A040      		sbci r26,hlo8(-2147482623)
+ 215 0118 B048      		sbci r27,hhi8(-2147482623)
+ 216 011a 04F0      		brlt .L18
+ 217 011c 80E0      		ldi r24,lo8(0)
+ 218               	.LVL7:
+ 219               	.L16:
+ 220               	.LM26:
+ 221               	/* #APP */
+ 222               	 ;  169 "zoEncoder.c" 1
+ 223 011e 0F90      		pop __tmp_reg__ 
+ 224 0120 0FBE      		out __SREG__, __tmp_reg__
+ 225               	 ;  0 "" 2
+ 226               	.LVL8:
+ 227               	/* epilogue start */
+ 228               	.LM27:
+ 229               	/* #NOAPP */
+ 230 0122 0895      		ret
+ 231               	.L18:
+ 232               	.LM28:
+ 233 0124 8FEF      		ldi r24,lo8(-1)
+ 234               	.LVL9:
+ 235 0126 00C0      		rjmp .L16
+ 236               	.LFE28:
+ 238               	.global	zoEncoderGetPosSpi
+ 240               	zoEncoderGetPosSpi:
+ 241               	.LFB22:
+ 242               	.LM29:
+ 243 0128 DF93      		push r29
+ 244 012a CF93      		push r28
+ 245 012c 00D0      		rcall .
+ 246 012e CDB7      		in r28,__SP_L__
+ 247 0130 DEB7      		in r29,__SP_H__
+ 248               	/* prologue: function */
+ 249               	/* frame size = 2 */
+ 250               	.LM30:
+ 251 0132 2A98      		cbi 37-32,2
+ 252               	.LM31:
+ 253               	/* #APP */
+ 254               	 ;  75 "zoEncoder.c" 1
+ 255 0134 0000      		nop
+ 256               	 ;  0 "" 2
+ 257               	.LM32:
+ 258               	 ;  76 "zoEncoder.c" 1
+ 259 0136 0000      		nop
+ 260               	 ;  0 "" 2
+ 261               	.LM33:
+ 262               	 ;  77 "zoEncoder.c" 1
+ 263 0138 0000      		nop
+ 264               	 ;  0 "" 2
+ 265               	.LM34:
+ 266               	 ;  78 "zoEncoder.c" 1
+ 267 013a 0000      		nop
+ 268               	 ;  0 "" 2
+ 269               	.LM35:
+ 270               	 ;  79 "zoEncoder.c" 1
+ 271 013c 0000      		nop
+ 272               	 ;  0 "" 2
+ 273               	.LM36:
+ 274               	 ;  80 "zoEncoder.c" 1
+ 275 013e 0000      		nop
+ 276               	 ;  0 "" 2
+ 277               	.LM37:
+ 278               	 ;  81 "zoEncoder.c" 1
+ 279 0140 0000      		nop
+ 280               	 ;  0 "" 2
+ 281               	.LM38:
+ 282               	 ;  82 "zoEncoder.c" 1
+ 283 0142 0000      		nop
+ 284               	 ;  0 "" 2
+ 285               	.LM39:
+ 286               	 ;  83 "zoEncoder.c" 1
+ 287 0144 0000      		nop
+ 288               	 ;  0 "" 2
+ 289               	.LM40:
+ 290               	 ;  84 "zoEncoder.c" 1
+ 291 0146 0000      		nop
+ 292               	 ;  0 "" 2
+ 293               	.LM41:
+ 294               	/* #NOAPP */
+ 295 0148 80E0      		ldi r24,lo8(0)
+ 296 014a 0E94 0000 		call zoSpiTransferByte
+ 297 014e 8A83      		std Y+2,r24
+ 298               	.LM42:
+ 299 0150 80E0      		ldi r24,lo8(0)
+ 300 0152 0E94 0000 		call zoSpiTransferByte
+ 301 0156 8983      		std Y+1,r24
+ 302               	.LM43:
+ 303 0158 2A9A      		sbi 37-32,2
+ 304 015a 2981      		ldd r18,Y+1
+ 305 015c 3A81      		ldd r19,Y+2
+ 306 015e 3295      		swap r19
+ 307 0160 2295      		swap r18
+ 308 0162 2F70      		andi r18,0x0f
+ 309 0164 2327      		eor r18,r19
+ 310 0166 3F70      		andi r19,0x0f
+ 311 0168 2327      		eor r18,r19
+ 312               	.LM44:
+ 313 016a C901      		movw r24,r18
+ 314               	/* epilogue start */
+ 315 016c 0F90      		pop __tmp_reg__
+ 316 016e 0F90      		pop __tmp_reg__
+ 317 0170 CF91      		pop r28
+ 318 0172 DF91      		pop r29
+ 319 0174 0895      		ret
+ 320               	.LFE22:
+ 322               	.global	zoEncoderReset
+ 324               	zoEncoderReset:
+ 325               	.LFB25:
+ 326               	.LM45:
+ 327               	/* prologue: function */
+ 328               	/* frame size = 0 */
+ 329               	.LM46:
+ 330 0176 0E94 0000 		call zoEncoderGetPosSpi
+ 331 017a 9C01      		movw r18,r24
+ 332               	.LVL10:
+ 333 017c 40E0      		ldi r20,lo8(0)
+ 334 017e 50E0      		ldi r21,hi8(0)
+ 335               	.LVL11:
+ 336               	.LM47:
+ 337               	/* #APP */
+ 338               	 ;  125 "zoEncoder.c" 1
+ 339 0180 0FB6      		in __tmp_reg__, __SREG__
+ 340 0182 0F92      		 push __tmp_reg__
+ 341 0184 F894      		cli
+ 342               	 ;  0 "" 2
+ 343               	.LM48:
+ 344               	/* #NOAPP */
+ 345 0186 2093 0000 		sts InitialAbsPos,r18
+ 346 018a 3093 0000 		sts (InitialAbsPos)+1,r19
+ 347 018e 4093 0000 		sts (InitialAbsPos)+2,r20
+ 348 0192 5093 0000 		sts (InitialAbsPos)+3,r21
+ 349               	.LM49:
+ 350 0196 9093 0000 		sts (PositionAbsolute)+1,r25
+ 351 019a 8093 0000 		sts PositionAbsolute,r24
+ 352               	.LM50:
+ 353 019e 9093 0000 		sts (LastPositionAbsolute)+1,r25
+ 354 01a2 8093 0000 		sts LastPositionAbsolute,r24
+ 355               	.LM51:
+ 356 01a6 1092 0000 		sts DeltaPos,__zero_reg__
+ 357 01aa 1092 0000 		sts (DeltaPos)+1,__zero_reg__
+ 358 01ae 1092 0000 		sts (DeltaPos)+2,__zero_reg__
+ 359 01b2 1092 0000 		sts (DeltaPos)+3,__zero_reg__
+ 360               	.LM52:
+ 361 01b6 1092 0000 		sts EncoderPos,__zero_reg__
+ 362 01ba 1092 0000 		sts (EncoderPos)+1,__zero_reg__
+ 363 01be 1092 0000 		sts (EncoderPos)+2,__zero_reg__
+ 364 01c2 1092 0000 		sts (EncoderPos)+3,__zero_reg__
+ 365               	.LM53:
+ 366 01c6 1092 0000 		sts LastEncoderPos,__zero_reg__
+ 367 01ca 1092 0000 		sts (LastEncoderPos)+1,__zero_reg__
+ 368 01ce 1092 0000 		sts (LastEncoderPos)+2,__zero_reg__
+ 369 01d2 1092 0000 		sts (LastEncoderPos)+3,__zero_reg__
+ 370               	.LM54:
+ 371 01d6 81E0      		ldi r24,lo8(1)
+ 372 01d8 8093 0000 		sts NoOfEntriesControlLoopIsr,r24
+ 373               	.LM55:
+ 374 01dc 1092 0000 		sts FullTurns,__zero_reg__
+ 375 01e0 1092 0000 		sts (FullTurns)+1,__zero_reg__
+ 376 01e4 1092 0000 		sts (FullTurns)+2,__zero_reg__
+ 377 01e8 1092 0000 		sts (FullTurns)+3,__zero_reg__
+ 378               	.LM56:
+ 379               	/* #APP */
+ 380               	 ;  134 "zoEncoder.c" 1
+ 381 01ec 0F90      		pop __tmp_reg__ 
+ 382 01ee 0FBE      		out __SREG__, __tmp_reg__
+ 383               	 ;  0 "" 2
+ 384               	/* epilogue start */
+ 385               	.LM57:
+ 386               	/* #NOAPP */
+ 387 01f0 0895      		ret
+ 388               	.LFE25:
+ 390               	.global	zoEncoderGetPos
+ 392               	zoEncoderGetPos:
+ 393               	.LFB21:
+ 394               	.LM58:
+ 395 01f2 EF92      		push r14
+ 396 01f4 FF92      		push r15
+ 397 01f6 0F93      		push r16
+ 398 01f8 1F93      		push r17
+ 399               	/* prologue: function */
+ 400               	/* frame size = 0 */
+ 401               	.LM59:
+ 402               	/* #APP */
+ 403               	 ;  51 "zoEncoder.c" 1
+ 404 01fa 0FB6      		in __tmp_reg__, __SREG__
+ 405 01fc 0F92      		 push __tmp_reg__
+ 406 01fe F894      		cli
+ 407               	 ;  0 "" 2
+ 408               	.LM60:
+ 409               	/* #NOAPP */
+ 410 0200 8091 0000 		lds r24,PositionAbsolute
+ 411 0204 9091 0000 		lds r25,(PositionAbsolute)+1
+ 412 0208 9093 0000 		sts (LastPositionAbsolute)+1,r25
+ 413 020c 8093 0000 		sts LastPositionAbsolute,r24
+ 414               	.LM61:
+ 415 0210 0E94 0000 		call zoEncoderGetPosSpi
+ 416 0214 9093 0000 		sts (PositionAbsolute)+1,r25
+ 417 0218 8093 0000 		sts PositionAbsolute,r24
+ 418               	.LM62:
+ 419 021c 2091 0000 		lds r18,PositionAbsolute
+ 420 0220 3091 0000 		lds r19,(PositionAbsolute)+1
+ 421 0224 8091 0000 		lds r24,LastPositionAbsolute
+ 422 0228 9091 0000 		lds r25,(LastPositionAbsolute)+1
+ 423 022c 40E0      		ldi r20,lo8(0)
+ 424 022e 50E0      		ldi r21,hi8(0)
+ 425 0230 A0E0      		ldi r26,lo8(0)
+ 426 0232 B0E0      		ldi r27,hi8(0)
+ 427 0234 281B      		sub r18,r24
+ 428 0236 390B      		sbc r19,r25
+ 429 0238 4A0B      		sbc r20,r26
+ 430 023a 5B0B      		sbc r21,r27
+ 431 023c 2053      		subi r18,lo8(-2000)
+ 432 023e 384F      		sbci r19,hi8(-2000)
+ 433 0240 4F4F      		sbci r20,hlo8(-2000)
+ 434 0242 5F4F      		sbci r21,hhi8(-2000)
+ 435 0244 04F4      		brge .L24
+ 436               	.LM63:
+ 437 0246 8091 0000 		lds r24,FullTurns
+ 438 024a 9091 0000 		lds r25,(FullTurns)+1
+ 439 024e A091 0000 		lds r26,(FullTurns)+2
+ 440 0252 B091 0000 		lds r27,(FullTurns)+3
+ 441 0256 0196      		adiw r24,1
+ 442 0258 A11D      		adc r26,__zero_reg__
+ 443 025a B11D      		adc r27,__zero_reg__
+ 444 025c 8093 0000 		sts FullTurns,r24
+ 445 0260 9093 0000 		sts (FullTurns)+1,r25
+ 446 0264 A093 0000 		sts (FullTurns)+2,r26
+ 447 0268 B093 0000 		sts (FullTurns)+3,r27
+ 448               	.L24:
+ 449               	.LM64:
+ 450 026c 2091 0000 		lds r18,PositionAbsolute
+ 451 0270 3091 0000 		lds r19,(PositionAbsolute)+1
+ 452 0274 8091 0000 		lds r24,LastPositionAbsolute
+ 453 0278 9091 0000 		lds r25,(LastPositionAbsolute)+1
+ 454 027c 40E0      		ldi r20,lo8(0)
+ 455 027e 50E0      		ldi r21,hi8(0)
+ 456 0280 A0E0      		ldi r26,lo8(0)
+ 457 0282 B0E0      		ldi r27,hi8(0)
+ 458 0284 281B      		sub r18,r24
+ 459 0286 390B      		sbc r19,r25
+ 460 0288 4A0B      		sbc r20,r26
+ 461 028a 5B0B      		sbc r21,r27
+ 462 028c 215D      		subi r18,lo8(2001)
+ 463 028e 3740      		sbci r19,hi8(2001)
+ 464 0290 4040      		sbci r20,hlo8(2001)
+ 465 0292 5040      		sbci r21,hhi8(2001)
+ 466 0294 04F0      		brlt .L25
+ 467               	.LM65:
+ 468 0296 8091 0000 		lds r24,FullTurns
+ 469 029a 9091 0000 		lds r25,(FullTurns)+1
+ 470 029e A091 0000 		lds r26,(FullTurns)+2
+ 471 02a2 B091 0000 		lds r27,(FullTurns)+3
+ 472 02a6 0197      		sbiw r24,1
+ 473 02a8 A109      		sbc r26,__zero_reg__
+ 474 02aa B109      		sbc r27,__zero_reg__
+ 475 02ac 8093 0000 		sts FullTurns,r24
+ 476 02b0 9093 0000 		sts (FullTurns)+1,r25
+ 477 02b4 A093 0000 		sts (FullTurns)+2,r26
+ 478 02b8 B093 0000 		sts (FullTurns)+3,r27
+ 479               	.L25:
+ 480               	.LM66:
+ 481 02bc 8091 0000 		lds r24,FullTurns
+ 482 02c0 9091 0000 		lds r25,(FullTurns)+1
+ 483 02c4 A091 0000 		lds r26,(FullTurns)+2
+ 484 02c8 B091 0000 		lds r27,(FullTurns)+3
+ 485 02cc 2091 0000 		lds r18,PositionAbsolute
+ 486 02d0 3091 0000 		lds r19,(PositionAbsolute)+1
+ 487 02d4 E090 0000 		lds r14,InitialAbsPos
+ 488 02d8 F090 0000 		lds r15,(InitialAbsPos)+1
+ 489 02dc 0091 0000 		lds r16,(InitialAbsPos)+2
+ 490 02e0 1091 0000 		lds r17,(InitialAbsPos)+3
+ 491 02e4 40E0      		ldi r20,lo8(0)
+ 492 02e6 50E0      		ldi r21,hi8(0)
+ 493               	.LVL12:
+ 494 02e8 6CE0      		ldi r22,12
+ 495 02ea 880F      	1:	lsl r24
+ 496 02ec 991F      		rol r25
+ 497 02ee AA1F      		rol r26
+ 498 02f0 BB1F      		rol r27
+ 499 02f2 6A95      		dec r22
+ 500 02f4 01F4      		brne 1b
+ 501 02f6 280F      		add r18,r24
+ 502 02f8 391F      		adc r19,r25
+ 503 02fa 4A1F      		adc r20,r26
+ 504 02fc 5B1F      		adc r21,r27
+ 505               	.LVL13:
+ 506 02fe 2E19      		sub r18,r14
+ 507 0300 3F09      		sbc r19,r15
+ 508 0302 400B      		sbc r20,r16
+ 509 0304 510B      		sbc r21,r17
+ 510               	.LM67:
+ 511 0306 2093 0000 		sts EncoderPos,r18
+ 512 030a 3093 0000 		sts (EncoderPos)+1,r19
+ 513 030e 4093 0000 		sts (EncoderPos)+2,r20
+ 514 0312 5093 0000 		sts (EncoderPos)+3,r21
+ 515               	.LM68:
+ 516               	/* #APP */
+ 517               	 ;  63 "zoEncoder.c" 1
+ 518 0316 0F90      		pop __tmp_reg__ 
+ 519 0318 0FBE      		out __SREG__, __tmp_reg__
+ 520               	 ;  0 "" 2
+ 521               	.LM69:
+ 522               	/* #NOAPP */
+ 523 031a B901      		movw r22,r18
+ 524               	.LVL14:
+ 525 031c CA01      		movw r24,r20
+ 526               	.LVL15:
+ 527               	/* epilogue start */
+ 528 031e 1F91      		pop r17
+ 529 0320 0F91      		pop r16
+ 530 0322 FF90      		pop r15
+ 531 0324 EF90      		pop r14
+ 532 0326 0895      		ret
+ 533               	.LFE21:
+ 535               	.global	zoEncoderInit
+ 537               	zoEncoderInit:
+ 538               	.LFB20:
+ 539               	.LM70:
+ 540               	/* prologue: function */
+ 541               	/* frame size = 0 */
+ 542               	.LM71:
+ 543 0328 0E94 0000 		call zoSpiInit
+ 544               	.LM72:
+ 545 032c 0E94 0000 		call zoEncoderGetPosSpi
+ 546               	.LM73:
+ 547 0330 0E94 0000 		call zoEncoderGetPosSpi
+ 548               	.LM74:
+ 549               	/* #APP */
+ 550               	 ;  35 "zoEncoder.c" 1
+ 551 0334 0FB6      		in __tmp_reg__, __SREG__
+ 552 0336 0F92      		 push __tmp_reg__
+ 553 0338 F894      		cli
+ 554               	 ;  0 "" 2
+ 555               	.LM75:
+ 556               	/* #NOAPP */
+ 557 033a 9C01      		movw r18,r24
+ 558               	.LVL16:
+ 559 033c 40E0      		ldi r20,lo8(0)
+ 560 033e 50E0      		ldi r21,hi8(0)
+ 561 0340 2093 0000 		sts InitialAbsPos,r18
+ 562 0344 3093 0000 		sts (InitialAbsPos)+1,r19
+ 563 0348 4093 0000 		sts (InitialAbsPos)+2,r20
+ 564 034c 5093 0000 		sts (InitialAbsPos)+3,r21
+ 565               	.LM76:
+ 566 0350 9093 0000 		sts (PositionAbsolute)+1,r25
+ 567 0354 8093 0000 		sts PositionAbsolute,r24
+ 568               	.LM77:
+ 569 0358 9093 0000 		sts (LastPositionAbsolute)+1,r25
+ 570 035c 8093 0000 		sts LastPositionAbsolute,r24
+ 571               	.LM78:
+ 572 0360 1092 0000 		sts DeltaPos,__zero_reg__
+ 573 0364 1092 0000 		sts (DeltaPos)+1,__zero_reg__
+ 574 0368 1092 0000 		sts (DeltaPos)+2,__zero_reg__
+ 575 036c 1092 0000 		sts (DeltaPos)+3,__zero_reg__
+ 576               	.LM79:
+ 577 0370 1092 0000 		sts EncoderPos,__zero_reg__
+ 578 0374 1092 0000 		sts (EncoderPos)+1,__zero_reg__
+ 579 0378 1092 0000 		sts (EncoderPos)+2,__zero_reg__
+ 580 037c 1092 0000 		sts (EncoderPos)+3,__zero_reg__
+ 581               	.LM80:
+ 582 0380 1092 0000 		sts LastEncoderPos,__zero_reg__
+ 583 0384 1092 0000 		sts (LastEncoderPos)+1,__zero_reg__
+ 584 0388 1092 0000 		sts (LastEncoderPos)+2,__zero_reg__
+ 585 038c 1092 0000 		sts (LastEncoderPos)+3,__zero_reg__
+ 586               	.LM81:
+ 587 0390 81E0      		ldi r24,lo8(1)
+ 588               	.LVL17:
+ 589 0392 8093 0000 		sts NoOfEntriesControlLoopIsr,r24
+ 590               	.LM82:
+ 591 0396 1092 0000 		sts FullTurns,__zero_reg__
+ 592 039a 1092 0000 		sts (FullTurns)+1,__zero_reg__
+ 593 039e 1092 0000 		sts (FullTurns)+2,__zero_reg__
+ 594 03a2 1092 0000 		sts (FullTurns)+3,__zero_reg__
+ 595               	.LM83:
+ 596               	/* #APP */
+ 597               	 ;  44 "zoEncoder.c" 1
+ 598 03a6 0F90      		pop __tmp_reg__ 
+ 599 03a8 0FBE      		out __SREG__, __tmp_reg__
+ 600               	 ;  0 "" 2
+ 601               	/* epilogue start */
+ 602               	.LM84:
+ 603               	/* #NOAPP */
+ 604 03aa 0895      		ret
+ 605               	.LFE20:
+ 607               		.lcomm EncoderPos,4
+ 608               		.data
+ 611               	NoOfEntriesControlLoopIsr:
+ 612 0000 01        		.byte	1
+ 613               		.lcomm LastEncoderPos,4
+ 614               		.lcomm DeltaPos,4
+ 615               		.lcomm InitialAbsPos,4
+ 616               		.lcomm PositionAbsolute,2
+ 617               		.lcomm LastPositionAbsolute,2
+ 618               		.lcomm FullTurns,4
+ 707               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoEncoder.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:18     .text:00000000 zoEncoderGetPosAbsolute
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:615    .bss:00000010 PositionAbsolute
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:51     .text:00000016 zoEncoderGetVel
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:613    .bss:00000008 DeltaPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:101    .text:00000060 zoEncoderSetVel
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:611    .data:00000000 NoOfEntriesControlLoopIsr
+                             .bss:00000000 EncoderPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:607    .bss:00000004 LastEncoderPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:148    .text:000000d0 zoEncoderPollOverFlowError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:194    .text:000000fc zoEncoderPollUnderFlowError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:240    .text:00000128 zoEncoderGetPosSpi
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:324    .text:00000176 zoEncoderReset
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:614    .bss:0000000c InitialAbsPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:616    .bss:00000012 LastPositionAbsolute
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:617    .bss:00000014 FullTurns
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:392    .text:000001f2 zoEncoderGetPos
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccvfAX1y.s:537    .text:00000328 zoEncoderInit
+
+UNDEFINED SYMBOLS
+__floatsisf
+Sms
+__mulsf3
+__divsf3
+__fixsfsi
+zoSpiTransferByte
+zoSpiInit
+__do_copy_data
+__do_clear_bss

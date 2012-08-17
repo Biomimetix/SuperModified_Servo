@@ -1,0 +1,414 @@
+   1               		.file	"zoProtocolI2c.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoProtocolI2cSetLAM
+  18               	zoProtocolI2cSetLAM:
+  19               	.LFB8:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25 0000 8095      		com r24
+  26               	.LVL1:
+  27 0002 880F      		lsl r24
+  28 0004 8093 BD00 		sts 189,r24
+  29               	/* epilogue start */
+  30               	.LM3:
+  31 0008 0895      		ret
+  32               	.LFE8:
+  34               	.global	zoProtocolI2cSetBitrate
+  36               	zoProtocolI2cSetBitrate:
+  37               	.LFB9:
+  38               	.LM4:
+  39               	.LVL2:
+  40               	/* prologue: function */
+  41               	/* frame size = 0 */
+  42               	.LM5:
+  43 000a 28EE      		ldi r18,lo8(1000)
+  44 000c 33E0      		ldi r19,hi8(1000)
+  45 000e 40E0      		ldi r20,hlo8(1000)
+  46 0010 50E0      		ldi r21,hhi8(1000)
+  47 0012 0E94 0000 		call __udivmodsi4
+  48               	.LVL3:
+  49 0016 DA01      		movw r26,r20
+  50 0018 C901      		movw r24,r18
+  51 001a 0E94 0000 		call zoI2cSetBitrate
+  52               	/* epilogue start */
+  53               	.LM6:
+  54 001e 0895      		ret
+  55               	.LFE9:
+  57               	.global	zoProtocolI2cGetPacket
+  59               	zoProtocolI2cGetPacket:
+  60               	.LFB6:
+  61               	.LM7:
+  62               	.LVL4:
+  63 0020 CF93      		push r28
+  64 0022 DF93      		push r29
+  65               	/* prologue: function */
+  66               	/* frame size = 0 */
+  67 0024 EC01      		movw r28,r24
+  68               	.LM8:
+  69 0026 8091 0000 		lds r24,zoProtocolI2cError
+  70 002a 9091 0000 		lds r25,(zoProtocolI2cError)+1
+  71               	.LVL5:
+  72 002e 0E94 0000 		call zoErrorIsEmpty
+  73 0032 8823      		tst r24
+  74 0034 01F0      		breq .L6
+  75               	.LM9:
+  76 0036 8091 0000 		lds r24,zoRxPacketReceived
+  77 003a 8823      		tst r24
+  78 003c 01F4      		brne .L13
+  79               	.L6:
+  80               	.LM10:
+  81 003e 80E0      		ldi r24,lo8(0)
+  82               	.LVL6:
+  83               	.L9:
+  84               	/* epilogue start */
+  85               	.LM11:
+  86 0040 DF91      		pop r29
+  87 0042 CF91      		pop r28
+  88               	.LVL7:
+  89 0044 0895      		ret
+  90               	.LVL8:
+  91               	.L13:
+  92               	.LM12:
+  93               	/* #APP */
+  94               	 ;  80 "zoProtocolI2c.c" 1
+  95 0046 0FB6      		in __tmp_reg__, __SREG__
+  96 0048 0F92      		 push __tmp_reg__
+  97 004a F894      		cli
+  98               	 ;  0 "" 2
+  99               	.LM13:
+ 100               	/* #NOAPP */
+ 101 004c 8091 0000 		lds r24,RxPacket
+ 102 0050 8883      		st Y,r24
+ 103               	.LM14:
+ 104 0052 8091 0000 		lds r24,RxPacket+1
+ 105 0056 8983      		std Y+1,r24
+ 106               	.LM15:
+ 107 0058 8091 0000 		lds r24,RxPacket+2
+ 108 005c 8A83      		std Y+2,r24
+ 109               	.LM16:
+ 110 005e 2091 0000 		lds r18,RxPacket+3
+ 111 0062 2B83      		std Y+3,r18
+ 112               	.LM17:
+ 113 0064 8091 0000 		lds r24,RxPacket+20
+ 114 0068 8C8B      		std Y+20,r24
+ 115               	.LM18:
+ 116 006a 2223      		tst r18
+ 117 006c 01F0      		breq .L7
+ 118 006e 90E0      		ldi r25,lo8(0)
+ 119               	.LVL9:
+ 120               	.L8:
+ 121               	.LM19:
+ 122 0070 E92F      		mov r30,r25
+ 123 0072 F0E0      		ldi r31,lo8(0)
+ 124 0074 DF01      		movw r26,r30
+ 125 0076 A050      		subi r26,lo8(-(RxPacket))
+ 126 0078 B040      		sbci r27,hi8(-(RxPacket))
+ 127 007a 1496      		adiw r26,4
+ 128 007c 8C91      		ld r24,X
+ 129 007e EC0F      		add r30,r28
+ 130 0080 FD1F      		adc r31,r29
+ 131 0082 8483      		std Z+4,r24
+ 132               	.LM20:
+ 133 0084 9F5F      		subi r25,lo8(-(1))
+ 134 0086 9217      		cp r25,r18
+ 135 0088 00F0      		brlo .L8
+ 136               	.L7:
+ 137               	.LM21:
+ 138 008a 1092 0000 		sts zoRxPacketReceived,__zero_reg__
+ 139               	.LM22:
+ 140               	/* #APP */
+ 141               	 ;  93 "zoProtocolI2c.c" 1
+ 142 008e 0F90      		pop __tmp_reg__ 
+ 143 0090 0FBE      		out __SREG__, __tmp_reg__
+ 144               	 ;  0 "" 2
+ 145               	/* #NOAPP */
+ 146 0092 8FEF      		ldi r24,lo8(-1)
+ 147 0094 00C0      		rjmp .L9
+ 148               	.LFE6:
+ 150               	.global	zoProtocolI2cPutPacket
+ 152               	zoProtocolI2cPutPacket:
+ 153               	.LFB5:
+ 154               	.LM23:
+ 155               	.LVL10:
+ 156 0096 DF93      		push r29
+ 157 0098 CF93      		push r28
+ 158 009a CDB7      		in r28,__SP_L__
+ 159 009c DEB7      		in r29,__SP_H__
+ 160 009e 6597      		sbiw r28,21
+ 161 00a0 0FB6      		in __tmp_reg__,__SREG__
+ 162 00a2 F894      		cli
+ 163 00a4 DEBF      		out __SP_H__,r29
+ 164 00a6 0FBE      		out __SREG__,__tmp_reg__
+ 165 00a8 CDBF      		out __SP_L__,r28
+ 166               	/* prologue: function */
+ 167               	/* frame size = 21 */
+ 168 00aa 9C01      		movw r18,r24
+ 169               	.LM24:
+ 170 00ac FC01      		movw r30,r24
+ 171 00ae 8081      		ld r24,Z
+ 172               	.LVL11:
+ 173 00b0 8983      		std Y+1,r24
+ 174               	.LM25:
+ 175 00b2 8181      		ldd r24,Z+1
+ 176 00b4 8A83      		std Y+2,r24
+ 177               	.LM26:
+ 178 00b6 8281      		ldd r24,Z+2
+ 179 00b8 8B83      		std Y+3,r24
+ 180               	.LM27:
+ 181 00ba 8381      		ldd r24,Z+3
+ 182 00bc 8C83      		std Y+4,r24
+ 183               	.LM28:
+ 184 00be 8823      		tst r24
+ 185 00c0 01F0      		breq .L21
+ 186 00c2 90E0      		ldi r25,lo8(0)
+ 187               	.LVL12:
+ 188 00c4 AE01      		movw r20,r28
+ 189 00c6 4B5F      		subi r20,lo8(-(5))
+ 190 00c8 5F4F      		sbci r21,hi8(-(5))
+ 191               	.L16:
+ 192               	.LM29:
+ 193 00ca E92F      		mov r30,r25
+ 194 00cc F0E0      		ldi r31,lo8(0)
+ 195 00ce DA01      		movw r26,r20
+ 196 00d0 AE0F      		add r26,r30
+ 197 00d2 BF1F      		adc r27,r31
+ 198 00d4 E20F      		add r30,r18
+ 199 00d6 F31F      		adc r31,r19
+ 200 00d8 8481      		ldd r24,Z+4
+ 201 00da 8C93      		st X,r24
+ 202               	.LM30:
+ 203 00dc 9F5F      		subi r25,lo8(-(1))
+ 204 00de F901      		movw r30,r18
+ 205 00e0 8381      		ldd r24,Z+3
+ 206 00e2 9817      		cp r25,r24
+ 207 00e4 00F0      		brlo .L16
+ 208               	.L15:
+ 209               	.LM31:
+ 210 00e6 480F      		add r20,r24
+ 211 00e8 511D      		adc r21,__zero_reg__
+ 212 00ea F901      		movw r30,r18
+ 213 00ec 8489      		ldd r24,Z+20
+ 214 00ee FA01      		movw r30,r20
+ 215 00f0 8083      		st Z,r24
+ 216               	.LM32:
+ 217 00f2 F901      		movw r30,r18
+ 218 00f4 6381      		ldd r22,Z+3
+ 219 00f6 6B5F      		subi r22,lo8(-(5))
+ 220 00f8 8081      		ld r24,Z
+ 221 00fa AE01      		movw r20,r28
+ 222 00fc 4F5F      		subi r20,lo8(-(1))
+ 223 00fe 5F4F      		sbci r21,hi8(-(1))
+ 224 0100 0E94 0000 		call zoI2cMasterSendBlocking
+ 225               	.LVL13:
+ 226               	/* epilogue start */
+ 227               	.LM33:
+ 228 0104 6596      		adiw r28,21
+ 229 0106 0FB6      		in __tmp_reg__,__SREG__
+ 230 0108 F894      		cli
+ 231 010a DEBF      		out __SP_H__,r29
+ 232 010c 0FBE      		out __SREG__,__tmp_reg__
+ 233 010e CDBF      		out __SP_L__,r28
+ 234 0110 CF91      		pop r28
+ 235 0112 DF91      		pop r29
+ 236 0114 0895      		ret
+ 237               	.LVL14:
+ 238               	.L21:
+ 239 0116 AE01      		movw r20,r28
+ 240 0118 4B5F      		subi r20,lo8(-(5))
+ 241 011a 5F4F      		sbci r21,hi8(-(5))
+ 242 011c 00C0      		rjmp .L15
+ 243               	.LFE5:
+ 245               	.global	zoProtocolI2cInit
+ 247               	zoProtocolI2cInit:
+ 248               	.LFB4:
+ 249               	.LM34:
+ 250               	.LVL15:
+ 251 011e FF92      		push r15
+ 252 0120 0F93      		push r16
+ 253 0122 1F93      		push r17
+ 254               	/* prologue: function */
+ 255               	/* frame size = 0 */
+ 256 0124 F82E      		mov r15,r24
+ 257 0126 8B01      		movw r16,r22
+ 258               	.LM35:
+ 259 0128 0E94 0000 		call zoI2cInit
+ 260               	.LVL16:
+ 261               	.LM36:
+ 262 012c 8F2D      		mov r24,r15
+ 263 012e 61E0      		ldi r22,lo8(1)
+ 264 0130 0E94 0000 		call zoI2cSetLocalDeviceAddr
+ 265               	.LM37:
+ 266 0134 C801      		movw r24,r16
+ 267 0136 0E94 0000 		call zoI2cSetBitrate
+ 268               	.LM38:
+ 269 013a 80E0      		ldi r24,lo8(gs(i2cSlaveRx))
+ 270 013c 90E0      		ldi r25,hi8(gs(i2cSlaveRx))
+ 271 013e 0E94 0000 		call zoI2cSetSlaveReceiveHandler
+ 272               	/* epilogue start */
+ 273               	.LM39:
+ 274 0142 1F91      		pop r17
+ 275 0144 0F91      		pop r16
+ 276               	.LVL17:
+ 277 0146 FF90      		pop r15
+ 278               	.LVL18:
+ 279 0148 0895      		ret
+ 280               	.LFE4:
+ 283               	i2cSlaveRx:
+ 284               	.LFB7:
+ 285               	.LM40:
+ 286               	.LVL19:
+ 287 014a 1F93      		push r17
+ 288 014c CF93      		push r28
+ 289 014e DF93      		push r29
+ 290               	/* prologue: function */
+ 291               	/* frame size = 0 */
+ 292 0150 182F      		mov r17,r24
+ 293 0152 EB01      		movw r28,r22
+ 294               	.LM41:
+ 295 0154 8091 0000 		lds r24,zoRxPacketReceived
+ 296               	.LVL20:
+ 297 0158 8F3F      		cpi r24,lo8(-1)
+ 298 015a 01F4      		brne .+2
+ 299 015c 00C0      		rjmp .L33
+ 300               	.LVL21:
+ 301               	.L25:
+ 302               	.LM42:
+ 303 015e FE01      		movw r30,r28
+ 304 0160 8191      		ld r24,Z+
+ 305 0162 8093 0000 		sts RxPacket,r24
+ 306               	.LM43:
+ 307 0166 8981      		ldd r24,Y+1
+ 308 0168 8093 0000 		sts RxPacket+1,r24
+ 309 016c DF01      		movw r26,r30
+ 310 016e 1196      		adiw r26,1
+ 311               	.LVL22:
+ 312               	.LM44:
+ 313 0170 8181      		ldd r24,Z+1
+ 314 0172 8093 0000 		sts RxPacket+2,r24
+ 315 0176 AD01      		movw r20,r26
+ 316 0178 4F5F      		subi r20,lo8(-(1))
+ 317 017a 5F4F      		sbci r21,hi8(-(1))
+ 318               	.LVL23:
+ 319               	.LM45:
+ 320 017c 1196      		adiw r26,1
+ 321 017e 8C91      		ld r24,X
+ 322 0180 8093 0000 		sts RxPacket+3,r24
+ 323               	.LM46:
+ 324 0184 8091 0000 		lds r24,RxPacket+3
+ 325 0188 90E0      		ldi r25,lo8(0)
+ 326 018a 0596      		adiw r24,5
+ 327 018c 212F      		mov r18,r17
+ 328 018e 30E0      		ldi r19,lo8(0)
+ 329               	.LVL24:
+ 330 0190 8217      		cp r24,r18
+ 331 0192 9307      		cpc r25,r19
+ 332 0194 01F4      		brne .L26
+ 333               	.LVL25:
+ 334               	.LM47:
+ 335 0196 DA01      		movw r26,r20
+ 336 0198 1196      		adiw r26,1
+ 337               	.LM48:
+ 338 019a 8091 0000 		lds r24,RxPacket+3
+ 339 019e 8823      		tst r24
+ 340 01a0 01F0      		breq .L28
+ 341               	.LM49:
+ 342 01a2 90E0      		ldi r25,lo8(0)
+ 343               	.LVL26:
+ 344               	.L30:
+ 345               	.LM50:
+ 346 01a4 E92F      		mov r30,r25
+ 347 01a6 F0E0      		ldi r31,lo8(0)
+ 348 01a8 8D91      		ld r24,X+
+ 349 01aa E050      		subi r30,lo8(-(RxPacket))
+ 350 01ac F040      		sbci r31,hi8(-(RxPacket))
+ 351 01ae 8483      		std Z+4,r24
+ 352               	.LM51:
+ 353 01b0 9F5F      		subi r25,lo8(-(1))
+ 354 01b2 8091 0000 		lds r24,RxPacket+3
+ 355 01b6 9817      		cp r25,r24
+ 356 01b8 00F0      		brlo .L30
+ 357               	.L28:
+ 358               	.LM52:
+ 359 01ba 8C91      		ld r24,X
+ 360 01bc 8093 0000 		sts RxPacket+20,r24
+ 361               	.LM53:
+ 362 01c0 8FEF      		ldi r24,lo8(-1)
+ 363 01c2 8093 0000 		sts zoRxPacketReceived,r24
+ 364               	/* epilogue start */
+ 365               	.LM54:
+ 366 01c6 DF91      		pop r29
+ 367 01c8 CF91      		pop r28
+ 368 01ca 1F91      		pop r17
+ 369 01cc 0895      		ret
+ 370               	.LVL27:
+ 371               	.L26:
+ 372               	.LM55:
+ 373 01ce 8091 0000 		lds r24,zoProtocolI2cError
+ 374 01d2 9091 0000 		lds r25,(zoProtocolI2cError)+1
+ 375 01d6 62E1      		ldi r22,lo8(18)
+ 376 01d8 0E94 0000 		call zoErrorPutIsr
+ 377               	.LVL28:
+ 378               	.LM56:
+ 379 01dc 8FEF      		ldi r24,lo8(-1)
+ 380 01de 8093 0000 		sts zoRxPacketReceived,r24
+ 381               	.LM57:
+ 382 01e2 DF91      		pop r29
+ 383 01e4 CF91      		pop r28
+ 384 01e6 1F91      		pop r17
+ 385               	.LVL29:
+ 386 01e8 0895      		ret
+ 387               	.LVL30:
+ 388               	.L33:
+ 389               	.LM58:
+ 390 01ea 8091 0000 		lds r24,zoProtocolI2cError
+ 391 01ee 9091 0000 		lds r25,(zoProtocolI2cError)+1
+ 392 01f2 61E1      		ldi r22,lo8(17)
+ 393 01f4 0E94 0000 		call zoErrorPutIsr
+ 394 01f8 00C0      		rjmp .L25
+ 395               	.LFE7:
+ 397               	.global	zoProtocolI2cError
+ 398               		.data
+ 401               	zoProtocolI2cError:
+ 402 0000 0000      		.word	zoI2cError
+ 403               		.lcomm zoRxPacketReceived,1
+ 404               		.lcomm RxPacket,21
+ 469               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoProtocolI2c.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:18     .text:00000000 zoProtocolI2cSetLAM
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:36     .text:0000000a zoProtocolI2cSetBitrate
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:59     .text:00000020 zoProtocolI2cGetPacket
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:401    .data:00000000 zoProtocolI2cError
+                             .bss:00000000 zoRxPacketReceived
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:403    .bss:00000001 RxPacket
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:152    .text:00000096 zoProtocolI2cPutPacket
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:247    .text:0000011e zoProtocolI2cInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccza0l0A.s:283    .text:0000014a i2cSlaveRx
+
+UNDEFINED SYMBOLS
+__udivmodsi4
+zoI2cSetBitrate
+zoErrorIsEmpty
+zoI2cMasterSendBlocking
+zoI2cInit
+zoI2cSetLocalDeviceAddr
+zoI2cSetSlaveReceiveHandler
+zoErrorPutIsr
+zoI2cError
+__do_copy_data
+__do_clear_bss

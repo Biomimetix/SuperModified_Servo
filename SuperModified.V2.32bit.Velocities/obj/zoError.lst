@@ -1,0 +1,372 @@
+   1               		.file	"zoError.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoErrorInit
+  18               	zoErrorInit:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 FC01      		movw r30,r24
+  25               	.LM2:
+  26               	/* #APP */
+  27               	 ;  6 "zoError.c" 1
+  28 0002 0FB6      		in __tmp_reg__, __SREG__
+  29 0004 0F92      		 push __tmp_reg__
+  30 0006 F894      		cli
+  31               	 ;  0 "" 2
+  32               	.LM3:
+  33               	/* #NOAPP */
+  34 0008 1082      		st Z,__zero_reg__
+  35               	.LM4:
+  36 000a 0596      		adiw r24,5
+  37               	.LVL1:
+  38 000c 9283      		std Z+2,r25
+  39 000e 8183      		std Z+1,r24
+  40               	.LM5:
+  41 0010 9483      		std Z+4,r25
+  42 0012 8383      		std Z+3,r24
+  43               	.LM6:
+  44               	/* #APP */
+  45               	 ;  10 "zoError.c" 1
+  46 0014 0F90      		pop __tmp_reg__ 
+  47 0016 0FBE      		out __SREG__, __tmp_reg__
+  48               	 ;  0 "" 2
+  49               	/* epilogue start */
+  50               	.LM7:
+  51               	/* #NOAPP */
+  52 0018 0895      		ret
+  53               	.LFE2:
+  55               	.global	zoErrorGetIsr
+  57               	zoErrorGetIsr:
+  58               	.LFB3:
+  59               	.LM8:
+  60               	.LVL2:
+  61               	/* prologue: function */
+  62               	/* frame size = 0 */
+  63 001a DC01      		movw r26,r24
+  64               	.LM9:
+  65 001c 8C91      		ld r24,X
+  66               	.LVL3:
+  67 001e 8150      		subi r24,lo8(-(-1))
+  68 0020 8C93      		st X,r24
+  69               	.LM10:
+  70 0022 1396      		adiw r26,3
+  71 0024 ED91      		ld r30,X+
+  72 0026 FC91      		ld r31,X
+  73 0028 1497      		sbiw r26,3+1
+  74 002a E081      		ld r30,Z
+  75               	.LVL4:
+  76               	.LM11:
+  77 002c 1396      		adiw r26,3
+  78 002e 8D91      		ld r24,X+
+  79 0030 9C91      		ld r25,X
+  80 0032 1497      		sbiw r26,3+1
+  81 0034 0196      		adiw r24,1
+  82 0036 1496      		adiw r26,3+1
+  83 0038 9C93      		st X,r25
+  84 003a 8E93      		st -X,r24
+  85 003c 1397      		sbiw r26,3
+  86               	.LM12:
+  87 003e 1396      		adiw r26,3
+  88 0040 2D91      		ld r18,X+
+  89 0042 3C91      		ld r19,X
+  90 0044 1497      		sbiw r26,3+1
+  91 0046 AD01      		movw r20,r26
+  92 0048 4B5F      		subi r20,lo8(-(5))
+  93 004a 5F4F      		sbci r21,hi8(-(5))
+  94 004c CD01      		movw r24,r26
+  95 004e 0D96      		adiw r24,13
+  96 0050 2817      		cp r18,r24
+  97 0052 3907      		cpc r19,r25
+  98 0054 01F0      		breq .L7
+  99               	.LM13:
+ 100 0056 8E2F      		mov r24,r30
+ 101               	/* epilogue start */
+ 102 0058 0895      		ret
+ 103               	.L7:
+ 104               	.LM14:
+ 105 005a 1496      		adiw r26,3+1
+ 106 005c 5C93      		st X,r21
+ 107 005e 4E93      		st -X,r20
+ 108 0060 1397      		sbiw r26,3
+ 109               	.LM15:
+ 110 0062 8E2F      		mov r24,r30
+ 111 0064 0895      		ret
+ 112               	.LFE3:
+ 114               	.global	zoErrorPutIsr
+ 116               	zoErrorPutIsr:
+ 117               	.LFB5:
+ 118               	.LM16:
+ 119               	.LVL5:
+ 120               	/* prologue: function */
+ 121               	/* frame size = 0 */
+ 122 0066 DC01      		movw r26,r24
+ 123               	.LM17:
+ 124 0068 8C91      		ld r24,X
+ 125               	.LVL6:
+ 126 006a 8830      		cpi r24,lo8(8)
+ 127 006c 00F4      		brsh .L9
+ 128               	.LM18:
+ 129 006e 8C91      		ld r24,X
+ 130 0070 8F5F      		subi r24,lo8(-(1))
+ 131 0072 8C93      		st X,r24
+ 132               	.L9:
+ 133               	.LM19:
+ 134 0074 1196      		adiw r26,1
+ 135 0076 ED91      		ld r30,X+
+ 136 0078 FC91      		ld r31,X
+ 137 007a 1297      		sbiw r26,1+1
+ 138 007c 6083      		st Z,r22
+ 139               	.LM20:
+ 140 007e 1196      		adiw r26,1
+ 141 0080 8D91      		ld r24,X+
+ 142 0082 9C91      		ld r25,X
+ 143 0084 1297      		sbiw r26,1+1
+ 144 0086 0196      		adiw r24,1
+ 145 0088 1296      		adiw r26,1+1
+ 146 008a 9C93      		st X,r25
+ 147 008c 8E93      		st -X,r24
+ 148 008e 1197      		sbiw r26,1
+ 149               	.LM21:
+ 150 0090 1196      		adiw r26,1
+ 151 0092 2D91      		ld r18,X+
+ 152 0094 3C91      		ld r19,X
+ 153 0096 1297      		sbiw r26,1+1
+ 154 0098 AD01      		movw r20,r26
+ 155 009a 4B5F      		subi r20,lo8(-(5))
+ 156 009c 5F4F      		sbci r21,hi8(-(5))
+ 157 009e CD01      		movw r24,r26
+ 158 00a0 0D96      		adiw r24,13
+ 159 00a2 2817      		cp r18,r24
+ 160 00a4 3907      		cpc r19,r25
+ 161 00a6 01F0      		breq .L12
+ 162 00a8 0895      		ret
+ 163               	.L12:
+ 164               	.LM22:
+ 165 00aa 1296      		adiw r26,1+1
+ 166 00ac 5C93      		st X,r21
+ 167 00ae 4E93      		st -X,r20
+ 168 00b0 1197      		sbiw r26,1
+ 169 00b2 0895      		ret
+ 170               	.LFE5:
+ 172               	.global	zoErrorIsEmpty
+ 174               	zoErrorIsEmpty:
+ 175               	.LFB7:
+ 176               	.LM23:
+ 177               	.LVL7:
+ 178               	/* prologue: function */
+ 179               	/* frame size = 0 */
+ 180 00b4 FC01      		movw r30,r24
+ 181               	.LM24:
+ 182 00b6 8081      		ld r24,Z
+ 183               	.LVL8:
+ 184 00b8 8823      		tst r24
+ 185 00ba 01F0      		breq .L17
+ 186 00bc 80E0      		ldi r24,lo8(0)
+ 187               	.LM25:
+ 188 00be 0895      		ret
+ 189               	.L17:
+ 190               	.LM26:
+ 191 00c0 8FEF      		ldi r24,lo8(-1)
+ 192 00c2 0895      		ret
+ 193               	.LFE7:
+ 195               	.global	zoErrorGet
+ 197               	zoErrorGet:
+ 198               	.LFB4:
+ 199               	.LM27:
+ 200               	.LVL9:
+ 201               	/* prologue: function */
+ 202               	/* frame size = 0 */
+ 203 00c4 DC01      		movw r26,r24
+ 204               	.LM28:
+ 205               	/* #APP */
+ 206               	 ;  30 "zoError.c" 1
+ 207 00c6 0FB6      		in __tmp_reg__, __SREG__
+ 208 00c8 0F92      		 push __tmp_reg__
+ 209 00ca F894      		cli
+ 210               	 ;  0 "" 2
+ 211               	/* #NOAPP */
+ 212               	.LBB4:
+ 213               	.LBB5:
+ 214               	.LM29:
+ 215 00cc 8C91      		ld r24,X
+ 216               	.LVL10:
+ 217 00ce 8150      		subi r24,lo8(-(-1))
+ 218 00d0 8C93      		st X,r24
+ 219               	.LM30:
+ 220 00d2 1396      		adiw r26,3
+ 221 00d4 ED91      		ld r30,X+
+ 222 00d6 FC91      		ld r31,X
+ 223 00d8 1497      		sbiw r26,3+1
+ 224 00da E081      		ld r30,Z
+ 225               	.LVL11:
+ 226               	.LM31:
+ 227 00dc 1396      		adiw r26,3
+ 228 00de 8D91      		ld r24,X+
+ 229 00e0 9C91      		ld r25,X
+ 230 00e2 1497      		sbiw r26,3+1
+ 231 00e4 0196      		adiw r24,1
+ 232 00e6 1496      		adiw r26,3+1
+ 233 00e8 9C93      		st X,r25
+ 234 00ea 8E93      		st -X,r24
+ 235 00ec 1397      		sbiw r26,3
+ 236               	.LM32:
+ 237 00ee 1396      		adiw r26,3
+ 238 00f0 2D91      		ld r18,X+
+ 239 00f2 3C91      		ld r19,X
+ 240 00f4 1497      		sbiw r26,3+1
+ 241 00f6 AD01      		movw r20,r26
+ 242 00f8 4B5F      		subi r20,lo8(-(5))
+ 243 00fa 5F4F      		sbci r21,hi8(-(5))
+ 244 00fc CD01      		movw r24,r26
+ 245 00fe 0D96      		adiw r24,13
+ 246 0100 2817      		cp r18,r24
+ 247 0102 3907      		cpc r19,r25
+ 248 0104 01F0      		breq .L21
+ 249               	.LBE5:
+ 250               	.LBE4:
+ 251               	.LM33:
+ 252               	/* #APP */
+ 253               	 ;  32 "zoError.c" 1
+ 254 0106 0F90      		pop __tmp_reg__ 
+ 255 0108 0FBE      		out __SREG__, __tmp_reg__
+ 256               	 ;  0 "" 2
+ 257               	.LM34:
+ 258               	/* #NOAPP */
+ 259 010a 8E2F      		mov r24,r30
+ 260               	/* epilogue start */
+ 261 010c 0895      		ret
+ 262               	.L21:
+ 263               	.LBB7:
+ 264               	.LBB6:
+ 265               	.LM35:
+ 266 010e 1496      		adiw r26,3+1
+ 267 0110 5C93      		st X,r21
+ 268 0112 4E93      		st -X,r20
+ 269 0114 1397      		sbiw r26,3
+ 270               	.LBE6:
+ 271               	.LBE7:
+ 272               	.LM36:
+ 273               	/* #APP */
+ 274               	 ;  32 "zoError.c" 1
+ 275 0116 0F90      		pop __tmp_reg__ 
+ 276 0118 0FBE      		out __SREG__, __tmp_reg__
+ 277               	 ;  0 "" 2
+ 278               	.LM37:
+ 279               	/* #NOAPP */
+ 280 011a 8E2F      		mov r24,r30
+ 281 011c 0895      		ret
+ 282               	.LFE4:
+ 284               	.global	zoErrorPut
+ 286               	zoErrorPut:
+ 287               	.LFB6:
+ 288               	.LM38:
+ 289               	.LVL12:
+ 290               	/* prologue: function */
+ 291               	/* frame size = 0 */
+ 292 011e DC01      		movw r26,r24
+ 293               	.LM39:
+ 294               	/* #APP */
+ 295               	 ;  49 "zoError.c" 1
+ 296 0120 0FB6      		in __tmp_reg__, __SREG__
+ 297 0122 0F92      		 push __tmp_reg__
+ 298 0124 F894      		cli
+ 299               	 ;  0 "" 2
+ 300               	/* #NOAPP */
+ 301               	.LBB10:
+ 302               	.LBB11:
+ 303               	.LM40:
+ 304 0126 8C91      		ld r24,X
+ 305               	.LVL13:
+ 306 0128 8830      		cpi r24,lo8(8)
+ 307 012a 00F4      		brsh .L23
+ 308               	.LM41:
+ 309 012c 8C91      		ld r24,X
+ 310 012e 8F5F      		subi r24,lo8(-(1))
+ 311 0130 8C93      		st X,r24
+ 312               	.L23:
+ 313               	.LM42:
+ 314 0132 1196      		adiw r26,1
+ 315 0134 ED91      		ld r30,X+
+ 316 0136 FC91      		ld r31,X
+ 317 0138 1297      		sbiw r26,1+1
+ 318 013a 6083      		st Z,r22
+ 319               	.LM43:
+ 320 013c 1196      		adiw r26,1
+ 321 013e 8D91      		ld r24,X+
+ 322 0140 9C91      		ld r25,X
+ 323 0142 1297      		sbiw r26,1+1
+ 324 0144 0196      		adiw r24,1
+ 325 0146 1296      		adiw r26,1+1
+ 326 0148 9C93      		st X,r25
+ 327 014a 8E93      		st -X,r24
+ 328 014c 1197      		sbiw r26,1
+ 329               	.LM44:
+ 330 014e 1196      		adiw r26,1
+ 331 0150 2D91      		ld r18,X+
+ 332 0152 3C91      		ld r19,X
+ 333 0154 1297      		sbiw r26,1+1
+ 334 0156 AD01      		movw r20,r26
+ 335 0158 4B5F      		subi r20,lo8(-(5))
+ 336 015a 5F4F      		sbci r21,hi8(-(5))
+ 337 015c CD01      		movw r24,r26
+ 338 015e 0D96      		adiw r24,13
+ 339 0160 2817      		cp r18,r24
+ 340 0162 3907      		cpc r19,r25
+ 341 0164 01F0      		breq .L26
+ 342               	.LBE11:
+ 343               	.LBE10:
+ 344               	.LM45:
+ 345               	/* #APP */
+ 346               	 ;  51 "zoError.c" 1
+ 347 0166 0F90      		pop __tmp_reg__ 
+ 348 0168 0FBE      		out __SREG__, __tmp_reg__
+ 349               	 ;  0 "" 2
+ 350               	/* epilogue start */
+ 351               	.LM46:
+ 352               	/* #NOAPP */
+ 353 016a 0895      		ret
+ 354               	.L26:
+ 355               	.LBB13:
+ 356               	.LBB12:
+ 357               	.LM47:
+ 358 016c 1296      		adiw r26,1+1
+ 359 016e 5C93      		st X,r21
+ 360 0170 4E93      		st -X,r20
+ 361 0172 1197      		sbiw r26,1
+ 362               	.LBE12:
+ 363               	.LBE13:
+ 364               	.LM48:
+ 365               	/* #APP */
+ 366               	 ;  51 "zoError.c" 1
+ 367 0174 0F90      		pop __tmp_reg__ 
+ 368 0176 0FBE      		out __SREG__, __tmp_reg__
+ 369               	 ;  0 "" 2
+ 370               	.LM49:
+ 371               	/* #NOAPP */
+ 372 0178 0895      		ret
+ 373               	.LFE6:
+ 439               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoError.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:18     .text:00000000 zoErrorInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:57     .text:0000001a zoErrorGetIsr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:116    .text:00000066 zoErrorPutIsr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:174    .text:000000b4 zoErrorIsEmpty
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:197    .text:000000c4 zoErrorGet
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccqlLP76.s:286    .text:0000011e zoErrorPut
+
+NO UNDEFINED SYMBOLS

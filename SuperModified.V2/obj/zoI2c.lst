@@ -1,0 +1,1284 @@
+   1               		.file	"zoI2c.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoI2cSetBitrate
+  18               	zoI2cSetBitrate:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 BC01      		movw r22,r24
+  25               	.LM2:
+  26 0002 0197      		sbiw r24,1
+  27               	.LVL1:
+  28 0004 8059      		subi r24,lo8(400)
+  29 0006 9140      		sbci r25,hi8(400)
+  30 0008 00F0      		brlo .L2
+  31 000a 80E0      		ldi r24,lo8(0)
+  32 000c 0895      		ret
+  33               	.L2:
+  34               	.LM3:
+  35 000e 80E2      		ldi r24,lo8(20000)
+  36 0010 9EE4      		ldi r25,hi8(20000)
+  37 0012 0E94 0000 		call __udivmodhi4
+  38               	.LVL2:
+  39               	.LM4:
+  40 0016 6031      		cpi r22,lo8(16)
+  41               	.LVL3:
+  42 0018 00F0      		brlo .L4
+  43               	.LM5:
+  44 001a 862F      		mov r24,r22
+  45 001c 90E0      		ldi r25,lo8(0)
+  46               	.LVL4:
+  47 001e 4097      		sbiw r24,16
+  48               	.LVL5:
+  49 0020 9595      		asr r25
+  50 0022 8795      		ror r24
+  51               	.LVL6:
+  52 0024 682F      		mov r22,r24
+  53               	.LVL7:
+  54               	.L4:
+  55               	.LM6:
+  56 0026 6093 B800 		sts 184,r22
+  57 002a 8FEF      		ldi r24,lo8(-1)
+  58               	.LM7:
+  59 002c 0895      		ret
+  60               	.LFE3:
+  62               	.global	zoI2cSetLocalDeviceAddr
+  64               	zoI2cSetLocalDeviceAddr:
+  65               	.LFB4:
+  66               	.LM8:
+  67               	.LVL8:
+  68               	/* prologue: function */
+  69               	/* frame size = 0 */
+  70               	.LM9:
+  71 002e 1816      		cp __zero_reg__,r24
+  72 0030 04F0      		brlt .L8
+  73 0032 80E0      		ldi r24,lo8(0)
+  74               	.LVL9:
+  75 0034 0895      		ret
+  76               	.LVL10:
+  77               	.L8:
+  78               	.LM10:
+  79 0036 90E0      		ldi r25,lo8(0)
+  80 0038 880F      		lsl r24
+  81 003a 991F      		rol r25
+  82               	.LVL11:
+  83 003c 20E0      		ldi r18,lo8(0)
+  84 003e 6623      		tst r22
+  85 0040 01F4      		brne .L12
+  86               	.L10:
+  87 0042 282B      		or r18,r24
+  88 0044 2093 BA00 		sts 186,r18
+  89 0048 8FEF      		ldi r24,lo8(-1)
+  90               	.LM11:
+  91 004a 0895      		ret
+  92               	.L12:
+  93               	.LM12:
+  94 004c 21E0      		ldi r18,lo8(1)
+  95 004e 00C0      		rjmp .L10
+  96               	.LFE4:
+  98               	.global	zoI2cSetWaitOnBusReadyTimeOut
+ 100               	zoI2cSetWaitOnBusReadyTimeOut:
+ 101               	.LFB5:
+ 102               	.LM13:
+ 103               	.LVL12:
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	.LM14:
+ 107 0050 9093 0000 		sts (BusReadyTimeOut)+1,r25
+ 108 0054 8093 0000 		sts BusReadyTimeOut,r24
+ 109               	/* epilogue start */
+ 110               	.LM15:
+ 111 0058 0895      		ret
+ 112               	.LFE5:
+ 114               	.global	zoI2cSetWaitOnTransmitTimeOut
+ 116               	zoI2cSetWaitOnTransmitTimeOut:
+ 117               	.LFB6:
+ 118               	.LM16:
+ 119               	.LVL13:
+ 120               	/* prologue: function */
+ 121               	/* frame size = 0 */
+ 122               	.LM17:
+ 123 005a 9093 0000 		sts (TransmitTimeOut)+1,r25
+ 124 005e 8093 0000 		sts TransmitTimeOut,r24
+ 125               	/* epilogue start */
+ 126               	.LM18:
+ 127 0062 0895      		ret
+ 128               	.LFE6:
+ 130               	.global	zoI2cSetWaitOnReceiveTimeOut
+ 132               	zoI2cSetWaitOnReceiveTimeOut:
+ 133               	.LFB7:
+ 134               	.LM19:
+ 135               	.LVL14:
+ 136               	/* prologue: function */
+ 137               	/* frame size = 0 */
+ 138               	.LM20:
+ 139 0064 9093 0000 		sts (ReceiveTimeOut)+1,r25
+ 140 0068 8093 0000 		sts ReceiveTimeOut,r24
+ 141               	/* epilogue start */
+ 142               	.LM21:
+ 143 006c 0895      		ret
+ 144               	.LFE7:
+ 146               	.global	zoI2cSetSlaveReceiveHandler
+ 148               	zoI2cSetSlaveReceiveHandler:
+ 149               	.LFB8:
+ 150               	.LM22:
+ 151               	.LVL15:
+ 152               	/* prologue: function */
+ 153               	/* frame size = 0 */
+ 154               	.LM23:
+ 155 006e 9093 0000 		sts (zoI2cSlaveReceive)+1,r25
+ 156 0072 8093 0000 		sts zoI2cSlaveReceive,r24
+ 157               	/* epilogue start */
+ 158               	.LM24:
+ 159 0076 0895      		ret
+ 160               	.LFE8:
+ 162               	.global	zoI2cSetSlaveTransmitHandler
+ 164               	zoI2cSetSlaveTransmitHandler:
+ 165               	.LFB9:
+ 166               	.LM25:
+ 167               	.LVL16:
+ 168               	/* prologue: function */
+ 169               	/* frame size = 0 */
+ 170               	.LM26:
+ 171 0078 9093 0000 		sts (zoI2cSlaveTransmit)+1,r25
+ 172 007c 8093 0000 		sts zoI2cSlaveTransmit,r24
+ 173               	/* epilogue start */
+ 174               	.LM27:
+ 175 0080 0895      		ret
+ 176               	.LFE9:
+ 178               	.global	zoI2cSendStart
+ 180               	zoI2cSendStart:
+ 181               	.LFB10:
+ 182               	.LM28:
+ 183               	/* prologue: function */
+ 184               	/* frame size = 0 */
+ 185               	.LM29:
+ 186 0082 ECEB      		ldi r30,lo8(188)
+ 187 0084 F0E0      		ldi r31,hi8(188)
+ 188 0086 8081      		ld r24,Z
+ 189 0088 8F70      		andi r24,lo8(15)
+ 190 008a 806A      		ori r24,lo8(-96)
+ 191 008c 8083      		st Z,r24
+ 192               	/* epilogue start */
+ 193               	.LM30:
+ 194 008e 0895      		ret
+ 195               	.LFE10:
+ 197               	.global	zoI2cSendStop
+ 199               	zoI2cSendStop:
+ 200               	.LFB11:
+ 201               	.LM31:
+ 202               	/* prologue: function */
+ 203               	/* frame size = 0 */
+ 204               	.LM32:
+ 205 0090 ECEB      		ldi r30,lo8(188)
+ 206 0092 F0E0      		ldi r31,hi8(188)
+ 207 0094 8081      		ld r24,Z
+ 208 0096 8F70      		andi r24,lo8(15)
+ 209 0098 806D      		ori r24,lo8(-48)
+ 210 009a 8083      		st Z,r24
+ 211               	/* epilogue start */
+ 212               	.LM33:
+ 213 009c 0895      		ret
+ 214               	.LFE11:
+ 216               	.global	zoI2cWaitForComplete
+ 218               	zoI2cWaitForComplete:
+ 219               	.LFB12:
+ 220               	.LM34:
+ 221               	/* prologue: function */
+ 222               	/* frame size = 0 */
+ 223               	.L28:
+ 224               	.LM35:
+ 225 009e 8091 BC00 		lds r24,188
+ 226 00a2 87FF      		sbrs r24,7
+ 227 00a4 00C0      		rjmp .L28
+ 228               	/* epilogue start */
+ 229               	.LM36:
+ 230 00a6 0895      		ret
+ 231               	.LFE12:
+ 233               	.global	zoI2cSendByte
+ 235               	zoI2cSendByte:
+ 236               	.LFB13:
+ 237               	.LM37:
+ 238               	.LVL17:
+ 239               	/* prologue: function */
+ 240               	/* frame size = 0 */
+ 241               	.LM38:
+ 242 00a8 8093 BB00 		sts 187,r24
+ 243               	.LM39:
+ 244 00ac ECEB      		ldi r30,lo8(188)
+ 245 00ae F0E0      		ldi r31,hi8(188)
+ 246 00b0 8081      		ld r24,Z
+ 247               	.LVL18:
+ 248 00b2 8F70      		andi r24,lo8(15)
+ 249 00b4 8068      		ori r24,lo8(-128)
+ 250 00b6 8083      		st Z,r24
+ 251               	/* epilogue start */
+ 252               	.LM40:
+ 253 00b8 0895      		ret
+ 254               	.LFE13:
+ 256               	.global	zoI2cAcknowledgeRx
+ 258               	zoI2cAcknowledgeRx:
+ 259               	.LFB14:
+ 260               	.LM41:
+ 261               	.LVL19:
+ 262               	/* prologue: function */
+ 263               	/* frame size = 0 */
+ 264               	.LM42:
+ 265 00ba 8823      		tst r24
+ 266 00bc 01F4      		brne .L37
+ 267               	.LM43:
+ 268 00be 8091 BC00 		lds r24,188
+ 269               	.LVL20:
+ 270 00c2 8F70      		andi r24,lo8(15)
+ 271 00c4 8068      		ori r24,lo8(-128)
+ 272 00c6 8093 BC00 		sts 188,r24
+ 273 00ca 0895      		ret
+ 274               	.LVL21:
+ 275               	.L37:
+ 276               	.LM44:
+ 277 00cc 8091 BC00 		lds r24,188
+ 278               	.LVL22:
+ 279 00d0 8F70      		andi r24,lo8(15)
+ 280 00d2 806C      		ori r24,lo8(-64)
+ 281 00d4 8093 BC00 		sts 188,r24
+ 282 00d8 0895      		ret
+ 283               	.LFE14:
+ 285               	.global	__vector_24
+ 287               	__vector_24:
+ 288               	.LFB17:
+ 289               	.LM45:
+ 290 00da 1F92      		push __zero_reg__
+ 291 00dc 0F92      		push r0
+ 292 00de 0FB6      		in r0,__SREG__
+ 293 00e0 0F92      		push r0
+ 294 00e2 1124      		clr __zero_reg__
+ 295 00e4 2F93      		push r18
+ 296 00e6 3F93      		push r19
+ 297 00e8 4F93      		push r20
+ 298 00ea 5F93      		push r21
+ 299 00ec 6F93      		push r22
+ 300 00ee 7F93      		push r23
+ 301 00f0 8F93      		push r24
+ 302 00f2 9F93      		push r25
+ 303 00f4 AF93      		push r26
+ 304 00f6 BF93      		push r27
+ 305 00f8 EF93      		push r30
+ 306 00fa FF93      		push r31
+ 307               	/* prologue: Signal */
+ 308               	/* frame size = 0 */
+ 309               	.LM46:
+ 310 00fc E091 B900 		lds r30,185
+ 311 0100 E695      		lsr r30
+ 312 0102 E695      		lsr r30
+ 313 0104 E695      		lsr r30
+ 314 0106 F0E0      		ldi r31,lo8(0)
+ 315 0108 EE0F      		lsl r30
+ 316 010a FF1F      		rol r31
+ 317 010c E050      		subi r30,lo8(-(zoI2cFunctor))
+ 318 010e F040      		sbci r31,hi8(-(zoI2cFunctor))
+ 319 0110 0190      		ld __tmp_reg__,Z+
+ 320 0112 F081      		ld r31,Z
+ 321 0114 E02D      		mov r30,__tmp_reg__
+ 322 0116 0995      		icall
+ 323               	/* epilogue start */
+ 324               	.LM47:
+ 325 0118 FF91      		pop r31
+ 326 011a EF91      		pop r30
+ 327 011c BF91      		pop r27
+ 328 011e AF91      		pop r26
+ 329 0120 9F91      		pop r25
+ 330 0122 8F91      		pop r24
+ 331 0124 7F91      		pop r23
+ 332 0126 6F91      		pop r22
+ 333 0128 5F91      		pop r21
+ 334 012a 4F91      		pop r20
+ 335 012c 3F91      		pop r19
+ 336 012e 2F91      		pop r18
+ 337 0130 0F90      		pop r0
+ 338 0132 0FBE      		out __SREG__,r0
+ 339 0134 0F90      		pop r0
+ 340 0136 1F90      		pop __zero_reg__
+ 341 0138 1895      		reti
+ 342               	.LFE17:
+ 344               	.global	zoI2cFunctorStart
+ 346               	zoI2cFunctorStart:
+ 347               	.LFB19:
+ 348               	.LM48:
+ 349               	/* prologue: function */
+ 350               	/* frame size = 0 */
+ 351               	.LM49:
+ 352 013a 8091 0000 		lds r24,I2cDeviceAddrRW
+ 353               	.LBB14:
+ 354               	.LBB15:
+ 355               	.LM50:
+ 356 013e 8093 BB00 		sts 187,r24
+ 357               	.LM51:
+ 358 0142 ECEB      		ldi r30,lo8(188)
+ 359 0144 F0E0      		ldi r31,hi8(188)
+ 360 0146 8081      		ld r24,Z
+ 361 0148 8F70      		andi r24,lo8(15)
+ 362 014a 8068      		ori r24,lo8(-128)
+ 363 014c 8083      		st Z,r24
+ 364               	/* epilogue start */
+ 365               	.LBE15:
+ 366               	.LBE14:
+ 367               	.LM52:
+ 368 014e 0895      		ret
+ 369               	.LFE19:
+ 371               	.global	zoI2cFunctorMtAck
+ 373               	zoI2cFunctorMtAck:
+ 374               	.LFB20:
+ 375               	.LM53:
+ 376               	/* prologue: function */
+ 377               	/* frame size = 0 */
+ 378               	.LM54:
+ 379 0150 9091 0000 		lds r25,I2cSendDataIndex
+ 380 0154 8091 0000 		lds r24,I2cSendDataLength
+ 381 0158 9817      		cp r25,r24
+ 382 015a 00F0      		brlo .L46
+ 383               	.LBB16:
+ 384               	.LBB17:
+ 385               	.LM55:
+ 386 015c 8091 BC00 		lds r24,188
+ 387 0160 8F70      		andi r24,lo8(15)
+ 388 0162 806D      		ori r24,lo8(-48)
+ 389 0164 8093 BC00 		sts 188,r24
+ 390               	.LBE17:
+ 391               	.LBE16:
+ 392               	.LM56:
+ 393 0168 1092 0000 		sts I2cState,__zero_reg__
+ 394 016c 0895      		ret
+ 395               	.L46:
+ 396               	.LM57:
+ 397 016e E92F      		mov r30,r25
+ 398 0170 F0E0      		ldi r31,lo8(0)
+ 399 0172 E050      		subi r30,lo8(-(I2cSendData))
+ 400 0174 F040      		sbci r31,hi8(-(I2cSendData))
+ 401 0176 8081      		ld r24,Z
+ 402 0178 9F5F      		subi r25,lo8(-(1))
+ 403 017a 9093 0000 		sts I2cSendDataIndex,r25
+ 404               	.LBB18:
+ 405               	.LBB19:
+ 406               	.LM58:
+ 407 017e 8093 BB00 		sts 187,r24
+ 408               	.LM59:
+ 409 0182 8091 BC00 		lds r24,188
+ 410 0186 8F70      		andi r24,lo8(15)
+ 411 0188 8068      		ori r24,lo8(-128)
+ 412 018a 8093 BC00 		sts 188,r24
+ 413 018e 0895      		ret
+ 414               	.LBE19:
+ 415               	.LBE18:
+ 416               	.LFE20:
+ 418               	.global	zoI2cFunctorMrDataNAck
+ 420               	zoI2cFunctorMrDataNAck:
+ 421               	.LFB21:
+ 422               	.LM60:
+ 423               	/* prologue: function */
+ 424               	/* frame size = 0 */
+ 425               	.LM61:
+ 426 0190 8091 0000 		lds r24,I2cReceiveDataIndex
+ 427 0194 9091 BB00 		lds r25,187
+ 428 0198 E0E0      		ldi r30,lo8(I2cReceiveData)
+ 429 019a F0E0      		ldi r31,hi8(I2cReceiveData)
+ 430 019c E80F      		add r30,r24
+ 431 019e F11D      		adc r31,__zero_reg__
+ 432 01a0 9083      		st Z,r25
+ 433 01a2 8F5F      		subi r24,lo8(-(1))
+ 434 01a4 8093 0000 		sts I2cReceiveDataIndex,r24
+ 435               	.LBB20:
+ 436               	.LBB21:
+ 437               	.LM62:
+ 438 01a8 ECEB      		ldi r30,lo8(188)
+ 439 01aa F0E0      		ldi r31,hi8(188)
+ 440 01ac 8081      		ld r24,Z
+ 441 01ae 8F70      		andi r24,lo8(15)
+ 442 01b0 806D      		ori r24,lo8(-48)
+ 443 01b2 8083      		st Z,r24
+ 444               	.LBE21:
+ 445               	.LBE20:
+ 446               	.LM63:
+ 447 01b4 1092 0000 		sts I2cState,__zero_reg__
+ 448               	/* epilogue start */
+ 449               	.LM64:
+ 450 01b8 0895      		ret
+ 451               	.LFE21:
+ 453               	.global	zoI2cFunctorSrAck
+ 455               	zoI2cFunctorSrAck:
+ 456               	.LFB26:
+ 457               	.LM65:
+ 458               	/* prologue: function */
+ 459               	/* frame size = 0 */
+ 460               	.LM66:
+ 461 01ba 85E0      		ldi r24,lo8(5)
+ 462 01bc 8093 0000 		sts I2cState,r24
+ 463               	.LM67:
+ 464 01c0 1092 0000 		sts I2cReceiveDataIndex,__zero_reg__
+ 465               	.LM68:
+ 466 01c4 ECEB      		ldi r30,lo8(188)
+ 467 01c6 F0E0      		ldi r31,hi8(188)
+ 468 01c8 8081      		ld r24,Z
+ 469 01ca 8F70      		andi r24,lo8(15)
+ 470 01cc 806C      		ori r24,lo8(-64)
+ 471 01ce 8083      		st Z,r24
+ 472               	/* epilogue start */
+ 473               	.LM69:
+ 474 01d0 0895      		ret
+ 475               	.LFE26:
+ 477               	.global	zoI2cFunctorStop
+ 479               	zoI2cFunctorStop:
+ 480               	.LFB29:
+ 481               	.LM70:
+ 482               	/* prologue: function */
+ 483               	/* frame size = 0 */
+ 484               	.LM71:
+ 485 01d2 8091 BC00 		lds r24,188
+ 486 01d6 8F70      		andi r24,lo8(15)
+ 487 01d8 806C      		ori r24,lo8(-64)
+ 488 01da 8093 BC00 		sts 188,r24
+ 489               	.LM72:
+ 490 01de E091 0000 		lds r30,zoI2cSlaveReceive
+ 491 01e2 F091 0000 		lds r31,(zoI2cSlaveReceive)+1
+ 492 01e6 3097      		sbiw r30,0
+ 493 01e8 01F0      		breq .L52
+ 494 01ea 8091 0000 		lds r24,I2cReceiveDataIndex
+ 495 01ee 60E0      		ldi r22,lo8(I2cReceiveData)
+ 496 01f0 70E0      		ldi r23,hi8(I2cReceiveData)
+ 497 01f2 0995      		icall
+ 498               	.L52:
+ 499               	.LM73:
+ 500 01f4 1092 0000 		sts I2cState,__zero_reg__
+ 501               	/* epilogue start */
+ 502               	.LM74:
+ 503 01f8 0895      		ret
+ 504               	.LFE29:
+ 506               	.global	zoI2cFunctorStAck
+ 508               	zoI2cFunctorStAck:
+ 509               	.LFB30:
+ 510               	.LM75:
+ 511               	/* prologue: function */
+ 512               	/* frame size = 0 */
+ 513               	.LM76:
+ 514 01fa 84E0      		ldi r24,lo8(4)
+ 515 01fc 8093 0000 		sts I2cState,r24
+ 516               	.LM77:
+ 517 0200 E091 0000 		lds r30,zoI2cSlaveTransmit
+ 518 0204 F091 0000 		lds r31,(zoI2cSlaveTransmit)+1
+ 519 0208 3097      		sbiw r30,0
+ 520 020a 01F0      		breq .L55
+ 521 020c 80E2      		ldi r24,lo8(32)
+ 522 020e 60E0      		ldi r22,lo8(I2cSendData)
+ 523 0210 70E0      		ldi r23,hi8(I2cSendData)
+ 524 0212 0995      		icall
+ 525 0214 8093 0000 		sts I2cSendDataLength,r24
+ 526               	.L55:
+ 527               	.LM78:
+ 528 0218 8091 0000 		lds r24,I2cSendData
+ 529 021c 8093 BB00 		sts 187,r24
+ 530 0220 81E0      		ldi r24,lo8(1)
+ 531 0222 8093 0000 		sts I2cSendDataIndex,r24
+ 532               	.LM79:
+ 533 0226 8091 0000 		lds r24,I2cSendDataLength
+ 534 022a 8230      		cpi r24,lo8(2)
+ 535 022c 00F4      		brsh .L60
+ 536               	.LM80:
+ 537 022e 8091 BC00 		lds r24,188
+ 538 0232 8F70      		andi r24,lo8(15)
+ 539 0234 8068      		ori r24,lo8(-128)
+ 540 0236 8093 BC00 		sts 188,r24
+ 541 023a 0895      		ret
+ 542               	.L60:
+ 543               	.LM81:
+ 544 023c 8091 BC00 		lds r24,188
+ 545 0240 8F70      		andi r24,lo8(15)
+ 546 0242 806C      		ori r24,lo8(-64)
+ 547 0244 8093 BC00 		sts 188,r24
+ 548 0248 0895      		ret
+ 549               	.LFE30:
+ 551               	.global	zoI2cFunctorStDataAck
+ 553               	zoI2cFunctorStDataAck:
+ 554               	.LFB31:
+ 555               	.LM82:
+ 556               	/* prologue: function */
+ 557               	/* frame size = 0 */
+ 558               	.LM83:
+ 559 024a 9091 0000 		lds r25,I2cSendDataIndex
+ 560 024e E92F      		mov r30,r25
+ 561 0250 F0E0      		ldi r31,lo8(0)
+ 562 0252 E050      		subi r30,lo8(-(I2cSendData))
+ 563 0254 F040      		sbci r31,hi8(-(I2cSendData))
+ 564 0256 8081      		ld r24,Z
+ 565 0258 8093 BB00 		sts 187,r24
+ 566 025c 9F5F      		subi r25,lo8(-(1))
+ 567 025e 9093 0000 		sts I2cSendDataIndex,r25
+ 568               	.LM84:
+ 569 0262 8091 0000 		lds r24,I2cSendDataLength
+ 570 0266 9817      		cp r25,r24
+ 571 0268 00F0      		brlo .L65
+ 572               	.LM85:
+ 573 026a 8091 BC00 		lds r24,188
+ 574 026e 8F70      		andi r24,lo8(15)
+ 575 0270 8068      		ori r24,lo8(-128)
+ 576 0272 8093 BC00 		sts 188,r24
+ 577 0276 0895      		ret
+ 578               	.L65:
+ 579               	.LM86:
+ 580 0278 8091 BC00 		lds r24,188
+ 581 027c 8F70      		andi r24,lo8(15)
+ 582 027e 806C      		ori r24,lo8(-64)
+ 583 0280 8093 BC00 		sts 188,r24
+ 584 0284 0895      		ret
+ 585               	.LFE31:
+ 587               	.global	zoI2cFunctorStDataNAck
+ 589               	zoI2cFunctorStDataNAck:
+ 590               	.LFB32:
+ 591               	.LM87:
+ 592               	/* prologue: function */
+ 593               	/* frame size = 0 */
+ 594               	.LM88:
+ 595 0286 ECEB      		ldi r30,lo8(188)
+ 596 0288 F0E0      		ldi r31,hi8(188)
+ 597 028a 8081      		ld r24,Z
+ 598 028c 8F70      		andi r24,lo8(15)
+ 599 028e 806C      		ori r24,lo8(-64)
+ 600 0290 8083      		st Z,r24
+ 601               	.LM89:
+ 602 0292 1092 0000 		sts I2cState,__zero_reg__
+ 603               	/* epilogue start */
+ 604               	.LM90:
+ 605 0296 0895      		ret
+ 606               	.LFE32:
+ 608               	.global	zoI2cFunctorNull
+ 610               	zoI2cFunctorNull:
+ 611               	.LFB34:
+ 612               	.LM91:
+ 613               	/* prologue: function */
+ 614               	/* frame size = 0 */
+ 615               	/* epilogue start */
+ 616               	.LM92:
+ 617 0298 0895      		ret
+ 618               	.LFE34:
+ 620               	.global	zoI2cFunctorInit
+ 622               	zoI2cFunctorInit:
+ 623               	.LFB35:
+ 624               	.LM93:
+ 625               	/* prologue: function */
+ 626               	/* frame size = 0 */
+ 627               	.LM94:
+ 628 029a 80E0      		ldi r24,lo8(gs(zoI2cFunctorBusError))
+ 629 029c 90E0      		ldi r25,hi8(gs(zoI2cFunctorBusError))
+ 630 029e 9093 0000 		sts (zoI2cFunctor)+1,r25
+ 631 02a2 8093 0000 		sts zoI2cFunctor,r24
+ 632               	.LM95:
+ 633 02a6 80E0      		ldi r24,lo8(gs(zoI2cFunctorStart))
+ 634 02a8 90E0      		ldi r25,hi8(gs(zoI2cFunctorStart))
+ 635 02aa 9093 0000 		sts (zoI2cFunctor+2)+1,r25
+ 636 02ae 8093 0000 		sts zoI2cFunctor+2,r24
+ 637               	.LM96:
+ 638 02b2 9093 0000 		sts (zoI2cFunctor+4)+1,r25
+ 639 02b6 8093 0000 		sts zoI2cFunctor+4,r24
+ 640               	.LM97:
+ 641 02ba 80E0      		ldi r24,lo8(gs(zoI2cFunctorMtAck))
+ 642 02bc 90E0      		ldi r25,hi8(gs(zoI2cFunctorMtAck))
+ 643 02be 9093 0000 		sts (zoI2cFunctor+6)+1,r25
+ 644 02c2 8093 0000 		sts zoI2cFunctor+6,r24
+ 645               	.LM98:
+ 646 02c6 20E0      		ldi r18,lo8(gs(zoI2cFunctorMasterNAck))
+ 647 02c8 30E0      		ldi r19,hi8(gs(zoI2cFunctorMasterNAck))
+ 648 02ca 3093 0000 		sts (zoI2cFunctor+8)+1,r19
+ 649 02ce 2093 0000 		sts zoI2cFunctor+8,r18
+ 650               	.LM99:
+ 651 02d2 9093 0000 		sts (zoI2cFunctor+10)+1,r25
+ 652 02d6 8093 0000 		sts zoI2cFunctor+10,r24
+ 653               	.LM100:
+ 654 02da 3093 0000 		sts (zoI2cFunctor+12)+1,r19
+ 655 02de 2093 0000 		sts zoI2cFunctor+12,r18
+ 656               	.LM101:
+ 657 02e2 80E0      		ldi r24,lo8(gs(zoI2cFunctorArbitrationLost))
+ 658 02e4 90E0      		ldi r25,hi8(gs(zoI2cFunctorArbitrationLost))
+ 659 02e6 9093 0000 		sts (zoI2cFunctor+14)+1,r25
+ 660 02ea 8093 0000 		sts zoI2cFunctor+14,r24
+ 661               	.LM102:
+ 662 02ee 80E0      		ldi r24,lo8(gs(zoI2cFunctorMrSlaveAck))
+ 663 02f0 90E0      		ldi r25,hi8(gs(zoI2cFunctorMrSlaveAck))
+ 664 02f2 9093 0000 		sts (zoI2cFunctor+16)+1,r25
+ 665 02f6 8093 0000 		sts zoI2cFunctor+16,r24
+ 666               	.LM103:
+ 667 02fa 3093 0000 		sts (zoI2cFunctor+18)+1,r19
+ 668 02fe 2093 0000 		sts zoI2cFunctor+18,r18
+ 669               	.LM104:
+ 670 0302 80E0      		ldi r24,lo8(gs(zoI2cFunctorMrDataAck))
+ 671 0304 90E0      		ldi r25,hi8(gs(zoI2cFunctorMrDataAck))
+ 672 0306 9093 0000 		sts (zoI2cFunctor+20)+1,r25
+ 673 030a 8093 0000 		sts zoI2cFunctor+20,r24
+ 674               	.LM105:
+ 675 030e 80E0      		ldi r24,lo8(gs(zoI2cFunctorMrDataNAck))
+ 676 0310 90E0      		ldi r25,hi8(gs(zoI2cFunctorMrDataNAck))
+ 677 0312 9093 0000 		sts (zoI2cFunctor+22)+1,r25
+ 678 0316 8093 0000 		sts zoI2cFunctor+22,r24
+ 679               	.LM106:
+ 680 031a 80E0      		ldi r24,lo8(gs(zoI2cFunctorSrAck))
+ 681 031c 90E0      		ldi r25,hi8(gs(zoI2cFunctorSrAck))
+ 682 031e 9093 0000 		sts (zoI2cFunctor+24)+1,r25
+ 683 0322 8093 0000 		sts zoI2cFunctor+24,r24
+ 684               	.LM107:
+ 685 0326 9093 0000 		sts (zoI2cFunctor+26)+1,r25
+ 686 032a 8093 0000 		sts zoI2cFunctor+26,r24
+ 687               	.LM108:
+ 688 032e 9093 0000 		sts (zoI2cFunctor+28)+1,r25
+ 689 0332 8093 0000 		sts zoI2cFunctor+28,r24
+ 690               	.LM109:
+ 691 0336 9093 0000 		sts (zoI2cFunctor+30)+1,r25
+ 692 033a 8093 0000 		sts zoI2cFunctor+30,r24
+ 693               	.LM110:
+ 694 033e 20E0      		ldi r18,lo8(gs(zoI2cFunctorSrDataAck))
+ 695 0340 30E0      		ldi r19,hi8(gs(zoI2cFunctorSrDataAck))
+ 696 0342 3093 0000 		sts (zoI2cFunctor+32)+1,r19
+ 697 0346 2093 0000 		sts zoI2cFunctor+32,r18
+ 698               	.LM111:
+ 699 034a 80E0      		ldi r24,lo8(gs(zoI2cFunctorSrDataNack))
+ 700 034c 90E0      		ldi r25,hi8(gs(zoI2cFunctorSrDataNack))
+ 701 034e 9093 0000 		sts (zoI2cFunctor+34)+1,r25
+ 702 0352 8093 0000 		sts zoI2cFunctor+34,r24
+ 703               	.LM112:
+ 704 0356 3093 0000 		sts (zoI2cFunctor+36)+1,r19
+ 705 035a 2093 0000 		sts zoI2cFunctor+36,r18
+ 706               	.LM113:
+ 707 035e 9093 0000 		sts (zoI2cFunctor+38)+1,r25
+ 708 0362 8093 0000 		sts zoI2cFunctor+38,r24
+ 709               	.LM114:
+ 710 0366 80E0      		ldi r24,lo8(gs(zoI2cFunctorStop))
+ 711 0368 90E0      		ldi r25,hi8(gs(zoI2cFunctorStop))
+ 712 036a 9093 0000 		sts (zoI2cFunctor+40)+1,r25
+ 713 036e 8093 0000 		sts zoI2cFunctor+40,r24
+ 714               	.LM115:
+ 715 0372 80E0      		ldi r24,lo8(gs(zoI2cFunctorStAck))
+ 716 0374 90E0      		ldi r25,hi8(gs(zoI2cFunctorStAck))
+ 717 0376 9093 0000 		sts (zoI2cFunctor+42)+1,r25
+ 718 037a 8093 0000 		sts zoI2cFunctor+42,r24
+ 719               	.LM116:
+ 720 037e 9093 0000 		sts (zoI2cFunctor+44)+1,r25
+ 721 0382 8093 0000 		sts zoI2cFunctor+44,r24
+ 722               	.LM117:
+ 723 0386 80E0      		ldi r24,lo8(gs(zoI2cFunctorStDataAck))
+ 724 0388 90E0      		ldi r25,hi8(gs(zoI2cFunctorStDataAck))
+ 725 038a 9093 0000 		sts (zoI2cFunctor+46)+1,r25
+ 726 038e 8093 0000 		sts zoI2cFunctor+46,r24
+ 727               	.LM118:
+ 728 0392 80E0      		ldi r24,lo8(gs(zoI2cFunctorStDataNAck))
+ 729 0394 90E0      		ldi r25,hi8(gs(zoI2cFunctorStDataNAck))
+ 730 0396 9093 0000 		sts (zoI2cFunctor+48)+1,r25
+ 731 039a 8093 0000 		sts zoI2cFunctor+48,r24
+ 732               	.LM119:
+ 733 039e 9093 0000 		sts (zoI2cFunctor+50)+1,r25
+ 734 03a2 8093 0000 		sts zoI2cFunctor+50,r24
+ 735               	.LM120:
+ 736 03a6 80E0      		ldi r24,lo8(gs(zoI2cFunctorNull))
+ 737 03a8 90E0      		ldi r25,hi8(gs(zoI2cFunctorNull))
+ 738 03aa 9093 0000 		sts (zoI2cFunctor+52)+1,r25
+ 739 03ae 8093 0000 		sts zoI2cFunctor+52,r24
+ 740               	.LM121:
+ 741 03b2 9093 0000 		sts (zoI2cFunctor+54)+1,r25
+ 742 03b6 8093 0000 		sts zoI2cFunctor+54,r24
+ 743               	.LM122:
+ 744 03ba 9093 0000 		sts (zoI2cFunctor+56)+1,r25
+ 745 03be 8093 0000 		sts zoI2cFunctor+56,r24
+ 746               	.LM123:
+ 747 03c2 9093 0000 		sts (zoI2cFunctor+58)+1,r25
+ 748 03c6 8093 0000 		sts zoI2cFunctor+58,r24
+ 749               	.LM124:
+ 750 03ca 9093 0000 		sts (zoI2cFunctor+60)+1,r25
+ 751 03ce 8093 0000 		sts zoI2cFunctor+60,r24
+ 752               	.LM125:
+ 753 03d2 80E0      		ldi r24,lo8(gs(zoI2cFunctorNoInfo))
+ 754 03d4 90E0      		ldi r25,hi8(gs(zoI2cFunctorNoInfo))
+ 755 03d6 9093 0000 		sts (zoI2cFunctor+62)+1,r25
+ 756 03da 8093 0000 		sts zoI2cFunctor+62,r24
+ 757               	/* epilogue start */
+ 758               	.LM126:
+ 759 03de 0895      		ret
+ 760               	.LFE35:
+ 762               	.global	zoI2cFunctorNoInfo
+ 764               	zoI2cFunctorNoInfo:
+ 765               	.LFB33:
+ 766               	.LM127:
+ 767               	/* prologue: function */
+ 768               	/* frame size = 0 */
+ 769               	.LM128:
+ 770 03e0 80E0      		ldi r24,lo8(zoI2cError)
+ 771 03e2 90E0      		ldi r25,hi8(zoI2cError)
+ 772 03e4 64E0      		ldi r22,lo8(4)
+ 773 03e6 0E94 0000 		call zoErrorPut
+ 774               	/* epilogue start */
+ 775               	.LM129:
+ 776 03ea 0895      		ret
+ 777               	.LFE33:
+ 779               	.global	zoI2cFunctorArbitrationLost
+ 781               	zoI2cFunctorArbitrationLost:
+ 782               	.LFB23:
+ 783               	.LM130:
+ 784               	/* prologue: function */
+ 785               	/* frame size = 0 */
+ 786               	.LM131:
+ 787 03ec ECEB      		ldi r30,lo8(188)
+ 788 03ee F0E0      		ldi r31,hi8(188)
+ 789 03f0 8081      		ld r24,Z
+ 790 03f2 8F70      		andi r24,lo8(15)
+ 791 03f4 8068      		ori r24,lo8(-128)
+ 792 03f6 8083      		st Z,r24
+ 793               	.LM132:
+ 794 03f8 80E0      		ldi r24,lo8(zoI2cError)
+ 795 03fa 90E0      		ldi r25,hi8(zoI2cError)
+ 796 03fc 63E0      		ldi r22,lo8(3)
+ 797 03fe 0E94 0000 		call zoErrorPut
+ 798               	.LM133:
+ 799 0402 1092 0000 		sts I2cState,__zero_reg__
+ 800               	/* epilogue start */
+ 801               	.LM134:
+ 802 0406 0895      		ret
+ 803               	.LFE23:
+ 805               	.global	zoI2cFunctorMasterNAck
+ 807               	zoI2cFunctorMasterNAck:
+ 808               	.LFB22:
+ 809               	.LM135:
+ 810               	/* prologue: function */
+ 811               	/* frame size = 0 */
+ 812               	.LBB22:
+ 813               	.LBB23:
+ 814               	.LM136:
+ 815 0408 ECEB      		ldi r30,lo8(188)
+ 816 040a F0E0      		ldi r31,hi8(188)
+ 817 040c 8081      		ld r24,Z
+ 818 040e 8F70      		andi r24,lo8(15)
+ 819 0410 806D      		ori r24,lo8(-48)
+ 820 0412 8083      		st Z,r24
+ 821               	.LBE23:
+ 822               	.LBE22:
+ 823               	.LM137:
+ 824 0414 80E0      		ldi r24,lo8(zoI2cError)
+ 825 0416 90E0      		ldi r25,hi8(zoI2cError)
+ 826 0418 61E0      		ldi r22,lo8(1)
+ 827 041a 0E94 0000 		call zoErrorPut
+ 828               	.LM138:
+ 829 041e 1092 0000 		sts I2cState,__zero_reg__
+ 830               	/* epilogue start */
+ 831               	.LM139:
+ 832 0422 0895      		ret
+ 833               	.LFE22:
+ 835               	.global	zoI2cFunctorBusError
+ 837               	zoI2cFunctorBusError:
+ 838               	.LFB18:
+ 839               	.LM140:
+ 840               	/* prologue: function */
+ 841               	/* frame size = 0 */
+ 842               	.LM141:
+ 843 0424 ECEB      		ldi r30,lo8(188)
+ 844 0426 F0E0      		ldi r31,hi8(188)
+ 845 0428 8081      		ld r24,Z
+ 846 042a 8F70      		andi r24,lo8(15)
+ 847 042c 806D      		ori r24,lo8(-48)
+ 848 042e 8083      		st Z,r24
+ 849               	.LM142:
+ 850 0430 80E0      		ldi r24,lo8(zoI2cError)
+ 851 0432 90E0      		ldi r25,hi8(zoI2cError)
+ 852 0434 62E0      		ldi r22,lo8(2)
+ 853 0436 0E94 0000 		call zoErrorPut
+ 854               	.LM143:
+ 855 043a 1092 0000 		sts I2cState,__zero_reg__
+ 856               	/* epilogue start */
+ 857               	.LM144:
+ 858 043e 0895      		ret
+ 859               	.LFE18:
+ 861               	.global	zoI2cMasterSend
+ 863               	zoI2cMasterSend:
+ 864               	.LFB15:
+ 865               	.LM145:
+ 866               	.LVL23:
+ 867 0440 CF92      		push r12
+ 868 0442 DF92      		push r13
+ 869 0444 EF92      		push r14
+ 870 0446 FF92      		push r15
+ 871 0448 0F93      		push r16
+ 872 044a 1F93      		push r17
+ 873 044c DF93      		push r29
+ 874 044e CF93      		push r28
+ 875 0450 00D0      		rcall .
+ 876 0452 CDB7      		in r28,__SP_L__
+ 877 0454 DEB7      		in r29,__SP_H__
+ 878               	/* prologue: function */
+ 879               	/* frame size = 2 */
+ 880 0456 D82E      		mov r13,r24
+ 881 0458 F62E      		mov r15,r22
+ 882 045a E42E      		mov r14,r20
+ 883 045c C52E      		mov r12,r21
+ 884               	.LVL24:
+ 885               	.LM146:
+ 886 045e 8E01      		movw r16,r28
+ 887 0460 0F5F      		subi r16,lo8(-(1))
+ 888 0462 1F4F      		sbci r17,hi8(-(1))
+ 889 0464 C801      		movw r24,r16
+ 890               	.LVL25:
+ 891 0466 0E94 0000 		call zoSystemTimerTimeOutInit
+ 892               	.LVL26:
+ 893               	.L81:
+ 894               	.LM147:
+ 895 046a 8091 0000 		lds r24,I2cState
+ 896 046e 8823      		tst r24
+ 897 0470 01F0      		breq .L89
+ 898               	.LM148:
+ 899 0472 6091 0000 		lds r22,BusReadyTimeOut
+ 900 0476 7091 0000 		lds r23,(BusReadyTimeOut)+1
+ 901 047a C801      		movw r24,r16
+ 902 047c 0E94 0000 		call zoSystemTimerTimeOutExpired
+ 903 0480 8823      		tst r24
+ 904 0482 01F0      		breq .L81
+ 905               	.LM149:
+ 906 0484 80E0      		ldi r24,lo8(zoI2cError)
+ 907 0486 90E0      		ldi r25,hi8(zoI2cError)
+ 908 0488 65E0      		ldi r22,lo8(5)
+ 909 048a 0E94 0000 		call zoErrorPut
+ 910 048e 80E0      		ldi r24,lo8(0)
+ 911               	.LVL27:
+ 912               	.L82:
+ 913               	/* epilogue start */
+ 914               	.LM150:
+ 915 0490 0F90      		pop __tmp_reg__
+ 916 0492 0F90      		pop __tmp_reg__
+ 917 0494 CF91      		pop r28
+ 918 0496 DF91      		pop r29
+ 919 0498 1F91      		pop r17
+ 920 049a 0F91      		pop r16
+ 921 049c FF90      		pop r15
+ 922               	.LVL28:
+ 923 049e EF90      		pop r14
+ 924               	.LVL29:
+ 925 04a0 DF90      		pop r13
+ 926               	.LVL30:
+ 927 04a2 CF90      		pop r12
+ 928               	.LVL31:
+ 929 04a4 0895      		ret
+ 930               	.LVL32:
+ 931               	.L89:
+ 932               	.LM151:
+ 933 04a6 82E0      		ldi r24,lo8(2)
+ 934 04a8 8093 0000 		sts I2cState,r24
+ 935               	.LM152:
+ 936 04ac 8D2D      		mov r24,r13
+ 937 04ae 90E0      		ldi r25,lo8(0)
+ 938               	.LVL33:
+ 939 04b0 880F      		lsl r24
+ 940 04b2 991F      		rol r25
+ 941               	.LVL34:
+ 942 04b4 8093 0000 		sts I2cDeviceAddrRW,r24
+ 943               	.LM153:
+ 944 04b8 FF20      		tst r15
+ 945 04ba 01F0      		breq .L84
+ 946 04bc A0E0      		ldi r26,lo8(I2cSendData)
+ 947 04be B0E0      		ldi r27,hi8(I2cSendData)
+ 948 04c0 8E2D      		mov r24,r14
+ 949               	.LVL35:
+ 950 04c2 9C2D      		mov r25,r12
+ 951               	.LVL36:
+ 952 04c4 9C01      		movw r18,r24
+ 953 04c6 F901      		movw r30,r18
+ 954               	.LVL37:
+ 955               	.L85:
+ 956               	.LM154:
+ 957 04c8 8191      		ld r24,Z+
+ 958 04ca 8D93      		st X+,r24
+ 959               	.LM155:
+ 960 04cc 8E2F      		mov r24,r30
+ 961               	.LVL38:
+ 962 04ce 8E19      		sub r24,r14
+ 963 04d0 8F15      		cp r24,r15
+ 964 04d2 00F0      		brlo .L85
+ 965               	.LVL39:
+ 966               	.L84:
+ 967               	.LM156:
+ 968 04d4 1092 0000 		sts I2cSendDataIndex,__zero_reg__
+ 969               	.LM157:
+ 970 04d8 F092 0000 		sts I2cSendDataLength,r15
+ 971               	.LBB24:
+ 972               	.LBB25:
+ 973               	.LM158:
+ 974 04dc 8091 BC00 		lds r24,188
+ 975               	.LVL40:
+ 976 04e0 8F70      		andi r24,lo8(15)
+ 977 04e2 806A      		ori r24,lo8(-96)
+ 978 04e4 8093 BC00 		sts 188,r24
+ 979 04e8 8FEF      		ldi r24,lo8(-1)
+ 980 04ea 00C0      		rjmp .L82
+ 981               	.LBE25:
+ 982               	.LBE24:
+ 983               	.LFE15:
+ 985               	.global	zoI2cMasterSendBlocking
+ 987               	zoI2cMasterSendBlocking:
+ 988               	.LFB16:
+ 989               	.LM159:
+ 990               	.LVL41:
+ 991 04ec 0F93      		push r16
+ 992 04ee 1F93      		push r17
+ 993 04f0 DF93      		push r29
+ 994 04f2 CF93      		push r28
+ 995 04f4 00D0      		rcall .
+ 996 04f6 CDB7      		in r28,__SP_L__
+ 997 04f8 DEB7      		in r29,__SP_H__
+ 998               	/* prologue: function */
+ 999               	/* frame size = 2 */
+ 1000               	.LM160:
+ 1001 04fa 0E94 0000 		call zoI2cMasterSend
+ 1002               	.LVL42:
+ 1003 04fe 8823      		tst r24
+ 1004 0500 01F4      		brne .L97
+ 1005               	.L92:
+ 1006               	/* epilogue start */
+ 1007               	.LM161:
+ 1008 0502 0F90      		pop __tmp_reg__
+ 1009 0504 0F90      		pop __tmp_reg__
+ 1010 0506 CF91      		pop r28
+ 1011 0508 DF91      		pop r29
+ 1012 050a 1F91      		pop r17
+ 1013 050c 0F91      		pop r16
+ 1014 050e 0895      		ret
+ 1015               	.L97:
+ 1016               	.LM162:
+ 1017 0510 8E01      		movw r16,r28
+ 1018 0512 0F5F      		subi r16,lo8(-(1))
+ 1019 0514 1F4F      		sbci r17,hi8(-(1))
+ 1020 0516 C801      		movw r24,r16
+ 1021 0518 0E94 0000 		call zoSystemTimerTimeOutInit
+ 1022               	.L93:
+ 1023               	.LM163:
+ 1024 051c 8091 0000 		lds r24,I2cState
+ 1025 0520 8823      		tst r24
+ 1026 0522 01F0      		breq .L98
+ 1027               	.LM164:
+ 1028 0524 6091 0000 		lds r22,TransmitTimeOut
+ 1029 0528 7091 0000 		lds r23,(TransmitTimeOut)+1
+ 1030 052c C801      		movw r24,r16
+ 1031 052e 0E94 0000 		call zoSystemTimerTimeOutExpired
+ 1032 0532 8823      		tst r24
+ 1033 0534 01F0      		breq .L93
+ 1034               	.LM165:
+ 1035 0536 80E0      		ldi r24,lo8(zoI2cError)
+ 1036 0538 90E0      		ldi r25,hi8(zoI2cError)
+ 1037 053a 66E0      		ldi r22,lo8(6)
+ 1038 053c 0E94 0000 		call zoErrorPut
+ 1039 0540 80E0      		ldi r24,lo8(0)
+ 1040               	.LM166:
+ 1041 0542 0F90      		pop __tmp_reg__
+ 1042 0544 0F90      		pop __tmp_reg__
+ 1043 0546 CF91      		pop r28
+ 1044 0548 DF91      		pop r29
+ 1045 054a 1F91      		pop r17
+ 1046 054c 0F91      		pop r16
+ 1047 054e 0895      		ret
+ 1048               	.L98:
+ 1049               	.LM167:
+ 1050 0550 80E0      		ldi r24,lo8(zoI2cError)
+ 1051 0552 90E0      		ldi r25,hi8(zoI2cError)
+ 1052 0554 0E94 0000 		call zoErrorIsEmpty
+ 1053 0558 00C0      		rjmp .L92
+ 1054               	.LFE16:
+ 1056               	.global	zoI2cInit
+ 1058               	zoI2cInit:
+ 1059               	.LFB2:
+ 1060               	.LM168:
+ 1061               	/* prologue: function */
+ 1062               	/* frame size = 0 */
+ 1063               	.LM169:
+ 1064 055a 449A      		sbi 40-32,4
+ 1065               	.LM170:
+ 1066 055c 459A      		sbi 40-32,5
+ 1067               	.LM171:
+ 1068 055e 1092 0000 		sts (zoI2cSlaveReceive)+1,__zero_reg__
+ 1069 0562 1092 0000 		sts zoI2cSlaveReceive,__zero_reg__
+ 1070               	.LM172:
+ 1071 0566 1092 0000 		sts (zoI2cSlaveTransmit)+1,__zero_reg__
+ 1072 056a 1092 0000 		sts zoI2cSlaveTransmit,__zero_reg__
+ 1073               	.LM173:
+ 1074 056e 0E94 0000 		call zoI2cFunctorInit
+ 1075               	.LM174:
+ 1076 0572 80E0      		ldi r24,lo8(zoI2cError)
+ 1077 0574 90E0      		ldi r25,hi8(zoI2cError)
+ 1078 0576 0E94 0000 		call zoErrorInit
+ 1079               	.LM175:
+ 1080 057a 0E94 0000 		call zoSystemTimerInit
+ 1081               	.LM176:
+ 1082 057e 84E6      		ldi r24,lo8(100)
+ 1083 0580 90E0      		ldi r25,hi8(100)
+ 1084 0582 0E94 0000 		call zoI2cSetBitrate
+ 1085               	.LM177:
+ 1086 0586 ECEB      		ldi r30,lo8(188)
+ 1087 0588 F0E0      		ldi r31,hi8(188)
+ 1088 058a 8081      		ld r24,Z
+ 1089 058c 8460      		ori r24,lo8(4)
+ 1090 058e 8083      		st Z,r24
+ 1091               	.LM178:
+ 1092 0590 1092 0000 		sts I2cState,__zero_reg__
+ 1093               	.LM179:
+ 1094 0594 8081      		ld r24,Z
+ 1095 0596 8160      		ori r24,lo8(1)
+ 1096 0598 8083      		st Z,r24
+ 1097               	.LM180:
+ 1098 059a 8081      		ld r24,Z
+ 1099 059c 8064      		ori r24,lo8(64)
+ 1100 059e 8083      		st Z,r24
+ 1101               	.LM181:
+ 1102               	/* #APP */
+ 1103               	 ;  105 "zoI2c.c" 1
+ 1104 05a0 7894      		sei
+ 1105               	 ;  0 "" 2
+ 1106               	/* epilogue start */
+ 1107               	.LM182:
+ 1108               	/* #NOAPP */
+ 1109 05a2 0895      		ret
+ 1110               	.LFE2:
+ 1112               	.global	zoI2cFunctorSrDataNack
+ 1114               	zoI2cFunctorSrDataNack:
+ 1115               	.LFB28:
+ 1116               	.LM183:
+ 1117               	/* prologue: function */
+ 1118               	/* frame size = 0 */
+ 1119               	.LBB28:
+ 1120               	.LBB29:
+ 1121               	.LM184:
+ 1122 05a4 ECEB      		ldi r30,lo8(188)
+ 1123 05a6 F0E0      		ldi r31,hi8(188)
+ 1124 05a8 8081      		ld r24,Z
+ 1125 05aa 8F70      		andi r24,lo8(15)
+ 1126 05ac 8068      		ori r24,lo8(-128)
+ 1127 05ae 8083      		st Z,r24
+ 1128               	/* epilogue start */
+ 1129               	.LBE29:
+ 1130               	.LBE28:
+ 1131               	.LM185:
+ 1132 05b0 0895      		ret
+ 1133               	.LFE28:
+ 1135               	.global	zoI2cFunctorMrSlaveAck
+ 1137               	zoI2cFunctorMrSlaveAck:
+ 1138               	.LFB25:
+ 1139               	.LM186:
+ 1140               	/* prologue: function */
+ 1141               	/* frame size = 0 */
+ 1142               	.LM187:
+ 1143 05b2 2091 0000 		lds r18,I2cReceiveDataIndex
+ 1144 05b6 30E0      		ldi r19,lo8(0)
+ 1145 05b8 8091 0000 		lds r24,I2cReceiveDataLength
+ 1146 05bc 90E0      		ldi r25,lo8(0)
+ 1147 05be 0197      		sbiw r24,1
+ 1148 05c0 2817      		cp r18,r24
+ 1149 05c2 3907      		cpc r19,r25
+ 1150 05c4 04F0      		brlt .L107
+ 1151               	.LBB34:
+ 1152               	.LBB35:
+ 1153               	.LM188:
+ 1154 05c6 8091 BC00 		lds r24,188
+ 1155 05ca 8F70      		andi r24,lo8(15)
+ 1156 05cc 8068      		ori r24,lo8(-128)
+ 1157 05ce 8093 BC00 		sts 188,r24
+ 1158 05d2 0895      		ret
+ 1159               	.L107:
+ 1160               	.LBE35:
+ 1161               	.LBE34:
+ 1162               	.LBB36:
+ 1163               	.LBB37:
+ 1164               	.LM189:
+ 1165 05d4 8091 BC00 		lds r24,188
+ 1166 05d8 8F70      		andi r24,lo8(15)
+ 1167 05da 806C      		ori r24,lo8(-64)
+ 1168 05dc 8093 BC00 		sts 188,r24
+ 1169 05e0 0895      		ret
+ 1170               	.LBE37:
+ 1171               	.LBE36:
+ 1172               	.LFE25:
+ 1174               	.global	zoI2cFunctorSrDataAck
+ 1176               	zoI2cFunctorSrDataAck:
+ 1177               	.LFB27:
+ 1178               	.LM190:
+ 1179               	/* prologue: function */
+ 1180               	/* frame size = 0 */
+ 1181               	.LM191:
+ 1182 05e2 8091 0000 		lds r24,I2cReceiveDataIndex
+ 1183 05e6 9091 BB00 		lds r25,187
+ 1184 05ea E82F      		mov r30,r24
+ 1185 05ec F0E0      		ldi r31,lo8(0)
+ 1186 05ee E050      		subi r30,lo8(-(I2cReceiveData))
+ 1187 05f0 F040      		sbci r31,hi8(-(I2cReceiveData))
+ 1188 05f2 9083      		st Z,r25
+ 1189 05f4 8F5F      		subi r24,lo8(-(1))
+ 1190 05f6 8093 0000 		sts I2cReceiveDataIndex,r24
+ 1191               	.LM192:
+ 1192 05fa 8032      		cpi r24,lo8(32)
+ 1193 05fc 00F0      		brlo .L112
+ 1194               	.LBB42:
+ 1195               	.LBB43:
+ 1196               	.LM193:
+ 1197 05fe 8091 BC00 		lds r24,188
+ 1198 0602 8F70      		andi r24,lo8(15)
+ 1199 0604 8068      		ori r24,lo8(-128)
+ 1200 0606 8093 BC00 		sts 188,r24
+ 1201 060a 0895      		ret
+ 1202               	.L112:
+ 1203               	.LBE43:
+ 1204               	.LBE42:
+ 1205               	.LBB44:
+ 1206               	.LBB45:
+ 1207               	.LM194:
+ 1208 060c 8091 BC00 		lds r24,188
+ 1209 0610 8F70      		andi r24,lo8(15)
+ 1210 0612 806C      		ori r24,lo8(-64)
+ 1211 0614 8093 BC00 		sts 188,r24
+ 1212 0618 0895      		ret
+ 1213               	.LBE45:
+ 1214               	.LBE44:
+ 1215               	.LFE27:
+ 1217               	.global	zoI2cFunctorMrDataAck
+ 1219               	zoI2cFunctorMrDataAck:
+ 1220               	.LFB24:
+ 1221               	.LM195:
+ 1222               	/* prologue: function */
+ 1223               	/* frame size = 0 */
+ 1224               	.LM196:
+ 1225 061a 2091 0000 		lds r18,I2cReceiveDataIndex
+ 1226 061e 8091 BB00 		lds r24,187
+ 1227 0622 E22F      		mov r30,r18
+ 1228 0624 F0E0      		ldi r31,lo8(0)
+ 1229 0626 E050      		subi r30,lo8(-(I2cReceiveData))
+ 1230 0628 F040      		sbci r31,hi8(-(I2cReceiveData))
+ 1231 062a 8083      		st Z,r24
+ 1232 062c 2F5F      		subi r18,lo8(-(1))
+ 1233 062e 2093 0000 		sts I2cReceiveDataIndex,r18
+ 1234               	.LM197:
+ 1235 0632 30E0      		ldi r19,lo8(0)
+ 1236 0634 8091 0000 		lds r24,I2cReceiveDataLength
+ 1237 0638 90E0      		ldi r25,lo8(0)
+ 1238 063a 0197      		sbiw r24,1
+ 1239 063c 2817      		cp r18,r24
+ 1240 063e 3907      		cpc r19,r25
+ 1241 0640 04F0      		brlt .L117
+ 1242               	.LBB50:
+ 1243               	.LBB51:
+ 1244               	.LM198:
+ 1245 0642 8091 BC00 		lds r24,188
+ 1246 0646 8F70      		andi r24,lo8(15)
+ 1247 0648 8068      		ori r24,lo8(-128)
+ 1248 064a 8093 BC00 		sts 188,r24
+ 1249 064e 0895      		ret
+ 1250               	.L117:
+ 1251               	.LBE51:
+ 1252               	.LBE50:
+ 1253               	.LBB52:
+ 1254               	.LBB53:
+ 1255               	.LM199:
+ 1256 0650 8091 BC00 		lds r24,188
+ 1257 0654 8F70      		andi r24,lo8(15)
+ 1258 0656 806C      		ori r24,lo8(-64)
+ 1259 0658 8093 BC00 		sts 188,r24
+ 1260 065c 0895      		ret
+ 1261               	.LBE53:
+ 1262               	.LBE52:
+ 1263               	.LFE24:
+ 1265               	.global	zoI2cError
+ 1266               	.global	zoI2cError
+ 1267               		.section .bss
+ 1270               	zoI2cError:
+ 1271 0000 0000 0000 		.skip 13,0
+ 1271      0000 0000 
+ 1271      0000 0000 
+ 1271      00
+ 1272               		.data
+ 1275               	TransmitTimeOut:
+ 1276 0000 E803      		.word	1000
+ 1279               	BusReadyTimeOut:
+ 1280 0002 E803      		.word	1000
+ 1283               	ReceiveTimeOut:
+ 1284 0004 E803      		.word	1000
+ 1285               		.lcomm I2cState,1
+ 1286               		.lcomm I2cDeviceAddrRW,1
+ 1287               		.lcomm I2cSendData,32
+ 1288               		.lcomm I2cSendDataIndex,1
+ 1289               		.lcomm I2cSendDataLength,1
+ 1290               		.lcomm I2cReceiveData,32
+ 1291               		.lcomm I2cReceiveDataIndex,1
+ 1292               		.lcomm I2cReceiveDataLength,1
+ 1293               		.lcomm zoI2cSlaveReceive,2
+ 1294               		.lcomm zoI2cSlaveTransmit,2
+ 1295               		.lcomm zoI2cFunctor,64
+ 1584               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoI2c.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:18     .text:00000000 zoI2cSetBitrate
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:64     .text:0000002e zoI2cSetLocalDeviceAddr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:100    .text:00000050 zoI2cSetWaitOnBusReadyTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1279   .data:00000002 BusReadyTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:116    .text:0000005a zoI2cSetWaitOnTransmitTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1275   .data:00000000 TransmitTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:132    .text:00000064 zoI2cSetWaitOnReceiveTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1283   .data:00000004 ReceiveTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:148    .text:0000006e zoI2cSetSlaveReceiveHandler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1292   .bss:00000053 zoI2cSlaveReceive
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:164    .text:00000078 zoI2cSetSlaveTransmitHandler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1293   .bss:00000055 zoI2cSlaveTransmit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:180    .text:00000082 zoI2cSendStart
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:199    .text:00000090 zoI2cSendStop
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:218    .text:0000009e zoI2cWaitForComplete
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:235    .text:000000a8 zoI2cSendByte
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:258    .text:000000ba zoI2cAcknowledgeRx
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:287    .text:000000da __vector_24
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1294   .bss:00000057 zoI2cFunctor
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:346    .text:0000013a zoI2cFunctorStart
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1285   .bss:0000000e I2cDeviceAddrRW
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:373    .text:00000150 zoI2cFunctorMtAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1287   .bss:0000002f I2cSendDataIndex
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1288   .bss:00000030 I2cSendDataLength
+                             .bss:0000000d I2cState
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1286   .bss:0000000f I2cSendData
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:420    .text:00000190 zoI2cFunctorMrDataNAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1290   .bss:00000051 I2cReceiveDataIndex
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1289   .bss:00000031 I2cReceiveData
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:455    .text:000001ba zoI2cFunctorSrAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:479    .text:000001d2 zoI2cFunctorStop
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:508    .text:000001fa zoI2cFunctorStAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:553    .text:0000024a zoI2cFunctorStDataAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:589    .text:00000286 zoI2cFunctorStDataNAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:610    .text:00000298 zoI2cFunctorNull
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:622    .text:0000029a zoI2cFunctorInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:837    .text:00000424 zoI2cFunctorBusError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:807    .text:00000408 zoI2cFunctorMasterNAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:781    .text:000003ec zoI2cFunctorArbitrationLost
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1137   .text:000005b2 zoI2cFunctorMrSlaveAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1219   .text:0000061a zoI2cFunctorMrDataAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1176   .text:000005e2 zoI2cFunctorSrDataAck
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1114   .text:000005a4 zoI2cFunctorSrDataNack
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:764    .text:000003e0 zoI2cFunctorNoInfo
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1270   .bss:00000000 zoI2cError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:863    .text:00000440 zoI2cMasterSend
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:987    .text:000004ec zoI2cMasterSendBlocking
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1058   .text:0000055a zoI2cInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccMSca6q.s:1291   .bss:00000052 I2cReceiveDataLength
+
+UNDEFINED SYMBOLS
+__udivmodhi4
+zoErrorPut
+zoSystemTimerTimeOutInit
+zoSystemTimerTimeOutExpired
+zoErrorIsEmpty
+zoErrorInit
+zoSystemTimerInit
+__do_copy_data
+__do_clear_bss

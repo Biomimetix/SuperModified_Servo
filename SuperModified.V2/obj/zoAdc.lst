@@ -1,0 +1,417 @@
+   1               		.file	"zoAdc.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoAdcInit
+  18               	zoAdcInit:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 17B8      		out 39-32,__zero_reg__
+  25               	.LM3:
+  26 0002 1092 7E00 		sts 126,__zero_reg__
+  27               	.LM4:
+  28 0006 E4E6      		ldi r30,lo8(100)
+  29 0008 F0E0      		ldi r31,hi8(100)
+  30 000a 8081      		ld r24,Z
+  31 000c 8E7F      		andi r24,lo8(-2)
+  32 000e 8083      		st Z,r24
+  33               	.LM5:
+  34 0010 EAE7      		ldi r30,lo8(122)
+  35 0012 F0E0      		ldi r31,hi8(122)
+  36 0014 8081      		ld r24,Z
+  37 0016 8068      		ori r24,lo8(-128)
+  38 0018 8083      		st Z,r24
+  39               	.LM6:
+  40 001a 8081      		ld r24,Z
+  41 001c 8062      		ori r24,lo8(32)
+  42 001e 8083      		st Z,r24
+  43               	.LBB10:
+  44               	.LBB11:
+  45               	.LM7:
+  46 0020 8081      		ld r24,Z
+  47 0022 8760      		ori r24,lo8(7)
+  48 0024 8083      		st Z,r24
+  49               	.LBE11:
+  50               	.LBE10:
+  51               	.LBB12:
+  52               	.LBB13:
+  53               	.LM8:
+  54 0026 ECE7      		ldi r30,lo8(124)
+  55 0028 F0E0      		ldi r31,hi8(124)
+  56 002a 8081      		ld r24,Z
+  57 002c 8F73      		andi r24,lo8(63)
+  58 002e 8064      		ori r24,lo8(64)
+  59 0030 8083      		st Z,r24
+  60               	.LBE13:
+  61               	.LBE12:
+  62               	.LBB14:
+  63               	.LBB15:
+  64               	.LM9:
+  65 0032 EBE7      		ldi r30,lo8(123)
+  66 0034 F0E0      		ldi r31,hi8(123)
+  67 0036 8081      		ld r24,Z
+  68 0038 887F      		andi r24,lo8(-8)
+  69 003a 8083      		st Z,r24
+  70               	.LBE15:
+  71               	.LBE14:
+  72               	.LBB16:
+  73               	.LBB17:
+  74               	.LM10:
+  75               	/* #APP */
+  76               	 ;  63 "zoAdc.c" 1
+  77 003c 0FB6      		in __tmp_reg__, __SREG__
+  78 003e 0F92      		 push __tmp_reg__
+  79 0040 F894      		cli
+  80               	 ;  0 "" 2
+  81               	.LM11:
+  82               	/* #NOAPP */
+  83 0042 8FEF      		ldi r24,lo8(-1)
+  84 0044 8093 0000 		sts AdcChannelOn,r24
+  85               	.LM12:
+  86               	/* #APP */
+  87               	 ;  65 "zoAdc.c" 1
+  88 0048 0F90      		pop __tmp_reg__ 
+  89 004a 0FBE      		out __SREG__, __tmp_reg__
+  90               	 ;  0 "" 2
+  91               	/* #NOAPP */
+  92               	.LBE17:
+  93               	.LBE16:
+  94               	.LM13:
+  95 004c ECE7      		ldi r30,lo8(124)
+  96 004e F0E0      		ldi r31,hi8(124)
+  97 0050 8081      		ld r24,Z
+  98 0052 8F7D      		andi r24,lo8(-33)
+  99 0054 8083      		st Z,r24
+ 100               	.LM14:
+ 101 0056 EAE7      		ldi r30,lo8(122)
+ 102 0058 F0E0      		ldi r31,hi8(122)
+ 103 005a 8081      		ld r24,Z
+ 104 005c 8860      		ori r24,lo8(8)
+ 105 005e 8083      		st Z,r24
+ 106               	.LM15:
+ 107 0060 8081      		ld r24,Z
+ 108 0062 8065      		ori r24,lo8(80)
+ 109 0064 8083      		st Z,r24
+ 110               	.LM16:
+ 111               	/* #APP */
+ 112               	 ;  33 "zoAdc.c" 1
+ 113 0066 7894      		sei
+ 114               	 ;  0 "" 2
+ 115               	/* epilogue start */
+ 116               	.LM17:
+ 117               	/* #NOAPP */
+ 118 0068 0895      		ret
+ 119               	.LFE2:
+ 121               	.global	zoAdcSetPrescaler
+ 123               	zoAdcSetPrescaler:
+ 124               	.LFB3:
+ 125               	.LM18:
+ 126               	.LVL0:
+ 127               	/* prologue: function */
+ 128               	/* frame size = 0 */
+ 129               	.LM19:
+ 130 006a EAE7      		ldi r30,lo8(122)
+ 131 006c F0E0      		ldi r31,hi8(122)
+ 132 006e 9081      		ld r25,Z
+ 133 0070 987F      		andi r25,lo8(-8)
+ 134 0072 982B      		or r25,r24
+ 135 0074 9083      		st Z,r25
+ 136               	/* epilogue start */
+ 137               	.LM20:
+ 138 0076 0895      		ret
+ 139               	.LFE3:
+ 141               	.global	zoAdcSetReference
+ 143               	zoAdcSetReference:
+ 144               	.LFB4:
+ 145               	.LM21:
+ 146               	.LVL1:
+ 147               	/* prologue: function */
+ 148               	/* frame size = 0 */
+ 149               	.LM22:
+ 150 0078 ECE7      		ldi r30,lo8(124)
+ 151 007a F0E0      		ldi r31,hi8(124)
+ 152 007c 9081      		ld r25,Z
+ 153 007e 9F73      		andi r25,lo8(63)
+ 154 0080 982B      		or r25,r24
+ 155 0082 9083      		st Z,r25
+ 156               	/* epilogue start */
+ 157               	.LM23:
+ 158 0084 0895      		ret
+ 159               	.LFE4:
+ 161               	.global	zoAdcSetTrigger
+ 163               	zoAdcSetTrigger:
+ 164               	.LFB5:
+ 165               	.LM24:
+ 166               	.LVL2:
+ 167               	/* prologue: function */
+ 168               	/* frame size = 0 */
+ 169               	.LM25:
+ 170 0086 EBE7      		ldi r30,lo8(123)
+ 171 0088 F0E0      		ldi r31,hi8(123)
+ 172 008a 9081      		ld r25,Z
+ 173 008c 987F      		andi r25,lo8(-8)
+ 174 008e 982B      		or r25,r24
+ 175 0090 9083      		st Z,r25
+ 176               	/* epilogue start */
+ 177               	.LM26:
+ 178 0092 0895      		ret
+ 179               	.LFE5:
+ 181               	.global	zoAdcOff
+ 183               	zoAdcOff:
+ 184               	.LFB6:
+ 185               	.LM27:
+ 186               	/* prologue: function */
+ 187               	/* frame size = 0 */
+ 188               	.LM28:
+ 189 0094 EAE7      		ldi r30,lo8(122)
+ 190 0096 F0E0      		ldi r31,hi8(122)
+ 191 0098 8081      		ld r24,Z
+ 192 009a 877F      		andi r24,lo8(-9)
+ 193 009c 8083      		st Z,r24
+ 194               	.LM29:
+ 195 009e 8081      		ld r24,Z
+ 196 00a0 8F77      		andi r24,lo8(127)
+ 197 00a2 8083      		st Z,r24
+ 198               	/* epilogue start */
+ 199               	.LM30:
+ 200 00a4 0895      		ret
+ 201               	.LFE6:
+ 203               	.global	zoAdcChannelEnable
+ 205               	zoAdcChannelEnable:
+ 206               	.LFB7:
+ 207               	.LM31:
+ 208               	.LVL3:
+ 209               	/* prologue: function */
+ 210               	/* frame size = 0 */
+ 211               	.LM32:
+ 212               	/* #APP */
+ 213               	 ;  63 "zoAdc.c" 1
+ 214 00a6 0FB6      		in __tmp_reg__, __SREG__
+ 215 00a8 0F92      		 push __tmp_reg__
+ 216 00aa F894      		cli
+ 217               	 ;  0 "" 2
+ 218               	.LM33:
+ 219               	/* #NOAPP */
+ 220 00ac E0E0      		ldi r30,lo8(AdcChannelOn)
+ 221 00ae F0E0      		ldi r31,hi8(AdcChannelOn)
+ 222 00b0 E80F      		add r30,r24
+ 223 00b2 F11D      		adc r31,__zero_reg__
+ 224 00b4 8FEF      		ldi r24,lo8(-1)
+ 225               	.LVL4:
+ 226 00b6 8083      		st Z,r24
+ 227               	.LM34:
+ 228               	/* #APP */
+ 229               	 ;  65 "zoAdc.c" 1
+ 230 00b8 0F90      		pop __tmp_reg__ 
+ 231 00ba 0FBE      		out __SREG__, __tmp_reg__
+ 232               	 ;  0 "" 2
+ 233               	/* epilogue start */
+ 234               	.LM35:
+ 235               	/* #NOAPP */
+ 236 00bc 0895      		ret
+ 237               	.LFE7:
+ 239               	.global	zoAdcChannelDisable
+ 241               	zoAdcChannelDisable:
+ 242               	.LFB8:
+ 243               	.LM36:
+ 244               	.LVL5:
+ 245               	/* prologue: function */
+ 246               	/* frame size = 0 */
+ 247               	.LM37:
+ 248               	/* #APP */
+ 249               	 ;  74 "zoAdc.c" 1
+ 250 00be 0FB6      		in __tmp_reg__, __SREG__
+ 251 00c0 0F92      		 push __tmp_reg__
+ 252 00c2 F894      		cli
+ 253               	 ;  0 "" 2
+ 254               	.LM38:
+ 255               	/* #NOAPP */
+ 256 00c4 E0E0      		ldi r30,lo8(AdcChannelOn)
+ 257 00c6 F0E0      		ldi r31,hi8(AdcChannelOn)
+ 258 00c8 E80F      		add r30,r24
+ 259 00ca F11D      		adc r31,__zero_reg__
+ 260 00cc 1082      		st Z,__zero_reg__
+ 261               	.LM39:
+ 262               	/* #APP */
+ 263               	 ;  76 "zoAdc.c" 1
+ 264 00ce 0F90      		pop __tmp_reg__ 
+ 265 00d0 0FBE      		out __SREG__, __tmp_reg__
+ 266               	 ;  0 "" 2
+ 267               	/* epilogue start */
+ 268               	.LM40:
+ 269               	/* #NOAPP */
+ 270 00d2 0895      		ret
+ 271               	.LFE8:
+ 273               	.global	zoAdcRead
+ 275               	zoAdcRead:
+ 276               	.LFB9:
+ 277               	.LM41:
+ 278               	.LVL6:
+ 279               	/* prologue: function */
+ 280               	/* frame size = 0 */
+ 281 00d4 E82F      		mov r30,r24
+ 282               	.LM42:
+ 283               	/* #APP */
+ 284               	 ;  86 "zoAdc.c" 1
+ 285 00d6 0FB6      		in __tmp_reg__, __SREG__
+ 286 00d8 0F92      		 push __tmp_reg__
+ 287 00da F894      		cli
+ 288               	 ;  0 "" 2
+ 289               	.LM43:
+ 290               	/* #NOAPP */
+ 291 00dc F0E0      		ldi r31,lo8(0)
+ 292 00de EE0F      		lsl r30
+ 293 00e0 FF1F      		rol r31
+ 294               	.LVL7:
+ 295 00e2 E050      		subi r30,lo8(-(AdcResult))
+ 296 00e4 F040      		sbci r31,hi8(-(AdcResult))
+ 297 00e6 2081      		ld r18,Z
+ 298 00e8 3181      		ldd r19,Z+1
+ 299               	.LVL8:
+ 300               	.LM44:
+ 301               	/* #APP */
+ 302               	 ;  88 "zoAdc.c" 1
+ 303 00ea 0F90      		pop __tmp_reg__ 
+ 304 00ec 0FBE      		out __SREG__, __tmp_reg__
+ 305               	 ;  0 "" 2
+ 306               	.LM45:
+ 307               	/* #NOAPP */
+ 308 00ee C901      		movw r24,r18
+ 309               	.LVL9:
+ 310               	/* epilogue start */
+ 311 00f0 0895      		ret
+ 312               	.LFE9:
+ 314               	.global	__vector_21
+ 316               	__vector_21:
+ 317               	.LFB10:
+ 318               	.LM46:
+ 319 00f2 1F92      		push __zero_reg__
+ 320 00f4 0F92      		push r0
+ 321 00f6 0FB6      		in r0,__SREG__
+ 322 00f8 0F92      		push r0
+ 323 00fa 1124      		clr __zero_reg__
+ 324 00fc 2F93      		push r18
+ 325 00fe 4F93      		push r20
+ 326 0100 5F93      		push r21
+ 327 0102 8F93      		push r24
+ 328 0104 9F93      		push r25
+ 329 0106 EF93      		push r30
+ 330 0108 FF93      		push r31
+ 331               	/* prologue: Signal */
+ 332               	/* frame size = 0 */
+ 333               	.LM47:
+ 334 010a E091 0000 		lds r30,AdcCurrentChannel
+ 335 010e F0E0      		ldi r31,lo8(0)
+ 336 0110 8091 7800 		lds r24,120
+ 337 0114 90E0      		ldi r25,lo8(0)
+ 338 0116 EE0F      		lsl r30
+ 339 0118 FF1F      		rol r31
+ 340 011a E050      		subi r30,lo8(-(AdcResult))
+ 341 011c F040      		sbci r31,hi8(-(AdcResult))
+ 342 011e 9183      		std Z+1,r25
+ 343 0120 8083      		st Z,r24
+ 344               	.LM48:
+ 345 0122 E091 0000 		lds r30,AdcCurrentChannel
+ 346 0126 F0E0      		ldi r31,lo8(0)
+ 347 0128 EE0F      		lsl r30
+ 348 012a FF1F      		rol r31
+ 349 012c E050      		subi r30,lo8(-(AdcResult))
+ 350 012e F040      		sbci r31,hi8(-(AdcResult))
+ 351 0130 4081      		ld r20,Z
+ 352 0132 5181      		ldd r21,Z+1
+ 353 0134 2091 7900 		lds r18,121
+ 354 0138 922F      		mov r25,r18
+ 355 013a 80E0      		ldi r24,lo8(0)
+ 356 013c 842B      		or r24,r20
+ 357 013e 952B      		or r25,r21
+ 358 0140 9183      		std Z+1,r25
+ 359 0142 8083      		st Z,r24
+ 360               	.L19:
+ 361               	.LM49:
+ 362 0144 8091 0000 		lds r24,AdcCurrentChannel
+ 363 0148 8F5F      		subi r24,lo8(-(1))
+ 364 014a 8093 0000 		sts AdcCurrentChannel,r24
+ 365               	.LM50:
+ 366 014e 8091 0000 		lds r24,AdcCurrentChannel
+ 367 0152 8B30      		cpi r24,lo8(11)
+ 368 0154 00F0      		brlo .L18
+ 369               	.LM51:
+ 370 0156 1092 0000 		sts AdcCurrentChannel,__zero_reg__
+ 371               	.L18:
+ 372               	.LM52:
+ 373 015a E091 0000 		lds r30,AdcCurrentChannel
+ 374 015e F0E0      		ldi r31,lo8(0)
+ 375 0160 E050      		subi r30,lo8(-(AdcChannelOn))
+ 376 0162 F040      		sbci r31,hi8(-(AdcChannelOn))
+ 377 0164 8081      		ld r24,Z
+ 378 0166 8823      		tst r24
+ 379 0168 01F0      		breq .L19
+ 380               	.LM53:
+ 381 016a 8091 0000 		lds r24,AdcCurrentChannel
+ 382 016e 8930      		cpi r24,lo8(9)
+ 383 0170 00F0      		brlo .L25
+ 384               	.LM54:
+ 385 0172 9091 7C00 		lds r25,124
+ 386 0176 8091 0000 		lds r24,AdcCurrentChannel
+ 387 017a 8B5F      		subi r24,lo8(-(5))
+ 388 017c 907F      		andi r25,lo8(-16)
+ 389 017e 892B      		or r24,r25
+ 390 0180 8093 7C00 		sts 124,r24
+ 391               	.L22:
+ 392               	/* epilogue start */
+ 393               	.LM55:
+ 394 0184 FF91      		pop r31
+ 395 0186 EF91      		pop r30
+ 396 0188 9F91      		pop r25
+ 397 018a 8F91      		pop r24
+ 398 018c 5F91      		pop r21
+ 399 018e 4F91      		pop r20
+ 400 0190 2F91      		pop r18
+ 401 0192 0F90      		pop r0
+ 402 0194 0FBE      		out __SREG__,r0
+ 403 0196 0F90      		pop r0
+ 404 0198 1F90      		pop __zero_reg__
+ 405 019a 1895      		reti
+ 406               	.L25:
+ 407               	.LM56:
+ 408 019c 8091 7C00 		lds r24,124
+ 409 01a0 9091 0000 		lds r25,AdcCurrentChannel
+ 410 01a4 807F      		andi r24,lo8(-16)
+ 411 01a6 892B      		or r24,r25
+ 412 01a8 8093 7C00 		sts 124,r24
+ 413 01ac 00C0      		rjmp .L22
+ 414               	.LFE10:
+ 416               		.lcomm AdcCurrentChannel,1
+ 417               		.lcomm AdcResult,22
+ 418               		.lcomm AdcChannelOn,11
+ 507               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoAdc.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:18     .text:00000000 zoAdcInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:417    .bss:00000017 AdcChannelOn
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:123    .text:0000006a zoAdcSetPrescaler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:143    .text:00000078 zoAdcSetReference
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:163    .text:00000086 zoAdcSetTrigger
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:183    .text:00000094 zoAdcOff
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:205    .text:000000a6 zoAdcChannelEnable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:241    .text:000000be zoAdcChannelDisable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:275    .text:000000d4 zoAdcRead
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:416    .bss:00000001 AdcResult
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccOfnM9a.s:316    .text:000000f2 __vector_21
+                             .bss:00000000 AdcCurrentChannel
+
+UNDEFINED SYMBOLS
+__do_clear_bss

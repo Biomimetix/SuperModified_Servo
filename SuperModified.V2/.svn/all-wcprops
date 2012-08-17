@@ -1,0 +1,371 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/24/trunk/SuperModified.V2
+END
+zoUart.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoUart.h
+END
+zoIcp.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoIcp.h
+END
+zoPid.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoPid.h
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/13/trunk/SuperModified.V2/readme.txt
+END
+zoSuperModified.elf
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSuperModified.elf
+END
+zoSuperModified.suo
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/24/trunk/SuperModified.V2/zoSuperModified.suo
+END
+zoEncoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoEncoder.h
+END
+zoSystemTimer.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSystemTimer.c
+END
+zoSuperModified.sym
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSuperModified.sym
+END
+zoAdc.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/24/trunk/SuperModified.V2/zoAdc.c
+END
+zoMcu.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoMcu.h
+END
+zoSystemTimer.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSystemTimer.h
+END
+main.lss
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.lss
+END
+zoAdc.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoAdc.h
+END
+main.elf
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.elf
+END
+zoMotor.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoMotor.c
+END
+main.sym
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.sym
+END
+zoCommands.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/22/trunk/SuperModified.V2/zoCommands.c
+END
+zoSms.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/22/trunk/SuperModified.V2/zoSms.c
+END
+zoMotor.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoMotor.h
+END
+zoCommands.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoCommands.h
+END
+zoSms.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoSms.h
+END
+gplForFiles.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/gplForFiles.h
+END
+zoTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoTypes.h
+END
+zoSuperModified.sln
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/19/trunk/SuperModified.V2/zoSuperModified.sln
+END
+Arduino.Boot.20MHz.57600.hex
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/13/trunk/SuperModified.V2/Arduino.Boot.20MHz.57600.hex
+END
+zoString.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoString.h
+END
+zoSmsError.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSmsError.c
+END
+zoI2c.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoI2c.c
+END
+GPLV3.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13/trunk/SuperModified.V2/GPLV3.txt
+END
+zoSmsError.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoSmsError.h
+END
+zoI2c.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoI2c.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/19/trunk/SuperModified.V2/Makefile
+END
+zoSuperModified.eep
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSuperModified.eep
+END
+zoError.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoError.c
+END
+zoSuperModified.map
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSuperModified.map
+END
+zoSpi.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSpi.c
+END
+zoProtocolUart.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/22/trunk/SuperModified.V2/zoProtocolUart.c
+END
+zoError.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoError.h
+END
+zoProtocolI2C.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoProtocolI2C.c
+END
+zoSpi.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSpi.h
+END
+zoProtocol.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoProtocol.c
+END
+zoProtocolUart.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoProtocolUart.h
+END
+main.eep
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.eep
+END
+zoProtocolI2C.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoProtocolI2C.h
+END
+restoreDefaults.hex
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/restoreDefaults.hex
+END
+zoProtocolRcServo.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/22/trunk/SuperModified.V2/zoProtocolRcServo.c
+END
+zoProtocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoProtocol.h
+END
+main.map
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.map
+END
+Source.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/17/trunk/SuperModified.V2/Source.vcproj
+END
+zoBuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoBuffer.c
+END
+zoProtocolRcServo.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoProtocolRcServo.h
+END
+zoUart.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/20/trunk/SuperModified.V2/zoUart.c
+END
+zoIcp.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoIcp.c
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/20/trunk/SuperModified.V2/main.c
+END
+zoPid.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoPid.c
+END
+main.hex
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/13/trunk/SuperModified.V2/main.hex
+END
+avrlibdefs.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/13/trunk/SuperModified.V2/avrlibdefs.h
+END
+zoSuperModified.lss
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoSuperModified.lss
+END
+zoBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/13/trunk/SuperModified.V2/zoBuffer.h
+END
+zoEncoder.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21/trunk/SuperModified.V2/zoEncoder.c
+END

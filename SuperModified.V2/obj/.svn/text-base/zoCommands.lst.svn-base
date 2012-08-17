@@ -1,0 +1,3871 @@
+   1               		.file	"zoCommands.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoCommandAbsolutePositionMove
+  18               	zoCommandAbsolutePositionMove:
+  19               	.LFB28:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LBB92:
+  25               	.LBB93:
+  26               	.LM2:
+  27 0000 FC01      		movw r30,r24
+  28 0002 8481      		ldd r24,Z+4
+  29 0004 9581      		ldd r25,Z+5
+  30 0006 A681      		ldd r26,Z+6
+  31 0008 B781      		ldd r27,Z+7
+  32               	.LVL1:
+  33               	.LBE93:
+  34               	.LBE92:
+  35               	.LM3:
+  36               	/* #APP */
+  37               	 ;  384 "zoCommands.c" 1
+  38 000a 0FB6      		in __tmp_reg__, __SREG__
+  39 000c 0F92      		 push __tmp_reg__
+  40 000e F894      		cli
+  41               	 ;  0 "" 2
+  42               	.LM4:
+  43               	/* #NOAPP */
+  44 0010 21E0      		ldi r18,lo8(1)
+  45 0012 2093 0000 		sts Sms,r18
+  46               	.LM5:
+  47 0016 8093 0000 		sts Sms+80,r24
+  48 001a 9093 0000 		sts (Sms+80)+1,r25
+  49 001e A093 0000 		sts (Sms+80)+2,r26
+  50 0022 B093 0000 		sts (Sms+80)+3,r27
+  51               	.LM6:
+  52               	/* #APP */
+  53               	 ;  387 "zoCommands.c" 1
+  54 0026 0F90      		pop __tmp_reg__ 
+  55 0028 0FBE      		out __SREG__, __tmp_reg__
+  56               	 ;  0 "" 2
+  57               	/* epilogue start */
+  58               	.LM7:
+  59               	/* #NOAPP */
+  60 002a 0895      		ret
+  61               	.LFE28:
+  63               	.global	zoCommandRelativePositionMove
+  65               	zoCommandRelativePositionMove:
+  66               	.LFB29:
+  67               	.LM8:
+  68               	.LVL2:
+  69               	/* prologue: function */
+  70               	/* frame size = 0 */
+  71               	.LBB94:
+  72               	.LBB95:
+  73               	.LM9:
+  74 002c FC01      		movw r30,r24
+  75 002e 8481      		ldd r24,Z+4
+  76 0030 9581      		ldd r25,Z+5
+  77 0032 A681      		ldd r26,Z+6
+  78 0034 B781      		ldd r27,Z+7
+  79               	.LVL3:
+  80               	.LBE95:
+  81               	.LBE94:
+  82               	.LM10:
+  83               	/* #APP */
+  84               	 ;  396 "zoCommands.c" 1
+  85 0036 0FB6      		in __tmp_reg__, __SREG__
+  86 0038 0F92      		 push __tmp_reg__
+  87 003a F894      		cli
+  88               	 ;  0 "" 2
+  89               	.LM11:
+  90               	/* #NOAPP */
+  91 003c 21E0      		ldi r18,lo8(1)
+  92 003e 2093 0000 		sts Sms,r18
+  93               	.LM12:
+  94 0042 2091 0000 		lds r18,Sms+80
+  95 0046 3091 0000 		lds r19,(Sms+80)+1
+  96 004a 4091 0000 		lds r20,(Sms+80)+2
+  97 004e 5091 0000 		lds r21,(Sms+80)+3
+  98 0052 820F      		add r24,r18
+  99 0054 931F      		adc r25,r19
+ 100 0056 A41F      		adc r26,r20
+ 101 0058 B51F      		adc r27,r21
+ 102 005a 8093 0000 		sts Sms+80,r24
+ 103 005e 9093 0000 		sts (Sms+80)+1,r25
+ 104 0062 A093 0000 		sts (Sms+80)+2,r26
+ 105 0066 B093 0000 		sts (Sms+80)+3,r27
+ 106               	.LM13:
+ 107               	/* #APP */
+ 108               	 ;  399 "zoCommands.c" 1
+ 109 006a 0F90      		pop __tmp_reg__ 
+ 110 006c 0FBE      		out __SREG__, __tmp_reg__
+ 111               	 ;  0 "" 2
+ 112               	/* epilogue start */
+ 113               	.LM14:
+ 114               	/* #NOAPP */
+ 115 006e 0895      		ret
+ 116               	.LFE29:
+ 118               	.global	zoCommandSetVelocitySetpoint
+ 120               	zoCommandSetVelocitySetpoint:
+ 121               	.LFB33:
+ 122               	.LM15:
+ 123               	.LVL4:
+ 124               	/* prologue: function */
+ 125               	/* frame size = 0 */
+ 126               	.LBB96:
+ 127               	.LBB97:
+ 128               	.LM16:
+ 129 0070 FC01      		movw r30,r24
+ 130 0072 8481      		ldd r24,Z+4
+ 131 0074 9581      		ldd r25,Z+5
+ 132               	.LVL5:
+ 133               	.LBE97:
+ 134               	.LBE96:
+ 135               	.LM17:
+ 136               	/* #APP */
+ 137               	 ;  432 "zoCommands.c" 1
+ 138 0076 0FB6      		in __tmp_reg__, __SREG__
+ 139 0078 0F92      		 push __tmp_reg__
+ 140 007a F894      		cli
+ 141               	 ;  0 "" 2
+ 142               	.LM18:
+ 143               	/* #NOAPP */
+ 144 007c 21E0      		ldi r18,lo8(1)
+ 145 007e 2093 0000 		sts Sms+90,r18
+ 146               	.LM19:
+ 147 0082 AA27      		clr r26
+ 148 0084 97FD      		sbrc r25,7
+ 149 0086 A095      		com r26
+ 150 0088 BA2F      		mov r27,r26
+ 151               	.LVL6:
+ 152 008a 8093 0000 		sts Sms+91,r24
+ 153 008e 9093 0000 		sts (Sms+91)+1,r25
+ 154 0092 A093 0000 		sts (Sms+91)+2,r26
+ 155 0096 B093 0000 		sts (Sms+91)+3,r27
+ 156               	.LM20:
+ 157               	/* #APP */
+ 158               	 ;  435 "zoCommands.c" 1
+ 159 009a 0F90      		pop __tmp_reg__ 
+ 160 009c 0FBE      		out __SREG__, __tmp_reg__
+ 161               	 ;  0 "" 2
+ 162               	/* epilogue start */
+ 163               	.LM21:
+ 164               	/* #NOAPP */
+ 165 009e 0895      		ret
+ 166               	.LFE33:
+ 168               	.global	zoCommandSetAbsolutePositionSetpoint
+ 170               	zoCommandSetAbsolutePositionSetpoint:
+ 171               	.LFB34:
+ 172               	.LM22:
+ 173               	.LVL7:
+ 174               	/* prologue: function */
+ 175               	/* frame size = 0 */
+ 176               	.LBB98:
+ 177               	.LBB99:
+ 178               	.LM23:
+ 179 00a0 FC01      		movw r30,r24
+ 180 00a2 8481      		ldd r24,Z+4
+ 181 00a4 9581      		ldd r25,Z+5
+ 182 00a6 A681      		ldd r26,Z+6
+ 183 00a8 B781      		ldd r27,Z+7
+ 184               	.LVL8:
+ 185               	.LBE99:
+ 186               	.LBE98:
+ 187               	.LM24:
+ 188               	/* #APP */
+ 189               	 ;  444 "zoCommands.c" 1
+ 190 00aa 0FB6      		in __tmp_reg__, __SREG__
+ 191 00ac 0F92      		 push __tmp_reg__
+ 192 00ae F894      		cli
+ 193               	 ;  0 "" 2
+ 194               	.LM25:
+ 195               	/* #NOAPP */
+ 196 00b0 22E0      		ldi r18,lo8(2)
+ 197 00b2 2093 0000 		sts Sms+90,r18
+ 198               	.LM26:
+ 199 00b6 8093 0000 		sts Sms+91,r24
+ 200 00ba 9093 0000 		sts (Sms+91)+1,r25
+ 201 00be A093 0000 		sts (Sms+91)+2,r26
+ 202 00c2 B093 0000 		sts (Sms+91)+3,r27
+ 203               	.LM27:
+ 204               	/* #APP */
+ 205               	 ;  447 "zoCommands.c" 1
+ 206 00c6 0F90      		pop __tmp_reg__ 
+ 207 00c8 0FBE      		out __SREG__, __tmp_reg__
+ 208               	 ;  0 "" 2
+ 209               	/* epilogue start */
+ 210               	.LM28:
+ 211               	/* #NOAPP */
+ 212 00ca 0895      		ret
+ 213               	.LFE34:
+ 215               	.global	zoCommandSetRelativePositionSetpoint
+ 217               	zoCommandSetRelativePositionSetpoint:
+ 218               	.LFB35:
+ 219               	.LM29:
+ 220               	.LVL9:
+ 221               	/* prologue: function */
+ 222               	/* frame size = 0 */
+ 223               	.LBB100:
+ 224               	.LBB101:
+ 225               	.LM30:
+ 226 00cc FC01      		movw r30,r24
+ 227 00ce 8481      		ldd r24,Z+4
+ 228 00d0 9581      		ldd r25,Z+5
+ 229 00d2 A681      		ldd r26,Z+6
+ 230 00d4 B781      		ldd r27,Z+7
+ 231               	.LVL10:
+ 232               	.LBE101:
+ 233               	.LBE100:
+ 234               	.LM31:
+ 235               	/* #APP */
+ 236               	 ;  456 "zoCommands.c" 1
+ 237 00d6 0FB6      		in __tmp_reg__, __SREG__
+ 238 00d8 0F92      		 push __tmp_reg__
+ 239 00da F894      		cli
+ 240               	 ;  0 "" 2
+ 241               	.LM32:
+ 242               	/* #NOAPP */
+ 243 00dc 23E0      		ldi r18,lo8(3)
+ 244 00de 2093 0000 		sts Sms+90,r18
+ 245               	.LM33:
+ 246 00e2 8093 0000 		sts Sms+91,r24
+ 247 00e6 9093 0000 		sts (Sms+91)+1,r25
+ 248 00ea A093 0000 		sts (Sms+91)+2,r26
+ 249 00ee B093 0000 		sts (Sms+91)+3,r27
+ 250               	.LM34:
+ 251               	/* #APP */
+ 252               	 ;  459 "zoCommands.c" 1
+ 253 00f2 0F90      		pop __tmp_reg__ 
+ 254 00f4 0FBE      		out __SREG__, __tmp_reg__
+ 255               	 ;  0 "" 2
+ 256               	/* epilogue start */
+ 257               	.LM35:
+ 258               	/* #NOAPP */
+ 259 00f6 0895      		ret
+ 260               	.LFE35:
+ 262               	.global	zoCommandSetProfiledVelocitySetpoint
+ 264               	zoCommandSetProfiledVelocitySetpoint:
+ 265               	.LFB36:
+ 266               	.LM36:
+ 267               	.LVL11:
+ 268               	/* prologue: function */
+ 269               	/* frame size = 0 */
+ 270               	.LBB102:
+ 271               	.LBB103:
+ 272               	.LM37:
+ 273 00f8 FC01      		movw r30,r24
+ 274 00fa 8481      		ldd r24,Z+4
+ 275 00fc 9581      		ldd r25,Z+5
+ 276               	.LVL12:
+ 277               	.LBE103:
+ 278               	.LBE102:
+ 279               	.LM38:
+ 280               	/* #APP */
+ 281               	 ;  468 "zoCommands.c" 1
+ 282 00fe 0FB6      		in __tmp_reg__, __SREG__
+ 283 0100 0F92      		 push __tmp_reg__
+ 284 0102 F894      		cli
+ 285               	 ;  0 "" 2
+ 286               	.LM39:
+ 287               	/* #NOAPP */
+ 288 0104 24E0      		ldi r18,lo8(4)
+ 289 0106 2093 0000 		sts Sms+90,r18
+ 290               	.LM40:
+ 291 010a AA27      		clr r26
+ 292 010c 97FD      		sbrc r25,7
+ 293 010e A095      		com r26
+ 294 0110 BA2F      		mov r27,r26
+ 295               	.LVL13:
+ 296 0112 8093 0000 		sts Sms+91,r24
+ 297 0116 9093 0000 		sts (Sms+91)+1,r25
+ 298 011a A093 0000 		sts (Sms+91)+2,r26
+ 299 011e B093 0000 		sts (Sms+91)+3,r27
+ 300               	.LM41:
+ 301               	/* #APP */
+ 302               	 ;  471 "zoCommands.c" 1
+ 303 0122 0F90      		pop __tmp_reg__ 
+ 304 0124 0FBE      		out __SREG__, __tmp_reg__
+ 305               	 ;  0 "" 2
+ 306               	/* epilogue start */
+ 307               	.LM42:
+ 308               	/* #NOAPP */
+ 309 0126 0895      		ret
+ 310               	.LFE36:
+ 312               	.global	zoCommandSetProfiledAbsolutePositionSetpoint
+ 314               	zoCommandSetProfiledAbsolutePositionSetpoint:
+ 315               	.LFB37:
+ 316               	.LM43:
+ 317               	.LVL14:
+ 318               	/* prologue: function */
+ 319               	/* frame size = 0 */
+ 320               	.LBB104:
+ 321               	.LBB105:
+ 322               	.LM44:
+ 323 0128 FC01      		movw r30,r24
+ 324 012a 8481      		ldd r24,Z+4
+ 325 012c 9581      		ldd r25,Z+5
+ 326 012e A681      		ldd r26,Z+6
+ 327 0130 B781      		ldd r27,Z+7
+ 328               	.LVL15:
+ 329               	.LBE105:
+ 330               	.LBE104:
+ 331               	.LM45:
+ 332               	/* #APP */
+ 333               	 ;  479 "zoCommands.c" 1
+ 334 0132 0FB6      		in __tmp_reg__, __SREG__
+ 335 0134 0F92      		 push __tmp_reg__
+ 336 0136 F894      		cli
+ 337               	 ;  0 "" 2
+ 338               	.LM46:
+ 339               	/* #NOAPP */
+ 340 0138 25E0      		ldi r18,lo8(5)
+ 341 013a 2093 0000 		sts Sms+90,r18
+ 342               	.LM47:
+ 343 013e 8093 0000 		sts Sms+91,r24
+ 344 0142 9093 0000 		sts (Sms+91)+1,r25
+ 345 0146 A093 0000 		sts (Sms+91)+2,r26
+ 346 014a B093 0000 		sts (Sms+91)+3,r27
+ 347               	.LM48:
+ 348               	/* #APP */
+ 349               	 ;  482 "zoCommands.c" 1
+ 350 014e 0F90      		pop __tmp_reg__ 
+ 351 0150 0FBE      		out __SREG__, __tmp_reg__
+ 352               	 ;  0 "" 2
+ 353               	/* epilogue start */
+ 354               	.LM49:
+ 355               	/* #NOAPP */
+ 356 0152 0895      		ret
+ 357               	.LFE37:
+ 359               	.global	zoCommandSetProfiledRelativePositionSetpoint
+ 361               	zoCommandSetProfiledRelativePositionSetpoint:
+ 362               	.LFB38:
+ 363               	.LM50:
+ 364               	.LVL16:
+ 365               	/* prologue: function */
+ 366               	/* frame size = 0 */
+ 367               	.LBB106:
+ 368               	.LBB107:
+ 369               	.LM51:
+ 370 0154 FC01      		movw r30,r24
+ 371 0156 8481      		ldd r24,Z+4
+ 372 0158 9581      		ldd r25,Z+5
+ 373 015a A681      		ldd r26,Z+6
+ 374 015c B781      		ldd r27,Z+7
+ 375               	.LVL17:
+ 376               	.LBE107:
+ 377               	.LBE106:
+ 378               	.LM52:
+ 379               	/* #APP */
+ 380               	 ;  491 "zoCommands.c" 1
+ 381 015e 0FB6      		in __tmp_reg__, __SREG__
+ 382 0160 0F92      		 push __tmp_reg__
+ 383 0162 F894      		cli
+ 384               	 ;  0 "" 2
+ 385               	.LM53:
+ 386               	/* #NOAPP */
+ 387 0164 26E0      		ldi r18,lo8(6)
+ 388 0166 2093 0000 		sts Sms+90,r18
+ 389               	.LM54:
+ 390 016a 8093 0000 		sts Sms+91,r24
+ 391 016e 9093 0000 		sts (Sms+91)+1,r25
+ 392 0172 A093 0000 		sts (Sms+91)+2,r26
+ 393 0176 B093 0000 		sts (Sms+91)+3,r27
+ 394               	.LM55:
+ 395               	/* #APP */
+ 396               	 ;  494 "zoCommands.c" 1
+ 397 017a 0F90      		pop __tmp_reg__ 
+ 398 017c 0FBE      		out __SREG__, __tmp_reg__
+ 399               	 ;  0 "" 2
+ 400               	/* epilogue start */
+ 401               	.LM56:
+ 402               	/* #NOAPP */
+ 403 017e 0895      		ret
+ 404               	.LFE38:
+ 406               	.global	zoCommandSetDigitalOut
+ 408               	zoCommandSetDigitalOut:
+ 409               	.LFB40:
+ 410               	.LM57:
+ 411               	.LVL18:
+ 412               	/* prologue: function */
+ 413               	/* frame size = 0 */
+ 414 0180 FC01      		movw r30,r24
+ 415               	.LM58:
+ 416               	/* #APP */
+ 417               	 ;  519 "zoCommands.c" 1
+ 418 0182 0FB6      		in __tmp_reg__, __SREG__
+ 419 0184 0F92      		 push __tmp_reg__
+ 420 0186 F894      		cli
+ 421               	 ;  0 "" 2
+ 422               	.LM59:
+ 423               	/* #NOAPP */
+ 424 0188 4BB1      		in r20,43-32
+ 425 018a 8091 0000 		lds r24,Sms+6
+ 426               	.LVL19:
+ 427 018e 2481      		ldd r18,Z+4
+ 428 0190 8223      		and r24,r18
+ 429 0192 90E0      		ldi r25,lo8(0)
+ 430 0194 9C01      		movw r18,r24
+ 431 0196 3695      		lsr r19
+ 432 0198 322F      		mov r19,r18
+ 433 019a 2227      		clr r18
+ 434 019c 3795      		ror r19
+ 435 019e 2795      		ror r18
+ 436 01a0 4F77      		andi r20,lo8(127)
+ 437 01a2 422B      		or r20,r18
+ 438 01a4 4BB9      		out 43-32,r20
+ 439               	.LM60:
+ 440 01a6 25B1      		in r18,37-32
+ 441 01a8 880F      		lsl r24
+ 442 01aa 991F      		rol r25
+ 443 01ac 880F      		lsl r24
+ 444 01ae 991F      		rol r25
+ 445 01b0 880F      		lsl r24
+ 446 01b2 991F      		rol r25
+ 447 01b4 8873      		andi r24,lo8(56)
+ 448 01b6 277C      		andi r18,lo8(-57)
+ 449 01b8 822B      		or r24,r18
+ 450 01ba 85B9      		out 37-32,r24
+ 451               	.LM61:
+ 452               	/* #APP */
+ 453               	 ;  526 "zoCommands.c" 1
+ 454 01bc 0F90      		pop __tmp_reg__ 
+ 455 01be 0FBE      		out __SREG__, __tmp_reg__
+ 456               	 ;  0 "" 2
+ 457               	/* epilogue start */
+ 458               	.LM62:
+ 459               	/* #NOAPP */
+ 460 01c0 0895      		ret
+ 461               	.LFE40:
+ 463               	.global	zoCommandGetGainP
+ 465               	zoCommandGetGainP:
+ 466               	.LFB49:
+ 467               	.LM63:
+ 468               	.LVL20:
+ 469               	/* prologue: function */
+ 470               	/* frame size = 0 */
+ 471 01c2 FC01      		movw r30,r24
+ 472               	.LM64:
+ 473 01c4 82E0      		ldi r24,lo8(2)
+ 474               	.LVL21:
+ 475 01c6 8383      		std Z+3,r24
+ 476               	.LM65:
+ 477               	/* #APP */
+ 478               	 ;  615 "zoCommands.c" 1
+ 479 01c8 0FB6      		in __tmp_reg__, __SREG__
+ 480 01ca 0F92      		 push __tmp_reg__
+ 481 01cc F894      		cli
+ 482               	 ;  0 "" 2
+ 483               	/* #NOAPP */
+ 484               	.LBB108:
+ 485               	.LBB109:
+ 486               	.LM66:
+ 487 01ce 8091 0000 		lds r24,Sms+58
+ 488 01d2 9091 0000 		lds r25,(Sms+58)+1
+ 489 01d6 9583      		std Z+5,r25
+ 490 01d8 8483      		std Z+4,r24
+ 491               	.LBE109:
+ 492               	.LBE108:
+ 493               	.LM67:
+ 494               	/* #APP */
+ 495               	 ;  617 "zoCommands.c" 1
+ 496 01da 0F90      		pop __tmp_reg__ 
+ 497 01dc 0FBE      		out __SREG__, __tmp_reg__
+ 498               	 ;  0 "" 2
+ 499               	/* epilogue start */
+ 500               	.LM68:
+ 501               	/* #NOAPP */
+ 502 01de 0895      		ret
+ 503               	.LFE49:
+ 505               	.global	zoCommandGetGainI
+ 507               	zoCommandGetGainI:
+ 508               	.LFB50:
+ 509               	.LM69:
+ 510               	.LVL22:
+ 511               	/* prologue: function */
+ 512               	/* frame size = 0 */
+ 513 01e0 FC01      		movw r30,r24
+ 514               	.LM70:
+ 515 01e2 82E0      		ldi r24,lo8(2)
+ 516               	.LVL23:
+ 517 01e4 8383      		std Z+3,r24
+ 518               	.LM71:
+ 519               	/* #APP */
+ 520               	 ;  624 "zoCommands.c" 1
+ 521 01e6 0FB6      		in __tmp_reg__, __SREG__
+ 522 01e8 0F92      		 push __tmp_reg__
+ 523 01ea F894      		cli
+ 524               	 ;  0 "" 2
+ 525               	/* #NOAPP */
+ 526               	.LBB110:
+ 527               	.LBB111:
+ 528               	.LM72:
+ 529 01ec 8091 0000 		lds r24,Sms+60
+ 530 01f0 9091 0000 		lds r25,(Sms+60)+1
+ 531 01f4 9583      		std Z+5,r25
+ 532 01f6 8483      		std Z+4,r24
+ 533               	.LBE111:
+ 534               	.LBE110:
+ 535               	.LM73:
+ 536               	/* #APP */
+ 537               	 ;  626 "zoCommands.c" 1
+ 538 01f8 0F90      		pop __tmp_reg__ 
+ 539 01fa 0FBE      		out __SREG__, __tmp_reg__
+ 540               	 ;  0 "" 2
+ 541               	/* epilogue start */
+ 542               	.LM74:
+ 543               	/* #NOAPP */
+ 544 01fc 0895      		ret
+ 545               	.LFE50:
+ 547               	.global	zoCommandGetGainD
+ 549               	zoCommandGetGainD:
+ 550               	.LFB51:
+ 551               	.LM75:
+ 552               	.LVL24:
+ 553               	/* prologue: function */
+ 554               	/* frame size = 0 */
+ 555 01fe FC01      		movw r30,r24
+ 556               	.LM76:
+ 557 0200 82E0      		ldi r24,lo8(2)
+ 558               	.LVL25:
+ 559 0202 8383      		std Z+3,r24
+ 560               	.LM77:
+ 561               	/* #APP */
+ 562               	 ;  632 "zoCommands.c" 1
+ 563 0204 0FB6      		in __tmp_reg__, __SREG__
+ 564 0206 0F92      		 push __tmp_reg__
+ 565 0208 F894      		cli
+ 566               	 ;  0 "" 2
+ 567               	/* #NOAPP */
+ 568               	.LBB112:
+ 569               	.LBB113:
+ 570               	.LM78:
+ 571 020a 8091 0000 		lds r24,Sms+62
+ 572 020e 9091 0000 		lds r25,(Sms+62)+1
+ 573 0212 9583      		std Z+5,r25
+ 574 0214 8483      		std Z+4,r24
+ 575               	.LBE113:
+ 576               	.LBE112:
+ 577               	.LM79:
+ 578               	/* #APP */
+ 579               	 ;  634 "zoCommands.c" 1
+ 580 0216 0F90      		pop __tmp_reg__ 
+ 581 0218 0FBE      		out __SREG__, __tmp_reg__
+ 582               	 ;  0 "" 2
+ 583               	/* epilogue start */
+ 584               	.LM80:
+ 585               	/* #NOAPP */
+ 586 021a 0895      		ret
+ 587               	.LFE51:
+ 589               	.global	zoCommandGetProfileAcceleration
+ 591               	zoCommandGetProfileAcceleration:
+ 592               	.LFB52:
+ 593               	.LM81:
+ 594               	.LVL26:
+ 595               	/* prologue: function */
+ 596               	/* frame size = 0 */
+ 597 021c FC01      		movw r30,r24
+ 598               	.LM82:
+ 599 021e 82E0      		ldi r24,lo8(2)
+ 600               	.LVL27:
+ 601 0220 8383      		std Z+3,r24
+ 602               	.LM83:
+ 603               	/* #APP */
+ 604               	 ;  641 "zoCommands.c" 1
+ 605 0222 0FB6      		in __tmp_reg__, __SREG__
+ 606 0224 0F92      		 push __tmp_reg__
+ 607 0226 F894      		cli
+ 608               	 ;  0 "" 2
+ 609               	/* #NOAPP */
+ 610               	.LBB114:
+ 611               	.LBB115:
+ 612               	.LM84:
+ 613 0228 8091 0000 		lds r24,Sms+53
+ 614 022c 9091 0000 		lds r25,(Sms+53)+1
+ 615 0230 9583      		std Z+5,r25
+ 616 0232 8483      		std Z+4,r24
+ 617               	.LBE115:
+ 618               	.LBE114:
+ 619               	.LM85:
+ 620               	/* #APP */
+ 621               	 ;  643 "zoCommands.c" 1
+ 622 0234 0F90      		pop __tmp_reg__ 
+ 623 0236 0FBE      		out __SREG__, __tmp_reg__
+ 624               	 ;  0 "" 2
+ 625               	/* epilogue start */
+ 626               	.LM86:
+ 627               	/* #NOAPP */
+ 628 0238 0895      		ret
+ 629               	.LFE52:
+ 631               	.global	zoCommandGetProfileVelocity
+ 633               	zoCommandGetProfileVelocity:
+ 634               	.LFB53:
+ 635               	.LM87:
+ 636               	.LVL28:
+ 637               	/* prologue: function */
+ 638               	/* frame size = 0 */
+ 639 023a FC01      		movw r30,r24
+ 640               	.LM88:
+ 641 023c 82E0      		ldi r24,lo8(2)
+ 642               	.LVL29:
+ 643 023e 8383      		std Z+3,r24
+ 644               	.LM89:
+ 645               	/* #APP */
+ 646               	 ;  650 "zoCommands.c" 1
+ 647 0240 0FB6      		in __tmp_reg__, __SREG__
+ 648 0242 0F92      		 push __tmp_reg__
+ 649 0244 F894      		cli
+ 650               	 ;  0 "" 2
+ 651               	/* #NOAPP */
+ 652               	.LBB116:
+ 653               	.LBB117:
+ 654               	.LM90:
+ 655 0246 8091 0000 		lds r24,Sms+55
+ 656 024a 9091 0000 		lds r25,(Sms+55)+1
+ 657 024e 9583      		std Z+5,r25
+ 658 0250 8483      		std Z+4,r24
+ 659               	.LBE117:
+ 660               	.LBE116:
+ 661               	.LM91:
+ 662               	/* #APP */
+ 663               	 ;  652 "zoCommands.c" 1
+ 664 0252 0F90      		pop __tmp_reg__ 
+ 665 0254 0FBE      		out __SREG__, __tmp_reg__
+ 666               	 ;  0 "" 2
+ 667               	/* epilogue start */
+ 668               	.LM92:
+ 669               	/* #NOAPP */
+ 670 0256 0895      		ret
+ 671               	.LFE53:
+ 673               	.global	zoCommandGetCurrentLimit
+ 675               	zoCommandGetCurrentLimit:
+ 676               	.LFB54:
+ 677               	.LM93:
+ 678               	.LVL30:
+ 679               	/* prologue: function */
+ 680               	/* frame size = 0 */
+ 681 0258 FC01      		movw r30,r24
+ 682               	.LM94:
+ 683 025a 82E0      		ldi r24,lo8(2)
+ 684               	.LVL31:
+ 685 025c 8383      		std Z+3,r24
+ 686               	.LM95:
+ 687               	/* #APP */
+ 688               	 ;  659 "zoCommands.c" 1
+ 689 025e 0FB6      		in __tmp_reg__, __SREG__
+ 690 0260 0F92      		 push __tmp_reg__
+ 691 0262 F894      		cli
+ 692               	 ;  0 "" 2
+ 693               	/* #NOAPP */
+ 694               	.LBB118:
+ 695               	.LBB119:
+ 696               	.LM96:
+ 697 0264 8091 0000 		lds r24,Sms+7
+ 698 0268 9091 0000 		lds r25,(Sms+7)+1
+ 699 026c 9583      		std Z+5,r25
+ 700 026e 8483      		std Z+4,r24
+ 701               	.LBE119:
+ 702               	.LBE118:
+ 703               	.LM97:
+ 704               	/* #APP */
+ 705               	 ;  661 "zoCommands.c" 1
+ 706 0270 0F90      		pop __tmp_reg__ 
+ 707 0272 0FBE      		out __SREG__, __tmp_reg__
+ 708               	 ;  0 "" 2
+ 709               	/* epilogue start */
+ 710               	.LM98:
+ 711               	/* #NOAPP */
+ 712 0274 0895      		ret
+ 713               	.LFE54:
+ 715               	.global	zoCommandGetCurrentLimitDuration
+ 717               	zoCommandGetCurrentLimitDuration:
+ 718               	.LFB55:
+ 719               	.LM99:
+ 720               	.LVL32:
+ 721               	/* prologue: function */
+ 722               	/* frame size = 0 */
+ 723 0276 FC01      		movw r30,r24
+ 724               	.LM100:
+ 725 0278 82E0      		ldi r24,lo8(2)
+ 726               	.LVL33:
+ 727 027a 8383      		std Z+3,r24
+ 728               	.LM101:
+ 729               	/* #APP */
+ 730               	 ;  668 "zoCommands.c" 1
+ 731 027c 0FB6      		in __tmp_reg__, __SREG__
+ 732 027e 0F92      		 push __tmp_reg__
+ 733 0280 F894      		cli
+ 734               	 ;  0 "" 2
+ 735               	/* #NOAPP */
+ 736               	.LBB120:
+ 737               	.LBB121:
+ 738               	.LM102:
+ 739 0282 8091 0000 		lds r24,Sms+9
+ 740 0286 9091 0000 		lds r25,(Sms+9)+1
+ 741 028a 9583      		std Z+5,r25
+ 742 028c 8483      		std Z+4,r24
+ 743               	.LBE121:
+ 744               	.LBE120:
+ 745               	.LM103:
+ 746               	/* #APP */
+ 747               	 ;  670 "zoCommands.c" 1
+ 748 028e 0F90      		pop __tmp_reg__ 
+ 749 0290 0FBE      		out __SREG__, __tmp_reg__
+ 750               	 ;  0 "" 2
+ 751               	/* epilogue start */
+ 752               	.LM104:
+ 753               	/* #NOAPP */
+ 754 0292 0895      		ret
+ 755               	.LFE55:
+ 757               	.global	zoCommandGetDigitalIoConfiguration
+ 759               	zoCommandGetDigitalIoConfiguration:
+ 760               	.LFB56:
+ 761               	.LM105:
+ 762               	.LVL34:
+ 763               	/* prologue: function */
+ 764               	/* frame size = 0 */
+ 765 0294 FC01      		movw r30,r24
+ 766               	.LM106:
+ 767 0296 81E0      		ldi r24,lo8(1)
+ 768               	.LVL35:
+ 769 0298 8383      		std Z+3,r24
+ 770               	.LM107:
+ 771 029a 8091 0000 		lds r24,Sms+6
+ 772 029e 8483      		std Z+4,r24
+ 773               	/* epilogue start */
+ 774               	.LM108:
+ 775 02a0 0895      		ret
+ 776               	.LFE56:
+ 778               	.global	zoCommandGetLocalAcceptanceMask
+ 780               	zoCommandGetLocalAcceptanceMask:
+ 781               	.LFB57:
+ 782               	.LM109:
+ 783               	.LVL36:
+ 784               	/* prologue: function */
+ 785               	/* frame size = 0 */
+ 786 02a2 FC01      		movw r30,r24
+ 787               	.LM110:
+ 788 02a4 81E0      		ldi r24,lo8(1)
+ 789               	.LVL37:
+ 790 02a6 8383      		std Z+3,r24
+ 791               	.LM111:
+ 792 02a8 8091 0000 		lds r24,Sms+19
+ 793 02ac 8483      		std Z+4,r24
+ 794               	/* epilogue start */
+ 795               	.LM112:
+ 796 02ae 0895      		ret
+ 797               	.LFE57:
+ 799               	.global	zoCommandGetDigitalIn
+ 801               	zoCommandGetDigitalIn:
+ 802               	.LFB58:
+ 803               	.LM113:
+ 804               	.LVL38:
+ 805               	/* prologue: function */
+ 806               	/* frame size = 0 */
+ 807 02b0 FC01      		movw r30,r24
+ 808               	.LM114:
+ 809 02b2 81E0      		ldi r24,lo8(1)
+ 810               	.LVL39:
+ 811 02b4 8383      		std Z+3,r24
+ 812               	.LM115:
+ 813               	/* #APP */
+ 814               	 ;  689 "zoCommands.c" 1
+ 815 02b6 0FB6      		in __tmp_reg__, __SREG__
+ 816 02b8 0F92      		 push __tmp_reg__
+ 817 02ba F894      		cli
+ 818               	 ;  0 "" 2
+ 819               	.LM116:
+ 820               	/* #NOAPP */
+ 821 02bc 29B1      		in r18,41-32
+ 822               	.LM117:
+ 823 02be 83B1      		in r24,35-32
+ 824 02c0 90E0      		ldi r25,lo8(0)
+ 825 02c2 8873      		andi r24,lo8(56)
+ 826 02c4 9070      		andi r25,hi8(56)
+ 827 02c6 9595      		asr r25
+ 828 02c8 8795      		ror r24
+ 829 02ca 9595      		asr r25
+ 830 02cc 8795      		ror r24
+ 831 02ce 221F      		rol r18
+ 832 02d0 2227      		clr r18
+ 833 02d2 221F      		rol r18
+ 834 02d4 282B      		or r18,r24
+ 835               	.LM118:
+ 836               	/* #APP */
+ 837               	 ;  692 "zoCommands.c" 1
+ 838 02d6 0F90      		pop __tmp_reg__ 
+ 839 02d8 0FBE      		out __SREG__, __tmp_reg__
+ 840               	 ;  0 "" 2
+ 841               	.LM119:
+ 842               	/* #NOAPP */
+ 843 02da 2483      		std Z+4,r18
+ 844               	/* epilogue start */
+ 845               	.LM120:
+ 846 02dc 0895      		ret
+ 847               	.LFE58:
+ 849               	.global	zoCommandGetVelocity
+ 851               	zoCommandGetVelocity:
+ 852               	.LFB62:
+ 853               	.LM121:
+ 854               	.LVL40:
+ 855 02de 0F93      		push r16
+ 856 02e0 1F93      		push r17
+ 857               	/* prologue: function */
+ 858               	/* frame size = 0 */
+ 859 02e2 8C01      		movw r16,r24
+ 860               	.LM122:
+ 861 02e4 82E0      		ldi r24,lo8(2)
+ 862               	.LVL41:
+ 863 02e6 F801      		movw r30,r16
+ 864 02e8 8383      		std Z+3,r24
+ 865               	.LM123:
+ 866 02ea 0E94 0000 		call zoEncoderGetVel
+ 867               	.LBB122:
+ 868               	.LBB123:
+ 869               	.LM124:
+ 870 02ee F801      		movw r30,r16
+ 871 02f0 9583      		std Z+5,r25
+ 872 02f2 8483      		std Z+4,r24
+ 873               	/* epilogue start */
+ 874               	.LBE123:
+ 875               	.LBE122:
+ 876               	.LM125:
+ 877 02f4 1F91      		pop r17
+ 878 02f6 0F91      		pop r16
+ 879               	.LVL42:
+ 880 02f8 0895      		ret
+ 881               	.LFE62:
+ 883               	.global	zoProfiledVelocity
+ 885               	zoProfiledVelocity:
+ 886               	.LFB66:
+ 887               	.LM126:
+ 888               	.LVL43:
+ 889 02fa 2F92      		push r2
+ 890 02fc 3F92      		push r3
+ 891 02fe 4F92      		push r4
+ 892 0300 5F92      		push r5
+ 893 0302 6F92      		push r6
+ 894 0304 7F92      		push r7
+ 895 0306 8F92      		push r8
+ 896 0308 9F92      		push r9
+ 897 030a AF92      		push r10
+ 898 030c BF92      		push r11
+ 899 030e CF92      		push r12
+ 900 0310 DF92      		push r13
+ 901 0312 EF92      		push r14
+ 902 0314 FF92      		push r15
+ 903 0316 0F93      		push r16
+ 904 0318 1F93      		push r17
+ 905 031a DF93      		push r29
+ 906 031c CF93      		push r28
+ 907 031e CDB7      		in r28,__SP_L__
+ 908 0320 DEB7      		in r29,__SP_H__
+ 909 0322 2897      		sbiw r28,8
+ 910 0324 0FB6      		in __tmp_reg__,__SREG__
+ 911 0326 F894      		cli
+ 912 0328 DEBF      		out __SP_H__,r29
+ 913 032a 0FBE      		out __SREG__,__tmp_reg__
+ 914 032c CDBF      		out __SP_L__,r28
+ 915               	/* prologue: function */
+ 916               	/* frame size = 8 */
+ 917               	.LM127:
+ 918 032e 3C01      		movw r6,r24
+ 919 0330 8824      		clr r8
+ 920 0332 77FC      		sbrc r7,7
+ 921 0334 8094      		com r8
+ 922 0336 982C      		mov r9,r8
+ 923               	.LVL44:
+ 924               	.LM128:
+ 925               	/* #APP */
+ 926               	 ;  804 "zoCommands.c" 1
+ 927 0338 0FB6      		in __tmp_reg__, __SREG__
+ 928 033a 0F92      		 push __tmp_reg__
+ 929 033c F894      		cli
+ 930               	 ;  0 "" 2
+ 931               	.LM129:
+ 932               	/* #NOAPP */
+ 933 033e 8091 0000 		lds r24,Sms
+ 934               	.LVL45:
+ 935 0342 8130      		cpi r24,lo8(1)
+ 936 0344 01F4      		brne .+2
+ 937 0346 00C0      		rjmp .L48
+ 938               	.LM130:
+ 939 0348 8091 0000 		lds r24,Sms+1
+ 940 034c 9091 0000 		lds r25,(Sms+1)+1
+ 941 0350 A091 0000 		lds r26,(Sms+1)+2
+ 942 0354 B091 0000 		lds r27,(Sms+1)+3
+ 943 0358 8983      		std Y+1,r24
+ 944 035a 9A83      		std Y+2,r25
+ 945 035c AB83      		std Y+3,r26
+ 946 035e BC83      		std Y+4,r27
+ 947 0360 BC01      		movw r22,r24
+ 948 0362 CD01      		movw r24,r26
+ 949 0364 2091 0000 		lds r18,Sms+29
+ 950 0368 3091 0000 		lds r19,(Sms+29)+1
+ 951 036c 4091 0000 		lds r20,(Sms+29)+2
+ 952 0370 5091 0000 		lds r21,(Sms+29)+3
+ 953 0374 0E94 0000 		call __mulsf3
+ 954 0378 0E94 0000 		call __fixsfsi
+ 955 037c 5B01      		movw r10,r22
+ 956 037e 6C01      		movw r12,r24
+ 957               	.LVL46:
+ 958               	.LM131:
+ 959 0380 6091 0000 		lds r22,Sms+21
+ 960 0384 7091 0000 		lds r23,(Sms+21)+1
+ 961 0388 8091 0000 		lds r24,(Sms+21)+2
+ 962 038c 9091 0000 		lds r25,(Sms+21)+3
+ 963 0390 0E94 0000 		call __fixsfsi
+ 964 0394 1B01      		movw r2,r22
+ 965 0396 2C01      		movw r4,r24
+ 966               	.LVL47:
+ 967               	.L43:
+ 968               	.LM132:
+ 969 0398 6A14      		cp r6,r10
+ 970 039a 7B04      		cpc r7,r11
+ 971 039c 8C04      		cpc r8,r12
+ 972 039e 9D04      		cpc r9,r13
+ 973 03a0 04F4      		brge .+2
+ 974 03a2 00C0      		rjmp .L44
+ 975               	.LM133:
+ 976 03a4 8091 0000 		lds r24,Sms+53
+ 977 03a8 9091 0000 		lds r25,(Sms+53)+1
+ 978 03ac 9C01      		movw r18,r24
+ 979 03ae 40E0      		ldi r20,lo8(0)
+ 980 03b0 50E0      		ldi r21,hi8(0)
+ 981 03b2 2D83      		std Y+5,r18
+ 982 03b4 3E83      		std Y+6,r19
+ 983 03b6 4F83      		std Y+7,r20
+ 984 03b8 5887      		std Y+8,r21
+ 985               	.LVL48:
+ 986               	.L45:
+ 987               	.LM134:
+ 988               	/* #APP */
+ 989               	 ;  819 "zoCommands.c" 1
+ 990 03ba 0F90      		pop __tmp_reg__ 
+ 991 03bc 0FBE      		out __SREG__, __tmp_reg__
+ 992               	 ;  0 "" 2
+ 993               	.LM135:
+ 994               	 ;  823 "zoCommands.c" 1
+ 995 03be 0FB6      		in __tmp_reg__, __SREG__
+ 996 03c0 0F92      		 push __tmp_reg__
+ 997 03c2 F894      		cli
+ 998               	 ;  0 "" 2
+ 999               	.LM136:
+ 1000               	/* #NOAPP */
+ 1001 03c4 C201      		movw r24,r4
+ 1002 03c6 B101      		movw r22,r2
+ 1003 03c8 0E94 0000 		call __floatsisf
+ 1004 03cc 6093 0000 		sts Sms+21,r22
+ 1005 03d0 7093 0000 		sts (Sms+21)+1,r23
+ 1006 03d4 8093 0000 		sts (Sms+21)+2,r24
+ 1007 03d8 9093 0000 		sts (Sms+21)+3,r25
+ 1008               	.LM137:
+ 1009 03dc C401      		movw r24,r8
+ 1010 03de B301      		movw r22,r6
+ 1011 03e0 A401      		movw r20,r8
+ 1012 03e2 9301      		movw r18,r6
+ 1013 03e4 0E94 0000 		call __mulsi3
+ 1014 03e8 7B01      		movw r14,r22
+ 1015 03ea 8C01      		movw r16,r24
+ 1016 03ec C601      		movw r24,r12
+ 1017 03ee B501      		movw r22,r10
+ 1018 03f0 A601      		movw r20,r12
+ 1019 03f2 9501      		movw r18,r10
+ 1020 03f4 0E94 0000 		call __mulsi3
+ 1021 03f8 E61A      		sub r14,r22
+ 1022 03fa F70A      		sbc r15,r23
+ 1023 03fc 080B      		sbc r16,r24
+ 1024 03fe 190B      		sbc r17,r25
+ 1025 0400 C801      		movw r24,r16
+ 1026 0402 B701      		movw r22,r14
+ 1027 0404 2D81      		ldd r18,Y+5
+ 1028 0406 3E81      		ldd r19,Y+6
+ 1029 0408 4F81      		ldd r20,Y+7
+ 1030 040a 5885      		ldd r21,Y+8
+ 1031 040c 0E94 0000 		call __divmodsi4
+ 1032 0410 CA01      		movw r24,r20
+ 1033 0412 B901      		movw r22,r18
+ 1034 0414 22E0      		ldi r18,lo8(2)
+ 1035 0416 30E0      		ldi r19,hi8(2)
+ 1036 0418 40E0      		ldi r20,hlo8(2)
+ 1037 041a 50E0      		ldi r21,hhi8(2)
+ 1038 041c 0E94 0000 		call __divmodsi4
+ 1039 0420 220D      		add r18,r2
+ 1040 0422 331D      		adc r19,r3
+ 1041 0424 441D      		adc r20,r4
+ 1042 0426 551D      		adc r21,r5
+ 1043 0428 2093 0000 		sts Sms+41,r18
+ 1044 042c 3093 0000 		sts (Sms+41)+1,r19
+ 1045 0430 4093 0000 		sts (Sms+41)+2,r20
+ 1046 0434 5093 0000 		sts (Sms+41)+3,r21
+ 1047               	.LM138:
+ 1048 0438 83E0      		ldi r24,lo8(3)
+ 1049 043a 8093 0000 		sts Sms,r24
+ 1050               	.LM139:
+ 1051 043e C401      		movw r24,r8
+ 1052 0440 B301      		movw r22,r6
+ 1053 0442 0E94 0000 		call __floatsisf
+ 1054 0446 2981      		ldd r18,Y+1
+ 1055 0448 3A81      		ldd r19,Y+2
+ 1056 044a 4B81      		ldd r20,Y+3
+ 1057 044c 5C81      		ldd r21,Y+4
+ 1058 044e 0E94 0000 		call __divsf3
+ 1059 0452 6093 0000 		sts Sms+25,r22
+ 1060 0456 7093 0000 		sts (Sms+25)+1,r23
+ 1061 045a 8093 0000 		sts (Sms+25)+2,r24
+ 1062 045e 9093 0000 		sts (Sms+25)+3,r25
+ 1063               	.LM140:
+ 1064 0462 C601      		movw r24,r12
+ 1065 0464 B501      		movw r22,r10
+ 1066 0466 0E94 0000 		call __floatsisf
+ 1067 046a 2981      		ldd r18,Y+1
+ 1068 046c 3A81      		ldd r19,Y+2
+ 1069 046e 4B81      		ldd r20,Y+3
+ 1070 0470 5C81      		ldd r21,Y+4
+ 1071 0472 0E94 0000 		call __divsf3
+ 1072 0476 DC01      		movw r26,r24
+ 1073 0478 9B01      		movw r18,r22
+ 1074 047a AC01      		movw r20,r24
+ 1075 047c 2093 0000 		sts Sms+29,r18
+ 1076 0480 3093 0000 		sts (Sms+29)+1,r19
+ 1077 0484 4093 0000 		sts (Sms+29)+2,r20
+ 1078 0488 5093 0000 		sts (Sms+29)+3,r21
+ 1079               	.LM141:
+ 1080 048c CB01      		movw r24,r22
+ 1081 048e 8093 0000 		sts Sms+33,r24
+ 1082 0492 9093 0000 		sts (Sms+33)+1,r25
+ 1083 0496 A093 0000 		sts (Sms+33)+2,r26
+ 1084 049a B093 0000 		sts (Sms+33)+3,r27
+ 1085               	.LM142:
+ 1086 049e 6D81      		ldd r22,Y+5
+ 1087 04a0 7E81      		ldd r23,Y+6
+ 1088 04a2 8F81      		ldd r24,Y+7
+ 1089 04a4 9885      		ldd r25,Y+8
+ 1090 04a6 0E94 0000 		call __floatsisf
+ 1091 04aa 2981      		ldd r18,Y+1
+ 1092 04ac 3A81      		ldd r19,Y+2
+ 1093 04ae 4B81      		ldd r20,Y+3
+ 1094 04b0 5C81      		ldd r21,Y+4
+ 1095 04b2 0E94 0000 		call __divsf3
+ 1096 04b6 2981      		ldd r18,Y+1
+ 1097 04b8 3A81      		ldd r19,Y+2
+ 1098 04ba 4B81      		ldd r20,Y+3
+ 1099 04bc 5C81      		ldd r21,Y+4
+ 1100 04be 0E94 0000 		call __divsf3
+ 1101 04c2 6093 0000 		sts Sms+37,r22
+ 1102 04c6 7093 0000 		sts (Sms+37)+1,r23
+ 1103 04ca 8093 0000 		sts (Sms+37)+2,r24
+ 1104 04ce 9093 0000 		sts (Sms+37)+3,r25
+ 1105               	.LM143:
+ 1106               	/* #APP */
+ 1107               	 ;  831 "zoCommands.c" 1
+ 1108 04d2 0F90      		pop __tmp_reg__ 
+ 1109 04d4 0FBE      		out __SREG__, __tmp_reg__
+ 1110               	 ;  0 "" 2
+ 1111               	/* epilogue start */
+ 1112               	.LM144:
+ 1113               	/* #NOAPP */
+ 1114 04d6 2896      		adiw r28,8
+ 1115 04d8 0FB6      		in __tmp_reg__,__SREG__
+ 1116 04da F894      		cli
+ 1117 04dc DEBF      		out __SP_H__,r29
+ 1118 04de 0FBE      		out __SREG__,__tmp_reg__
+ 1119 04e0 CDBF      		out __SP_L__,r28
+ 1120 04e2 CF91      		pop r28
+ 1121 04e4 DF91      		pop r29
+ 1122 04e6 1F91      		pop r17
+ 1123 04e8 0F91      		pop r16
+ 1124 04ea FF90      		pop r15
+ 1125 04ec EF90      		pop r14
+ 1126 04ee DF90      		pop r13
+ 1127 04f0 CF90      		pop r12
+ 1128 04f2 BF90      		pop r11
+ 1129 04f4 AF90      		pop r10
+ 1130               	.LVL49:
+ 1131 04f6 9F90      		pop r9
+ 1132 04f8 8F90      		pop r8
+ 1133 04fa 7F90      		pop r7
+ 1134 04fc 6F90      		pop r6
+ 1135               	.LVL50:
+ 1136 04fe 5F90      		pop r5
+ 1137 0500 4F90      		pop r4
+ 1138 0502 3F90      		pop r3
+ 1139 0504 2F90      		pop r2
+ 1140               	.LVL51:
+ 1141 0506 0895      		ret
+ 1142               	.LVL52:
+ 1143               	.L44:
+ 1144               	.LM145:
+ 1145 0508 8091 0000 		lds r24,Sms+53
+ 1146 050c 9091 0000 		lds r25,(Sms+53)+1
+ 1147 0510 A0E0      		ldi r26,lo8(0)
+ 1148 0512 B0E0      		ldi r27,hi8(0)
+ 1149 0514 2227      		clr r18
+ 1150 0516 3327      		clr r19
+ 1151 0518 A901      		movw r20,r18
+ 1152 051a 281B      		sub r18,r24
+ 1153 051c 390B      		sbc r19,r25
+ 1154 051e 4A0B      		sbc r20,r26
+ 1155 0520 5B0B      		sbc r21,r27
+ 1156 0522 2D83      		std Y+5,r18
+ 1157 0524 3E83      		std Y+6,r19
+ 1158 0526 4F83      		std Y+7,r20
+ 1159 0528 5887      		std Y+8,r21
+ 1160               	.LVL53:
+ 1161 052a 00C0      		rjmp .L45
+ 1162               	.LVL54:
+ 1163               	.L48:
+ 1164               	.LM146:
+ 1165 052c 0E94 0000 		call zoEncoderGetPos
+ 1166 0530 1B01      		movw r2,r22
+ 1167 0532 2C01      		movw r4,r24
+ 1168               	.LVL55:
+ 1169               	.LM147:
+ 1170 0534 0E94 0000 		call zoEncoderGetVel
+ 1171 0538 5C01      		movw r10,r24
+ 1172 053a CC24      		clr r12
+ 1173 053c B7FC      		sbrc r11,7
+ 1174 053e C094      		com r12
+ 1175 0540 DC2C      		mov r13,r12
+ 1176               	.LVL56:
+ 1177 0542 2091 0000 		lds r18,Sms+1
+ 1178 0546 3091 0000 		lds r19,(Sms+1)+1
+ 1179 054a 4091 0000 		lds r20,(Sms+1)+2
+ 1180 054e 5091 0000 		lds r21,(Sms+1)+3
+ 1181 0552 2983      		std Y+1,r18
+ 1182 0554 3A83      		std Y+2,r19
+ 1183 0556 4B83      		std Y+3,r20
+ 1184 0558 5C83      		std Y+4,r21
+ 1185 055a 00C0      		rjmp .L43
+ 1186               	.LFE66:
+ 1188               	.global	zoCommandProfiledVelocityMove
+ 1190               	zoCommandProfiledVelocityMove:
+ 1191               	.LFB30:
+ 1192               	.LM148:
+ 1193               	.LVL57:
+ 1194               	/* prologue: function */
+ 1195               	/* frame size = 0 */
+ 1196               	.LM149:
+ 1197 055c FC01      		movw r30,r24
+ 1198 055e 8481      		ldd r24,Z+4
+ 1199 0560 9581      		ldd r25,Z+5
+ 1200               	.LVL58:
+ 1201 0562 0E94 0000 		call zoProfiledVelocity
+ 1202               	/* epilogue start */
+ 1203               	.LM150:
+ 1204 0566 0895      		ret
+ 1205               	.LFE30:
+ 1207               	.global	zoCommandGetPosition
+ 1209               	zoCommandGetPosition:
+ 1210               	.LFB60:
+ 1211               	.LM151:
+ 1212               	.LVL59:
+ 1213 0568 0F93      		push r16
+ 1214 056a 1F93      		push r17
+ 1215               	/* prologue: function */
+ 1216               	/* frame size = 0 */
+ 1217 056c 8C01      		movw r16,r24
+ 1218               	.LM152:
+ 1219 056e 84E0      		ldi r24,lo8(4)
+ 1220               	.LVL60:
+ 1221 0570 F801      		movw r30,r16
+ 1222 0572 8383      		std Z+3,r24
+ 1223               	.LM153:
+ 1224 0574 0E94 0000 		call zoEncoderGetPos
+ 1225               	.LBB124:
+ 1226               	.LBB125:
+ 1227               	.LM154:
+ 1228 0578 F801      		movw r30,r16
+ 1229 057a 6483      		std Z+4,r22
+ 1230 057c 7583      		std Z+5,r23
+ 1231 057e 8683      		std Z+6,r24
+ 1232 0580 9783      		std Z+7,r25
+ 1233               	/* epilogue start */
+ 1234               	.LBE125:
+ 1235               	.LBE124:
+ 1236               	.LM155:
+ 1237 0582 1F91      		pop r17
+ 1238 0584 0F91      		pop r16
+ 1239               	.LVL61:
+ 1240 0586 0895      		ret
+ 1241               	.LFE60:
+ 1243               	.global	zoCommandHalt
+ 1245               	zoCommandHalt:
+ 1246               	.LFB46:
+ 1247               	.LM156:
+ 1248               	.LVL62:
+ 1249               	/* prologue: function */
+ 1250               	/* frame size = 0 */
+ 1251               	.LM157:
+ 1252               	/* #APP */
+ 1253               	 ;  583 "zoCommands.c" 1
+ 1254 0588 0FB6      		in __tmp_reg__, __SREG__
+ 1255 058a 0F92      		 push __tmp_reg__
+ 1256 058c F894      		cli
+ 1257               	 ;  0 "" 2
+ 1258               	.LM158:
+ 1259               	/* #NOAPP */
+ 1260 058e 81E0      		ldi r24,lo8(1)
+ 1261               	.LVL63:
+ 1262 0590 8093 0000 		sts Sms,r24
+ 1263               	.LM159:
+ 1264 0594 0E94 0000 		call zoEncoderGetPos
+ 1265 0598 6093 0000 		sts Sms+80,r22
+ 1266 059c 7093 0000 		sts (Sms+80)+1,r23
+ 1267 05a0 8093 0000 		sts (Sms+80)+2,r24
+ 1268 05a4 9093 0000 		sts (Sms+80)+3,r25
+ 1269               	.LM160:
+ 1270               	/* #APP */
+ 1271               	 ;  586 "zoCommands.c" 1
+ 1272 05a8 0F90      		pop __tmp_reg__ 
+ 1273 05aa 0FBE      		out __SREG__, __tmp_reg__
+ 1274               	 ;  0 "" 2
+ 1275               	/* epilogue start */
+ 1276               	.LM161:
+ 1277               	/* #NOAPP */
+ 1278 05ac 0895      		ret
+ 1279               	.LFE46:
+ 1281               	.global	zoCommandVelocityMove
+ 1283               	zoCommandVelocityMove:
+ 1284               	.LFB27:
+ 1285               	.LM162:
+ 1286               	.LVL64:
+ 1287 05ae CF93      		push r28
+ 1288 05b0 DF93      		push r29
+ 1289               	/* prologue: function */
+ 1290               	/* frame size = 0 */
+ 1291               	.LBB126:
+ 1292               	.LBB127:
+ 1293               	.LM163:
+ 1294 05b2 FC01      		movw r30,r24
+ 1295 05b4 C481      		ldd r28,Z+4
+ 1296 05b6 D581      		ldd r29,Z+5
+ 1297               	.LVL65:
+ 1298               	.LBE127:
+ 1299               	.LBE126:
+ 1300               	.LM164:
+ 1301               	/* #APP */
+ 1302               	 ;  371 "zoCommands.c" 1
+ 1303 05b8 0FB6      		in __tmp_reg__, __SREG__
+ 1304 05ba 0F92      		 push __tmp_reg__
+ 1305 05bc F894      		cli
+ 1306               	 ;  0 "" 2
+ 1307               	.LM165:
+ 1308               	/* #NOAPP */
+ 1309 05be 8091 0000 		lds r24,Sms
+ 1310               	.LVL66:
+ 1311 05c2 8130      		cpi r24,lo8(1)
+ 1312 05c4 01F0      		breq .L58
+ 1313               	.L56:
+ 1314               	.LM166:
+ 1315 05c6 BE01      		movw r22,r28
+ 1316 05c8 8827      		clr r24
+ 1317 05ca 77FD      		sbrc r23,7
+ 1318 05cc 8095      		com r24
+ 1319 05ce 982F      		mov r25,r24
+ 1320               	.LVL67:
+ 1321 05d0 0E94 0000 		call __floatsisf
+ 1322               	.LVL68:
+ 1323 05d4 2091 0000 		lds r18,Sms+1
+ 1324 05d8 3091 0000 		lds r19,(Sms+1)+1
+ 1325 05dc 4091 0000 		lds r20,(Sms+1)+2
+ 1326 05e0 5091 0000 		lds r21,(Sms+1)+3
+ 1327 05e4 0E94 0000 		call __divsf3
+ 1328 05e8 6093 0000 		sts Sms+29,r22
+ 1329 05ec 7093 0000 		sts (Sms+29)+1,r23
+ 1330 05f0 8093 0000 		sts (Sms+29)+2,r24
+ 1331 05f4 9093 0000 		sts (Sms+29)+3,r25
+ 1332               	.LM167:
+ 1333 05f8 82E0      		ldi r24,lo8(2)
+ 1334 05fa 8093 0000 		sts Sms,r24
+ 1335               	.LM168:
+ 1336               	/* #APP */
+ 1337               	 ;  376 "zoCommands.c" 1
+ 1338 05fe 0F90      		pop __tmp_reg__ 
+ 1339 0600 0FBE      		out __SREG__, __tmp_reg__
+ 1340               	 ;  0 "" 2
+ 1341               	/* epilogue start */
+ 1342               	.LM169:
+ 1343               	/* #NOAPP */
+ 1344 0602 DF91      		pop r29
+ 1345 0604 CF91      		pop r28
+ 1346 0606 0895      		ret
+ 1347               	.LVL69:
+ 1348               	.L58:
+ 1349               	.LM170:
+ 1350 0608 0E94 0000 		call zoEncoderGetPos
+ 1351 060c 0E94 0000 		call __floatsisf
+ 1352 0610 6093 0000 		sts Sms+21,r22
+ 1353 0614 7093 0000 		sts (Sms+21)+1,r23
+ 1354 0618 8093 0000 		sts (Sms+21)+2,r24
+ 1355 061c 9093 0000 		sts (Sms+21)+3,r25
+ 1356 0620 00C0      		rjmp .L56
+ 1357               	.LFE27:
+ 1359               	.global	zoProfiledMoveAbsolute
+ 1361               	zoProfiledMoveAbsolute:
+ 1362               	.LFB67:
+ 1363               	.LM171:
+ 1364               	.LVL70:
+ 1365 0622 2F92      		push r2
+ 1366 0624 3F92      		push r3
+ 1367 0626 4F92      		push r4
+ 1368 0628 5F92      		push r5
+ 1369 062a 6F92      		push r6
+ 1370 062c 7F92      		push r7
+ 1371 062e 8F92      		push r8
+ 1372 0630 9F92      		push r9
+ 1373 0632 AF92      		push r10
+ 1374 0634 BF92      		push r11
+ 1375 0636 CF92      		push r12
+ 1376 0638 DF92      		push r13
+ 1377 063a EF92      		push r14
+ 1378 063c FF92      		push r15
+ 1379 063e 0F93      		push r16
+ 1380 0640 1F93      		push r17
+ 1381 0642 DF93      		push r29
+ 1382 0644 CF93      		push r28
+ 1383 0646 CDB7      		in r28,__SP_L__
+ 1384 0648 DEB7      		in r29,__SP_H__
+ 1385 064a 6E97      		sbiw r28,30
+ 1386 064c 0FB6      		in __tmp_reg__,__SREG__
+ 1387 064e F894      		cli
+ 1388 0650 DEBF      		out __SP_H__,r29
+ 1389 0652 0FBE      		out __SREG__,__tmp_reg__
+ 1390 0654 CDBF      		out __SP_L__,r28
+ 1391               	/* prologue: function */
+ 1392               	/* frame size = 30 */
+ 1393 0656 6B8F      		std Y+27,r22
+ 1394 0658 7C8F      		std Y+28,r23
+ 1395 065a 8D8F      		std Y+29,r24
+ 1396 065c 9E8F      		std Y+30,r25
+ 1397               	.LM172:
+ 1398               	/* #APP */
+ 1399               	 ;  849 "zoCommands.c" 1
+ 1400 065e 0FB6      		in __tmp_reg__, __SREG__
+ 1401 0660 0F92      		 push __tmp_reg__
+ 1402 0662 F894      		cli
+ 1403               	 ;  0 "" 2
+ 1404               	.LM173:
+ 1405               	/* #NOAPP */
+ 1406 0664 8091 0000 		lds r24,Sms
+ 1407 0668 8130      		cpi r24,lo8(1)
+ 1408 066a 01F4      		brne .+2
+ 1409 066c 00C0      		rjmp .L71
+ 1410               	.LVL71:
+ 1411               	.LM174:
+ 1412 066e 2091 0000 		lds r18,Sms+1
+ 1413 0672 3091 0000 		lds r19,(Sms+1)+1
+ 1414 0676 4091 0000 		lds r20,(Sms+1)+2
+ 1415 067a 5091 0000 		lds r21,(Sms+1)+3
+ 1416 067e 2D83      		std Y+5,r18
+ 1417 0680 3E83      		std Y+6,r19
+ 1418 0682 4F83      		std Y+7,r20
+ 1419 0684 5887      		std Y+8,r21
+ 1420 0686 CA01      		movw r24,r20
+ 1421 0688 B901      		movw r22,r18
+ 1422 068a 2091 0000 		lds r18,Sms+29
+ 1423 068e 3091 0000 		lds r19,(Sms+29)+1
+ 1424 0692 4091 0000 		lds r20,(Sms+29)+2
+ 1425 0696 5091 0000 		lds r21,(Sms+29)+3
+ 1426 069a 0E94 0000 		call __mulsf3
+ 1427 069e 0E94 0000 		call __fixsfsi
+ 1428 06a2 6B87      		std Y+11,r22
+ 1429 06a4 7C87      		std Y+12,r23
+ 1430 06a6 8D87      		std Y+13,r24
+ 1431 06a8 9E87      		std Y+14,r25
+ 1432               	.LVL72:
+ 1433               	.LM175:
+ 1434 06aa 6091 0000 		lds r22,Sms+21
+ 1435 06ae 7091 0000 		lds r23,(Sms+21)+1
+ 1436 06b2 8091 0000 		lds r24,(Sms+21)+2
+ 1437 06b6 9091 0000 		lds r25,(Sms+21)+3
+ 1438 06ba 0E94 0000 		call __fixsfsi
+ 1439 06be 6F8B      		std Y+23,r22
+ 1440 06c0 788F      		std Y+24,r23
+ 1441 06c2 898F      		std Y+25,r24
+ 1442 06c4 9A8F      		std Y+26,r25
+ 1443               	.LVL73:
+ 1444               	.L61:
+ 1445               	.LM176:
+ 1446 06c6 8F89      		ldd r24,Y+23
+ 1447 06c8 988D      		ldd r25,Y+24
+ 1448 06ca A98D      		ldd r26,Y+25
+ 1449 06cc BA8D      		ldd r27,Y+26
+ 1450 06ce 2B8D      		ldd r18,Y+27
+ 1451 06d0 3C8D      		ldd r19,Y+28
+ 1452 06d2 4D8D      		ldd r20,Y+29
+ 1453 06d4 5E8D      		ldd r21,Y+30
+ 1454 06d6 2817      		cp r18,r24
+ 1455 06d8 3907      		cpc r19,r25
+ 1456 06da 4A07      		cpc r20,r26
+ 1457 06dc 5B07      		cpc r21,r27
+ 1458 06de 04F4      		brge .+2
+ 1459 06e0 00C0      		rjmp .L62
+ 1460               	.LM177:
+ 1461 06e2 8091 0000 		lds r24,Sms+53
+ 1462 06e6 9091 0000 		lds r25,(Sms+53)+1
+ 1463 06ea 9C01      		movw r18,r24
+ 1464 06ec 40E0      		ldi r20,lo8(0)
+ 1465 06ee 50E0      		ldi r21,hi8(0)
+ 1466 06f0 2B8B      		std Y+19,r18
+ 1467 06f2 3C8B      		std Y+20,r19
+ 1468 06f4 4D8B      		std Y+21,r20
+ 1469 06f6 5E8B      		std Y+22,r21
+ 1470               	.LVL74:
+ 1471               	.LM178:
+ 1472 06f8 5095      		com r21
+ 1473 06fa 4095      		com r20
+ 1474 06fc 3095      		com r19
+ 1475 06fe 2195      		neg r18
+ 1476 0700 3F4F      		sbci r19,lo8(-1)
+ 1477 0702 4F4F      		sbci r20,lo8(-1)
+ 1478 0704 5F4F      		sbci r21,lo8(-1)
+ 1479 0706 2F87      		std Y+15,r18
+ 1480 0708 388B      		std Y+16,r19
+ 1481 070a 498B      		std Y+17,r20
+ 1482 070c 5A8B      		std Y+18,r21
+ 1483               	.LVL75:
+ 1484               	.LM179:
+ 1485 070e 8091 0000 		lds r24,Sms+55
+ 1486 0712 9091 0000 		lds r25,(Sms+55)+1
+ 1487 0716 1C01      		movw r2,r24
+ 1488               	.LVL76:
+ 1489 0718 4424      		clr r4
+ 1490 071a 5524      		clr r5
+ 1491               	.LVL77:
+ 1492 071c 31E0      		ldi r19,lo8(1)
+ 1493 071e 3987      		std Y+9,r19
+ 1494               	.LVL78:
+ 1495 0720 81E0      		ldi r24,lo8(1)
+ 1496 0722 90E0      		ldi r25,hi8(1)
+ 1497 0724 A0E0      		ldi r26,hlo8(1)
+ 1498 0726 B0E0      		ldi r27,hhi8(1)
+ 1499 0728 8983      		std Y+1,r24
+ 1500 072a 9A83      		std Y+2,r25
+ 1501 072c AB83      		std Y+3,r26
+ 1502 072e BC83      		std Y+4,r27
+ 1503               	.L69:
+ 1504               	.LM180:
+ 1505               	/* #APP */
+ 1506               	 ;  867 "zoCommands.c" 1
+ 1507 0730 0F90      		pop __tmp_reg__ 
+ 1508 0732 0FBE      		out __SREG__, __tmp_reg__
+ 1509               	 ;  0 "" 2
+ 1510               	.LM181:
+ 1511               	/* #NOAPP */
+ 1512 0734 C201      		movw r24,r4
+ 1513 0736 B101      		movw r22,r2
+ 1514 0738 2B85      		ldd r18,Y+11
+ 1515 073a 3C85      		ldd r19,Y+12
+ 1516 073c 4D85      		ldd r20,Y+13
+ 1517 073e 5E85      		ldd r21,Y+14
+ 1518 0740 0E94 0000 		call __mulsi3
+ 1519 0744 97FD      		sbrc r25,7
+ 1520 0746 00C0      		rjmp .L63
+ 1521 0748 5901      		movw r10,r18
+ 1522 074a 6A01      		movw r12,r20
+ 1523               	.LVL79:
+ 1524 074c 6F88      		ldd r6,Y+23
+ 1525 074e 788C      		ldd r7,Y+24
+ 1526 0750 898C      		ldd r8,Y+25
+ 1527 0752 9A8C      		ldd r9,Y+26
+ 1528               	.LVL80:
+ 1529 0754 1A86      		std Y+10,__zero_reg__
+ 1530               	.LVL81:
+ 1531               	.L64:
+ 1532               	.LM182:
+ 1533 0756 C601      		movw r24,r12
+ 1534 0758 B501      		movw r22,r10
+ 1535 075a A601      		movw r20,r12
+ 1536 075c 9501      		movw r18,r10
+ 1537 075e 0E94 0000 		call __mulsi3
+ 1538 0762 22E0      		ldi r18,lo8(2)
+ 1539 0764 30E0      		ldi r19,hi8(2)
+ 1540 0766 40E0      		ldi r20,hlo8(2)
+ 1541 0768 50E0      		ldi r21,hhi8(2)
+ 1542 076a 0E94 0000 		call __divmodsi4
+ 1543 076e 7901      		movw r14,r18
+ 1544 0770 8A01      		movw r16,r20
+ 1545 0772 6B8D      		ldd r22,Y+27
+ 1546 0774 7C8D      		ldd r23,Y+28
+ 1547 0776 8D8D      		ldd r24,Y+29
+ 1548 0778 9E8D      		ldd r25,Y+30
+ 1549 077a 6619      		sub r22,r6
+ 1550 077c 7709      		sbc r23,r7
+ 1551 077e 8809      		sbc r24,r8
+ 1552 0780 9909      		sbc r25,r9
+ 1553 0782 2B89      		ldd r18,Y+19
+ 1554 0784 3C89      		ldd r19,Y+20
+ 1555 0786 4D89      		ldd r20,Y+21
+ 1556 0788 5E89      		ldd r21,Y+22
+ 1557 078a 0E94 0000 		call __mulsi3
+ 1558 078e E60E      		add r14,r22
+ 1559 0790 F71E      		adc r15,r23
+ 1560 0792 081F      		adc r16,r24
+ 1561 0794 191F      		adc r17,r25
+ 1562 0796 C801      		movw r24,r16
+ 1563 0798 B701      		movw r22,r14
+ 1564 079a 0E94 0000 		call __floatsisf
+ 1565 079e 0E94 0000 		call sqrt
+ 1566 07a2 0E94 0000 		call __fixsfsi
+ 1567 07a6 9B01      		movw r18,r22
+ 1568 07a8 AC01      		movw r20,r24
+ 1569 07aa 6981      		ldd r22,Y+1
+ 1570 07ac 7A81      		ldd r23,Y+2
+ 1571 07ae 8B81      		ldd r24,Y+3
+ 1572 07b0 9C81      		ldd r25,Y+4
+ 1573 07b2 0E94 0000 		call __mulsi3
+ 1574 07b6 7B01      		movw r14,r22
+ 1575 07b8 8C01      		movw r16,r24
+ 1576               	.LVL82:
+ 1577               	.LM183:
+ 1578 07ba C601      		movw r24,r12
+ 1579 07bc B501      		movw r22,r10
+ 1580 07be 6E19      		sub r22,r14
+ 1581 07c0 7F09      		sbc r23,r15
+ 1582 07c2 800B      		sbc r24,r16
+ 1583 07c4 910B      		sbc r25,r17
+ 1584 07c6 2981      		ldd r18,Y+1
+ 1585 07c8 3A81      		ldd r19,Y+2
+ 1586 07ca 4B81      		ldd r20,Y+3
+ 1587 07cc 5C81      		ldd r21,Y+4
+ 1588 07ce 0E94 0000 		call __mulsi3
+ 1589 07d2 1616      		cp __zero_reg__,r22
+ 1590 07d4 1706      		cpc __zero_reg__,r23
+ 1591 07d6 1806      		cpc __zero_reg__,r24
+ 1592 07d8 1906      		cpc __zero_reg__,r25
+ 1593 07da 04F4      		brge .L65
+ 1594 07dc 4A85      		ldd r20,Y+10
+ 1595 07de 4423      		tst r20
+ 1596 07e0 01F4      		brne .+2
+ 1597 07e2 00C0      		rjmp .L72
+ 1598               	.LVL83:
+ 1599               	.L65:
+ 1600               	.LM184:
+ 1601 07e4 C801      		movw r24,r16
+ 1602 07e6 B701      		movw r22,r14
+ 1603 07e8 6219      		sub r22,r2
+ 1604 07ea 7309      		sbc r23,r3
+ 1605 07ec 8409      		sbc r24,r4
+ 1606 07ee 9509      		sbc r25,r5
+ 1607 07f0 2981      		ldd r18,Y+1
+ 1608 07f2 3A81      		ldd r19,Y+2
+ 1609 07f4 4B81      		ldd r20,Y+3
+ 1610 07f6 5C81      		ldd r21,Y+4
+ 1611 07f8 0E94 0000 		call __mulsi3
+ 1612 07fc 97FD      		sbrc r25,7
+ 1613 07fe 00C0      		rjmp .L66
+ 1614               	.LM185:
+ 1615 0800 C201      		movw r24,r4
+ 1616 0802 B101      		movw r22,r2
+ 1617 0804 6A19      		sub r22,r10
+ 1618 0806 7B09      		sbc r23,r11
+ 1619 0808 8C09      		sbc r24,r12
+ 1620 080a 9D09      		sbc r25,r13
+ 1621 080c 0E94 0000 		call __mulsi3
+ 1622 0810 97FD      		sbrc r25,7
+ 1623 0812 00C0      		rjmp .L73
+ 1624               	.L67:
+ 1625               	.LM186:
+ 1626 0814 C201      		movw r24,r4
+ 1627 0816 B101      		movw r22,r2
+ 1628 0818 A201      		movw r20,r4
+ 1629 081a 9101      		movw r18,r2
+ 1630 081c 0E94 0000 		call __mulsi3
+ 1631 0820 7B01      		movw r14,r22
+ 1632 0822 8C01      		movw r16,r24
+ 1633               	.LVL84:
+ 1634 0824 C601      		movw r24,r12
+ 1635 0826 B501      		movw r22,r10
+ 1636 0828 A601      		movw r20,r12
+ 1637 082a 9501      		movw r18,r10
+ 1638 082c 0E94 0000 		call __mulsi3
+ 1639 0830 A801      		movw r20,r16
+ 1640 0832 9701      		movw r18,r14
+ 1641 0834 261B      		sub r18,r22
+ 1642 0836 370B      		sbc r19,r23
+ 1643 0838 480B      		sbc r20,r24
+ 1644 083a 590B      		sbc r21,r25
+ 1645 083c CA01      		movw r24,r20
+ 1646 083e B901      		movw r22,r18
+ 1647 0840 22E0      		ldi r18,lo8(2)
+ 1648 0842 30E0      		ldi r19,hi8(2)
+ 1649 0844 40E0      		ldi r20,hlo8(2)
+ 1650 0846 50E0      		ldi r21,hhi8(2)
+ 1651 0848 0E94 0000 		call __divmodsi4
+ 1652 084c CA01      		movw r24,r20
+ 1653 084e B901      		movw r22,r18
+ 1654 0850 2B89      		ldd r18,Y+19
+ 1655 0852 3C89      		ldd r19,Y+20
+ 1656 0854 4D89      		ldd r20,Y+21
+ 1657 0856 5E89      		ldd r21,Y+22
+ 1658 0858 0E94 0000 		call __divmodsi4
+ 1659 085c 5901      		movw r10,r18
+ 1660 085e 6A01      		movw r12,r20
+ 1661               	.LVL85:
+ 1662 0860 A60C      		add r10,r6
+ 1663 0862 B71C      		adc r11,r7
+ 1664 0864 C81C      		adc r12,r8
+ 1665 0866 D91C      		adc r13,r9
+ 1666               	.LM187:
+ 1667 0868 C801      		movw r24,r16
+ 1668 086a B701      		movw r22,r14
+ 1669 086c 22E0      		ldi r18,lo8(2)
+ 1670 086e 30E0      		ldi r19,hi8(2)
+ 1671 0870 40E0      		ldi r20,hlo8(2)
+ 1672 0872 50E0      		ldi r21,hhi8(2)
+ 1673 0874 0E94 0000 		call __divmodsi4
+ 1674 0878 CA01      		movw r24,r20
+ 1675 087a B901      		movw r22,r18
+ 1676 087c 2F85      		ldd r18,Y+15
+ 1677 087e 3889      		ldd r19,Y+16
+ 1678 0880 4989      		ldd r20,Y+17
+ 1679 0882 5A89      		ldd r21,Y+18
+ 1680 0884 0E94 0000 		call __divmodsi4
+ 1681 0888 7901      		movw r14,r18
+ 1682 088a 8A01      		movw r16,r20
+ 1683               	.LVL86:
+ 1684 088c 8B8D      		ldd r24,Y+27
+ 1685 088e 9C8D      		ldd r25,Y+28
+ 1686 0890 AD8D      		ldd r26,Y+29
+ 1687 0892 BE8D      		ldd r27,Y+30
+ 1688 0894 E80E      		add r14,r24
+ 1689 0896 F91E      		adc r15,r25
+ 1690 0898 0A1F      		adc r16,r26
+ 1691 089a 1B1F      		adc r17,r27
+ 1692               	.LVL87:
+ 1693               	.L68:
+ 1694               	.LM188:
+ 1695               	/* #APP */
+ 1696               	 ;  912 "zoCommands.c" 1
+ 1697 089c 0FB6      		in __tmp_reg__, __SREG__
+ 1698 089e 0F92      		 push __tmp_reg__
+ 1699 08a0 F894      		cli
+ 1700               	 ;  0 "" 2
+ 1701               	.LM189:
+ 1702               	/* #NOAPP */
+ 1703 08a2 6F89      		ldd r22,Y+23
+ 1704 08a4 788D      		ldd r23,Y+24
+ 1705 08a6 898D      		ldd r24,Y+25
+ 1706 08a8 9A8D      		ldd r25,Y+26
+ 1707 08aa 0E94 0000 		call __floatsisf
+ 1708               	.LVL88:
+ 1709 08ae 6093 0000 		sts Sms+21,r22
+ 1710 08b2 7093 0000 		sts (Sms+21)+1,r23
+ 1711 08b6 8093 0000 		sts (Sms+21)+2,r24
+ 1712 08ba 9093 0000 		sts (Sms+21)+3,r25
+ 1713               	.LM190:
+ 1714 08be A092 0000 		sts Sms+41,r10
+ 1715 08c2 B092 0000 		sts (Sms+41)+1,r11
+ 1716 08c6 C092 0000 		sts (Sms+41)+2,r12
+ 1717 08ca D092 0000 		sts (Sms+41)+3,r13
+ 1718               	.LM191:
+ 1719 08ce E092 0000 		sts Sms+45,r14
+ 1720 08d2 F092 0000 		sts (Sms+45)+1,r15
+ 1721 08d6 0093 0000 		sts (Sms+45)+2,r16
+ 1722 08da 1093 0000 		sts (Sms+45)+3,r17
+ 1723               	.LM192:
+ 1724 08de 8B8D      		ldd r24,Y+27
+ 1725 08e0 9C8D      		ldd r25,Y+28
+ 1726 08e2 AD8D      		ldd r26,Y+29
+ 1727 08e4 BE8D      		ldd r27,Y+30
+ 1728 08e6 8093 0000 		sts Sms+49,r24
+ 1729 08ea 9093 0000 		sts (Sms+49)+1,r25
+ 1730 08ee A093 0000 		sts (Sms+49)+2,r26
+ 1731 08f2 B093 0000 		sts (Sms+49)+3,r27
+ 1732               	.LM193:
+ 1733 08f6 1092 0000 		sts Sms+57,__zero_reg__
+ 1734               	.LM194:
+ 1735 08fa 84E0      		ldi r24,lo8(4)
+ 1736 08fc 8093 0000 		sts Sms,r24
+ 1737               	.LM195:
+ 1738 0900 C201      		movw r24,r4
+ 1739 0902 B101      		movw r22,r2
+ 1740 0904 0E94 0000 		call __floatsisf
+ 1741 0908 2D81      		ldd r18,Y+5
+ 1742 090a 3E81      		ldd r19,Y+6
+ 1743 090c 4F81      		ldd r20,Y+7
+ 1744 090e 5885      		ldd r21,Y+8
+ 1745 0910 0E94 0000 		call __divsf3
+ 1746 0914 6093 0000 		sts Sms+25,r22
+ 1747 0918 7093 0000 		sts (Sms+25)+1,r23
+ 1748 091c 8093 0000 		sts (Sms+25)+2,r24
+ 1749 0920 9093 0000 		sts (Sms+25)+3,r25
+ 1750               	.LM196:
+ 1751 0924 6B85      		ldd r22,Y+11
+ 1752 0926 7C85      		ldd r23,Y+12
+ 1753 0928 8D85      		ldd r24,Y+13
+ 1754 092a 9E85      		ldd r25,Y+14
+ 1755 092c 0E94 0000 		call __floatsisf
+ 1756 0930 2D81      		ldd r18,Y+5
+ 1757 0932 3E81      		ldd r19,Y+6
+ 1758 0934 4F81      		ldd r20,Y+7
+ 1759 0936 5885      		ldd r21,Y+8
+ 1760 0938 0E94 0000 		call __divsf3
+ 1761 093c DC01      		movw r26,r24
+ 1762 093e 9B01      		movw r18,r22
+ 1763 0940 AC01      		movw r20,r24
+ 1764 0942 2093 0000 		sts Sms+29,r18
+ 1765 0946 3093 0000 		sts (Sms+29)+1,r19
+ 1766 094a 4093 0000 		sts (Sms+29)+2,r20
+ 1767 094e 5093 0000 		sts (Sms+29)+3,r21
+ 1768               	.LM197:
+ 1769 0952 CB01      		movw r24,r22
+ 1770 0954 8093 0000 		sts Sms+33,r24
+ 1771 0958 9093 0000 		sts (Sms+33)+1,r25
+ 1772 095c A093 0000 		sts (Sms+33)+2,r26
+ 1773 0960 B093 0000 		sts (Sms+33)+3,r27
+ 1774               	.LM198:
+ 1775 0964 6B89      		ldd r22,Y+19
+ 1776 0966 7C89      		ldd r23,Y+20
+ 1777 0968 8D89      		ldd r24,Y+21
+ 1778 096a 9E89      		ldd r25,Y+22
+ 1779 096c 0E94 0000 		call __floatsisf
+ 1780 0970 2D81      		ldd r18,Y+5
+ 1781 0972 3E81      		ldd r19,Y+6
+ 1782 0974 4F81      		ldd r20,Y+7
+ 1783 0976 5885      		ldd r21,Y+8
+ 1784 0978 0E94 0000 		call __divsf3
+ 1785 097c 2D81      		ldd r18,Y+5
+ 1786 097e 3E81      		ldd r19,Y+6
+ 1787 0980 4F81      		ldd r20,Y+7
+ 1788 0982 5885      		ldd r21,Y+8
+ 1789 0984 0E94 0000 		call __divsf3
+ 1790 0988 6093 0000 		sts Sms+37,r22
+ 1791 098c 7093 0000 		sts (Sms+37)+1,r23
+ 1792 0990 8093 0000 		sts (Sms+37)+2,r24
+ 1793 0994 9093 0000 		sts (Sms+37)+3,r25
+ 1794               	.LM199:
+ 1795               	/* #APP */
+ 1796               	 ;  923 "zoCommands.c" 1
+ 1797 0998 0F90      		pop __tmp_reg__ 
+ 1798 099a 0FBE      		out __SREG__, __tmp_reg__
+ 1799               	 ;  0 "" 2
+ 1800               	/* epilogue start */
+ 1801               	.LM200:
+ 1802               	/* #NOAPP */
+ 1803 099c 6E96      		adiw r28,30
+ 1804 099e 0FB6      		in __tmp_reg__,__SREG__
+ 1805 09a0 F894      		cli
+ 1806 09a2 DEBF      		out __SP_H__,r29
+ 1807 09a4 0FBE      		out __SREG__,__tmp_reg__
+ 1808 09a6 CDBF      		out __SP_L__,r28
+ 1809 09a8 CF91      		pop r28
+ 1810 09aa DF91      		pop r29
+ 1811 09ac 1F91      		pop r17
+ 1812 09ae 0F91      		pop r16
+ 1813 09b0 FF90      		pop r15
+ 1814 09b2 EF90      		pop r14
+ 1815               	.LVL89:
+ 1816 09b4 DF90      		pop r13
+ 1817 09b6 CF90      		pop r12
+ 1818 09b8 BF90      		pop r11
+ 1819 09ba AF90      		pop r10
+ 1820               	.LVL90:
+ 1821 09bc 9F90      		pop r9
+ 1822 09be 8F90      		pop r8
+ 1823 09c0 7F90      		pop r7
+ 1824 09c2 6F90      		pop r6
+ 1825               	.LVL91:
+ 1826 09c4 5F90      		pop r5
+ 1827 09c6 4F90      		pop r4
+ 1828               	.LVL92:
+ 1829 09c8 3F90      		pop r3
+ 1830 09ca 2F90      		pop r2
+ 1831               	.LVL93:
+ 1832 09cc 0895      		ret
+ 1833               	.LVL94:
+ 1834               	.L62:
+ 1835               	.LM201:
+ 1836 09ce 8091 0000 		lds r24,Sms+53
+ 1837 09d2 9091 0000 		lds r25,(Sms+53)+1
+ 1838 09d6 9C01      		movw r18,r24
+ 1839 09d8 40E0      		ldi r20,lo8(0)
+ 1840 09da 50E0      		ldi r21,hi8(0)
+ 1841 09dc 2F87      		std Y+15,r18
+ 1842 09de 388B      		std Y+16,r19
+ 1843 09e0 498B      		std Y+17,r20
+ 1844 09e2 5A8B      		std Y+18,r21
+ 1845               	.LVL95:
+ 1846 09e4 5095      		com r21
+ 1847 09e6 4095      		com r20
+ 1848 09e8 3095      		com r19
+ 1849 09ea 2195      		neg r18
+ 1850 09ec 3F4F      		sbci r19,lo8(-1)
+ 1851 09ee 4F4F      		sbci r20,lo8(-1)
+ 1852 09f0 5F4F      		sbci r21,lo8(-1)
+ 1853 09f2 2B8B      		std Y+19,r18
+ 1854 09f4 3C8B      		std Y+20,r19
+ 1855 09f6 4D8B      		std Y+21,r20
+ 1856 09f8 5E8B      		std Y+22,r21
+ 1857               	.LVL96:
+ 1858               	.LM202:
+ 1859 09fa 8091 0000 		lds r24,Sms+55
+ 1860 09fe 9091 0000 		lds r25,(Sms+55)+1
+ 1861 0a02 A0E0      		ldi r26,lo8(0)
+ 1862 0a04 B0E0      		ldi r27,hi8(0)
+ 1863 0a06 2224      		clr r2
+ 1864 0a08 3324      		clr r3
+ 1865 0a0a 2101      		movw r4,r2
+ 1866 0a0c 281A      		sub r2,r24
+ 1867 0a0e 390A      		sbc r3,r25
+ 1868 0a10 4A0A      		sbc r4,r26
+ 1869 0a12 5B0A      		sbc r5,r27
+ 1870               	.LVL97:
+ 1871 0a14 3FEF      		ldi r19,lo8(-1)
+ 1872 0a16 3987      		std Y+9,r19
+ 1873               	.LVL98:
+ 1874 0a18 8FEF      		ldi r24,lo8(-1)
+ 1875 0a1a 9FEF      		ldi r25,hi8(-1)
+ 1876 0a1c AFEF      		ldi r26,hlo8(-1)
+ 1877 0a1e BFEF      		ldi r27,hhi8(-1)
+ 1878 0a20 8983      		std Y+1,r24
+ 1879 0a22 9A83      		std Y+2,r25
+ 1880 0a24 AB83      		std Y+3,r26
+ 1881 0a26 BC83      		std Y+4,r27
+ 1882 0a28 00C0      		rjmp .L69
+ 1883               	.LVL99:
+ 1884               	.L73:
+ 1885               	.LM203:
+ 1886 0a2a 8B89      		ldd r24,Y+19
+ 1887 0a2c 9C89      		ldd r25,Y+20
+ 1888 0a2e AD89      		ldd r26,Y+21
+ 1889 0a30 BE89      		ldd r27,Y+22
+ 1890 0a32 B095      		com r27
+ 1891 0a34 A095      		com r26
+ 1892 0a36 9095      		com r25
+ 1893 0a38 8195      		neg r24
+ 1894 0a3a 9F4F      		sbci r25,lo8(-1)
+ 1895 0a3c AF4F      		sbci r26,lo8(-1)
+ 1896 0a3e BF4F      		sbci r27,lo8(-1)
+ 1897 0a40 8B8B      		std Y+19,r24
+ 1898 0a42 9C8B      		std Y+20,r25
+ 1899 0a44 AD8B      		std Y+21,r26
+ 1900 0a46 BE8B      		std Y+22,r27
+ 1901               	.LVL100:
+ 1902 0a48 00C0      		rjmp .L67
+ 1903               	.LVL101:
+ 1904               	.L72:
+ 1905               	.LM204:
+ 1906 0a4a 6B85      		ldd r22,Y+11
+ 1907 0a4c 7C85      		ldd r23,Y+12
+ 1908 0a4e 8D85      		ldd r24,Y+13
+ 1909 0a50 9E85      		ldd r25,Y+14
+ 1910 0a52 9B01      		movw r18,r22
+ 1911 0a54 AC01      		movw r20,r24
+ 1912 0a56 0E94 0000 		call __mulsi3
+ 1913 0a5a 22E0      		ldi r18,lo8(2)
+ 1914 0a5c 30E0      		ldi r19,hi8(2)
+ 1915 0a5e 40E0      		ldi r20,hlo8(2)
+ 1916 0a60 50E0      		ldi r21,hhi8(2)
+ 1917 0a62 0E94 0000 		call __divmodsi4
+ 1918 0a66 5095      		com r21
+ 1919 0a68 4095      		com r20
+ 1920 0a6a 3095      		com r19
+ 1921 0a6c 2195      		neg r18
+ 1922 0a6e 3F4F      		sbci r19,lo8(-1)
+ 1923 0a70 4F4F      		sbci r20,lo8(-1)
+ 1924 0a72 5F4F      		sbci r21,lo8(-1)
+ 1925 0a74 CA01      		movw r24,r20
+ 1926 0a76 B901      		movw r22,r18
+ 1927 0a78 2F85      		ldd r18,Y+15
+ 1928 0a7a 3889      		ldd r19,Y+16
+ 1929 0a7c 4989      		ldd r20,Y+17
+ 1930 0a7e 5A89      		ldd r21,Y+18
+ 1931 0a80 0E94 0000 		call __divmodsi4
+ 1932 0a84 3901      		movw r6,r18
+ 1933 0a86 4A01      		movw r8,r20
+ 1934 0a88 8F89      		ldd r24,Y+23
+ 1935 0a8a 988D      		ldd r25,Y+24
+ 1936 0a8c A98D      		ldd r26,Y+25
+ 1937 0a8e BA8D      		ldd r27,Y+26
+ 1938 0a90 680E      		add r6,r24
+ 1939 0a92 791E      		adc r7,r25
+ 1940 0a94 8A1E      		adc r8,r26
+ 1941 0a96 9B1E      		adc r9,r27
+ 1942               	.LM205:
+ 1943 0a98 6B8D      		ldd r22,Y+27
+ 1944 0a9a 7C8D      		ldd r23,Y+28
+ 1945 0a9c 8D8D      		ldd r24,Y+29
+ 1946 0a9e 9E8D      		ldd r25,Y+30
+ 1947 0aa0 6619      		sub r22,r6
+ 1948 0aa2 7709      		sbc r23,r7
+ 1949 0aa4 8809      		sbc r24,r8
+ 1950 0aa6 9909      		sbc r25,r9
+ 1951 0aa8 2F85      		ldd r18,Y+15
+ 1952 0aaa 3889      		ldd r19,Y+16
+ 1953 0aac 4989      		ldd r20,Y+17
+ 1954 0aae 5A89      		ldd r21,Y+18
+ 1955 0ab0 0E94 0000 		call __mulsi3
+ 1956 0ab4 0E94 0000 		call __floatsisf
+ 1957 0ab8 0E94 0000 		call sqrt
+ 1958 0abc A985      		ldd r26,Y+9
+ 1959 0abe EA2E      		mov r14,r26
+ 1960 0ac0 FF24      		clr r15
+ 1961 0ac2 E7FC      		sbrc r14,7
+ 1962 0ac4 F094      		com r15
+ 1963               	.LVL102:
+ 1964 0ac6 F094      		com r15
+ 1965 0ac8 E194      		neg r14
+ 1966 0aca F108      		sbc r15,__zero_reg__
+ 1967 0acc F394      		inc r15
+ 1968               	.LVL103:
+ 1969 0ace 0027      		clr r16
+ 1970 0ad0 F7FC      		sbrc r15,7
+ 1971 0ad2 0095      		com r16
+ 1972 0ad4 102F      		mov r17,r16
+ 1973 0ad6 0E94 0000 		call __fixsfsi
+ 1974 0ada 9B01      		movw r18,r22
+ 1975 0adc AC01      		movw r20,r24
+ 1976 0ade C801      		movw r24,r16
+ 1977 0ae0 B701      		movw r22,r14
+ 1978 0ae2 0E94 0000 		call __mulsi3
+ 1979 0ae6 7B01      		movw r14,r22
+ 1980 0ae8 8C01      		movw r16,r24
+ 1981               	.LVL104:
+ 1982 0aea 8F85      		ldd r24,Y+15
+ 1983 0aec 9889      		ldd r25,Y+16
+ 1984               	.LVL105:
+ 1985 0aee 6989      		ldd r22,Y+17
+ 1986               	.LVL106:
+ 1987 0af0 7A89      		ldd r23,Y+18
+ 1988               	.LVL107:
+ 1989 0af2 2B89      		ldd r18,Y+19
+ 1990 0af4 3C89      		ldd r19,Y+20
+ 1991 0af6 4D89      		ldd r20,Y+21
+ 1992 0af8 5E89      		ldd r21,Y+22
+ 1993 0afa 2F87      		std Y+15,r18
+ 1994 0afc 388B      		std Y+16,r19
+ 1995 0afe 498B      		std Y+17,r20
+ 1996 0b00 5A8B      		std Y+18,r21
+ 1997               	.LVL108:
+ 1998 0b02 AB01      		movw r20,r22
+ 1999 0b04 DA01      		movw r26,r20
+ 2000 0b06 8B8B      		std Y+19,r24
+ 2001 0b08 9C8B      		std Y+20,r25
+ 2002 0b0a AD8B      		std Y+21,r26
+ 2003 0b0c BE8B      		std Y+22,r27
+ 2004 0b0e AA24      		clr r10
+ 2005 0b10 BB24      		clr r11
+ 2006 0b12 6501      		movw r12,r10
+ 2007 0b14 00C0      		rjmp .L65
+ 2008               	.LVL109:
+ 2009               	.L66:
+ 2010               	.LM206:
+ 2011 0b16 C601      		movw r24,r12
+ 2012 0b18 B501      		movw r22,r10
+ 2013 0b1a A601      		movw r20,r12
+ 2014 0b1c 9501      		movw r18,r10
+ 2015 0b1e 0E94 0000 		call __mulsi3
+ 2016 0b22 24E0      		ldi r18,lo8(4)
+ 2017 0b24 30E0      		ldi r19,hi8(4)
+ 2018 0b26 40E0      		ldi r20,hlo8(4)
+ 2019 0b28 50E0      		ldi r21,hhi8(4)
+ 2020 0b2a 0E94 0000 		call __divmodsi4
+ 2021 0b2e 5095      		com r21
+ 2022 0b30 4095      		com r20
+ 2023 0b32 3095      		com r19
+ 2024 0b34 2195      		neg r18
+ 2025 0b36 3F4F      		sbci r19,lo8(-1)
+ 2026 0b38 4F4F      		sbci r20,lo8(-1)
+ 2027 0b3a 5F4F      		sbci r21,lo8(-1)
+ 2028 0b3c CA01      		movw r24,r20
+ 2029 0b3e B901      		movw r22,r18
+ 2030 0b40 2B89      		ldd r18,Y+19
+ 2031 0b42 3C89      		ldd r19,Y+20
+ 2032 0b44 4D89      		ldd r20,Y+21
+ 2033 0b46 5E89      		ldd r21,Y+22
+ 2034 0b48 0E94 0000 		call __divmodsi4
+ 2035 0b4c 5901      		movw r10,r18
+ 2036 0b4e 6A01      		movw r12,r20
+ 2037               	.LVL110:
+ 2038 0b50 2B8D      		ldd r18,Y+27
+ 2039 0b52 3C8D      		ldd r19,Y+28
+ 2040 0b54 4D8D      		ldd r20,Y+29
+ 2041 0b56 5E8D      		ldd r21,Y+30
+ 2042 0b58 620E      		add r6,r18
+ 2043 0b5a 731E      		adc r7,r19
+ 2044 0b5c 841E      		adc r8,r20
+ 2045 0b5e 951E      		adc r9,r21
+ 2046 0b60 C401      		movw r24,r8
+ 2047 0b62 B301      		movw r22,r6
+ 2048 0b64 22E0      		ldi r18,lo8(2)
+ 2049 0b66 30E0      		ldi r19,hi8(2)
+ 2050 0b68 40E0      		ldi r20,hlo8(2)
+ 2051 0b6a 50E0      		ldi r21,hhi8(2)
+ 2052 0b6c 0E94 0000 		call __divmodsi4
+ 2053 0b70 A20E      		add r10,r18
+ 2054 0b72 B31E      		adc r11,r19
+ 2055 0b74 C41E      		adc r12,r20
+ 2056 0b76 D51E      		adc r13,r21
+ 2057 0b78 1701      		movw r2,r14
+ 2058 0b7a 2801      		movw r4,r16
+ 2059               	.LVL111:
+ 2060 0b7c 8601      		movw r16,r12
+ 2061 0b7e 7501      		movw r14,r10
+ 2062               	.LVL112:
+ 2063 0b80 00C0      		rjmp .L68
+ 2064               	.LVL113:
+ 2065               	.L63:
+ 2066               	.LM207:
+ 2067 0b82 6B85      		ldd r22,Y+11
+ 2068 0b84 7C85      		ldd r23,Y+12
+ 2069 0b86 8D85      		ldd r24,Y+13
+ 2070 0b88 9E85      		ldd r25,Y+14
+ 2071 0b8a 9B01      		movw r18,r22
+ 2072 0b8c AC01      		movw r20,r24
+ 2073 0b8e 0E94 0000 		call __mulsi3
+ 2074 0b92 22E0      		ldi r18,lo8(2)
+ 2075 0b94 30E0      		ldi r19,hi8(2)
+ 2076 0b96 40E0      		ldi r20,hlo8(2)
+ 2077 0b98 50E0      		ldi r21,hhi8(2)
+ 2078 0b9a 0E94 0000 		call __divmodsi4
+ 2079 0b9e 5095      		com r21
+ 2080 0ba0 4095      		com r20
+ 2081 0ba2 3095      		com r19
+ 2082 0ba4 2195      		neg r18
+ 2083 0ba6 3F4F      		sbci r19,lo8(-1)
+ 2084 0ba8 4F4F      		sbci r20,lo8(-1)
+ 2085 0baa 5F4F      		sbci r21,lo8(-1)
+ 2086 0bac CA01      		movw r24,r20
+ 2087 0bae B901      		movw r22,r18
+ 2088 0bb0 2B89      		ldd r18,Y+19
+ 2089 0bb2 3C89      		ldd r19,Y+20
+ 2090 0bb4 4D89      		ldd r20,Y+21
+ 2091 0bb6 5E89      		ldd r21,Y+22
+ 2092 0bb8 0E94 0000 		call __divmodsi4
+ 2093 0bbc 3901      		movw r6,r18
+ 2094 0bbe 4A01      		movw r8,r20
+ 2095               	.LVL114:
+ 2096 0bc0 2F89      		ldd r18,Y+23
+ 2097 0bc2 388D      		ldd r19,Y+24
+ 2098 0bc4 498D      		ldd r20,Y+25
+ 2099 0bc6 5A8D      		ldd r21,Y+26
+ 2100 0bc8 620E      		add r6,r18
+ 2101 0bca 731E      		adc r7,r19
+ 2102 0bcc 841E      		adc r8,r20
+ 2103 0bce 951E      		adc r9,r21
+ 2104 0bd0 AA24      		clr r10
+ 2105 0bd2 BB24      		clr r11
+ 2106 0bd4 6501      		movw r12,r10
+ 2107               	.LVL115:
+ 2108 0bd6 3FEF      		ldi r19,lo8(-1)
+ 2109 0bd8 3A87      		std Y+10,r19
+ 2110               	.LVL116:
+ 2111 0bda 00C0      		rjmp .L64
+ 2112               	.LVL117:
+ 2113               	.L71:
+ 2114               	.LM208:
+ 2115 0bdc 0E94 0000 		call zoEncoderGetVel
+ 2116 0be0 9C01      		movw r18,r24
+ 2117 0be2 4427      		clr r20
+ 2118 0be4 37FD      		sbrc r19,7
+ 2119 0be6 4095      		com r20
+ 2120 0be8 542F      		mov r21,r20
+ 2121 0bea 2B87      		std Y+11,r18
+ 2122 0bec 3C87      		std Y+12,r19
+ 2123 0bee 4D87      		std Y+13,r20
+ 2124 0bf0 5E87      		std Y+14,r21
+ 2125               	.LVL118:
+ 2126               	.LM209:
+ 2127 0bf2 0E94 0000 		call zoEncoderGetPos
+ 2128 0bf6 6F8B      		std Y+23,r22
+ 2129 0bf8 788F      		std Y+24,r23
+ 2130 0bfa 898F      		std Y+25,r24
+ 2131 0bfc 9A8F      		std Y+26,r25
+ 2132               	.LVL119:
+ 2133 0bfe 8091 0000 		lds r24,Sms+1
+ 2134 0c02 9091 0000 		lds r25,(Sms+1)+1
+ 2135 0c06 A091 0000 		lds r26,(Sms+1)+2
+ 2136 0c0a B091 0000 		lds r27,(Sms+1)+3
+ 2137 0c0e 8D83      		std Y+5,r24
+ 2138 0c10 9E83      		std Y+6,r25
+ 2139 0c12 AF83      		std Y+7,r26
+ 2140 0c14 B887      		std Y+8,r27
+ 2141 0c16 00C0      		rjmp .L61
+ 2142               	.LFE67:
+ 2144               	.global	zoCommandDoMove
+ 2146               	zoCommandDoMove:
+ 2147               	.LFB65:
+ 2148               	.LM210:
+ 2149               	.LVL120:
+ 2150 0c18 EF92      		push r14
+ 2151 0c1a FF92      		push r15
+ 2152 0c1c 0F93      		push r16
+ 2153 0c1e 1F93      		push r17
+ 2154               	/* prologue: function */
+ 2155               	/* frame size = 0 */
+ 2156 0c20 FC01      		movw r30,r24
+ 2157               	.LM211:
+ 2158               	/* #APP */
+ 2159               	 ;  745 "zoCommands.c" 1
+ 2160 0c22 0FB6      		in __tmp_reg__, __SREG__
+ 2161 0c24 0F92      		 push __tmp_reg__
+ 2162 0c26 F894      		cli
+ 2163               	 ;  0 "" 2
+ 2164               	.LM212:
+ 2165               	 ;  747 "zoCommands.c" 1
+ 2166 0c28 0F90      		pop __tmp_reg__ 
+ 2167 0c2a 0FBE      		out __SREG__, __tmp_reg__
+ 2168               	 ;  0 "" 2
+ 2169               	.LM213:
+ 2170               	/* #NOAPP */
+ 2171 0c2c 8091 0000 		lds r24,Sms+90
+ 2172               	.LVL121:
+ 2173 0c30 8330      		cpi r24,lo8(3)
+ 2174 0c32 01F4      		brne .+2
+ 2175 0c34 00C0      		rjmp .L79
+ 2176 0c36 8430      		cpi r24,lo8(4)
+ 2177 0c38 00F0      		brlo .L85
+ 2178 0c3a 8530      		cpi r24,lo8(5)
+ 2179 0c3c 01F4      		brne .+2
+ 2180 0c3e 00C0      		rjmp .L81
+ 2181 0c40 8530      		cpi r24,lo8(5)
+ 2182 0c42 00F4      		brsh .+2
+ 2183 0c44 00C0      		rjmp .L80
+ 2184 0c46 8630      		cpi r24,lo8(6)
+ 2185 0c48 01F4      		brne .L75
+ 2186               	.LM214:
+ 2187 0c4a E090 0000 		lds r14,Sms+91
+ 2188 0c4e F090 0000 		lds r15,(Sms+91)+1
+ 2189 0c52 0091 0000 		lds r16,(Sms+91)+2
+ 2190 0c56 1091 0000 		lds r17,(Sms+91)+3
+ 2191 0c5a 0E94 0000 		call zoEncoderGetPos
+ 2192               	.LVL122:
+ 2193 0c5e E60E      		add r14,r22
+ 2194 0c60 F71E      		adc r15,r23
+ 2195 0c62 081F      		adc r16,r24
+ 2196 0c64 191F      		adc r17,r25
+ 2197 0c66 C801      		movw r24,r16
+ 2198 0c68 B701      		movw r22,r14
+ 2199 0c6a 0E94 0000 		call zoProfiledMoveAbsolute
+ 2200               	.LVL123:
+ 2201               	.L75:
+ 2202               	.LM215:
+ 2203               	/* #APP */
+ 2204               	 ;  785 "zoCommands.c" 1
+ 2205 0c6e 0FB6      		in __tmp_reg__, __SREG__
+ 2206 0c70 0F92      		 push __tmp_reg__
+ 2207 0c72 F894      		cli
+ 2208               	 ;  0 "" 2
+ 2209               	.LM216:
+ 2210               	/* #NOAPP */
+ 2211 0c74 1092 0000 		sts Sms+90,__zero_reg__
+ 2212               	.LM217:
+ 2213               	/* #APP */
+ 2214               	 ;  787 "zoCommands.c" 1
+ 2215 0c78 0F90      		pop __tmp_reg__ 
+ 2216 0c7a 0FBE      		out __SREG__, __tmp_reg__
+ 2217               	 ;  0 "" 2
+ 2218               	/* #NOAPP */
+ 2219               	.L84:
+ 2220               	/* epilogue start */
+ 2221               	.LM218:
+ 2222 0c7c 1F91      		pop r17
+ 2223 0c7e 0F91      		pop r16
+ 2224 0c80 FF90      		pop r15
+ 2225 0c82 EF90      		pop r14
+ 2226 0c84 0895      		ret
+ 2227               	.L85:
+ 2228               	.LM219:
+ 2229 0c86 8130      		cpi r24,lo8(1)
+ 2230 0c88 01F0      		breq .L77
+ 2231 0c8a 8230      		cpi r24,lo8(2)
+ 2232 0c8c 00F0      		brlo .L84
+ 2233               	.LM220:
+ 2234 0c8e 8091 0000 		lds r24,Sms+91
+ 2235 0c92 9091 0000 		lds r25,(Sms+91)+1
+ 2236 0c96 A091 0000 		lds r26,(Sms+91)+2
+ 2237 0c9a B091 0000 		lds r27,(Sms+91)+3
+ 2238               	.LBB128:
+ 2239               	.LBB129:
+ 2240               	.LM221:
+ 2241 0c9e 8483      		std Z+4,r24
+ 2242 0ca0 9583      		std Z+5,r25
+ 2243 0ca2 A683      		std Z+6,r26
+ 2244 0ca4 B783      		std Z+7,r27
+ 2245               	.LBE129:
+ 2246               	.LBE128:
+ 2247               	.LBB130:
+ 2248               	.LBB131:
+ 2249               	.LM222:
+ 2250               	/* #APP */
+ 2251               	 ;  384 "zoCommands.c" 1
+ 2252 0ca6 0FB6      		in __tmp_reg__, __SREG__
+ 2253 0ca8 0F92      		 push __tmp_reg__
+ 2254 0caa F894      		cli
+ 2255               	 ;  0 "" 2
+ 2256               	.LM223:
+ 2257               	/* #NOAPP */
+ 2258 0cac 21E0      		ldi r18,lo8(1)
+ 2259 0cae 2093 0000 		sts Sms,r18
+ 2260               	.LM224:
+ 2261 0cb2 8093 0000 		sts Sms+80,r24
+ 2262 0cb6 9093 0000 		sts (Sms+80)+1,r25
+ 2263 0cba A093 0000 		sts (Sms+80)+2,r26
+ 2264 0cbe B093 0000 		sts (Sms+80)+3,r27
+ 2265               	.LM225:
+ 2266               	/* #APP */
+ 2267               	 ;  387 "zoCommands.c" 1
+ 2268 0cc2 0F90      		pop __tmp_reg__ 
+ 2269 0cc4 0FBE      		out __SREG__, __tmp_reg__
+ 2270               	 ;  0 "" 2
+ 2271               	/* #NOAPP */
+ 2272 0cc6 00C0      		rjmp .L75
+ 2273               	.L80:
+ 2274               	.LBE131:
+ 2275               	.LBE130:
+ 2276               	.LM226:
+ 2277 0cc8 8091 0000 		lds r24,Sms+91
+ 2278 0ccc 9091 0000 		lds r25,(Sms+91)+1
+ 2279               	.LBB132:
+ 2280               	.LBB133:
+ 2281               	.LM227:
+ 2282 0cd0 9583      		std Z+5,r25
+ 2283 0cd2 8483      		std Z+4,r24
+ 2284               	.LBE133:
+ 2285               	.LBE132:
+ 2286               	.LBB134:
+ 2287               	.LBB135:
+ 2288               	.LM228:
+ 2289 0cd4 0E94 0000 		call zoProfiledVelocity
+ 2290               	.LVL124:
+ 2291 0cd8 00C0      		rjmp .L75
+ 2292               	.LVL125:
+ 2293               	.L81:
+ 2294               	.LBE135:
+ 2295               	.LBE134:
+ 2296               	.LM229:
+ 2297 0cda 6091 0000 		lds r22,Sms+91
+ 2298 0cde 7091 0000 		lds r23,(Sms+91)+1
+ 2299 0ce2 8091 0000 		lds r24,(Sms+91)+2
+ 2300 0ce6 9091 0000 		lds r25,(Sms+91)+3
+ 2301 0cea 0E94 0000 		call zoProfiledMoveAbsolute
+ 2302               	.LVL126:
+ 2303 0cee 00C0      		rjmp .L75
+ 2304               	.LVL127:
+ 2305               	.L77:
+ 2306               	.LBB136:
+ 2307               	.LBB137:
+ 2308               	.LM230:
+ 2309 0cf0 8091 0000 		lds r24,Sms+91
+ 2310 0cf4 9091 0000 		lds r25,(Sms+91)+1
+ 2311 0cf8 9583      		std Z+5,r25
+ 2312 0cfa 8483      		std Z+4,r24
+ 2313               	.LBE137:
+ 2314               	.LBE136:
+ 2315               	.LM231:
+ 2316 0cfc CF01      		movw r24,r30
+ 2317 0cfe 0E94 0000 		call zoCommandVelocityMove
+ 2318               	.LVL128:
+ 2319 0d02 00C0      		rjmp .L75
+ 2320               	.LVL129:
+ 2321               	.L79:
+ 2322               	.LM232:
+ 2323 0d04 8091 0000 		lds r24,Sms+91
+ 2324 0d08 9091 0000 		lds r25,(Sms+91)+1
+ 2325 0d0c A091 0000 		lds r26,(Sms+91)+2
+ 2326 0d10 B091 0000 		lds r27,(Sms+91)+3
+ 2327               	.LBB138:
+ 2328               	.LBB139:
+ 2329               	.LM233:
+ 2330 0d14 8483      		std Z+4,r24
+ 2331 0d16 9583      		std Z+5,r25
+ 2332 0d18 A683      		std Z+6,r26
+ 2333 0d1a B783      		std Z+7,r27
+ 2334               	.LBE139:
+ 2335               	.LBE138:
+ 2336               	.LBB140:
+ 2337               	.LBB141:
+ 2338               	.LM234:
+ 2339               	/* #APP */
+ 2340               	 ;  396 "zoCommands.c" 1
+ 2341 0d1c 0FB6      		in __tmp_reg__, __SREG__
+ 2342 0d1e 0F92      		 push __tmp_reg__
+ 2343 0d20 F894      		cli
+ 2344               	 ;  0 "" 2
+ 2345               	.LM235:
+ 2346               	/* #NOAPP */
+ 2347 0d22 21E0      		ldi r18,lo8(1)
+ 2348 0d24 2093 0000 		sts Sms,r18
+ 2349               	.LM236:
+ 2350 0d28 2091 0000 		lds r18,Sms+80
+ 2351 0d2c 3091 0000 		lds r19,(Sms+80)+1
+ 2352 0d30 4091 0000 		lds r20,(Sms+80)+2
+ 2353 0d34 5091 0000 		lds r21,(Sms+80)+3
+ 2354 0d38 280F      		add r18,r24
+ 2355 0d3a 391F      		adc r19,r25
+ 2356 0d3c 4A1F      		adc r20,r26
+ 2357 0d3e 5B1F      		adc r21,r27
+ 2358 0d40 2093 0000 		sts Sms+80,r18
+ 2359 0d44 3093 0000 		sts (Sms+80)+1,r19
+ 2360 0d48 4093 0000 		sts (Sms+80)+2,r20
+ 2361 0d4c 5093 0000 		sts (Sms+80)+3,r21
+ 2362               	.LM237:
+ 2363               	/* #APP */
+ 2364               	 ;  399 "zoCommands.c" 1
+ 2365 0d50 0F90      		pop __tmp_reg__ 
+ 2366 0d52 0FBE      		out __SREG__, __tmp_reg__
+ 2367               	 ;  0 "" 2
+ 2368               	/* #NOAPP */
+ 2369 0d54 00C0      		rjmp .L75
+ 2370               	.LBE141:
+ 2371               	.LBE140:
+ 2372               	.LFE65:
+ 2374               	.global	zoCommandProfiledRelativePositionMove
+ 2376               	zoCommandProfiledRelativePositionMove:
+ 2377               	.LFB32:
+ 2378               	.LM238:
+ 2379               	.LVL130:
+ 2380 0d56 EF92      		push r14
+ 2381 0d58 FF92      		push r15
+ 2382 0d5a 0F93      		push r16
+ 2383 0d5c 1F93      		push r17
+ 2384               	/* prologue: function */
+ 2385               	/* frame size = 0 */
+ 2386               	.LBB142:
+ 2387               	.LBB143:
+ 2388               	.LM239:
+ 2389 0d5e FC01      		movw r30,r24
+ 2390 0d60 E480      		ldd r14,Z+4
+ 2391 0d62 F580      		ldd r15,Z+5
+ 2392 0d64 0681      		ldd r16,Z+6
+ 2393 0d66 1781      		ldd r17,Z+7
+ 2394               	.LBE143:
+ 2395               	.LBE142:
+ 2396               	.LM240:
+ 2397 0d68 0E94 0000 		call zoEncoderGetPos
+ 2398               	.LVL131:
+ 2399               	.LM241:
+ 2400 0d6c E60E      		add r14,r22
+ 2401 0d6e F71E      		adc r15,r23
+ 2402 0d70 081F      		adc r16,r24
+ 2403 0d72 191F      		adc r17,r25
+ 2404 0d74 C801      		movw r24,r16
+ 2405 0d76 B701      		movw r22,r14
+ 2406 0d78 0E94 0000 		call zoProfiledMoveAbsolute
+ 2407               	/* epilogue start */
+ 2408               	.LM242:
+ 2409 0d7c 1F91      		pop r17
+ 2410 0d7e 0F91      		pop r16
+ 2411 0d80 FF90      		pop r15
+ 2412 0d82 EF90      		pop r14
+ 2413 0d84 0895      		ret
+ 2414               	.LFE32:
+ 2416               	.global	zoCommandProfiledAbsolutePositionMove
+ 2418               	zoCommandProfiledAbsolutePositionMove:
+ 2419               	.LFB31:
+ 2420               	.LM243:
+ 2421               	.LVL132:
+ 2422               	/* prologue: function */
+ 2423               	/* frame size = 0 */
+ 2424               	.LM244:
+ 2425 0d86 FC01      		movw r30,r24
+ 2426 0d88 6481      		ldd r22,Z+4
+ 2427 0d8a 7581      		ldd r23,Z+5
+ 2428 0d8c 8681      		ldd r24,Z+6
+ 2429 0d8e 9781      		ldd r25,Z+7
+ 2430 0d90 0E94 0000 		call zoProfiledMoveAbsolute
+ 2431               	.LVL133:
+ 2432               	/* epilogue start */
+ 2433               	.LM245:
+ 2434 0d94 0895      		ret
+ 2435               	.LFE31:
+ 2437               	.global	zoCommandGetWarning
+ 2439               	zoCommandGetWarning:
+ 2440               	.LFB64:
+ 2441               	.LM246:
+ 2442               	.LVL134:
+ 2443 0d96 0F93      		push r16
+ 2444 0d98 1F93      		push r17
+ 2445 0d9a CF93      		push r28
+ 2446 0d9c DF93      		push r29
+ 2447               	/* prologue: function */
+ 2448               	/* frame size = 0 */
+ 2449 0d9e 8C01      		movw r16,r24
+ 2450               	.LM247:
+ 2451 0da0 FC01      		movw r30,r24
+ 2452 0da2 1382      		std Z+3,__zero_reg__
+ 2453 0da4 00C0      		rjmp .L91
+ 2454               	.LVL135:
+ 2455               	.L92:
+ 2456               	.LM248:
+ 2457 0da6 F801      		movw r30,r16
+ 2458 0da8 8381      		ldd r24,Z+3
+ 2459 0daa C82F      		mov r28,r24
+ 2460 0dac D0E0      		ldi r29,lo8(0)
+ 2461 0dae 80E0      		ldi r24,lo8(zoSmsWarning)
+ 2462 0db0 90E0      		ldi r25,hi8(zoSmsWarning)
+ 2463 0db2 0E94 0000 		call zoErrorGet
+ 2464 0db6 C00F      		add r28,r16
+ 2465 0db8 D11F      		adc r29,r17
+ 2466 0dba 8C83      		std Y+4,r24
+ 2467               	.LM249:
+ 2468 0dbc F801      		movw r30,r16
+ 2469 0dbe 8381      		ldd r24,Z+3
+ 2470 0dc0 8F5F      		subi r24,lo8(-(1))
+ 2471 0dc2 8383      		std Z+3,r24
+ 2472               	.LVL136:
+ 2473               	.L91:
+ 2474               	.LM250:
+ 2475 0dc4 80E0      		ldi r24,lo8(zoSmsWarning)
+ 2476 0dc6 90E0      		ldi r25,hi8(zoSmsWarning)
+ 2477 0dc8 0E94 0000 		call zoErrorIsEmpty
+ 2478 0dcc 8823      		tst r24
+ 2479 0dce 01F0      		breq .L92
+ 2480               	/* epilogue start */
+ 2481               	.LM251:
+ 2482 0dd0 DF91      		pop r29
+ 2483 0dd2 CF91      		pop r28
+ 2484 0dd4 1F91      		pop r17
+ 2485 0dd6 0F91      		pop r16
+ 2486               	.LVL137:
+ 2487 0dd8 0895      		ret
+ 2488               	.LFE64:
+ 2490               	.global	zoCommandGetCurrent
+ 2492               	zoCommandGetCurrent:
+ 2493               	.LFB63:
+ 2494               	.LM252:
+ 2495               	.LVL138:
+ 2496 0dda 0F93      		push r16
+ 2497 0ddc 1F93      		push r17
+ 2498               	/* prologue: function */
+ 2499               	/* frame size = 0 */
+ 2500 0dde 8C01      		movw r16,r24
+ 2501               	.LM253:
+ 2502 0de0 82E0      		ldi r24,lo8(2)
+ 2503               	.LVL139:
+ 2504 0de2 F801      		movw r30,r16
+ 2505 0de4 8383      		std Z+3,r24
+ 2506               	.LM254:
+ 2507 0de6 87E0      		ldi r24,lo8(7)
+ 2508 0de8 0E94 0000 		call zoAdcRead
+ 2509               	.LBB144:
+ 2510               	.LBB145:
+ 2511               	.LM255:
+ 2512 0dec F801      		movw r30,r16
+ 2513 0dee 9583      		std Z+5,r25
+ 2514 0df0 8483      		std Z+4,r24
+ 2515               	/* epilogue start */
+ 2516               	.LBE145:
+ 2517               	.LBE144:
+ 2518               	.LM256:
+ 2519 0df2 1F91      		pop r17
+ 2520 0df4 0F91      		pop r16
+ 2521               	.LVL140:
+ 2522 0df6 0895      		ret
+ 2523               	.LFE63:
+ 2525               	.global	zoCommandGetAnalogIn
+ 2527               	zoCommandGetAnalogIn:
+ 2528               	.LFB59:
+ 2529               	.LM257:
+ 2530               	.LVL141:
+ 2531 0df8 0F93      		push r16
+ 2532 0dfa 1F93      		push r17
+ 2533               	/* prologue: function */
+ 2534               	/* frame size = 0 */
+ 2535 0dfc 8C01      		movw r16,r24
+ 2536               	.LM258:
+ 2537 0dfe 88E0      		ldi r24,lo8(8)
+ 2538               	.LVL142:
+ 2539 0e00 F801      		movw r30,r16
+ 2540 0e02 8383      		std Z+3,r24
+ 2541               	.LM259:
+ 2542 0e04 80E0      		ldi r24,lo8(0)
+ 2543 0e06 0E94 0000 		call zoAdcRead
+ 2544               	.LBB146:
+ 2545               	.LBB147:
+ 2546               	.LM260:
+ 2547 0e0a F801      		movw r30,r16
+ 2548 0e0c 9583      		std Z+5,r25
+ 2549 0e0e 8483      		std Z+4,r24
+ 2550               	.LBE147:
+ 2551               	.LBE146:
+ 2552               	.LM261:
+ 2553 0e10 81E0      		ldi r24,lo8(1)
+ 2554 0e12 0E94 0000 		call zoAdcRead
+ 2555               	.LBB148:
+ 2556               	.LBB149:
+ 2557               	.LM262:
+ 2558 0e16 F801      		movw r30,r16
+ 2559 0e18 9783      		std Z+7,r25
+ 2560 0e1a 8683      		std Z+6,r24
+ 2561               	.LBE149:
+ 2562               	.LBE148:
+ 2563               	.LM263:
+ 2564 0e1c 82E0      		ldi r24,lo8(2)
+ 2565 0e1e 0E94 0000 		call zoAdcRead
+ 2566               	.LBB150:
+ 2567               	.LBB151:
+ 2568               	.LM264:
+ 2569 0e22 F801      		movw r30,r16
+ 2570 0e24 9187      		std Z+9,r25
+ 2571 0e26 8087      		std Z+8,r24
+ 2572               	.LBE151:
+ 2573               	.LBE150:
+ 2574               	.LM265:
+ 2575 0e28 83E0      		ldi r24,lo8(3)
+ 2576 0e2a 0E94 0000 		call zoAdcRead
+ 2577               	.LBB152:
+ 2578               	.LBB153:
+ 2579               	.LM266:
+ 2580 0e2e F801      		movw r30,r16
+ 2581 0e30 9387      		std Z+11,r25
+ 2582 0e32 8287      		std Z+10,r24
+ 2583               	/* epilogue start */
+ 2584               	.LBE153:
+ 2585               	.LBE152:
+ 2586               	.LM267:
+ 2587 0e34 1F91      		pop r17
+ 2588 0e36 0F91      		pop r16
+ 2589               	.LVL143:
+ 2590 0e38 0895      		ret
+ 2591               	.LFE59:
+ 2593               	.global	zoCommandGetAbsolutePosition
+ 2595               	zoCommandGetAbsolutePosition:
+ 2596               	.LFB61:
+ 2597               	.LM268:
+ 2598               	.LVL144:
+ 2599 0e3a 0F93      		push r16
+ 2600 0e3c 1F93      		push r17
+ 2601               	/* prologue: function */
+ 2602               	/* frame size = 0 */
+ 2603 0e3e 8C01      		movw r16,r24
+ 2604               	.LM269:
+ 2605 0e40 82E0      		ldi r24,lo8(2)
+ 2606               	.LVL145:
+ 2607 0e42 F801      		movw r30,r16
+ 2608 0e44 8383      		std Z+3,r24
+ 2609               	.LM270:
+ 2610 0e46 0E94 0000 		call zoEncoderGetPosAbsolute
+ 2611               	.LBB154:
+ 2612               	.LBB155:
+ 2613               	.LM271:
+ 2614 0e4a F801      		movw r30,r16
+ 2615 0e4c 9583      		std Z+5,r25
+ 2616 0e4e 8483      		std Z+4,r24
+ 2617               	/* epilogue start */
+ 2618               	.LBE155:
+ 2619               	.LBE154:
+ 2620               	.LM272:
+ 2621 0e50 1F91      		pop r17
+ 2622 0e52 0F91      		pop r16
+ 2623               	.LVL146:
+ 2624 0e54 0895      		ret
+ 2625               	.LFE61:
+ 2627               	.global	zoCommandSetErrorReportingLevel
+ 2629               	zoCommandSetErrorReportingLevel:
+ 2630               	.LFB48:
+ 2631               	.LM273:
+ 2632               	.LVL147:
+ 2633 0e56 CF93      		push r28
+ 2634 0e58 DF93      		push r29
+ 2635               	/* prologue: function */
+ 2636               	/* frame size = 0 */
+ 2637 0e5a EC01      		movw r28,r24
+ 2638               	.LM274:
+ 2639 0e5c 6C81      		ldd r22,Y+4
+ 2640 0e5e 6230      		cpi r22,lo8(2)
+ 2641 0e60 00F0      		brlo .L101
+ 2642               	.LVL148:
+ 2643               	.LM275:
+ 2644 0e62 80E0      		ldi r24,lo8(zoCommandsError)
+ 2645 0e64 90E0      		ldi r25,hi8(zoCommandsError)
+ 2646 0e66 63E0      		ldi r22,lo8(3)
+ 2647 0e68 0E94 0000 		call zoErrorPut
+ 2648               	/* epilogue start */
+ 2649               	.LM276:
+ 2650 0e6c DF91      		pop r29
+ 2651 0e6e CF91      		pop r28
+ 2652               	.LVL149:
+ 2653 0e70 0895      		ret
+ 2654               	.LVL150:
+ 2655               	.L101:
+ 2656               	.LM277:
+ 2657 0e72 80EC      		ldi r24,lo8(192)
+ 2658 0e74 90E0      		ldi r25,hi8(192)
+ 2659 0e76 0E94 0000 		call __eewr_byte_m328p
+ 2660               	.LM278:
+ 2661               	/* #APP */
+ 2662               	 ;  606 "zoCommands.c" 1
+ 2663 0e7a 0FB6      		in __tmp_reg__, __SREG__
+ 2664 0e7c 0F92      		 push __tmp_reg__
+ 2665 0e7e F894      		cli
+ 2666               	 ;  0 "" 2
+ 2667               	.LM279:
+ 2668               	/* #NOAPP */
+ 2669 0e80 8C81      		ldd r24,Y+4
+ 2670 0e82 8093 0000 		sts Sms+20,r24
+ 2671               	.LM280:
+ 2672               	/* #APP */
+ 2673               	 ;  608 "zoCommands.c" 1
+ 2674 0e86 0F90      		pop __tmp_reg__ 
+ 2675 0e88 0FBE      		out __SREG__, __tmp_reg__
+ 2676               	 ;  0 "" 2
+ 2677               	.LM281:
+ 2678               	/* #NOAPP */
+ 2679 0e8a DF91      		pop r29
+ 2680 0e8c CF91      		pop r28
+ 2681               	.LVL151:
+ 2682 0e8e 0895      		ret
+ 2683               	.LFE48:
+ 2685               	.global	zoCommandSetLocalAcceptanceMask
+ 2687               	zoCommandSetLocalAcceptanceMask:
+ 2688               	.LFB42:
+ 2689               	.LM282:
+ 2690               	.LVL152:
+ 2691               	/* prologue: function */
+ 2692               	/* frame size = 0 */
+ 2693               	.LM283:
+ 2694 0e90 FC01      		movw r30,r24
+ 2695 0e92 6481      		ldd r22,Z+4
+ 2696 0e94 6623      		tst r22
+ 2697 0e96 01F0      		breq .L108
+ 2698               	.LM284:
+ 2699 0e98 80EB      		ldi r24,lo8(176)
+ 2700 0e9a 90E0      		ldi r25,hi8(176)
+ 2701               	.LVL153:
+ 2702 0e9c 0E94 0000 		call __eewr_byte_m328p
+ 2703 0ea0 0895      		ret
+ 2704               	.LVL154:
+ 2705               	.L108:
+ 2706               	.LM285:
+ 2707 0ea2 80E0      		ldi r24,lo8(zoCommandsError)
+ 2708 0ea4 90E0      		ldi r25,hi8(zoCommandsError)
+ 2709               	.LVL155:
+ 2710 0ea6 63E0      		ldi r22,lo8(3)
+ 2711 0ea8 0E94 0000 		call zoErrorPut
+ 2712 0eac 0895      		ret
+ 2713               	.LFE42:
+ 2715               	.global	zoCommandSetNodeID
+ 2717               	zoCommandSetNodeID:
+ 2718               	.LFB41:
+ 2719               	.LM286:
+ 2720               	.LVL156:
+ 2721               	/* prologue: function */
+ 2722               	/* frame size = 0 */
+ 2723               	.LM287:
+ 2724 0eae FC01      		movw r30,r24
+ 2725 0eb0 6481      		ldd r22,Z+4
+ 2726 0eb2 1616      		cp __zero_reg__,r22
+ 2727 0eb4 04F4      		brge .L113
+ 2728               	.LM288:
+ 2729 0eb6 80E0      		ldi r24,lo8(0)
+ 2730 0eb8 90E0      		ldi r25,hi8(0)
+ 2731               	.LVL157:
+ 2732 0eba 0E94 0000 		call __eewr_byte_m328p
+ 2733 0ebe 0895      		ret
+ 2734               	.LVL158:
+ 2735               	.L113:
+ 2736               	.LM289:
+ 2737 0ec0 80E0      		ldi r24,lo8(zoCommandsError)
+ 2738 0ec2 90E0      		ldi r25,hi8(zoCommandsError)
+ 2739               	.LVL159:
+ 2740 0ec4 63E0      		ldi r22,lo8(3)
+ 2741 0ec6 0E94 0000 		call zoErrorPut
+ 2742 0eca 0895      		ret
+ 2743               	.LFE41:
+ 2745               	.global	zoCommandConfigureDigitalIO
+ 2747               	zoCommandConfigureDigitalIO:
+ 2748               	.LFB39:
+ 2749               	.LM290:
+ 2750               	.LVL160:
+ 2751 0ecc FF92      		push r15
+ 2752 0ece 0F93      		push r16
+ 2753 0ed0 1F93      		push r17
+ 2754               	/* prologue: function */
+ 2755               	/* frame size = 0 */
+ 2756               	.LM291:
+ 2757 0ed2 FC01      		movw r30,r24
+ 2758 0ed4 0481      		ldd r16,Z+4
+ 2759               	.LVL161:
+ 2760               	.LM292:
+ 2761 0ed6 FFE0      		ldi r31,lo8(15)
+ 2762 0ed8 FF2E      		mov r15,r31
+ 2763 0eda F022      		and r15,r16
+ 2764 0edc 80E8      		ldi r24,lo8(128)
+ 2765 0ede 90E0      		ldi r25,hi8(128)
+ 2766               	.LVL162:
+ 2767 0ee0 6F2D      		mov r22,r15
+ 2768 0ee2 0E94 0000 		call __eewr_byte_m328p
+ 2769               	.LM293:
+ 2770               	/* #APP */
+ 2771               	 ;  505 "zoCommands.c" 1
+ 2772 0ee6 0FB6      		in __tmp_reg__, __SREG__
+ 2773 0ee8 0F92      		 push __tmp_reg__
+ 2774 0eea F894      		cli
+ 2775               	 ;  0 "" 2
+ 2776               	.LM294:
+ 2777               	/* #NOAPP */
+ 2778 0eec 8AB1      		in r24,42-32
+ 2779 0eee 10E0      		ldi r17,lo8(0)
+ 2780 0ef0 9801      		movw r18,r16
+ 2781               	.LVL163:
+ 2782 0ef2 3695      		lsr r19
+ 2783 0ef4 322F      		mov r19,r18
+ 2784 0ef6 2227      		clr r18
+ 2785 0ef8 3795      		ror r19
+ 2786 0efa 2795      		ror r18
+ 2787 0efc 8F77      		andi r24,lo8(127)
+ 2788 0efe 822B      		or r24,r18
+ 2789 0f00 8AB9      		out 42-32,r24
+ 2790               	.LM295:
+ 2791 0f02 84B1      		in r24,36-32
+ 2792 0f04 000F      		lsl r16
+ 2793 0f06 111F      		rol r17
+ 2794 0f08 000F      		lsl r16
+ 2795 0f0a 111F      		rol r17
+ 2796 0f0c 0873      		andi r16,lo8(56)
+ 2797 0f0e 877C      		andi r24,lo8(-57)
+ 2798 0f10 082B      		or r16,r24
+ 2799 0f12 04B9      		out 36-32,r16
+ 2800               	.LM296:
+ 2801 0f14 F092 0000 		sts Sms+6,r15
+ 2802               	.LM297:
+ 2803               	/* #APP */
+ 2804               	 ;  512 "zoCommands.c" 1
+ 2805 0f18 0F90      		pop __tmp_reg__ 
+ 2806 0f1a 0FBE      		out __SREG__, __tmp_reg__
+ 2807               	 ;  0 "" 2
+ 2808               	/* epilogue start */
+ 2809               	.LM298:
+ 2810               	/* #NOAPP */
+ 2811 0f1c 1F91      		pop r17
+ 2812 0f1e 0F91      		pop r16
+ 2813 0f20 FF90      		pop r15
+ 2814 0f22 0895      		ret
+ 2815               	.LFE39:
+ 2817               	.global	zoCommandStop
+ 2819               	zoCommandStop:
+ 2820               	.LFB47:
+ 2821               	.LM299:
+ 2822               	.LVL164:
+ 2823               	/* prologue: function */
+ 2824               	/* frame size = 0 */
+ 2825               	.LM300:
+ 2826               	/* #APP */
+ 2827               	 ;  590 "zoCommands.c" 1
+ 2828 0f24 0FB6      		in __tmp_reg__, __SREG__
+ 2829 0f26 0F92      		 push __tmp_reg__
+ 2830 0f28 F894      		cli
+ 2831               	 ;  0 "" 2
+ 2832               	.LM301:
+ 2833               	/* #NOAPP */
+ 2834 0f2a 1092 0000 		sts Sms,__zero_reg__
+ 2835               	.LM302:
+ 2836               	/* #APP */
+ 2837               	 ;  592 "zoCommands.c" 1
+ 2838 0f2e 0F90      		pop __tmp_reg__ 
+ 2839 0f30 0FBE      		out __SREG__, __tmp_reg__
+ 2840               	 ;  0 "" 2
+ 2841               	.LM303:
+ 2842               	/* #NOAPP */
+ 2843 0f32 80E0      		ldi r24,lo8(0)
+ 2844               	.LVL165:
+ 2845 0f34 0E94 0000 		call zoMotorSetState
+ 2846               	/* epilogue start */
+ 2847               	.LM304:
+ 2848 0f38 0895      		ret
+ 2849               	.LFE47:
+ 2851               	.global	zoCommandStart
+ 2853               	zoCommandStart:
+ 2854               	.LFB45:
+ 2855               	.LM305:
+ 2856               	.LVL166:
+ 2857               	/* prologue: function */
+ 2858               	/* frame size = 0 */
+ 2859               	.LM306:
+ 2860               	/* #APP */
+ 2861               	 ;  571 "zoCommands.c" 1
+ 2862 0f3a 0FB6      		in __tmp_reg__, __SREG__
+ 2863 0f3c 0F92      		 push __tmp_reg__
+ 2864 0f3e F894      		cli
+ 2865               	 ;  0 "" 2
+ 2866               	.LM307:
+ 2867               	/* #NOAPP */
+ 2868 0f40 1092 0000 		sts Sms+90,__zero_reg__
+ 2869               	.LM308:
+ 2870 0f44 0E94 0000 		call zoEncoderReset
+ 2871               	.LVL167:
+ 2872               	.LM309:
+ 2873 0f48 1092 0000 		sts Sms+68,__zero_reg__
+ 2874 0f4c 1092 0000 		sts (Sms+68)+1,__zero_reg__
+ 2875 0f50 1092 0000 		sts (Sms+68)+2,__zero_reg__
+ 2876 0f54 1092 0000 		sts (Sms+68)+3,__zero_reg__
+ 2877               	.LM310:
+ 2878 0f58 1092 0000 		sts Sms+72,__zero_reg__
+ 2879 0f5c 1092 0000 		sts (Sms+72)+1,__zero_reg__
+ 2880 0f60 1092 0000 		sts (Sms+72)+2,__zero_reg__
+ 2881 0f64 1092 0000 		sts (Sms+72)+3,__zero_reg__
+ 2882               	.LM311:
+ 2883 0f68 81E0      		ldi r24,lo8(1)
+ 2884 0f6a 8093 0000 		sts Sms,r24
+ 2885               	.LM312:
+ 2886 0f6e 1092 0000 		sts Sms+80,__zero_reg__
+ 2887 0f72 1092 0000 		sts (Sms+80)+1,__zero_reg__
+ 2888 0f76 1092 0000 		sts (Sms+80)+2,__zero_reg__
+ 2889 0f7a 1092 0000 		sts (Sms+80)+3,__zero_reg__
+ 2890               	.LM313:
+ 2891 0f7e 8FEF      		ldi r24,lo8(-1)
+ 2892 0f80 0E94 0000 		call zoMotorSetState
+ 2893               	.LM314:
+ 2894               	/* #APP */
+ 2895               	 ;  579 "zoCommands.c" 1
+ 2896 0f84 0F90      		pop __tmp_reg__ 
+ 2897 0f86 0FBE      		out __SREG__, __tmp_reg__
+ 2898               	 ;  0 "" 2
+ 2899               	/* epilogue start */
+ 2900               	.LM315:
+ 2901               	/* #NOAPP */
+ 2902 0f88 0895      		ret
+ 2903               	.LFE45:
+ 2905               	.global	zoCommandResetPosition
+ 2907               	zoCommandResetPosition:
+ 2908               	.LFB44:
+ 2909               	.LM316:
+ 2910               	.LVL168:
+ 2911               	/* prologue: function */
+ 2912               	/* frame size = 0 */
+ 2913               	.LM317:
+ 2914 0f8a 0E94 0000 		call zoEncoderReset
+ 2915               	.LVL169:
+ 2916               	/* epilogue start */
+ 2917               	.LM318:
+ 2918 0f8e 0895      		ret
+ 2919               	.LFE44:
+ 2921               	.global	zoCommandSetBaudUart
+ 2923               	zoCommandSetBaudUart:
+ 2924               	.LFB43:
+ 2925               	.LM319:
+ 2926               	.LVL170:
+ 2927               	/* prologue: function */
+ 2928               	/* frame size = 0 */
+ 2929               	.LM320:
+ 2930 0f90 FC01      		movw r30,r24
+ 2931 0f92 4481      		ldd r20,Z+4
+ 2932 0f94 5581      		ldd r21,Z+5
+ 2933 0f96 6681      		ldd r22,Z+6
+ 2934 0f98 7781      		ldd r23,Z+7
+ 2935               	.LVL171:
+ 2936               	.LM321:
+ 2937 0f9a DB01      		movw r26,r22
+ 2938 0f9c CA01      		movw r24,r20
+ 2939               	.LVL172:
+ 2940 0f9e 0197      		sbiw r24,1
+ 2941 0fa0 A109      		sbc r26,__zero_reg__
+ 2942 0fa2 B109      		sbc r27,__zero_reg__
+ 2943 0fa4 8050      		subi r24,lo8(115200)
+ 2944 0fa6 924C      		sbci r25,hi8(115200)
+ 2945 0fa8 A140      		sbci r26,hlo8(115200)
+ 2946 0faa B040      		sbci r27,hhi8(115200)
+ 2947 0fac 00F4      		brsh .L126
+ 2948               	.LM322:
+ 2949 0fae 80EA      		ldi r24,lo8(160)
+ 2950 0fb0 90E0      		ldi r25,hi8(160)
+ 2951 0fb2 0E94 0000 		call __eewr_dword_m328p
+ 2952               	.LVL173:
+ 2953 0fb6 0895      		ret
+ 2954               	.LVL174:
+ 2955               	.L126:
+ 2956               	.LM323:
+ 2957 0fb8 80E0      		ldi r24,lo8(zoCommandsError)
+ 2958 0fba 90E0      		ldi r25,hi8(zoCommandsError)
+ 2959 0fbc 63E0      		ldi r22,lo8(3)
+ 2960 0fbe 0E94 0000 		call zoErrorPut
+ 2961               	.LVL175:
+ 2962 0fc2 0895      		ret
+ 2963               	.LFE43:
+ 2965               	.global	zoCommandSetCurrentLimitDuration
+ 2967               	zoCommandSetCurrentLimitDuration:
+ 2968               	.LFB26:
+ 2969               	.LM324:
+ 2970               	.LVL176:
+ 2971 0fc4 0F93      		push r16
+ 2972 0fc6 1F93      		push r17
+ 2973               	/* prologue: function */
+ 2974               	/* frame size = 0 */
+ 2975               	.LBB156:
+ 2976               	.LBB157:
+ 2977               	.LM325:
+ 2978 0fc8 FC01      		movw r30,r24
+ 2979 0fca 0481      		ldd r16,Z+4
+ 2980 0fcc 1581      		ldd r17,Z+5
+ 2981               	.LVL177:
+ 2982               	.LBE157:
+ 2983               	.LBE156:
+ 2984               	.LM326:
+ 2985 0fce 80E5      		ldi r24,lo8(80)
+ 2986 0fd0 90E0      		ldi r25,hi8(80)
+ 2987               	.LVL178:
+ 2988 0fd2 B801      		movw r22,r16
+ 2989 0fd4 0E94 0000 		call __eewr_word_m328p
+ 2990               	.LM327:
+ 2991               	/* #APP */
+ 2992               	 ;  360 "zoCommands.c" 1
+ 2993 0fd8 0FB6      		in __tmp_reg__, __SREG__
+ 2994 0fda 0F92      		 push __tmp_reg__
+ 2995 0fdc F894      		cli
+ 2996               	 ;  0 "" 2
+ 2997               	.LM328:
+ 2998               	/* #NOAPP */
+ 2999 0fde 1093 0000 		sts (Sms+7)+1,r17
+ 3000 0fe2 0093 0000 		sts Sms+7,r16
+ 3001               	.LM329:
+ 3002               	/* #APP */
+ 3003               	 ;  362 "zoCommands.c" 1
+ 3004 0fe6 0F90      		pop __tmp_reg__ 
+ 3005 0fe8 0FBE      		out __SREG__, __tmp_reg__
+ 3006               	 ;  0 "" 2
+ 3007               	/* epilogue start */
+ 3008               	.LM330:
+ 3009               	/* #NOAPP */
+ 3010 0fea 1F91      		pop r17
+ 3011 0fec 0F91      		pop r16
+ 3012               	.LVL179:
+ 3013 0fee 0895      		ret
+ 3014               	.LFE26:
+ 3016               	.global	zoCommandSetCurrentLimit
+ 3018               	zoCommandSetCurrentLimit:
+ 3019               	.LFB25:
+ 3020               	.LM331:
+ 3021               	.LVL180:
+ 3022 0ff0 CF93      		push r28
+ 3023 0ff2 DF93      		push r29
+ 3024               	/* prologue: function */
+ 3025               	/* frame size = 0 */
+ 3026               	.LBB158:
+ 3027               	.LBB159:
+ 3028               	.LM332:
+ 3029 0ff4 FC01      		movw r30,r24
+ 3030 0ff6 C481      		ldd r28,Z+4
+ 3031 0ff8 D581      		ldd r29,Z+5
+ 3032               	.LVL181:
+ 3033               	.LBE159:
+ 3034               	.LBE158:
+ 3035               	.LM333:
+ 3036 0ffa 2097      		sbiw r28,0
+ 3037 0ffc 01F0      		breq .L133
+ 3038               	.LM334:
+ 3039 0ffe 80E4      		ldi r24,lo8(64)
+ 3040 1000 90E0      		ldi r25,hi8(64)
+ 3041               	.LVL182:
+ 3042 1002 BE01      		movw r22,r28
+ 3043 1004 0E94 0000 		call __eewr_word_m328p
+ 3044               	.LM335:
+ 3045               	/* #APP */
+ 3046               	 ;  348 "zoCommands.c" 1
+ 3047 1008 0FB6      		in __tmp_reg__, __SREG__
+ 3048 100a 0F92      		 push __tmp_reg__
+ 3049 100c F894      		cli
+ 3050               	 ;  0 "" 2
+ 3051               	.LM336:
+ 3052               	/* #NOAPP */
+ 3053 100e D093 0000 		sts (Sms+7)+1,r29
+ 3054 1012 C093 0000 		sts Sms+7,r28
+ 3055               	.LM337:
+ 3056               	/* #APP */
+ 3057               	 ;  350 "zoCommands.c" 1
+ 3058 1016 0F90      		pop __tmp_reg__ 
+ 3059 1018 0FBE      		out __SREG__, __tmp_reg__
+ 3060               	 ;  0 "" 2
+ 3061               	/* epilogue start */
+ 3062               	.LM338:
+ 3063               	/* #NOAPP */
+ 3064 101a DF91      		pop r29
+ 3065 101c CF91      		pop r28
+ 3066               	.LVL183:
+ 3067 101e 0895      		ret
+ 3068               	.LVL184:
+ 3069               	.L133:
+ 3070               	.LM339:
+ 3071 1020 80E0      		ldi r24,lo8(zoCommandsError)
+ 3072 1022 90E0      		ldi r25,hi8(zoCommandsError)
+ 3073               	.LVL185:
+ 3074 1024 63E0      		ldi r22,lo8(3)
+ 3075 1026 0E94 0000 		call zoErrorPut
+ 3076               	.LM340:
+ 3077 102a DF91      		pop r29
+ 3078 102c CF91      		pop r28
+ 3079               	.LVL186:
+ 3080 102e 0895      		ret
+ 3081               	.LFE25:
+ 3083               	.global	zoCommandSetProfileVelocity
+ 3085               	zoCommandSetProfileVelocity:
+ 3086               	.LFB24:
+ 3087               	.LM341:
+ 3088               	.LVL187:
+ 3089 1030 CF93      		push r28
+ 3090 1032 DF93      		push r29
+ 3091               	/* prologue: function */
+ 3092               	/* frame size = 0 */
+ 3093               	.LBB160:
+ 3094               	.LBB161:
+ 3095               	.LM342:
+ 3096 1034 FC01      		movw r30,r24
+ 3097 1036 C481      		ldd r28,Z+4
+ 3098 1038 D581      		ldd r29,Z+5
+ 3099               	.LVL188:
+ 3100               	.LBE161:
+ 3101               	.LBE160:
+ 3102               	.LM343:
+ 3103 103a 2097      		sbiw r28,0
+ 3104 103c 01F0      		breq .L138
+ 3105               	.LM344:
+ 3106 103e 80E7      		ldi r24,lo8(112)
+ 3107 1040 90E0      		ldi r25,hi8(112)
+ 3108               	.LVL189:
+ 3109 1042 BE01      		movw r22,r28
+ 3110 1044 0E94 0000 		call __eewr_word_m328p
+ 3111               	.LM345:
+ 3112               	/* #APP */
+ 3113               	 ;  328 "zoCommands.c" 1
+ 3114 1048 0FB6      		in __tmp_reg__, __SREG__
+ 3115 104a 0F92      		 push __tmp_reg__
+ 3116 104c F894      		cli
+ 3117               	 ;  0 "" 2
+ 3118               	.LM346:
+ 3119               	/* #NOAPP */
+ 3120 104e D093 0000 		sts (Sms+55)+1,r29
+ 3121 1052 C093 0000 		sts Sms+55,r28
+ 3122               	.LM347:
+ 3123               	/* #APP */
+ 3124               	 ;  330 "zoCommands.c" 1
+ 3125 1056 0F90      		pop __tmp_reg__ 
+ 3126 1058 0FBE      		out __SREG__, __tmp_reg__
+ 3127               	 ;  0 "" 2
+ 3128               	/* epilogue start */
+ 3129               	.LM348:
+ 3130               	/* #NOAPP */
+ 3131 105a DF91      		pop r29
+ 3132 105c CF91      		pop r28
+ 3133               	.LVL190:
+ 3134 105e 0895      		ret
+ 3135               	.LVL191:
+ 3136               	.L138:
+ 3137               	.LM349:
+ 3138 1060 80E0      		ldi r24,lo8(zoCommandsError)
+ 3139 1062 90E0      		ldi r25,hi8(zoCommandsError)
+ 3140               	.LVL192:
+ 3141 1064 63E0      		ldi r22,lo8(3)
+ 3142 1066 0E94 0000 		call zoErrorPut
+ 3143               	.LM350:
+ 3144 106a DF91      		pop r29
+ 3145 106c CF91      		pop r28
+ 3146               	.LVL193:
+ 3147 106e 0895      		ret
+ 3148               	.LFE24:
+ 3150               	.global	zoCommandSetProfileAcceleration
+ 3152               	zoCommandSetProfileAcceleration:
+ 3153               	.LFB23:
+ 3154               	.LM351:
+ 3155               	.LVL194:
+ 3156 1070 CF93      		push r28
+ 3157 1072 DF93      		push r29
+ 3158               	/* prologue: function */
+ 3159               	/* frame size = 0 */
+ 3160               	.LBB162:
+ 3161               	.LBB163:
+ 3162               	.LM352:
+ 3163 1074 FC01      		movw r30,r24
+ 3164 1076 C481      		ldd r28,Z+4
+ 3165 1078 D581      		ldd r29,Z+5
+ 3166               	.LVL195:
+ 3167               	.LBE163:
+ 3168               	.LBE162:
+ 3169               	.LM353:
+ 3170 107a 2097      		sbiw r28,0
+ 3171 107c 01F0      		breq .L143
+ 3172               	.LM354:
+ 3173 107e 80E6      		ldi r24,lo8(96)
+ 3174 1080 90E0      		ldi r25,hi8(96)
+ 3175               	.LVL196:
+ 3176 1082 BE01      		movw r22,r28
+ 3177 1084 0E94 0000 		call __eewr_word_m328p
+ 3178               	.LM355:
+ 3179               	/* #APP */
+ 3180               	 ;  308 "zoCommands.c" 1
+ 3181 1088 0FB6      		in __tmp_reg__, __SREG__
+ 3182 108a 0F92      		 push __tmp_reg__
+ 3183 108c F894      		cli
+ 3184               	 ;  0 "" 2
+ 3185               	.LM356:
+ 3186               	/* #NOAPP */
+ 3187 108e D093 0000 		sts (Sms+53)+1,r29
+ 3188 1092 C093 0000 		sts Sms+53,r28
+ 3189               	.LM357:
+ 3190               	/* #APP */
+ 3191               	 ;  310 "zoCommands.c" 1
+ 3192 1096 0F90      		pop __tmp_reg__ 
+ 3193 1098 0FBE      		out __SREG__, __tmp_reg__
+ 3194               	 ;  0 "" 2
+ 3195               	/* epilogue start */
+ 3196               	.LM358:
+ 3197               	/* #NOAPP */
+ 3198 109a DF91      		pop r29
+ 3199 109c CF91      		pop r28
+ 3200               	.LVL197:
+ 3201 109e 0895      		ret
+ 3202               	.LVL198:
+ 3203               	.L143:
+ 3204               	.LM359:
+ 3205 10a0 80E0      		ldi r24,lo8(zoCommandsError)
+ 3206 10a2 90E0      		ldi r25,hi8(zoCommandsError)
+ 3207               	.LVL199:
+ 3208 10a4 63E0      		ldi r22,lo8(3)
+ 3209 10a6 0E94 0000 		call zoErrorPut
+ 3210               	.LM360:
+ 3211 10aa DF91      		pop r29
+ 3212 10ac CF91      		pop r28
+ 3213               	.LVL200:
+ 3214 10ae 0895      		ret
+ 3215               	.LFE23:
+ 3217               	.global	zoCommandSetGainD
+ 3219               	zoCommandSetGainD:
+ 3220               	.LFB22:
+ 3221               	.LM361:
+ 3222               	.LVL201:
+ 3223 10b0 0F93      		push r16
+ 3224 10b2 1F93      		push r17
+ 3225               	/* prologue: function */
+ 3226               	/* frame size = 0 */
+ 3227               	.LBB164:
+ 3228               	.LBB165:
+ 3229               	.LM362:
+ 3230 10b4 FC01      		movw r30,r24
+ 3231 10b6 0481      		ldd r16,Z+4
+ 3232 10b8 1581      		ldd r17,Z+5
+ 3233               	.LVL202:
+ 3234               	.LBE165:
+ 3235               	.LBE164:
+ 3236               	.LM363:
+ 3237 10ba 80E3      		ldi r24,lo8(48)
+ 3238 10bc 90E0      		ldi r25,hi8(48)
+ 3239               	.LVL203:
+ 3240 10be B801      		movw r22,r16
+ 3241 10c0 0E94 0000 		call __eewr_word_m328p
+ 3242               	.LM364:
+ 3243               	/* #APP */
+ 3244               	 ;  288 "zoCommands.c" 1
+ 3245 10c4 0FB6      		in __tmp_reg__, __SREG__
+ 3246 10c6 0F92      		 push __tmp_reg__
+ 3247 10c8 F894      		cli
+ 3248               	 ;  0 "" 2
+ 3249               	.LM365:
+ 3250               	/* #NOAPP */
+ 3251 10ca 1093 0000 		sts (Sms+62)+1,r17
+ 3252 10ce 0093 0000 		sts Sms+62,r16
+ 3253               	.LM366:
+ 3254               	/* #APP */
+ 3255               	 ;  290 "zoCommands.c" 1
+ 3256 10d2 0F90      		pop __tmp_reg__ 
+ 3257 10d4 0FBE      		out __SREG__, __tmp_reg__
+ 3258               	 ;  0 "" 2
+ 3259               	/* epilogue start */
+ 3260               	.LM367:
+ 3261               	/* #NOAPP */
+ 3262 10d6 1F91      		pop r17
+ 3263 10d8 0F91      		pop r16
+ 3264               	.LVL204:
+ 3265 10da 0895      		ret
+ 3266               	.LFE22:
+ 3268               	.global	zoCommandSetGainI
+ 3270               	zoCommandSetGainI:
+ 3271               	.LFB21:
+ 3272               	.LM368:
+ 3273               	.LVL205:
+ 3274 10dc 0F93      		push r16
+ 3275 10de 1F93      		push r17
+ 3276               	/* prologue: function */
+ 3277               	/* frame size = 0 */
+ 3278               	.LBB166:
+ 3279               	.LBB167:
+ 3280               	.LM369:
+ 3281 10e0 FC01      		movw r30,r24
+ 3282 10e2 0481      		ldd r16,Z+4
+ 3283 10e4 1581      		ldd r17,Z+5
+ 3284               	.LVL206:
+ 3285               	.LBE167:
+ 3286               	.LBE166:
+ 3287               	.LM370:
+ 3288 10e6 80E2      		ldi r24,lo8(32)
+ 3289 10e8 90E0      		ldi r25,hi8(32)
+ 3290               	.LVL207:
+ 3291 10ea B801      		movw r22,r16
+ 3292 10ec 0E94 0000 		call __eewr_word_m328p
+ 3293               	.LM371:
+ 3294               	/* #APP */
+ 3295               	 ;  276 "zoCommands.c" 1
+ 3296 10f0 0FB6      		in __tmp_reg__, __SREG__
+ 3297 10f2 0F92      		 push __tmp_reg__
+ 3298 10f4 F894      		cli
+ 3299               	 ;  0 "" 2
+ 3300               	.LM372:
+ 3301               	/* #NOAPP */
+ 3302 10f6 1093 0000 		sts (Sms+60)+1,r17
+ 3303 10fa 0093 0000 		sts Sms+60,r16
+ 3304               	.LM373:
+ 3305               	/* #APP */
+ 3306               	 ;  278 "zoCommands.c" 1
+ 3307 10fe 0F90      		pop __tmp_reg__ 
+ 3308 1100 0FBE      		out __SREG__, __tmp_reg__
+ 3309               	 ;  0 "" 2
+ 3310               	/* epilogue start */
+ 3311               	.LM374:
+ 3312               	/* #NOAPP */
+ 3313 1102 1F91      		pop r17
+ 3314 1104 0F91      		pop r16
+ 3315               	.LVL208:
+ 3316 1106 0895      		ret
+ 3317               	.LFE21:
+ 3319               	.global	zoCommandSetGainP
+ 3321               	zoCommandSetGainP:
+ 3322               	.LFB20:
+ 3323               	.LM375:
+ 3324               	.LVL209:
+ 3325 1108 0F93      		push r16
+ 3326 110a 1F93      		push r17
+ 3327               	/* prologue: function */
+ 3328               	/* frame size = 0 */
+ 3329               	.LBB168:
+ 3330               	.LBB169:
+ 3331               	.LM376:
+ 3332 110c FC01      		movw r30,r24
+ 3333 110e 0481      		ldd r16,Z+4
+ 3334 1110 1581      		ldd r17,Z+5
+ 3335               	.LVL210:
+ 3336               	.LBE169:
+ 3337               	.LBE168:
+ 3338               	.LM377:
+ 3339 1112 80E1      		ldi r24,lo8(16)
+ 3340 1114 90E0      		ldi r25,hi8(16)
+ 3341               	.LVL211:
+ 3342 1116 B801      		movw r22,r16
+ 3343 1118 0E94 0000 		call __eewr_word_m328p
+ 3344               	.LM378:
+ 3345               	/* #APP */
+ 3346               	 ;  264 "zoCommands.c" 1
+ 3347 111c 0FB6      		in __tmp_reg__, __SREG__
+ 3348 111e 0F92      		 push __tmp_reg__
+ 3349 1120 F894      		cli
+ 3350               	 ;  0 "" 2
+ 3351               	.LM379:
+ 3352               	/* #NOAPP */
+ 3353 1122 1093 0000 		sts (Sms+58)+1,r17
+ 3354 1126 0093 0000 		sts Sms+58,r16
+ 3355               	.LM380:
+ 3356               	/* #APP */
+ 3357               	 ;  266 "zoCommands.c" 1
+ 3358 112a 0F90      		pop __tmp_reg__ 
+ 3359 112c 0FBE      		out __SREG__, __tmp_reg__
+ 3360               	 ;  0 "" 2
+ 3361               	/* epilogue start */
+ 3362               	.LM381:
+ 3363               	/* #NOAPP */
+ 3364 112e 1F91      		pop r17
+ 3365 1130 0F91      		pop r16
+ 3366               	.LVL212:
+ 3367 1132 0895      		ret
+ 3368               	.LFE20:
+ 3370               	.global	zoCommandsServiceCommand
+ 3372               	zoCommandsServiceCommand:
+ 3373               	.LFB19:
+ 3374               	.LM382:
+ 3375               	.LVL213:
+ 3376 1134 CF93      		push r28
+ 3377 1136 DF93      		push r29
+ 3378               	/* prologue: function */
+ 3379               	/* frame size = 0 */
+ 3380 1138 EC01      		movw r28,r24
+ 3381               	.LM383:
+ 3382 113a EA81      		ldd r30,Y+2
+ 3383 113c EC3C      		cpi r30,lo8(-52)
+ 3384 113e 00F4      		brsh .L172
+ 3385               	.LVL214:
+ 3386               	.LM384:
+ 3387 1140 E83C      		cpi r30,lo8(-56)
+ 3388 1142 00F0      		brlo .L153
+ 3389               	.LM385:
+ 3390 1144 8B81      		ldd r24,Y+3
+ 3391 1146 8823      		tst r24
+ 3392 1148 01F0      		breq .+2
+ 3393 114a 00C0      		rjmp .L173
+ 3394               	.L154:
+ 3395               	.LM386:
+ 3396 114c 0E94 0000 		call zoMotorGetState
+ 3397 1150 8823      		tst r24
+ 3398 1152 01F0      		breq .L155
+ 3399               	.L169:
+ 3400               	.LM387:
+ 3401 1154 EA81      		ldd r30,Y+2
+ 3402               	.L156:
+ 3403               	.LM388:
+ 3404 1156 F0E0      		ldi r31,lo8(0)
+ 3405 1158 EE0F      		lsl r30
+ 3406 115a FF1F      		rol r31
+ 3407 115c E050      		subi r30,lo8(-(zoCommandBrc-400))
+ 3408 115e F040      		sbci r31,hi8(-(zoCommandBrc-400))
+ 3409 1160 0190      		ld __tmp_reg__,Z+
+ 3410 1162 F081      		ld r31,Z
+ 3411 1164 E02D      		mov r30,__tmp_reg__
+ 3412 1166 CE01      		movw r24,r28
+ 3413 1168 0995      		icall
+ 3414               	.LM389:
+ 3415 116a 80E0      		ldi r24,lo8(zoCommandsError)
+ 3416 116c 90E0      		ldi r25,hi8(zoCommandsError)
+ 3417 116e 0E94 0000 		call zoErrorIsEmpty
+ 3418 1172 8823      		tst r24
+ 3419 1174 01F0      		breq .+2
+ 3420 1176 00C0      		rjmp .L171
+ 3421               	.L152:
+ 3422               	/* epilogue start */
+ 3423               	.LM390:
+ 3424 1178 DF91      		pop r29
+ 3425 117a CF91      		pop r28
+ 3426               	.LVL215:
+ 3427 117c 0895      		ret
+ 3428               	.LVL216:
+ 3429               	.L153:
+ 3430               	.LM391:
+ 3431 117e E437      		cpi r30,lo8(116)
+ 3432 1180 00F4      		brsh .L172
+ 3433               	.LM392:
+ 3434 1182 E436      		cpi r30,lo8(100)
+ 3435 1184 00F4      		brsh .L174
+ 3436               	.LM393:
+ 3437 1186 ED31      		cpi r30,lo8(29)
+ 3438 1188 00F4      		brsh .L172
+ 3439               	.LM394:
+ 3440 118a F0E0      		ldi r31,lo8(0)
+ 3441 118c E050      		subi r30,lo8(-(zoCommandsSetByteCount))
+ 3442 118e F040      		sbci r31,hi8(-(zoCommandsSetByteCount))
+ 3443 1190 9B81      		ldd r25,Y+3
+ 3444 1192 8081      		ld r24,Z
+ 3445 1194 9817      		cp r25,r24
+ 3446 1196 01F0      		breq .L163
+ 3447               	.LM395:
+ 3448 1198 80E0      		ldi r24,lo8(zoCommandsError)
+ 3449 119a 90E0      		ldi r25,hi8(zoCommandsError)
+ 3450 119c 62E0      		ldi r22,lo8(2)
+ 3451 119e 0E94 0000 		call zoErrorPut
+ 3452 11a2 80E0      		ldi r24,lo8(0)
+ 3453 11a4 00C0      		rjmp .L152
+ 3454               	.LVL217:
+ 3455               	.L172:
+ 3456               	.LM396:
+ 3457 11a6 80E0      		ldi r24,lo8(zoCommandsError)
+ 3458 11a8 90E0      		ldi r25,hi8(zoCommandsError)
+ 3459 11aa 61E0      		ldi r22,lo8(1)
+ 3460 11ac 0E94 0000 		call zoErrorPut
+ 3461 11b0 80E0      		ldi r24,lo8(0)
+ 3462               	.LM397:
+ 3463 11b2 DF91      		pop r29
+ 3464 11b4 CF91      		pop r28
+ 3465               	.LVL218:
+ 3466 11b6 0895      		ret
+ 3467               	.LVL219:
+ 3468               	.L155:
+ 3469               	.LM398:
+ 3470 11b8 EA81      		ldd r30,Y+2
+ 3471 11ba E83C      		cpi r30,lo8(-56)
+ 3472 11bc 01F0      		breq .L157
+ 3473 11be EA3C      		cpi r30,lo8(-54)
+ 3474 11c0 01F4      		brne .L156
+ 3475               	.L157:
+ 3476               	.LM399:
+ 3477 11c2 80E0      		ldi r24,lo8(zoCommandsError)
+ 3478 11c4 90E0      		ldi r25,hi8(zoCommandsError)
+ 3479 11c6 64E0      		ldi r22,lo8(4)
+ 3480 11c8 0E94 0000 		call zoErrorPut
+ 3481 11cc 00C0      		rjmp .L169
+ 3482               	.LVL220:
+ 3483               	.L174:
+ 3484               	.LM400:
+ 3485 11ce F0E0      		ldi r31,lo8(0)
+ 3486 11d0 EE0F      		lsl r30
+ 3487 11d2 FF1F      		rol r31
+ 3488 11d4 E050      		subi r30,lo8(-(zoCommandGet-200))
+ 3489 11d6 F040      		sbci r31,hi8(-(zoCommandGet-200))
+ 3490 11d8 0190      		ld __tmp_reg__,Z+
+ 3491 11da F081      		ld r31,Z
+ 3492 11dc E02D      		mov r30,__tmp_reg__
+ 3493 11de 0995      		icall
+ 3494               	.LM401:
+ 3495 11e0 8B81      		ldd r24,Y+3
+ 3496 11e2 8823      		tst r24
+ 3497 11e4 01F0      		breq .L171
+ 3498               	.LM402:
+ 3499 11e6 80E0      		ldi r24,lo8(zoCommandsError)
+ 3500 11e8 90E0      		ldi r25,hi8(zoCommandsError)
+ 3501 11ea 65E0      		ldi r22,lo8(5)
+ 3502 11ec 0E94 0000 		call zoErrorPut
+ 3503 11f0 80E0      		ldi r24,lo8(0)
+ 3504 11f2 00C0      		rjmp .L152
+ 3505               	.L163:
+ 3506               	.LM403:
+ 3507 11f4 0E94 0000 		call zoMotorGetState
+ 3508 11f8 8823      		tst r24
+ 3509 11fa 01F4      		brne .L164
+ 3510 11fc EA81      		ldd r30,Y+2
+ 3511 11fe 8E2F      		mov r24,r30
+ 3512 1200 8750      		subi r24,lo8(-(-7))
+ 3513 1202 8630      		cpi r24,lo8(6)
+ 3514 1204 00F0      		brlo .L165
+ 3515 1206 EA31      		cpi r30,lo8(26)
+ 3516 1208 01F0      		breq .L165
+ 3517               	.L166:
+ 3518               	.LM404:
+ 3519 120a F0E0      		ldi r31,lo8(0)
+ 3520 120c EE0F      		lsl r30
+ 3521 120e FF1F      		rol r31
+ 3522 1210 E050      		subi r30,lo8(-(zoCommandSet))
+ 3523 1212 F040      		sbci r31,hi8(-(zoCommandSet))
+ 3524 1214 0190      		ld __tmp_reg__,Z+
+ 3525 1216 F081      		ld r31,Z
+ 3526 1218 E02D      		mov r30,__tmp_reg__
+ 3527 121a CE01      		movw r24,r28
+ 3528 121c 0995      		icall
+ 3529               	.L171:
+ 3530               	.LM405:
+ 3531 121e 80E0      		ldi r24,lo8(zoCommandsError)
+ 3532 1220 90E0      		ldi r25,hi8(zoCommandsError)
+ 3533 1222 0E94 0000 		call zoErrorIsEmpty
+ 3534               	.LM406:
+ 3535 1226 DF91      		pop r29
+ 3536 1228 CF91      		pop r28
+ 3537               	.LVL221:
+ 3538 122a 0895      		ret
+ 3539               	.LVL222:
+ 3540               	.L173:
+ 3541               	.LM407:
+ 3542 122c 80E0      		ldi r24,lo8(zoCommandsError)
+ 3543 122e 90E0      		ldi r25,hi8(zoCommandsError)
+ 3544 1230 65E0      		ldi r22,lo8(5)
+ 3545 1232 0E94 0000 		call zoErrorPut
+ 3546 1236 00C0      		rjmp .L154
+ 3547               	.L165:
+ 3548               	.LM408:
+ 3549 1238 80E0      		ldi r24,lo8(zoCommandsError)
+ 3550 123a 90E0      		ldi r25,hi8(zoCommandsError)
+ 3551 123c 64E0      		ldi r22,lo8(4)
+ 3552 123e 0E94 0000 		call zoErrorPut
+ 3553 1242 80E0      		ldi r24,lo8(0)
+ 3554 1244 00C0      		rjmp .L152
+ 3555               	.L164:
+ 3556               	.LM409:
+ 3557 1246 EA81      		ldd r30,Y+2
+ 3558 1248 00C0      		rjmp .L166
+ 3559               	.LFE19:
+ 3561               	.global	zoCommandsInit
+ 3563               	zoCommandsInit:
+ 3564               	.LFB18:
+ 3565               	.LM410:
+ 3566               	/* prologue: function */
+ 3567               	/* frame size = 0 */
+ 3568               	.LM411:
+ 3569 124a 80E0      		ldi r24,lo8(zoCommandsError)
+ 3570 124c 90E0      		ldi r25,hi8(zoCommandsError)
+ 3571 124e 0E94 0000 		call zoErrorInit
+ 3572               	.LM412:
+ 3573 1252 80E0      		ldi r24,lo8(gs(zoCommandSetGainP))
+ 3574 1254 90E0      		ldi r25,hi8(gs(zoCommandSetGainP))
+ 3575 1256 9093 0000 		sts (zoCommandSet)+1,r25
+ 3576 125a 8093 0000 		sts zoCommandSet,r24
+ 3577               	.LM413:
+ 3578 125e 22E0      		ldi r18,lo8(2)
+ 3579 1260 2093 0000 		sts zoCommandsSetByteCount,r18
+ 3580               	.LM414:
+ 3581 1264 80E0      		ldi r24,lo8(gs(zoCommandSetGainI))
+ 3582 1266 90E0      		ldi r25,hi8(gs(zoCommandSetGainI))
+ 3583 1268 9093 0000 		sts (zoCommandSet+2)+1,r25
+ 3584 126c 8093 0000 		sts zoCommandSet+2,r24
+ 3585               	.LM415:
+ 3586 1270 2093 0000 		sts zoCommandsSetByteCount+1,r18
+ 3587               	.LM416:
+ 3588 1274 80E0      		ldi r24,lo8(gs(zoCommandSetGainD))
+ 3589 1276 90E0      		ldi r25,hi8(gs(zoCommandSetGainD))
+ 3590 1278 9093 0000 		sts (zoCommandSet+4)+1,r25
+ 3591 127c 8093 0000 		sts zoCommandSet+4,r24
+ 3592               	.LM417:
+ 3593 1280 2093 0000 		sts zoCommandsSetByteCount+2,r18
+ 3594               	.LM418:
+ 3595 1284 80E0      		ldi r24,lo8(gs(zoCommandSetProfileAcceleration))
+ 3596 1286 90E0      		ldi r25,hi8(gs(zoCommandSetProfileAcceleration))
+ 3597 1288 9093 0000 		sts (zoCommandSet+6)+1,r25
+ 3598 128c 8093 0000 		sts zoCommandSet+6,r24
+ 3599               	.LM419:
+ 3600 1290 2093 0000 		sts zoCommandsSetByteCount+3,r18
+ 3601               	.LM420:
+ 3602 1294 80E0      		ldi r24,lo8(gs(zoCommandSetProfileVelocity))
+ 3603 1296 90E0      		ldi r25,hi8(gs(zoCommandSetProfileVelocity))
+ 3604 1298 9093 0000 		sts (zoCommandSet+8)+1,r25
+ 3605 129c 8093 0000 		sts zoCommandSet+8,r24
+ 3606               	.LM421:
+ 3607 12a0 2093 0000 		sts zoCommandsSetByteCount+4,r18
+ 3608               	.LM422:
+ 3609 12a4 80E0      		ldi r24,lo8(gs(zoCommandSetCurrentLimit))
+ 3610 12a6 90E0      		ldi r25,hi8(gs(zoCommandSetCurrentLimit))
+ 3611 12a8 9093 0000 		sts (zoCommandSet+10)+1,r25
+ 3612 12ac 8093 0000 		sts zoCommandSet+10,r24
+ 3613               	.LM423:
+ 3614 12b0 2093 0000 		sts zoCommandsSetByteCount+5,r18
+ 3615               	.LM424:
+ 3616 12b4 80E0      		ldi r24,lo8(gs(zoCommandSetCurrentLimitDuration))
+ 3617 12b6 90E0      		ldi r25,hi8(gs(zoCommandSetCurrentLimitDuration))
+ 3618 12b8 9093 0000 		sts (zoCommandSet+12)+1,r25
+ 3619 12bc 8093 0000 		sts zoCommandSet+12,r24
+ 3620               	.LM425:
+ 3621 12c0 2093 0000 		sts zoCommandsSetByteCount+6,r18
+ 3622               	.LM426:
+ 3623 12c4 80E0      		ldi r24,lo8(gs(zoCommandVelocityMove))
+ 3624 12c6 90E0      		ldi r25,hi8(gs(zoCommandVelocityMove))
+ 3625 12c8 9093 0000 		sts (zoCommandSet+14)+1,r25
+ 3626 12cc 8093 0000 		sts zoCommandSet+14,r24
+ 3627               	.LM427:
+ 3628 12d0 2093 0000 		sts zoCommandsSetByteCount+7,r18
+ 3629               	.LM428:
+ 3630 12d4 80E0      		ldi r24,lo8(gs(zoCommandAbsolutePositionMove))
+ 3631 12d6 90E0      		ldi r25,hi8(gs(zoCommandAbsolutePositionMove))
+ 3632 12d8 9093 0000 		sts (zoCommandSet+16)+1,r25
+ 3633 12dc 8093 0000 		sts zoCommandSet+16,r24
+ 3634               	.LM429:
+ 3635 12e0 34E0      		ldi r19,lo8(4)
+ 3636 12e2 3093 0000 		sts zoCommandsSetByteCount+8,r19
+ 3637               	.LM430:
+ 3638 12e6 80E0      		ldi r24,lo8(gs(zoCommandRelativePositionMove))
+ 3639 12e8 90E0      		ldi r25,hi8(gs(zoCommandRelativePositionMove))
+ 3640 12ea 9093 0000 		sts (zoCommandSet+18)+1,r25
+ 3641 12ee 8093 0000 		sts zoCommandSet+18,r24
+ 3642               	.LM431:
+ 3643 12f2 3093 0000 		sts zoCommandsSetByteCount+9,r19
+ 3644               	.LM432:
+ 3645 12f6 80E0      		ldi r24,lo8(gs(zoCommandProfiledVelocityMove))
+ 3646 12f8 90E0      		ldi r25,hi8(gs(zoCommandProfiledVelocityMove))
+ 3647 12fa 9093 0000 		sts (zoCommandSet+20)+1,r25
+ 3648 12fe 8093 0000 		sts zoCommandSet+20,r24
+ 3649               	.LM433:
+ 3650 1302 2093 0000 		sts zoCommandsSetByteCount+10,r18
+ 3651               	.LM434:
+ 3652 1306 80E0      		ldi r24,lo8(gs(zoCommandProfiledAbsolutePositionMove))
+ 3653 1308 90E0      		ldi r25,hi8(gs(zoCommandProfiledAbsolutePositionMove))
+ 3654 130a 9093 0000 		sts (zoCommandSet+22)+1,r25
+ 3655 130e 8093 0000 		sts zoCommandSet+22,r24
+ 3656               	.LM435:
+ 3657 1312 3093 0000 		sts zoCommandsSetByteCount+11,r19
+ 3658               	.LM436:
+ 3659 1316 80E0      		ldi r24,lo8(gs(zoCommandProfiledRelativePositionMove))
+ 3660 1318 90E0      		ldi r25,hi8(gs(zoCommandProfiledRelativePositionMove))
+ 3661 131a 9093 0000 		sts (zoCommandSet+24)+1,r25
+ 3662 131e 8093 0000 		sts zoCommandSet+24,r24
+ 3663               	.LM437:
+ 3664 1322 3093 0000 		sts zoCommandsSetByteCount+12,r19
+ 3665               	.LM438:
+ 3666 1326 80E0      		ldi r24,lo8(gs(zoCommandSetVelocitySetpoint))
+ 3667 1328 90E0      		ldi r25,hi8(gs(zoCommandSetVelocitySetpoint))
+ 3668 132a 9093 0000 		sts (zoCommandSet+26)+1,r25
+ 3669 132e 8093 0000 		sts zoCommandSet+26,r24
+ 3670               	.LM439:
+ 3671 1332 2093 0000 		sts zoCommandsSetByteCount+13,r18
+ 3672               	.LM440:
+ 3673 1336 80E0      		ldi r24,lo8(gs(zoCommandSetAbsolutePositionSetpoint))
+ 3674 1338 90E0      		ldi r25,hi8(gs(zoCommandSetAbsolutePositionSetpoint))
+ 3675 133a 9093 0000 		sts (zoCommandSet+28)+1,r25
+ 3676 133e 8093 0000 		sts zoCommandSet+28,r24
+ 3677               	.LM441:
+ 3678 1342 3093 0000 		sts zoCommandsSetByteCount+14,r19
+ 3679               	.LM442:
+ 3680 1346 80E0      		ldi r24,lo8(gs(zoCommandSetRelativePositionSetpoint))
+ 3681 1348 90E0      		ldi r25,hi8(gs(zoCommandSetRelativePositionSetpoint))
+ 3682 134a 9093 0000 		sts (zoCommandSet+30)+1,r25
+ 3683 134e 8093 0000 		sts zoCommandSet+30,r24
+ 3684               	.LM443:
+ 3685 1352 3093 0000 		sts zoCommandsSetByteCount+15,r19
+ 3686               	.LM444:
+ 3687 1356 80E0      		ldi r24,lo8(gs(zoCommandSetProfiledVelocitySetpoint))
+ 3688 1358 90E0      		ldi r25,hi8(gs(zoCommandSetProfiledVelocitySetpoint))
+ 3689 135a 9093 0000 		sts (zoCommandSet+32)+1,r25
+ 3690 135e 8093 0000 		sts zoCommandSet+32,r24
+ 3691               	.LM445:
+ 3692 1362 2093 0000 		sts zoCommandsSetByteCount+16,r18
+ 3693               	.LM446:
+ 3694 1366 80E0      		ldi r24,lo8(gs(zoCommandSetProfiledAbsolutePositionSetpoint))
+ 3695 1368 90E0      		ldi r25,hi8(gs(zoCommandSetProfiledAbsolutePositionSetpoint))
+ 3696 136a 9093 0000 		sts (zoCommandSet+34)+1,r25
+ 3697 136e 8093 0000 		sts zoCommandSet+34,r24
+ 3698               	.LM447:
+ 3699 1372 3093 0000 		sts zoCommandsSetByteCount+17,r19
+ 3700               	.LM448:
+ 3701 1376 80E0      		ldi r24,lo8(gs(zoCommandSetProfiledRelativePositionSetpoint))
+ 3702 1378 90E0      		ldi r25,hi8(gs(zoCommandSetProfiledRelativePositionSetpoint))
+ 3703 137a 9093 0000 		sts (zoCommandSet+36)+1,r25
+ 3704 137e 8093 0000 		sts zoCommandSet+36,r24
+ 3705               	.LM449:
+ 3706 1382 3093 0000 		sts zoCommandsSetByteCount+18,r19
+ 3707               	.LM450:
+ 3708 1386 80E0      		ldi r24,lo8(gs(zoCommandConfigureDigitalIO))
+ 3709 1388 90E0      		ldi r25,hi8(gs(zoCommandConfigureDigitalIO))
+ 3710 138a 9093 0000 		sts (zoCommandSet+38)+1,r25
+ 3711 138e 8093 0000 		sts zoCommandSet+38,r24
+ 3712               	.LM451:
+ 3713 1392 21E0      		ldi r18,lo8(1)
+ 3714 1394 2093 0000 		sts zoCommandsSetByteCount+19,r18
+ 3715               	.LM452:
+ 3716 1398 80E0      		ldi r24,lo8(gs(zoCommandSetDigitalOut))
+ 3717 139a 90E0      		ldi r25,hi8(gs(zoCommandSetDigitalOut))
+ 3718 139c 9093 0000 		sts (zoCommandSet+40)+1,r25
+ 3719 13a0 8093 0000 		sts zoCommandSet+40,r24
+ 3720               	.LM453:
+ 3721 13a4 2093 0000 		sts zoCommandsSetByteCount+20,r18
+ 3722               	.LM454:
+ 3723 13a8 80E0      		ldi r24,lo8(gs(zoCommandSetNodeID))
+ 3724 13aa 90E0      		ldi r25,hi8(gs(zoCommandSetNodeID))
+ 3725 13ac 9093 0000 		sts (zoCommandSet+42)+1,r25
+ 3726 13b0 8093 0000 		sts zoCommandSet+42,r24
+ 3727               	.LM455:
+ 3728 13b4 2093 0000 		sts zoCommandsSetByteCount+21,r18
+ 3729               	.LM456:
+ 3730 13b8 80E0      		ldi r24,lo8(gs(zoCommandSetLocalAcceptanceMask))
+ 3731 13ba 90E0      		ldi r25,hi8(gs(zoCommandSetLocalAcceptanceMask))
+ 3732 13bc 9093 0000 		sts (zoCommandSet+44)+1,r25
+ 3733 13c0 8093 0000 		sts zoCommandSet+44,r24
+ 3734               	.LM457:
+ 3735 13c4 2093 0000 		sts zoCommandsSetByteCount+22,r18
+ 3736               	.LM458:
+ 3737 13c8 80E0      		ldi r24,lo8(gs(zoCommandSetBaudUart))
+ 3738 13ca 90E0      		ldi r25,hi8(gs(zoCommandSetBaudUart))
+ 3739 13cc 9093 0000 		sts (zoCommandSet+46)+1,r25
+ 3740 13d0 8093 0000 		sts zoCommandSet+46,r24
+ 3741               	.LM459:
+ 3742 13d4 3093 0000 		sts zoCommandsSetByteCount+23,r19
+ 3743               	.LM460:
+ 3744 13d8 80E0      		ldi r24,lo8(gs(zoCommandResetPosition))
+ 3745 13da 90E0      		ldi r25,hi8(gs(zoCommandResetPosition))
+ 3746 13dc 9093 0000 		sts (zoCommandSet+48)+1,r25
+ 3747 13e0 8093 0000 		sts zoCommandSet+48,r24
+ 3748               	.LM461:
+ 3749 13e4 1092 0000 		sts zoCommandsSetByteCount+24,__zero_reg__
+ 3750               	.LM462:
+ 3751 13e8 E0E0      		ldi r30,lo8(gs(zoCommandStart))
+ 3752 13ea F0E0      		ldi r31,hi8(gs(zoCommandStart))
+ 3753 13ec F093 0000 		sts (zoCommandSet+50)+1,r31
+ 3754 13f0 E093 0000 		sts zoCommandSet+50,r30
+ 3755               	.LM463:
+ 3756 13f4 1092 0000 		sts zoCommandsSetByteCount+25,__zero_reg__
+ 3757               	.LM464:
+ 3758 13f8 60E0      		ldi r22,lo8(gs(zoCommandHalt))
+ 3759 13fa 70E0      		ldi r23,hi8(gs(zoCommandHalt))
+ 3760 13fc 7093 0000 		sts (zoCommandSet+52)+1,r23
+ 3761 1400 6093 0000 		sts zoCommandSet+52,r22
+ 3762               	.LM465:
+ 3763 1404 1092 0000 		sts zoCommandsSetByteCount+26,__zero_reg__
+ 3764               	.LM466:
+ 3765 1408 40E0      		ldi r20,lo8(gs(zoCommandStop))
+ 3766 140a 50E0      		ldi r21,hi8(gs(zoCommandStop))
+ 3767 140c 5093 0000 		sts (zoCommandSet+54)+1,r21
+ 3768 1410 4093 0000 		sts zoCommandSet+54,r20
+ 3769               	.LM467:
+ 3770 1414 1092 0000 		sts zoCommandsSetByteCount+27,__zero_reg__
+ 3771               	.LM468:
+ 3772 1418 80E0      		ldi r24,lo8(gs(zoCommandSetErrorReportingLevel))
+ 3773 141a 90E0      		ldi r25,hi8(gs(zoCommandSetErrorReportingLevel))
+ 3774 141c 9093 0000 		sts (zoCommandSet+56)+1,r25
+ 3775 1420 8093 0000 		sts zoCommandSet+56,r24
+ 3776               	.LM469:
+ 3777 1424 2093 0000 		sts zoCommandsSetByteCount+28,r18
+ 3778               	.LM470:
+ 3779 1428 80E0      		ldi r24,lo8(gs(zoCommandGetGainP))
+ 3780 142a 90E0      		ldi r25,hi8(gs(zoCommandGetGainP))
+ 3781 142c 9093 0000 		sts (zoCommandGet)+1,r25
+ 3782 1430 8093 0000 		sts zoCommandGet,r24
+ 3783               	.LM471:
+ 3784 1434 80E0      		ldi r24,lo8(gs(zoCommandGetGainI))
+ 3785 1436 90E0      		ldi r25,hi8(gs(zoCommandGetGainI))
+ 3786 1438 9093 0000 		sts (zoCommandGet+2)+1,r25
+ 3787 143c 8093 0000 		sts zoCommandGet+2,r24
+ 3788               	.LM472:
+ 3789 1440 80E0      		ldi r24,lo8(gs(zoCommandGetGainD))
+ 3790 1442 90E0      		ldi r25,hi8(gs(zoCommandGetGainD))
+ 3791 1444 9093 0000 		sts (zoCommandGet+4)+1,r25
+ 3792 1448 8093 0000 		sts zoCommandGet+4,r24
+ 3793               	.LM473:
+ 3794 144c 80E0      		ldi r24,lo8(gs(zoCommandGetProfileAcceleration))
+ 3795 144e 90E0      		ldi r25,hi8(gs(zoCommandGetProfileAcceleration))
+ 3796 1450 9093 0000 		sts (zoCommandGet+6)+1,r25
+ 3797 1454 8093 0000 		sts zoCommandGet+6,r24
+ 3798               	.LM474:
+ 3799 1458 80E0      		ldi r24,lo8(gs(zoCommandGetProfileVelocity))
+ 3800 145a 90E0      		ldi r25,hi8(gs(zoCommandGetProfileVelocity))
+ 3801 145c 9093 0000 		sts (zoCommandGet+8)+1,r25
+ 3802 1460 8093 0000 		sts zoCommandGet+8,r24
+ 3803               	.LM475:
+ 3804 1464 80E0      		ldi r24,lo8(gs(zoCommandGetCurrentLimit))
+ 3805 1466 90E0      		ldi r25,hi8(gs(zoCommandGetCurrentLimit))
+ 3806 1468 9093 0000 		sts (zoCommandGet+10)+1,r25
+ 3807 146c 8093 0000 		sts zoCommandGet+10,r24
+ 3808               	.LM476:
+ 3809 1470 80E0      		ldi r24,lo8(gs(zoCommandGetCurrentLimitDuration))
+ 3810 1472 90E0      		ldi r25,hi8(gs(zoCommandGetCurrentLimitDuration))
+ 3811 1474 9093 0000 		sts (zoCommandGet+12)+1,r25
+ 3812 1478 8093 0000 		sts zoCommandGet+12,r24
+ 3813               	.LM477:
+ 3814 147c 80E0      		ldi r24,lo8(gs(zoCommandGetDigitalIoConfiguration))
+ 3815 147e 90E0      		ldi r25,hi8(gs(zoCommandGetDigitalIoConfiguration))
+ 3816 1480 9093 0000 		sts (zoCommandGet+14)+1,r25
+ 3817 1484 8093 0000 		sts zoCommandGet+14,r24
+ 3818               	.LM478:
+ 3819 1488 80E0      		ldi r24,lo8(gs(zoCommandGetLocalAcceptanceMask))
+ 3820 148a 90E0      		ldi r25,hi8(gs(zoCommandGetLocalAcceptanceMask))
+ 3821 148c 9093 0000 		sts (zoCommandGet+16)+1,r25
+ 3822 1490 8093 0000 		sts zoCommandGet+16,r24
+ 3823               	.LM479:
+ 3824 1494 80E0      		ldi r24,lo8(gs(zoCommandGetDigitalIn))
+ 3825 1496 90E0      		ldi r25,hi8(gs(zoCommandGetDigitalIn))
+ 3826 1498 9093 0000 		sts (zoCommandGet+18)+1,r25
+ 3827 149c 8093 0000 		sts zoCommandGet+18,r24
+ 3828               	.LM480:
+ 3829 14a0 80E0      		ldi r24,lo8(gs(zoCommandGetAnalogIn))
+ 3830 14a2 90E0      		ldi r25,hi8(gs(zoCommandGetAnalogIn))
+ 3831 14a4 9093 0000 		sts (zoCommandGet+20)+1,r25
+ 3832 14a8 8093 0000 		sts zoCommandGet+20,r24
+ 3833               	.LM481:
+ 3834 14ac 80E0      		ldi r24,lo8(gs(zoCommandGetPosition))
+ 3835 14ae 90E0      		ldi r25,hi8(gs(zoCommandGetPosition))
+ 3836 14b0 9093 0000 		sts (zoCommandGet+22)+1,r25
+ 3837 14b4 8093 0000 		sts zoCommandGet+22,r24
+ 3838               	.LM482:
+ 3839 14b8 80E0      		ldi r24,lo8(gs(zoCommandGetAbsolutePosition))
+ 3840 14ba 90E0      		ldi r25,hi8(gs(zoCommandGetAbsolutePosition))
+ 3841 14bc 9093 0000 		sts (zoCommandGet+24)+1,r25
+ 3842 14c0 8093 0000 		sts zoCommandGet+24,r24
+ 3843               	.LM483:
+ 3844 14c4 80E0      		ldi r24,lo8(gs(zoCommandGetVelocity))
+ 3845 14c6 90E0      		ldi r25,hi8(gs(zoCommandGetVelocity))
+ 3846 14c8 9093 0000 		sts (zoCommandGet+26)+1,r25
+ 3847 14cc 8093 0000 		sts zoCommandGet+26,r24
+ 3848               	.LM484:
+ 3849 14d0 80E0      		ldi r24,lo8(gs(zoCommandGetCurrent))
+ 3850 14d2 90E0      		ldi r25,hi8(gs(zoCommandGetCurrent))
+ 3851 14d4 9093 0000 		sts (zoCommandGet+28)+1,r25
+ 3852 14d8 8093 0000 		sts zoCommandGet+28,r24
+ 3853               	.LM485:
+ 3854 14dc 80E0      		ldi r24,lo8(gs(zoCommandGetWarning))
+ 3855 14de 90E0      		ldi r25,hi8(gs(zoCommandGetWarning))
+ 3856 14e0 9093 0000 		sts (zoCommandGet+30)+1,r25
+ 3857 14e4 8093 0000 		sts zoCommandGet+30,r24
+ 3858               	.LM486:
+ 3859 14e8 80E0      		ldi r24,lo8(gs(zoCommandDoMove))
+ 3860 14ea 90E0      		ldi r25,hi8(gs(zoCommandDoMove))
+ 3861 14ec 9093 0000 		sts (zoCommandBrc)+1,r25
+ 3862 14f0 8093 0000 		sts zoCommandBrc,r24
+ 3863               	.LM487:
+ 3864 14f4 F093 0000 		sts (zoCommandBrc+2)+1,r31
+ 3865 14f8 E093 0000 		sts zoCommandBrc+2,r30
+ 3866               	.LM488:
+ 3867 14fc 7093 0000 		sts (zoCommandBrc+4)+1,r23
+ 3868 1500 6093 0000 		sts zoCommandBrc+4,r22
+ 3869               	.LM489:
+ 3870 1504 5093 0000 		sts (zoCommandBrc+6)+1,r21
+ 3871 1508 4093 0000 		sts zoCommandBrc+6,r20
+ 3872               	/* epilogue start */
+ 3873               	.LM490:
+ 3874 150c 0895      		ret
+ 3875               	.LFE18:
+ 3877               	.global	zoCommandsError
+ 3878               	.global	zoCommandsError
+ 3879               		.section .bss
+ 3882               	zoCommandsError:
+ 3883 0000 0000 0000 		.skip 13,0
+ 3883      0000 0000 
+ 3883      0000 0000 
+ 3883      00
+ 3884               		.lcomm zoCommandSet,58
+ 3885               		.lcomm zoCommandsSetByteCount,29
+ 3886               		.lcomm zoCommandGet,32
+ 3887               		.lcomm zoCommandBrc,8
+ 4304               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoCommands.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:18     .text:00000000 zoCommandAbsolutePositionMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:65     .text:0000002c zoCommandRelativePositionMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:120    .text:00000070 zoCommandSetVelocitySetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:170    .text:000000a0 zoCommandSetAbsolutePositionSetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:217    .text:000000cc zoCommandSetRelativePositionSetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:264    .text:000000f8 zoCommandSetProfiledVelocitySetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:314    .text:00000128 zoCommandSetProfiledAbsolutePositionSetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:361    .text:00000154 zoCommandSetProfiledRelativePositionSetpoint
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:408    .text:00000180 zoCommandSetDigitalOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:465    .text:000001c2 zoCommandGetGainP
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:507    .text:000001e0 zoCommandGetGainI
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:549    .text:000001fe zoCommandGetGainD
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:591    .text:0000021c zoCommandGetProfileAcceleration
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:633    .text:0000023a zoCommandGetProfileVelocity
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:675    .text:00000258 zoCommandGetCurrentLimit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:717    .text:00000276 zoCommandGetCurrentLimitDuration
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:759    .text:00000294 zoCommandGetDigitalIoConfiguration
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:780    .text:000002a2 zoCommandGetLocalAcceptanceMask
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:801    .text:000002b0 zoCommandGetDigitalIn
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:851    .text:000002de zoCommandGetVelocity
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:885    .text:000002fa zoProfiledVelocity
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:1190   .text:0000055c zoCommandProfiledVelocityMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:1209   .text:00000568 zoCommandGetPosition
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:1245   .text:00000588 zoCommandHalt
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:1283   .text:000005ae zoCommandVelocityMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:1361   .text:00000622 zoProfiledMoveAbsolute
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2146   .text:00000c18 zoCommandDoMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2376   .text:00000d56 zoCommandProfiledRelativePositionMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2418   .text:00000d86 zoCommandProfiledAbsolutePositionMove
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2439   .text:00000d96 zoCommandGetWarning
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2492   .text:00000dda zoCommandGetCurrent
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2527   .text:00000df8 zoCommandGetAnalogIn
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2595   .text:00000e3a zoCommandGetAbsolutePosition
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2629   .text:00000e56 zoCommandSetErrorReportingLevel
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3882   .bss:00000000 zoCommandsError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2687   .text:00000e90 zoCommandSetLocalAcceptanceMask
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2717   .text:00000eae zoCommandSetNodeID
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2747   .text:00000ecc zoCommandConfigureDigitalIO
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2819   .text:00000f24 zoCommandStop
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2853   .text:00000f3a zoCommandStart
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2907   .text:00000f8a zoCommandResetPosition
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2923   .text:00000f90 zoCommandSetBaudUart
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:2967   .text:00000fc4 zoCommandSetCurrentLimitDuration
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3018   .text:00000ff0 zoCommandSetCurrentLimit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3085   .text:00001030 zoCommandSetProfileVelocity
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3152   .text:00001070 zoCommandSetProfileAcceleration
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3219   .text:000010b0 zoCommandSetGainD
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3270   .text:000010dc zoCommandSetGainI
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3321   .text:00001108 zoCommandSetGainP
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3372   .text:00001134 zoCommandsServiceCommand
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3886   .bss:00000084 zoCommandBrc
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3884   .bss:00000047 zoCommandsSetByteCount
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3885   .bss:00000064 zoCommandGet
+                             .bss:0000000d zoCommandSet
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc5g0CWC.s:3563   .text:0000124a zoCommandsInit
+
+UNDEFINED SYMBOLS
+Sms
+zoEncoderGetVel
+__mulsf3
+__fixsfsi
+__floatsisf
+__mulsi3
+__divmodsi4
+__divsf3
+zoEncoderGetPos
+sqrt
+zoSmsWarning
+zoErrorGet
+zoErrorIsEmpty
+zoAdcRead
+zoEncoderGetPosAbsolute
+zoErrorPut
+__eewr_byte_m328p
+zoMotorSetState
+zoEncoderReset
+__eewr_dword_m328p
+__eewr_word_m328p
+zoMotorGetState
+zoErrorInit
+__do_clear_bss

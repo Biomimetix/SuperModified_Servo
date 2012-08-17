@@ -1,0 +1,978 @@
+   1               		.file	"zoSms.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoSmsPinsInit
+  18               	zoSmsPinsInit:
+  19               	.LFB8:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 84E0      		ldi r24,lo8(4)
+  25 0002 84B9      		out 36-32,r24
+  26               	.LM3:
+  27 0004 85B1      		in r24,37-32
+  28 0006 8E63      		ori r24,lo8(62)
+  29 0008 85B9      		out 37-32,r24
+  30               	.LM4:
+  31 000a 17B8      		out 39-32,__zero_reg__
+  32               	.LM5:
+  33 000c 88B1      		in r24,40-32
+  34 000e 8063      		ori r24,lo8(48)
+  35 0010 88B9      		out 40-32,r24
+  36               	.LM6:
+  37 0012 8EE3      		ldi r24,lo8(62)
+  38 0014 8AB9      		out 42-32,r24
+  39               	.LM7:
+  40 0016 81EC      		ldi r24,lo8(-63)
+  41 0018 8BB9      		out 43-32,r24
+  42               	/* epilogue start */
+  43               	.LM8:
+  44 001a 0895      		ret
+  45               	.LFE8:
+  47               	.global	accelerationCompleteCriterion
+  49               	accelerationCompleteCriterion:
+  50               	.LFB12:
+  51               	.LM9:
+  52 001c AF92      		push r10
+  53 001e BF92      		push r11
+  54 0020 CF92      		push r12
+  55 0022 DF92      		push r13
+  56 0024 EF92      		push r14
+  57 0026 FF92      		push r15
+  58 0028 0F93      		push r16
+  59 002a 1F93      		push r17
+  60               	/* prologue: function */
+  61               	/* frame size = 0 */
+  62               	.LM10:
+  63 002c E090 0000 		lds r14,Sms+25
+  64 0030 F090 0000 		lds r15,(Sms+25)+1
+  65 0034 0091 0000 		lds r16,(Sms+25)+2
+  66 0038 1091 0000 		lds r17,(Sms+25)+3
+  67 003c 6091 0000 		lds r22,Sms+33
+  68 0040 7091 0000 		lds r23,(Sms+33)+1
+  69 0044 8091 0000 		lds r24,(Sms+33)+2
+  70 0048 9091 0000 		lds r25,(Sms+33)+3
+  71 004c A801      		movw r20,r16
+  72 004e 9701      		movw r18,r14
+  73 0050 0E94 0000 		call __subsf3
+  74 0054 5B01      		movw r10,r22
+  75 0056 6C01      		movw r12,r24
+  76 0058 6091 0000 		lds r22,Sms+29
+  77 005c 7091 0000 		lds r23,(Sms+29)+1
+  78 0060 8091 0000 		lds r24,(Sms+29)+2
+  79 0064 9091 0000 		lds r25,(Sms+29)+3
+  80 0068 A801      		movw r20,r16
+  81 006a 9701      		movw r18,r14
+  82 006c 0E94 0000 		call __subsf3
+  83 0070 9B01      		movw r18,r22
+  84 0072 AC01      		movw r20,r24
+  85 0074 C601      		movw r24,r12
+  86 0076 B501      		movw r22,r10
+  87 0078 0E94 0000 		call __mulsf3
+  88 007c 2091 0000 		lds r18,Sms+1
+  89 0080 3091 0000 		lds r19,(Sms+1)+1
+  90 0084 4091 0000 		lds r20,(Sms+1)+2
+  91 0088 5091 0000 		lds r21,(Sms+1)+3
+  92 008c 0E94 0000 		call __mulsf3
+  93 0090 0E94 0000 		call __fixsfsi
+  94 0094 1616      		cp __zero_reg__,r22
+  95 0096 1706      		cpc __zero_reg__,r23
+  96 0098 1806      		cpc __zero_reg__,r24
+  97 009a 1906      		cpc __zero_reg__,r25
+  98 009c 04F4      		brge .L8
+  99 009e 80E0      		ldi r24,lo8(0)
+ 100               	.L5:
+ 101               	/* epilogue start */
+ 102               	.LM11:
+ 103 00a0 1F91      		pop r17
+ 104 00a2 0F91      		pop r16
+ 105 00a4 FF90      		pop r15
+ 106 00a6 EF90      		pop r14
+ 107 00a8 DF90      		pop r13
+ 108 00aa CF90      		pop r12
+ 109 00ac BF90      		pop r11
+ 110 00ae AF90      		pop r10
+ 111 00b0 0895      		ret
+ 112               	.L8:
+ 113               	.LM12:
+ 114 00b2 8FEF      		ldi r24,lo8(-1)
+ 115 00b4 00C0      		rjmp .L5
+ 116               	.LFE12:
+ 118               	.global	positionReachedCriterion
+ 120               	positionReachedCriterion:
+ 121               	.LFB14:
+ 122               	.LM13:
+ 123               	/* prologue: function */
+ 124               	/* frame size = 0 */
+ 125               	.LM14:
+ 126 00b6 0E94 0000 		call zoEncoderGetPos
+ 127 00ba 9B01      		movw r18,r22
+ 128 00bc AC01      		movw r20,r24
+ 129 00be 8091 0000 		lds r24,Sms+49
+ 130 00c2 9091 0000 		lds r25,(Sms+49)+1
+ 131 00c6 A091 0000 		lds r26,(Sms+49)+2
+ 132 00ca B091 0000 		lds r27,(Sms+49)+3
+ 133 00ce 281B      		sub r18,r24
+ 134 00d0 390B      		sbc r19,r25
+ 135 00d2 4A0B      		sbc r20,r26
+ 136 00d4 5B0B      		sbc r21,r27
+ 137 00d6 57FD      		sbrc r21,7
+ 138 00d8 00C0      		rjmp .L14
+ 139 00da 2230      		cpi r18,lo8(2)
+ 140 00dc 3105      		cpc r19,__zero_reg__
+ 141 00de 4105      		cpc r20,__zero_reg__
+ 142 00e0 5105      		cpc r21,__zero_reg__
+ 143 00e2 04F0      		brlt .L15
+ 144               	.L10:
+ 145 00e4 80E0      		ldi r24,lo8(0)
+ 146               	.LM15:
+ 147 00e6 0895      		ret
+ 148               	.L14:
+ 149               	.LM16:
+ 150 00e8 5095      		com r21
+ 151 00ea 4095      		com r20
+ 152 00ec 3095      		com r19
+ 153 00ee 2195      		neg r18
+ 154 00f0 3F4F      		sbci r19,lo8(-1)
+ 155 00f2 4F4F      		sbci r20,lo8(-1)
+ 156 00f4 5F4F      		sbci r21,lo8(-1)
+ 157 00f6 2230      		cpi r18,lo8(2)
+ 158 00f8 3105      		cpc r19,__zero_reg__
+ 159 00fa 4105      		cpc r20,__zero_reg__
+ 160 00fc 5105      		cpc r21,__zero_reg__
+ 161 00fe 04F4      		brge .L10
+ 162               	.L15:
+ 163 0100 8FEF      		ldi r24,lo8(-1)
+ 164 0102 0895      		ret
+ 165               	.LFE14:
+ 167               	.global	constantVelocityCompletedCriterion
+ 169               	constantVelocityCompletedCriterion:
+ 170               	.LFB13:
+ 171               	.LM17:
+ 172               	/* prologue: function */
+ 173               	/* frame size = 0 */
+ 174               	.LM18:
+ 175 0104 0E94 0000 		call zoEncoderGetPos
+ 176 0108 9B01      		movw r18,r22
+ 177 010a AC01      		movw r20,r24
+ 178 010c 8091 0000 		lds r24,Sms+45
+ 179 0110 9091 0000 		lds r25,(Sms+45)+1
+ 180 0114 A091 0000 		lds r26,(Sms+45)+2
+ 181 0118 B091 0000 		lds r27,(Sms+45)+3
+ 182 011c 281B      		sub r18,r24
+ 183 011e 390B      		sbc r19,r25
+ 184 0120 4A0B      		sbc r20,r26
+ 185 0122 5B0B      		sbc r21,r27
+ 186 0124 57FD      		sbrc r21,7
+ 187 0126 00C0      		rjmp .L21
+ 188 0128 2230      		cpi r18,lo8(2)
+ 189 012a 3105      		cpc r19,__zero_reg__
+ 190 012c 4105      		cpc r20,__zero_reg__
+ 191 012e 5105      		cpc r21,__zero_reg__
+ 192 0130 04F0      		brlt .L22
+ 193               	.L17:
+ 194 0132 80E0      		ldi r24,lo8(0)
+ 195               	.LM19:
+ 196 0134 0895      		ret
+ 197               	.L21:
+ 198               	.LM20:
+ 199 0136 5095      		com r21
+ 200 0138 4095      		com r20
+ 201 013a 3095      		com r19
+ 202 013c 2195      		neg r18
+ 203 013e 3F4F      		sbci r19,lo8(-1)
+ 204 0140 4F4F      		sbci r20,lo8(-1)
+ 205 0142 5F4F      		sbci r21,lo8(-1)
+ 206 0144 2230      		cpi r18,lo8(2)
+ 207 0146 3105      		cpc r19,__zero_reg__
+ 208 0148 4105      		cpc r20,__zero_reg__
+ 209 014a 5105      		cpc r21,__zero_reg__
+ 210 014c 04F4      		brge .L17
+ 211               	.L22:
+ 212 014e 8FEF      		ldi r24,lo8(-1)
+ 213 0150 0895      		ret
+ 214               	.LFE13:
+ 216               	.global	deccelRecalc
+ 218               	deccelRecalc:
+ 219               	.LFB11:
+ 220               	.LM21:
+ 221 0152 6F92      		push r6
+ 222 0154 7F92      		push r7
+ 223 0156 8F92      		push r8
+ 224 0158 9F92      		push r9
+ 225 015a AF92      		push r10
+ 226 015c BF92      		push r11
+ 227 015e CF92      		push r12
+ 228 0160 DF92      		push r13
+ 229 0162 EF92      		push r14
+ 230 0164 FF92      		push r15
+ 231 0166 0F93      		push r16
+ 232 0168 1F93      		push r17
+ 233               	/* prologue: function */
+ 234               	/* frame size = 0 */
+ 235               	.LM22:
+ 236 016a 6091 0000 		lds r22,Sms+29
+ 237 016e 7091 0000 		lds r23,(Sms+29)+1
+ 238 0172 8091 0000 		lds r24,(Sms+29)+2
+ 239 0176 9091 0000 		lds r25,(Sms+29)+3
+ 240 017a 0E94 0000 		call square
+ 241 017e 5B01      		movw r10,r22
+ 242 0180 6C01      		movw r12,r24
+ 243 0182 E090 0000 		lds r14,Sms+49
+ 244 0186 F090 0000 		lds r15,(Sms+49)+1
+ 245 018a 0091 0000 		lds r16,(Sms+49)+2
+ 246 018e 1091 0000 		lds r17,(Sms+49)+3
+ 247 0192 0E94 0000 		call zoEncoderGetPos
+ 248 0196 3B01      		movw r6,r22
+ 249 0198 4C01      		movw r8,r24
+ 250 019a C601      		movw r24,r12
+ 251 019c B501      		movw r22,r10
+ 252 019e 20E0      		ldi r18,lo8(0x3f000000)
+ 253 01a0 30E0      		ldi r19,hi8(0x3f000000)
+ 254 01a2 40E0      		ldi r20,hlo8(0x3f000000)
+ 255 01a4 5FE3      		ldi r21,hhi8(0x3f000000)
+ 256 01a6 0E94 0000 		call __mulsf3
+ 257 01aa 5B01      		movw r10,r22
+ 258 01ac 6C01      		movw r12,r24
+ 259 01ae E618      		sub r14,r6
+ 260 01b0 F708      		sbc r15,r7
+ 261 01b2 0809      		sbc r16,r8
+ 262 01b4 1909      		sbc r17,r9
+ 263 01b6 C801      		movw r24,r16
+ 264 01b8 B701      		movw r22,r14
+ 265 01ba 0E94 0000 		call __floatsisf
+ 266 01be 9B01      		movw r18,r22
+ 267 01c0 AC01      		movw r20,r24
+ 268 01c2 C601      		movw r24,r12
+ 269 01c4 B501      		movw r22,r10
+ 270 01c6 0E94 0000 		call __divsf3
+ 271               	/* epilogue start */
+ 272               	.LM23:
+ 273 01ca 1F91      		pop r17
+ 274 01cc 0F91      		pop r16
+ 275 01ce FF90      		pop r15
+ 276 01d0 EF90      		pop r14
+ 277 01d2 DF90      		pop r13
+ 278 01d4 CF90      		pop r12
+ 279 01d6 BF90      		pop r11
+ 280 01d8 AF90      		pop r10
+ 281 01da 9F90      		pop r9
+ 282 01dc 8F90      		pop r8
+ 283 01de 7F90      		pop r7
+ 284 01e0 6F90      		pop r6
+ 285 01e2 0895      		ret
+ 286               	.LFE11:
+ 288               	.global	zoSmsRestoreDefaults
+ 290               	zoSmsRestoreDefaults:
+ 291               	.LFB10:
+ 292               	.LM24:
+ 293               	/* prologue: function */
+ 294               	/* frame size = 0 */
+ 295               	.LM25:
+ 296 01e4 80E0      		ldi r24,lo8(0)
+ 297 01e6 90E0      		ldi r25,hi8(0)
+ 298 01e8 64E0      		ldi r22,lo8(4)
+ 299 01ea 0E94 0000 		call __eewr_byte_m328p
+ 300               	.LM26:
+ 301 01ee 80E1      		ldi r24,lo8(16)
+ 302 01f0 90E0      		ldi r25,hi8(16)
+ 303 01f2 60EA      		ldi r22,lo8(4000)
+ 304 01f4 7FE0      		ldi r23,hi8(4000)
+ 305 01f6 0E94 0000 		call __eewr_word_m328p
+ 306               	.LM27:
+ 307 01fa 80E2      		ldi r24,lo8(32)
+ 308 01fc 90E0      		ldi r25,hi8(32)
+ 309 01fe 64E6      		ldi r22,lo8(100)
+ 310 0200 70E0      		ldi r23,hi8(100)
+ 311 0202 0E94 0000 		call __eewr_word_m328p
+ 312               	.LM28:
+ 313 0206 80E3      		ldi r24,lo8(48)
+ 314 0208 90E0      		ldi r25,hi8(48)
+ 315 020a 68EE      		ldi r22,lo8(1000)
+ 316 020c 73E0      		ldi r23,hi8(1000)
+ 317 020e 0E94 0000 		call __eewr_word_m328p
+ 318               	.LM29:
+ 319 0212 80E4      		ldi r24,lo8(64)
+ 320 0214 90E0      		ldi r25,hi8(64)
+ 321 0216 68E8      		ldi r22,lo8(5000)
+ 322 0218 73E1      		ldi r23,hi8(5000)
+ 323 021a 0E94 0000 		call __eewr_word_m328p
+ 324               	.LM30:
+ 325 021e 80E5      		ldi r24,lo8(80)
+ 326 0220 90E0      		ldi r25,hi8(80)
+ 327 0222 68E8      		ldi r22,lo8(5000)
+ 328 0224 73E1      		ldi r23,hi8(5000)
+ 329 0226 0E94 0000 		call __eewr_word_m328p
+ 330               	.LM31:
+ 331 022a 80E8      		ldi r24,lo8(128)
+ 332 022c 90E0      		ldi r25,hi8(128)
+ 333 022e 60E0      		ldi r22,lo8(0)
+ 334 0230 0E94 0000 		call __eewr_byte_m328p
+ 335               	.LM32:
+ 336 0234 80EA      		ldi r24,lo8(160)
+ 337 0236 90E0      		ldi r25,hi8(160)
+ 338 0238 40E0      		ldi r20,lo8(115200)
+ 339 023a 52EC      		ldi r21,hi8(115200)
+ 340 023c 61E0      		ldi r22,hlo8(115200)
+ 341 023e 70E0      		ldi r23,hhi8(115200)
+ 342 0240 0E94 0000 		call __eewr_dword_m328p
+ 343               	.LM33:
+ 344 0244 80E9      		ldi r24,lo8(144)
+ 345 0246 90E0      		ldi r25,hi8(144)
+ 346 0248 40EA      		ldi r20,lo8(100000)
+ 347 024a 56E8      		ldi r21,hi8(100000)
+ 348 024c 61E0      		ldi r22,hlo8(100000)
+ 349 024e 70E0      		ldi r23,hhi8(100000)
+ 350 0250 0E94 0000 		call __eewr_dword_m328p
+ 351               	.LM34:
+ 352 0254 80E6      		ldi r24,lo8(96)
+ 353 0256 90E0      		ldi r25,hi8(96)
+ 354 0258 60E2      		ldi r22,lo8(800)
+ 355 025a 73E0      		ldi r23,hi8(800)
+ 356 025c 0E94 0000 		call __eewr_word_m328p
+ 357               	.LM35:
+ 358 0260 80E7      		ldi r24,lo8(112)
+ 359 0262 90E0      		ldi r25,hi8(112)
+ 360 0264 60E2      		ldi r22,lo8(800)
+ 361 0266 73E0      		ldi r23,hi8(800)
+ 362 0268 0E94 0000 		call __eewr_word_m328p
+ 363               	.LM36:
+ 364 026c 80EB      		ldi r24,lo8(176)
+ 365 026e 90E0      		ldi r25,hi8(176)
+ 366 0270 6FEF      		ldi r22,lo8(-1)
+ 367 0272 0E94 0000 		call __eewr_byte_m328p
+ 368               	.LM37:
+ 369 0276 80EC      		ldi r24,lo8(192)
+ 370 0278 90E0      		ldi r25,hi8(192)
+ 371 027a 60E0      		ldi r22,lo8(0)
+ 372 027c 0E94 0000 		call __eewr_byte_m328p
+ 373               	/* epilogue start */
+ 374               	.LM38:
+ 375 0280 0895      		ret
+ 376               	.LFE10:
+ 378               	.global	zoSmsInitSettingsFromEeprom
+ 380               	zoSmsInitSettingsFromEeprom:
+ 381               	.LFB9:
+ 382               	.LM39:
+ 383               	/* prologue: function */
+ 384               	/* frame size = 0 */
+ 385               	.LM40:
+ 386 0282 80E0      		ldi r24,lo8(0)
+ 387 0284 90E0      		ldi r25,hi8(0)
+ 388 0286 0E94 0000 		call __eerd_byte_m328p
+ 389 028a 8093 0000 		sts Sms+5,r24
+ 390               	.LM41:
+ 391 028e 80E1      		ldi r24,lo8(16)
+ 392 0290 90E0      		ldi r25,hi8(16)
+ 393 0292 0E94 0000 		call __eerd_word_m328p
+ 394 0296 9093 0000 		sts (Sms+58)+1,r25
+ 395 029a 8093 0000 		sts Sms+58,r24
+ 396               	.LM42:
+ 397 029e 80E2      		ldi r24,lo8(32)
+ 398 02a0 90E0      		ldi r25,hi8(32)
+ 399 02a2 0E94 0000 		call __eerd_word_m328p
+ 400 02a6 9093 0000 		sts (Sms+60)+1,r25
+ 401 02aa 8093 0000 		sts Sms+60,r24
+ 402               	.LM43:
+ 403 02ae 80E3      		ldi r24,lo8(48)
+ 404 02b0 90E0      		ldi r25,hi8(48)
+ 405 02b2 0E94 0000 		call __eerd_word_m328p
+ 406 02b6 9093 0000 		sts (Sms+62)+1,r25
+ 407 02ba 8093 0000 		sts Sms+62,r24
+ 408               	.LM44:
+ 409 02be 80E4      		ldi r24,lo8(64)
+ 410 02c0 90E0      		ldi r25,hi8(64)
+ 411 02c2 0E94 0000 		call __eerd_word_m328p
+ 412 02c6 9093 0000 		sts (Sms+7)+1,r25
+ 413 02ca 8093 0000 		sts Sms+7,r24
+ 414               	.LM45:
+ 415 02ce 80E5      		ldi r24,lo8(80)
+ 416 02d0 90E0      		ldi r25,hi8(80)
+ 417 02d2 0E94 0000 		call __eerd_word_m328p
+ 418 02d6 9093 0000 		sts (Sms+9)+1,r25
+ 419 02da 8093 0000 		sts Sms+9,r24
+ 420               	.LM46:
+ 421 02de 80E8      		ldi r24,lo8(128)
+ 422 02e0 90E0      		ldi r25,hi8(128)
+ 423 02e2 0E94 0000 		call __eerd_byte_m328p
+ 424 02e6 8093 0000 		sts Sms+6,r24
+ 425               	.LM47:
+ 426 02ea 80EA      		ldi r24,lo8(160)
+ 427 02ec 90E0      		ldi r25,hi8(160)
+ 428 02ee 0E94 0000 		call __eerd_dword_m328p
+ 429 02f2 6093 0000 		sts Sms+11,r22
+ 430 02f6 7093 0000 		sts (Sms+11)+1,r23
+ 431 02fa 8093 0000 		sts (Sms+11)+2,r24
+ 432 02fe 9093 0000 		sts (Sms+11)+3,r25
+ 433               	.LM48:
+ 434 0302 80E9      		ldi r24,lo8(144)
+ 435 0304 90E0      		ldi r25,hi8(144)
+ 436 0306 0E94 0000 		call __eerd_dword_m328p
+ 437 030a 6093 0000 		sts Sms+15,r22
+ 438 030e 7093 0000 		sts (Sms+15)+1,r23
+ 439 0312 8093 0000 		sts (Sms+15)+2,r24
+ 440 0316 9093 0000 		sts (Sms+15)+3,r25
+ 441               	.LM49:
+ 442 031a 80E6      		ldi r24,lo8(96)
+ 443 031c 90E0      		ldi r25,hi8(96)
+ 444 031e 0E94 0000 		call __eerd_word_m328p
+ 445 0322 9093 0000 		sts (Sms+53)+1,r25
+ 446 0326 8093 0000 		sts Sms+53,r24
+ 447               	.LM50:
+ 448 032a 80E7      		ldi r24,lo8(112)
+ 449 032c 90E0      		ldi r25,hi8(112)
+ 450 032e 0E94 0000 		call __eerd_word_m328p
+ 451 0332 9093 0000 		sts (Sms+55)+1,r25
+ 452 0336 8093 0000 		sts Sms+55,r24
+ 453               	.LM51:
+ 454 033a 80EB      		ldi r24,lo8(176)
+ 455 033c 90E0      		ldi r25,hi8(176)
+ 456 033e 0E94 0000 		call __eerd_byte_m328p
+ 457 0342 8093 0000 		sts Sms+19,r24
+ 458               	.LM52:
+ 459 0346 80EC      		ldi r24,lo8(192)
+ 460 0348 90E0      		ldi r25,hi8(192)
+ 461 034a 0E94 0000 		call __eerd_byte_m328p
+ 462 034e 8093 0000 		sts Sms+20,r24
+ 463               	/* epilogue start */
+ 464               	.LM53:
+ 465 0352 0895      		ret
+ 466               	.LFE9:
+ 468               	.global	zoSmsInit
+ 470               	zoSmsInit:
+ 471               	.LFB7:
+ 472               	.LM54:
+ 473               	/* prologue: function */
+ 474               	/* frame size = 0 */
+ 475               	.LM55:
+ 476 0354 0E94 0000 		call zoSmsPinsInit
+ 477               	.LM56:
+ 478 0358 0E94 0000 		call zoMotorInit
+ 479               	.LM57:
+ 480 035c 80E0      		ldi r24,lo8(0)
+ 481 035e 0E94 0000 		call zoMotorSetState
+ 482               	.LM58:
+ 483               	/* #APP */
+ 484               	 ;  112 "zoSms.c" 1
+ 485 0362 F894      		cli
+ 486               	 ;  0 "" 2
+ 487               	.LM59:
+ 488               	/* #NOAPP */
+ 489 0364 80E0      		ldi r24,lo8(gs(zoSmsControlLoop))
+ 490 0366 90E0      		ldi r25,hi8(gs(zoSmsControlLoop))
+ 491 0368 0E94 0000 		call zoMotorSetTimedEventHandler
+ 492               	.LM60:
+ 493 036c 0E94 0000 		call zoEncoderInit
+ 494               	.LM61:
+ 495 0370 0E94 0000 		call zoEncoderReset
+ 496               	.LM62:
+ 497               	/* #APP */
+ 498               	 ;  120 "zoSms.c" 1
+ 499 0374 F894      		cli
+ 500               	 ;  0 "" 2
+ 501               	.LM63:
+ 502               	/* #NOAPP */
+ 503 0376 0E94 0000 		call zoSmsInitSettingsFromEeprom
+ 504               	.LM64:
+ 505 037a 1092 0000 		sts Sms+90,__zero_reg__
+ 506               	.LM65:
+ 507 037e 1092 0000 		sts Sms+64,__zero_reg__
+ 508 0382 1092 0000 		sts (Sms+64)+1,__zero_reg__
+ 509 0386 1092 0000 		sts (Sms+64)+2,__zero_reg__
+ 510 038a 1092 0000 		sts (Sms+64)+3,__zero_reg__
+ 511               	.LM66:
+ 512 038e 1092 0000 		sts Sms+68,__zero_reg__
+ 513 0392 1092 0000 		sts (Sms+68)+1,__zero_reg__
+ 514 0396 1092 0000 		sts (Sms+68)+2,__zero_reg__
+ 515 039a 1092 0000 		sts (Sms+68)+3,__zero_reg__
+ 516               	.LM67:
+ 517 039e 1092 0000 		sts Sms+72,__zero_reg__
+ 518 03a2 1092 0000 		sts (Sms+72)+1,__zero_reg__
+ 519 03a6 1092 0000 		sts (Sms+72)+2,__zero_reg__
+ 520 03aa 1092 0000 		sts (Sms+72)+3,__zero_reg__
+ 521               	.LM68:
+ 522 03ae 1092 0000 		sts Sms+80,__zero_reg__
+ 523 03b2 1092 0000 		sts (Sms+80)+1,__zero_reg__
+ 524 03b6 1092 0000 		sts (Sms+80)+2,__zero_reg__
+ 525 03ba 1092 0000 		sts (Sms+80)+3,__zero_reg__
+ 526               	.LM69:
+ 527 03be 80E0      		ldi r24,lo8(gs(zoMotorSet))
+ 528 03c0 90E0      		ldi r25,hi8(gs(zoMotorSet))
+ 529 03c2 9093 0000 		sts (Sms+86)+1,r25
+ 530 03c6 8093 0000 		sts Sms+86,r24
+ 531               	.LM70:
+ 532 03ca 80E0      		ldi r24,lo8(gs(zoEncoderGetPos))
+ 533 03cc 90E0      		ldi r25,hi8(gs(zoEncoderGetPos))
+ 534 03ce 9093 0000 		sts (Sms+88)+1,r25
+ 535 03d2 8093 0000 		sts Sms+88,r24
+ 536               	.LM71:
+ 537 03d6 6091 0000 		lds r22,Sms+58
+ 538 03da 7091 0000 		lds r23,(Sms+58)+1
+ 539 03de 8FEF      		ldi r24,lo8(-1)
+ 540 03e0 9FEF      		ldi r25,hi8(-1)
+ 541 03e2 0E94 0000 		call __udivmodhi4
+ 542 03e6 962F      		mov r25,r22
+ 543 03e8 8827      		clr r24
+ 544 03ea 861B      		sub r24,r22
+ 545 03ec 970B      		sbc r25,r23
+ 546 03ee A0E0      		ldi r26,lo8(0)
+ 547 03f0 B0E0      		ldi r27,hi8(0)
+ 548 03f2 8093 0000 		sts Sms+76,r24
+ 549 03f6 9093 0000 		sts (Sms+76)+1,r25
+ 550 03fa A093 0000 		sts (Sms+76)+2,r26
+ 551 03fe B093 0000 		sts (Sms+76)+3,r27
+ 552               	.LM72:
+ 553 0402 80E0      		ldi r24,lo8(0x0)
+ 554 0404 90E0      		ldi r25,hi8(0x0)
+ 555 0406 A0E0      		ldi r26,hlo8(0x0)
+ 556 0408 B0E0      		ldi r27,hhi8(0x0)
+ 557 040a 8093 0000 		sts Sms+29,r24
+ 558 040e 9093 0000 		sts (Sms+29)+1,r25
+ 559 0412 A093 0000 		sts (Sms+29)+2,r26
+ 560 0416 B093 0000 		sts (Sms+29)+3,r27
+ 561               	.LM73:
+ 562 041a 1092 0000 		sts Sms,__zero_reg__
+ 563               	.LM74:
+ 564 041e 0E94 0000 		call zoSmsErrorInit
+ 565               	.LM75:
+ 566 0422 0E94 0000 		call zoAdcInit
+ 567               	.LM76:
+ 568               	/* #APP */
+ 569               	 ;  142 "zoSms.c" 1
+ 570 0426 F894      		cli
+ 571               	 ;  0 "" 2
+ 572               	.LM77:
+ 573               	/* #NOAPP */
+ 574 0428 80E0      		ldi r24,lo8(0)
+ 575 042a 0E94 0000 		call zoAdcSetTrigger
+ 576               	.LM78:
+ 577 042e 80E0      		ldi r24,lo8(0)
+ 578 0430 0E94 0000 		call zoAdcChannelEnable
+ 579               	.LM79:
+ 580 0434 81E0      		ldi r24,lo8(1)
+ 581 0436 0E94 0000 		call zoAdcChannelEnable
+ 582               	.LM80:
+ 583 043a 82E0      		ldi r24,lo8(2)
+ 584 043c 0E94 0000 		call zoAdcChannelEnable
+ 585               	.LM81:
+ 586 0440 83E0      		ldi r24,lo8(3)
+ 587 0442 0E94 0000 		call zoAdcChannelEnable
+ 588               	.LM82:
+ 589 0446 87E0      		ldi r24,lo8(7)
+ 590 0448 0E94 0000 		call zoAdcChannelEnable
+ 591               	.LM83:
+ 592               	/* #APP */
+ 593               	 ;  151 "zoSms.c" 1
+ 594 044c 7894      		sei
+ 595               	 ;  0 "" 2
+ 596               	/* epilogue start */
+ 597               	.LM84:
+ 598               	/* #NOAPP */
+ 599 044e 0895      		ret
+ 600               	.LFE7:
+ 602               	.global	zoSmsControlLoop
+ 604               	zoSmsControlLoop:
+ 605               	.LFB6:
+ 606               	.LM85:
+ 607 0450 AF92      		push r10
+ 608 0452 BF92      		push r11
+ 609 0454 CF92      		push r12
+ 610 0456 DF92      		push r13
+ 611 0458 EF92      		push r14
+ 612 045a FF92      		push r15
+ 613 045c 0F93      		push r16
+ 614 045e 1F93      		push r17
+ 615               	/* prologue: function */
+ 616               	/* frame size = 0 */
+ 617               	.LM86:
+ 618 0460 0E94 0000 		call zoEncoderSetVel
+ 619               	.LM87:
+ 620 0464 8091 0000 		lds r24,Sms
+ 621 0468 8823      		tst r24
+ 622 046a 01F0      		breq .L44
+ 623               	.LM88:
+ 624 046c 8330      		cpi r24,lo8(3)
+ 625 046e 01F0      		breq .L35
+ 626 0470 8430      		cpi r24,lo8(4)
+ 627 0472 01F4      		brne .+2
+ 628 0474 00C0      		rjmp .L36
+ 629 0476 8230      		cpi r24,lo8(2)
+ 630 0478 01F4      		brne .+2
+ 631 047a 00C0      		rjmp .L47
+ 632               	.L33:
+ 633               	.LM89:
+ 634 047c E091 0000 		lds r30,Sms+84
+ 635 0480 F091 0000 		lds r31,(Sms+84)+1
+ 636 0484 80E0      		ldi r24,lo8(Sms+58)
+ 637 0486 90E0      		ldi r25,hi8(Sms+58)
+ 638 0488 0995      		icall
+ 639               	.L44:
+ 640               	/* epilogue start */
+ 641               	.LM90:
+ 642 048a 1F91      		pop r17
+ 643 048c 0F91      		pop r16
+ 644 048e FF90      		pop r15
+ 645 0490 EF90      		pop r14
+ 646 0492 DF90      		pop r13
+ 647 0494 CF90      		pop r12
+ 648 0496 BF90      		pop r11
+ 649 0498 AF90      		pop r10
+ 650 049a 0895      		ret
+ 651               	.L35:
+ 652               	.LM91:
+ 653 049c E090 0000 		lds r14,Sms+29
+ 654 04a0 F090 0000 		lds r15,(Sms+29)+1
+ 655 04a4 0091 0000 		lds r16,(Sms+29)+2
+ 656 04a8 1091 0000 		lds r17,(Sms+29)+3
+ 657 04ac E092 0000 		sts Sms+33,r14
+ 658 04b0 F092 0000 		sts (Sms+33)+1,r15
+ 659 04b4 0093 0000 		sts (Sms+33)+2,r16
+ 660 04b8 1093 0000 		sts (Sms+33)+3,r17
+ 661               	.LBB4:
+ 662               	.LBB5:
+ 663               	.LM92:
+ 664 04bc A090 0000 		lds r10,Sms+25
+ 665 04c0 B090 0000 		lds r11,(Sms+25)+1
+ 666 04c4 C090 0000 		lds r12,(Sms+25)+2
+ 667 04c8 D090 0000 		lds r13,(Sms+25)+3
+ 668 04cc C801      		movw r24,r16
+ 669 04ce B701      		movw r22,r14
+ 670 04d0 A601      		movw r20,r12
+ 671 04d2 9501      		movw r18,r10
+ 672 04d4 0E94 0000 		call __subsf3
+ 673 04d8 9B01      		movw r18,r22
+ 674 04da AC01      		movw r20,r24
+ 675 04dc 0E94 0000 		call __mulsf3
+ 676 04e0 2091 0000 		lds r18,Sms+1
+ 677 04e4 3091 0000 		lds r19,(Sms+1)+1
+ 678 04e8 4091 0000 		lds r20,(Sms+1)+2
+ 679 04ec 5091 0000 		lds r21,(Sms+1)+3
+ 680 04f0 0E94 0000 		call __mulsf3
+ 681 04f4 0E94 0000 		call __fixsfsi
+ 682 04f8 1616      		cp __zero_reg__,r22
+ 683 04fa 1706      		cpc __zero_reg__,r23
+ 684 04fc 1806      		cpc __zero_reg__,r24
+ 685 04fe 1906      		cpc __zero_reg__,r25
+ 686 0500 04F0      		brlt .+2
+ 687 0502 00C0      		rjmp .L37
+ 688               	.L46:
+ 689               	.LBE5:
+ 690               	.LBE4:
+ 691               	.LM93:
+ 692 0504 C801      		movw r24,r16
+ 693 0506 B701      		movw r22,r14
+ 694 0508 2091 0000 		lds r18,Sms+37
+ 695 050c 3091 0000 		lds r19,(Sms+37)+1
+ 696 0510 4091 0000 		lds r20,(Sms+37)+2
+ 697 0514 5091 0000 		lds r21,(Sms+37)+3
+ 698 0518 0E94 0000 		call __addsf3
+ 699               	.L45:
+ 700               	.LM94:
+ 701 051c 6093 0000 		sts Sms+29,r22
+ 702 0520 7093 0000 		sts (Sms+29)+1,r23
+ 703 0524 8093 0000 		sts (Sms+29)+2,r24
+ 704 0528 9093 0000 		sts (Sms+29)+3,r25
+ 705               	.LM95:
+ 706 052c 2091 0000 		lds r18,Sms+21
+ 707 0530 3091 0000 		lds r19,(Sms+21)+1
+ 708 0534 4091 0000 		lds r20,(Sms+21)+2
+ 709 0538 5091 0000 		lds r21,(Sms+21)+3
+ 710 053c 0E94 0000 		call __addsf3
+ 711 0540 6093 0000 		sts Sms+21,r22
+ 712 0544 7093 0000 		sts (Sms+21)+1,r23
+ 713 0548 8093 0000 		sts (Sms+21)+2,r24
+ 714 054c 9093 0000 		sts (Sms+21)+3,r25
+ 715               	.LM96:
+ 716 0550 0E94 0000 		call __fixsfsi
+ 717 0554 6093 0000 		sts Sms+80,r22
+ 718 0558 7093 0000 		sts (Sms+80)+1,r23
+ 719 055c 8093 0000 		sts (Sms+80)+2,r24
+ 720 0560 9093 0000 		sts (Sms+80)+3,r25
+ 721               	.LM97:
+ 722 0564 E091 0000 		lds r30,Sms+84
+ 723 0568 F091 0000 		lds r31,(Sms+84)+1
+ 724 056c 80E0      		ldi r24,lo8(Sms+58)
+ 725 056e 90E0      		ldi r25,hi8(Sms+58)
+ 726 0570 0995      		icall
+ 727 0572 00C0      		rjmp .L44
+ 728               	.L47:
+ 729               	.LM98:
+ 730 0574 6091 0000 		lds r22,Sms+21
+ 731 0578 7091 0000 		lds r23,(Sms+21)+1
+ 732 057c 8091 0000 		lds r24,(Sms+21)+2
+ 733 0580 9091 0000 		lds r25,(Sms+21)+3
+ 734 0584 2091 0000 		lds r18,Sms+29
+ 735 0588 3091 0000 		lds r19,(Sms+29)+1
+ 736 058c 4091 0000 		lds r20,(Sms+29)+2
+ 737 0590 5091 0000 		lds r21,(Sms+29)+3
+ 738 0594 0E94 0000 		call __addsf3
+ 739 0598 6093 0000 		sts Sms+21,r22
+ 740 059c 7093 0000 		sts (Sms+21)+1,r23
+ 741 05a0 8093 0000 		sts (Sms+21)+2,r24
+ 742 05a4 9093 0000 		sts (Sms+21)+3,r25
+ 743               	.LM99:
+ 744 05a8 0E94 0000 		call __fixsfsi
+ 745 05ac 6093 0000 		sts Sms+80,r22
+ 746 05b0 7093 0000 		sts (Sms+80)+1,r23
+ 747 05b4 8093 0000 		sts (Sms+80)+2,r24
+ 748 05b8 9093 0000 		sts (Sms+80)+3,r25
+ 749               	.LM100:
+ 750 05bc E091 0000 		lds r30,Sms+84
+ 751 05c0 F091 0000 		lds r31,(Sms+84)+1
+ 752 05c4 80E0      		ldi r24,lo8(Sms+58)
+ 753 05c6 90E0      		ldi r25,hi8(Sms+58)
+ 754 05c8 0995      		icall
+ 755 05ca 00C0      		rjmp .L44
+ 756               	.L36:
+ 757               	.LM101:
+ 758 05cc E090 0000 		lds r14,Sms+29
+ 759 05d0 F090 0000 		lds r15,(Sms+29)+1
+ 760 05d4 0091 0000 		lds r16,(Sms+29)+2
+ 761 05d8 1091 0000 		lds r17,(Sms+29)+3
+ 762 05dc E092 0000 		sts Sms+33,r14
+ 763 05e0 F092 0000 		sts (Sms+33)+1,r15
+ 764 05e4 0093 0000 		sts (Sms+33)+2,r16
+ 765 05e8 1093 0000 		sts (Sms+33)+3,r17
+ 766               	.LM102:
+ 767 05ec 8091 0000 		lds r24,Sms+57
+ 768 05f0 8130      		cpi r24,lo8(1)
+ 769 05f2 01F0      		breq .L39
+ 770 05f4 8130      		cpi r24,lo8(1)
+ 771 05f6 00F0      		brlo .L38
+ 772 05f8 8230      		cpi r24,lo8(2)
+ 773 05fa 01F0      		breq .+2
+ 774 05fc 00C0      		rjmp .L33
+ 775               	.LM103:
+ 776 05fe 0E94 0000 		call positionReachedCriterion
+ 777 0602 8823      		tst r24
+ 778 0604 01F4      		brne .+2
+ 779 0606 00C0      		rjmp .L48
+ 780               	.LM104:
+ 781 0608 E090 0000 		lds r14,Sms+49
+ 782 060c F090 0000 		lds r15,(Sms+49)+1
+ 783 0610 0091 0000 		lds r16,(Sms+49)+2
+ 784 0614 1091 0000 		lds r17,(Sms+49)+3
+ 785 0618 C801      		movw r24,r16
+ 786 061a B701      		movw r22,r14
+ 787 061c 0E94 0000 		call __floatsisf
+ 788 0620 6093 0000 		sts Sms+21,r22
+ 789 0624 7093 0000 		sts (Sms+21)+1,r23
+ 790 0628 8093 0000 		sts (Sms+21)+2,r24
+ 791 062c 9093 0000 		sts (Sms+21)+3,r25
+ 792               	.LM105:
+ 793 0630 E092 0000 		sts Sms+80,r14
+ 794 0634 F092 0000 		sts (Sms+80)+1,r15
+ 795 0638 0093 0000 		sts (Sms+80)+2,r16
+ 796 063c 1093 0000 		sts (Sms+80)+3,r17
+ 797               	.LM106:
+ 798 0640 81E0      		ldi r24,lo8(1)
+ 799 0642 8093 0000 		sts Sms,r24
+ 800 0646 00C0      		rjmp .L33
+ 801               	.L38:
+ 802               	.LM107:
+ 803 0648 0E94 0000 		call accelerationCompleteCriterion
+ 804 064c 8823      		tst r24
+ 805 064e 01F4      		brne .+2
+ 806 0650 00C0      		rjmp .L46
+ 807               	.LM108:
+ 808 0652 81E0      		ldi r24,lo8(1)
+ 809 0654 8093 0000 		sts Sms+57,r24
+ 810 0658 00C0      		rjmp .L33
+ 811               	.L39:
+ 812               	.LM109:
+ 813 065a 0E94 0000 		call constantVelocityCompletedCriterion
+ 814 065e 8823      		tst r24
+ 815 0660 01F4      		brne .L42
+ 816               	.LM110:
+ 817 0662 6091 0000 		lds r22,Sms+21
+ 818 0666 7091 0000 		lds r23,(Sms+21)+1
+ 819 066a 8091 0000 		lds r24,(Sms+21)+2
+ 820 066e 9091 0000 		lds r25,(Sms+21)+3
+ 821 0672 2091 0000 		lds r18,Sms+25
+ 822 0676 3091 0000 		lds r19,(Sms+25)+1
+ 823 067a 4091 0000 		lds r20,(Sms+25)+2
+ 824 067e 5091 0000 		lds r21,(Sms+25)+3
+ 825 0682 0E94 0000 		call __addsf3
+ 826 0686 6093 0000 		sts Sms+21,r22
+ 827 068a 7093 0000 		sts (Sms+21)+1,r23
+ 828 068e 8093 0000 		sts (Sms+21)+2,r24
+ 829 0692 9093 0000 		sts (Sms+21)+3,r25
+ 830               	.LM111:
+ 831 0696 0E94 0000 		call __fixsfsi
+ 832 069a 6093 0000 		sts Sms+80,r22
+ 833 069e 7093 0000 		sts (Sms+80)+1,r23
+ 834 06a2 8093 0000 		sts (Sms+80)+2,r24
+ 835 06a6 9093 0000 		sts (Sms+80)+3,r25
+ 836 06aa 00C0      		rjmp .L33
+ 837               	.L42:
+ 838               	.LM112:
+ 839 06ac 82E0      		ldi r24,lo8(2)
+ 840 06ae 8093 0000 		sts Sms+57,r24
+ 841 06b2 00C0      		rjmp .L33
+ 842               	.L48:
+ 843               	.LM113:
+ 844 06b4 E090 0000 		lds r14,Sms+29
+ 845 06b8 F090 0000 		lds r15,(Sms+29)+1
+ 846 06bc 0091 0000 		lds r16,(Sms+29)+2
+ 847 06c0 1091 0000 		lds r17,(Sms+29)+3
+ 848 06c4 0E94 0000 		call deccelRecalc
+ 849 06c8 9B01      		movw r18,r22
+ 850 06ca AC01      		movw r20,r24
+ 851 06cc C801      		movw r24,r16
+ 852 06ce B701      		movw r22,r14
+ 853 06d0 0E94 0000 		call __subsf3
+ 854 06d4 00C0      		rjmp .L45
+ 855               	.L37:
+ 856               	.LM114:
+ 857 06d6 82E0      		ldi r24,lo8(2)
+ 858 06d8 8093 0000 		sts Sms,r24
+ 859               	.LM115:
+ 860 06dc A092 0000 		sts Sms+29,r10
+ 861 06e0 B092 0000 		sts (Sms+29)+1,r11
+ 862 06e4 C092 0000 		sts (Sms+29)+2,r12
+ 863 06e8 D092 0000 		sts (Sms+29)+3,r13
+ 864 06ec 00C0      		rjmp .L33
+ 865               	.LFE6:
+ 867               	.global	Sms
+ 868               		.data
+ 871               	Sms:
+ 872 0000 00        		.byte	0
+ 873 0001 00        		.byte	0
+ 874 0002 00        		.byte	0
+ 875 0003 00        		.byte	0
+ 876 0004 00        		.byte	0
+ 877 0005 00        		.byte	0
+ 878 0006 00        		.byte	0
+ 879 0007 0000      		.word	0
+ 880 0009 0000      		.word	0
+ 881 000b 00        		.byte	0
+ 882 000c 00        		.byte	0
+ 883 000d 00        		.byte	0
+ 884 000e 00        		.byte	0
+ 885 000f 00        		.byte	0
+ 886 0010 00        		.byte	0
+ 887 0011 00        		.byte	0
+ 888 0012 00        		.byte	0
+ 889 0013 00        		.byte	0
+ 890 0014 00        		.byte	0
+ 891 0015 00        		.byte	0
+ 892 0016 00        		.byte	0
+ 893 0017 00        		.byte	0
+ 894 0018 00        		.byte	0
+ 895 0019 00        		.byte	0
+ 896 001a 00        		.byte	0
+ 897 001b 00        		.byte	0
+ 898 001c 00        		.byte	0
+ 899 001d 00        		.byte	0
+ 900 001e 00        		.byte	0
+ 901 001f 00        		.byte	0
+ 902 0020 00        		.byte	0
+ 903 0021 00        		.byte	0
+ 904 0022 00        		.byte	0
+ 905 0023 00        		.byte	0
+ 906 0024 00        		.byte	0
+ 907 0025 00        		.byte	0
+ 908 0026 00        		.byte	0
+ 909 0027 00        		.byte	0
+ 910 0028 00        		.byte	0
+ 911 0029 00        		.byte	0
+ 912 002a 00        		.byte	0
+ 913 002b 00        		.byte	0
+ 914 002c 00        		.byte	0
+ 915 002d 00        		.byte	0
+ 916 002e 00        		.byte	0
+ 917 002f 00        		.byte	0
+ 918 0030 00        		.byte	0
+ 919 0031 00        		.byte	0
+ 920 0032 00        		.byte	0
+ 921 0033 00        		.byte	0
+ 922 0034 00        		.byte	0
+ 923 0035 0000      		.word	0
+ 924 0037 0000      		.word	0
+ 925 0039 00        		.skip 1,0
+ 926 003a 0000      		.word	0
+ 927 003c 0000      		.word	0
+ 928 003e 0000      		.word	0
+ 929 0040 00        		.byte	0
+ 930 0041 00        		.byte	0
+ 931 0042 00        		.byte	0
+ 932 0043 00        		.byte	0
+ 933 0044 00        		.byte	0
+ 934 0045 00        		.byte	0
+ 935 0046 00        		.byte	0
+ 936 0047 00        		.byte	0
+ 937 0048 00        		.byte	0
+ 938 0049 00        		.byte	0
+ 939 004a 00        		.byte	0
+ 940 004b 00        		.byte	0
+ 941 004c 00        		.byte	0
+ 942 004d 00        		.byte	0
+ 943 004e 00        		.byte	0
+ 944 004f 00        		.byte	0
+ 945 0050 00        		.byte	0
+ 946 0051 00        		.byte	0
+ 947 0052 00        		.byte	0
+ 948 0053 00        		.byte	0
+ 949 0054 0000      		.word	gs(zoPidDoPid)
+ 950 0056 0000      		.word	0
+ 951 0058 0000      		.word	0
+ 952 005a 00        		.byte	0
+ 953 005b 00        		.byte	0
+ 954 005c 00        		.byte	0
+ 955 005d 00        		.byte	0
+ 956 005e 00        		.byte	0
+ 1045               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoSms.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:18     .text:00000000 zoSmsPinsInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:49     .text:0000001c accelerationCompleteCriterion
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:871    .data:00000000 Sms
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:120    .text:000000b6 positionReachedCriterion
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:169    .text:00000104 constantVelocityCompletedCriterion
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:218    .text:00000152 deccelRecalc
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:290    .text:000001e4 zoSmsRestoreDefaults
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:380    .text:00000282 zoSmsInitSettingsFromEeprom
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:470    .text:00000354 zoSmsInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc3pnM9a.s:604    .text:00000450 zoSmsControlLoop
+
+UNDEFINED SYMBOLS
+__subsf3
+__mulsf3
+__fixsfsi
+zoEncoderGetPos
+square
+__floatsisf
+__divsf3
+__eewr_byte_m328p
+__eewr_word_m328p
+__eewr_dword_m328p
+__eerd_byte_m328p
+__eerd_word_m328p
+__eerd_dword_m328p
+zoMotorInit
+zoMotorSetState
+zoMotorSetTimedEventHandler
+zoEncoderInit
+zoEncoderReset
+zoMotorSet
+__udivmodhi4
+zoSmsErrorInit
+zoAdcInit
+zoAdcSetTrigger
+zoAdcChannelEnable
+zoEncoderSetVel
+__addsf3
+zoPidDoPid
+__do_copy_data

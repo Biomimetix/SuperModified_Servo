@@ -1,0 +1,601 @@
+   1               		.file	"zoBuffer.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoBufferIsEmpty
+  18               	zoBufferIsEmpty:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 FC01      		movw r30,r24
+  25               	.LM2:
+  26 0002 8181      		ldd r24,Z+1
+  27               	.LVL1:
+  28 0004 8823      		tst r24
+  29 0006 01F0      		breq .L6
+  30 0008 80E0      		ldi r24,lo8(0)
+  31               	.LM3:
+  32 000a 0895      		ret
+  33               	.L6:
+  34               	.LM4:
+  35 000c 8FEF      		ldi r24,lo8(-1)
+  36 000e 0895      		ret
+  37               	.LFE2:
+  39               	.global	zoBufferIsFull
+  41               	zoBufferIsFull:
+  42               	.LFB3:
+  43               	.LM5:
+  44               	.LVL2:
+  45               	/* prologue: function */
+  46               	/* frame size = 0 */
+  47 0010 FC01      		movw r30,r24
+  48               	.LM6:
+  49 0012 9181      		ldd r25,Z+1
+  50 0014 8081      		ld r24,Z
+  51               	.LVL3:
+  52 0016 9817      		cp r25,r24
+  53 0018 00F4      		brsh .L11
+  54 001a 80E0      		ldi r24,lo8(0)
+  55               	.LM7:
+  56 001c 0895      		ret
+  57               	.L11:
+  58               	.LM8:
+  59 001e 8FEF      		ldi r24,lo8(-1)
+  60 0020 0895      		ret
+  61               	.LFE3:
+  63               	.global	zoBufferFlush
+  65               	zoBufferFlush:
+  66               	.LFB4:
+  67               	.LM9:
+  68               	.LVL4:
+  69               	/* prologue: function */
+  70               	/* frame size = 0 */
+  71 0022 FC01      		movw r30,r24
+  72               	.LM10:
+  73               	/* #APP */
+  74               	 ;  18 "zoBuffer.c" 1
+  75 0024 0FB6      		in __tmp_reg__, __SREG__
+  76 0026 0F92      		 push __tmp_reg__
+  77 0028 F894      		cli
+  78               	 ;  0 "" 2
+  79               	.LM11:
+  80               	/* #NOAPP */
+  81 002a 8681      		ldd r24,Z+6
+  82 002c 9781      		ldd r25,Z+7
+  83               	.LVL5:
+  84 002e 9383      		std Z+3,r25
+  85 0030 8283      		std Z+2,r24
+  86               	.LM12:
+  87 0032 8681      		ldd r24,Z+6
+  88 0034 9781      		ldd r25,Z+7
+  89 0036 9583      		std Z+5,r25
+  90 0038 8483      		std Z+4,r24
+  91               	.LM13:
+  92 003a 1182      		std Z+1,__zero_reg__
+  93               	.LM14:
+  94               	/* #APP */
+  95               	 ;  22 "zoBuffer.c" 1
+  96 003c 0F90      		pop __tmp_reg__ 
+  97 003e 0FBE      		out __SREG__, __tmp_reg__
+  98               	 ;  0 "" 2
+  99               	/* epilogue start */
+ 100               	.LM15:
+ 101               	/* #NOAPP */
+ 102 0040 0895      		ret
+ 103               	.LFE4:
+ 105               	.global	zoBufferGetIsr
+ 107               	zoBufferGetIsr:
+ 108               	.LFB6:
+ 109               	.LM16:
+ 110               	.LVL6:
+ 111               	/* prologue: function */
+ 112               	/* frame size = 0 */
+ 113 0042 DC01      		movw r26,r24
+ 114               	.LM17:
+ 115 0044 1196      		adiw r26,1
+ 116 0046 8C91      		ld r24,X
+ 117 0048 1197      		sbiw r26,1
+ 118               	.LVL7:
+ 119 004a 8150      		subi r24,lo8(-(-1))
+ 120 004c 1196      		adiw r26,1
+ 121 004e 8C93      		st X,r24
+ 122 0050 1197      		sbiw r26,1
+ 123               	.LM18:
+ 124 0052 1496      		adiw r26,4
+ 125 0054 ED91      		ld r30,X+
+ 126 0056 FC91      		ld r31,X
+ 127 0058 1597      		sbiw r26,4+1
+ 128 005a 3191      		ld r19,Z+
+ 129               	.LVL8:
+ 130 005c 1596      		adiw r26,4+1
+ 131 005e FC93      		st X,r31
+ 132 0060 EE93      		st -X,r30
+ 133 0062 1497      		sbiw r26,4
+ 134               	.LM19:
+ 135 0064 1496      		adiw r26,4
+ 136 0066 4D91      		ld r20,X+
+ 137 0068 5C91      		ld r21,X
+ 138 006a 1597      		sbiw r26,4+1
+ 139 006c 1696      		adiw r26,6
+ 140 006e 8D91      		ld r24,X+
+ 141 0070 9C91      		ld r25,X
+ 142 0072 1797      		sbiw r26,6+1
+ 143 0074 2C91      		ld r18,X
+ 144 0076 820F      		add r24,r18
+ 145 0078 911D      		adc r25,__zero_reg__
+ 146 007a 4817      		cp r20,r24
+ 147 007c 5907      		cpc r21,r25
+ 148 007e 01F0      		breq .L17
+ 149               	.LM20:
+ 150 0080 832F      		mov r24,r19
+ 151               	/* epilogue start */
+ 152 0082 0895      		ret
+ 153               	.L17:
+ 154               	.LM21:
+ 155 0084 1696      		adiw r26,6
+ 156 0086 8D91      		ld r24,X+
+ 157 0088 9C91      		ld r25,X
+ 158 008a 1797      		sbiw r26,6+1
+ 159 008c 1596      		adiw r26,4+1
+ 160 008e 9C93      		st X,r25
+ 161 0090 8E93      		st -X,r24
+ 162 0092 1497      		sbiw r26,4
+ 163               	.LM22:
+ 164 0094 832F      		mov r24,r19
+ 165 0096 0895      		ret
+ 166               	.LFE6:
+ 168               	.global	zoBufferPutIsr
+ 170               	zoBufferPutIsr:
+ 171               	.LFB8:
+ 172               	.LM23:
+ 173               	.LVL9:
+ 174               	/* prologue: function */
+ 175               	/* frame size = 0 */
+ 176 0098 DC01      		movw r26,r24
+ 177               	.LM24:
+ 178 009a 1196      		adiw r26,1
+ 179 009c 8C91      		ld r24,X
+ 180 009e 1197      		sbiw r26,1
+ 181               	.LVL10:
+ 182 00a0 8F5F      		subi r24,lo8(-(1))
+ 183 00a2 1196      		adiw r26,1
+ 184 00a4 8C93      		st X,r24
+ 185 00a6 1197      		sbiw r26,1
+ 186               	.LM25:
+ 187 00a8 1296      		adiw r26,2
+ 188 00aa ED91      		ld r30,X+
+ 189 00ac FC91      		ld r31,X
+ 190 00ae 1397      		sbiw r26,2+1
+ 191 00b0 6193      		st Z+,r22
+ 192 00b2 1396      		adiw r26,2+1
+ 193 00b4 FC93      		st X,r31
+ 194 00b6 EE93      		st -X,r30
+ 195 00b8 1297      		sbiw r26,2
+ 196               	.LM26:
+ 197 00ba 1296      		adiw r26,2
+ 198 00bc 4D91      		ld r20,X+
+ 199 00be 5C91      		ld r21,X
+ 200 00c0 1397      		sbiw r26,2+1
+ 201 00c2 1696      		adiw r26,6
+ 202 00c4 8D91      		ld r24,X+
+ 203 00c6 9C91      		ld r25,X
+ 204 00c8 1797      		sbiw r26,6+1
+ 205 00ca 2C91      		ld r18,X
+ 206 00cc 820F      		add r24,r18
+ 207 00ce 911D      		adc r25,__zero_reg__
+ 208 00d0 4817      		cp r20,r24
+ 209 00d2 5907      		cpc r21,r25
+ 210 00d4 01F0      		breq .L21
+ 211 00d6 0895      		ret
+ 212               	.L21:
+ 213               	.LM27:
+ 214 00d8 1696      		adiw r26,6
+ 215 00da 8D91      		ld r24,X+
+ 216 00dc 9C91      		ld r25,X
+ 217 00de 1797      		sbiw r26,6+1
+ 218 00e0 1396      		adiw r26,2+1
+ 219 00e2 9C93      		st X,r25
+ 220 00e4 8E93      		st -X,r24
+ 221 00e6 1297      		sbiw r26,2
+ 222 00e8 0895      		ret
+ 223               	.LFE8:
+ 225               	.global	zoBufferReadIsr
+ 227               	zoBufferReadIsr:
+ 228               	.LFB10:
+ 229               	.LM28:
+ 230               	.LVL11:
+ 231               	/* prologue: function */
+ 232               	/* frame size = 0 */
+ 233 00ea DC01      		movw r26,r24
+ 234               	.LM29:
+ 235 00ec 1496      		adiw r26,4
+ 236 00ee ED91      		ld r30,X+
+ 237 00f0 FC91      		ld r31,X
+ 238 00f2 1597      		sbiw r26,4+1
+ 239               	.LVL12:
+ 240 00f4 70E0      		ldi r23,lo8(0)
+ 241 00f6 E60F      		add r30,r22
+ 242 00f8 F71F      		adc r31,r23
+ 243               	.LVL13:
+ 244               	.LM30:
+ 245 00fa 1696      		adiw r26,6
+ 246 00fc 8D91      		ld r24,X+
+ 247 00fe 9C91      		ld r25,X
+ 248 0100 1797      		sbiw r26,6+1
+ 249               	.LVL14:
+ 250 0102 2C91      		ld r18,X
+ 251 0104 820F      		add r24,r18
+ 252 0106 911D      		adc r25,__zero_reg__
+ 253 0108 8E17      		cp r24,r30
+ 254 010a 9F07      		cpc r25,r31
+ 255 010c 00F4      		brsh .L23
+ 256               	.LM31:
+ 257 010e 1496      		adiw r26,4
+ 258 0110 ED91      		ld r30,X+
+ 259 0112 FC91      		ld r31,X
+ 260 0114 1597      		sbiw r26,4+1
+ 261 0116 8C91      		ld r24,X
+ 262 0118 681B      		sub r22,r24
+ 263 011a 7109      		sbc r23,__zero_reg__
+ 264 011c E60F      		add r30,r22
+ 265 011e F71F      		adc r31,r23
+ 266               	.L23:
+ 267               	.LM32:
+ 268 0120 8081      		ld r24,Z
+ 269               	/* epilogue start */
+ 270 0122 0895      		ret
+ 271               	.LFE10:
+ 273               	.global	zoBufferRead
+ 275               	zoBufferRead:
+ 276               	.LFB11:
+ 277               	.LM33:
+ 278               	.LVL15:
+ 279               	/* prologue: function */
+ 280               	/* frame size = 0 */
+ 281 0124 DC01      		movw r26,r24
+ 282               	.LM34:
+ 283               	/* #APP */
+ 284               	 ;  97 "zoBuffer.c" 1
+ 285 0126 0FB6      		in __tmp_reg__, __SREG__
+ 286 0128 0F92      		 push __tmp_reg__
+ 287 012a F894      		cli
+ 288               	 ;  0 "" 2
+ 289               	/* #NOAPP */
+ 290               	.LBB4:
+ 291               	.LBB5:
+ 292               	.LM35:
+ 293 012c 1496      		adiw r26,4
+ 294 012e ED91      		ld r30,X+
+ 295 0130 FC91      		ld r31,X
+ 296 0132 1597      		sbiw r26,4+1
+ 297               	.LVL16:
+ 298 0134 70E0      		ldi r23,lo8(0)
+ 299 0136 E60F      		add r30,r22
+ 300 0138 F71F      		adc r31,r23
+ 301               	.LVL17:
+ 302               	.LM36:
+ 303 013a 1696      		adiw r26,6
+ 304 013c 8D91      		ld r24,X+
+ 305 013e 9C91      		ld r25,X
+ 306 0140 1797      		sbiw r26,6+1
+ 307               	.LVL18:
+ 308 0142 2C91      		ld r18,X
+ 309 0144 820F      		add r24,r18
+ 310 0146 911D      		adc r25,__zero_reg__
+ 311 0148 8E17      		cp r24,r30
+ 312 014a 9F07      		cpc r25,r31
+ 313 014c 00F4      		brsh .L26
+ 314               	.LM37:
+ 315 014e 1496      		adiw r26,4
+ 316 0150 ED91      		ld r30,X+
+ 317 0152 FC91      		ld r31,X
+ 318 0154 1597      		sbiw r26,4+1
+ 319 0156 8C91      		ld r24,X
+ 320 0158 681B      		sub r22,r24
+ 321 015a 7109      		sbc r23,__zero_reg__
+ 322 015c E60F      		add r30,r22
+ 323 015e F71F      		adc r31,r23
+ 324               	.L26:
+ 325               	.LBE5:
+ 326               	.LBE4:
+ 327               	.LM38:
+ 328               	/* #APP */
+ 329               	 ;  99 "zoBuffer.c" 1
+ 330 0160 0F90      		pop __tmp_reg__ 
+ 331 0162 0FBE      		out __SREG__, __tmp_reg__
+ 332               	 ;  0 "" 2
+ 333               	.LM39:
+ 334               	/* #NOAPP */
+ 335 0164 8081      		ld r24,Z
+ 336               	/* epilogue start */
+ 337 0166 0895      		ret
+ 338               	.LFE11:
+ 340               	.global	zoBufferInit
+ 342               	zoBufferInit:
+ 343               	.LFB5:
+ 344               	.LM40:
+ 345               	.LVL19:
+ 346 0168 CF93      		push r28
+ 347 016a DF93      		push r29
+ 348               	/* prologue: function */
+ 349               	/* frame size = 0 */
+ 350 016c EC01      		movw r28,r24
+ 351 016e 862F      		mov r24,r22
+ 352               	.LVL20:
+ 353               	.LM41:
+ 354               	/* #APP */
+ 355               	 ;  28 "zoBuffer.c" 1
+ 356 0170 0FB6      		in __tmp_reg__, __SREG__
+ 357 0172 0F92      		 push __tmp_reg__
+ 358 0174 F894      		cli
+ 359               	 ;  0 "" 2
+ 360               	.LM42:
+ 361               	/* #NOAPP */
+ 362 0176 1982      		std Y+1,__zero_reg__
+ 363               	.LM43:
+ 364 0178 6883      		st Y,r22
+ 365               	.LM44:
+ 366 017a 90E0      		ldi r25,lo8(0)
+ 367 017c 61E0      		ldi r22,lo8(1)
+ 368 017e 70E0      		ldi r23,hi8(1)
+ 369               	.LVL21:
+ 370 0180 0E94 0000 		call calloc
+ 371               	.LVL22:
+ 372 0184 9F83      		std Y+7,r25
+ 373 0186 8E83      		std Y+6,r24
+ 374               	.LM45:
+ 375 0188 8E81      		ldd r24,Y+6
+ 376 018a 9F81      		ldd r25,Y+7
+ 377 018c 892B      		or r24,r25
+ 378 018e 01F4      		brne .L29
+ 379 0190 80E0      		ldi r24,lo8(0)
+ 380               	.LVL23:
+ 381               	.LM46:
+ 382               	/* #APP */
+ 383               	 ;  41 "zoBuffer.c" 1
+ 384 0192 0F90      		pop __tmp_reg__ 
+ 385 0194 0FBE      		out __SREG__, __tmp_reg__
+ 386               	 ;  0 "" 2
+ 387               	.LVL24:
+ 388               	/* epilogue start */
+ 389               	.LM47:
+ 390               	/* #NOAPP */
+ 391 0196 DF91      		pop r29
+ 392 0198 CF91      		pop r28
+ 393               	.LVL25:
+ 394 019a 0895      		ret
+ 395               	.LVL26:
+ 396               	.L29:
+ 397               	.LM48:
+ 398 019c 8E81      		ldd r24,Y+6
+ 399 019e 9F81      		ldd r25,Y+7
+ 400 01a0 9B83      		std Y+3,r25
+ 401 01a2 8A83      		std Y+2,r24
+ 402               	.LM49:
+ 403 01a4 8E81      		ldd r24,Y+6
+ 404 01a6 9F81      		ldd r25,Y+7
+ 405 01a8 9D83      		std Y+5,r25
+ 406 01aa 8C83      		std Y+4,r24
+ 407 01ac 8FEF      		ldi r24,lo8(-1)
+ 408               	.LVL27:
+ 409               	.LM50:
+ 410               	/* #APP */
+ 411               	 ;  41 "zoBuffer.c" 1
+ 412 01ae 0F90      		pop __tmp_reg__ 
+ 413 01b0 0FBE      		out __SREG__, __tmp_reg__
+ 414               	 ;  0 "" 2
+ 415               	.LVL28:
+ 416               	.LM51:
+ 417               	/* #NOAPP */
+ 418 01b2 DF91      		pop r29
+ 419 01b4 CF91      		pop r28
+ 420               	.LVL29:
+ 421 01b6 0895      		ret
+ 422               	.LFE5:
+ 424               	.global	zoBufferPut
+ 426               	zoBufferPut:
+ 427               	.LFB9:
+ 428               	.LM52:
+ 429               	.LVL30:
+ 430               	/* prologue: function */
+ 431               	/* frame size = 0 */
+ 432 01b8 DC01      		movw r26,r24
+ 433               	.LM53:
+ 434               	/* #APP */
+ 435               	 ;  78 "zoBuffer.c" 1
+ 436 01ba 0FB6      		in __tmp_reg__, __SREG__
+ 437 01bc 0F92      		 push __tmp_reg__
+ 438 01be F894      		cli
+ 439               	 ;  0 "" 2
+ 440               	/* #NOAPP */
+ 441               	.LBB8:
+ 442               	.LBB9:
+ 443               	.LM54:
+ 444 01c0 1196      		adiw r26,1
+ 445 01c2 8C91      		ld r24,X
+ 446 01c4 1197      		sbiw r26,1
+ 447               	.LVL31:
+ 448 01c6 8F5F      		subi r24,lo8(-(1))
+ 449 01c8 1196      		adiw r26,1
+ 450 01ca 8C93      		st X,r24
+ 451 01cc 1197      		sbiw r26,1
+ 452               	.LM55:
+ 453 01ce 1296      		adiw r26,2
+ 454 01d0 ED91      		ld r30,X+
+ 455 01d2 FC91      		ld r31,X
+ 456 01d4 1397      		sbiw r26,2+1
+ 457 01d6 6193      		st Z+,r22
+ 458 01d8 1396      		adiw r26,2+1
+ 459 01da FC93      		st X,r31
+ 460 01dc EE93      		st -X,r30
+ 461 01de 1297      		sbiw r26,2
+ 462               	.LM56:
+ 463 01e0 1296      		adiw r26,2
+ 464 01e2 4D91      		ld r20,X+
+ 465 01e4 5C91      		ld r21,X
+ 466 01e6 1397      		sbiw r26,2+1
+ 467 01e8 1696      		adiw r26,6
+ 468 01ea 8D91      		ld r24,X+
+ 469 01ec 9C91      		ld r25,X
+ 470 01ee 1797      		sbiw r26,6+1
+ 471 01f0 2C91      		ld r18,X
+ 472 01f2 820F      		add r24,r18
+ 473 01f4 911D      		adc r25,__zero_reg__
+ 474 01f6 4817      		cp r20,r24
+ 475 01f8 5907      		cpc r21,r25
+ 476 01fa 01F0      		breq .L35
+ 477               	.LBE9:
+ 478               	.LBE8:
+ 479               	.LM57:
+ 480               	/* #APP */
+ 481               	 ;  80 "zoBuffer.c" 1
+ 482 01fc 0F90      		pop __tmp_reg__ 
+ 483 01fe 0FBE      		out __SREG__, __tmp_reg__
+ 484               	 ;  0 "" 2
+ 485               	/* epilogue start */
+ 486               	.LM58:
+ 487               	/* #NOAPP */
+ 488 0200 0895      		ret
+ 489               	.L35:
+ 490               	.LBB11:
+ 491               	.LBB10:
+ 492               	.LM59:
+ 493 0202 1696      		adiw r26,6
+ 494 0204 8D91      		ld r24,X+
+ 495 0206 9C91      		ld r25,X
+ 496 0208 1797      		sbiw r26,6+1
+ 497 020a 1396      		adiw r26,2+1
+ 498 020c 9C93      		st X,r25
+ 499 020e 8E93      		st -X,r24
+ 500 0210 1297      		sbiw r26,2
+ 501               	.LBE10:
+ 502               	.LBE11:
+ 503               	.LM60:
+ 504               	/* #APP */
+ 505               	 ;  80 "zoBuffer.c" 1
+ 506 0212 0F90      		pop __tmp_reg__ 
+ 507 0214 0FBE      		out __SREG__, __tmp_reg__
+ 508               	 ;  0 "" 2
+ 509               	.LM61:
+ 510               	/* #NOAPP */
+ 511 0216 0895      		ret
+ 512               	.LFE9:
+ 514               	.global	zoBufferGet
+ 516               	zoBufferGet:
+ 517               	.LFB7:
+ 518               	.LM62:
+ 519               	.LVL32:
+ 520               	/* prologue: function */
+ 521               	/* frame size = 0 */
+ 522 0218 DC01      		movw r26,r24
+ 523               	.LM63:
+ 524               	/* #APP */
+ 525               	 ;  62 "zoBuffer.c" 1
+ 526 021a 0FB6      		in __tmp_reg__, __SREG__
+ 527 021c 0F92      		 push __tmp_reg__
+ 528 021e F894      		cli
+ 529               	 ;  0 "" 2
+ 530               	/* #NOAPP */
+ 531               	.LBB14:
+ 532               	.LBB15:
+ 533               	.LM64:
+ 534 0220 1196      		adiw r26,1
+ 535 0222 8C91      		ld r24,X
+ 536 0224 1197      		sbiw r26,1
+ 537               	.LVL33:
+ 538 0226 8150      		subi r24,lo8(-(-1))
+ 539 0228 1196      		adiw r26,1
+ 540 022a 8C93      		st X,r24
+ 541 022c 1197      		sbiw r26,1
+ 542               	.LM65:
+ 543 022e 1496      		adiw r26,4
+ 544 0230 ED91      		ld r30,X+
+ 545 0232 FC91      		ld r31,X
+ 546 0234 1597      		sbiw r26,4+1
+ 547 0236 3191      		ld r19,Z+
+ 548               	.LVL34:
+ 549 0238 1596      		adiw r26,4+1
+ 550 023a FC93      		st X,r31
+ 551 023c EE93      		st -X,r30
+ 552 023e 1497      		sbiw r26,4
+ 553               	.LM66:
+ 554 0240 1496      		adiw r26,4
+ 555 0242 4D91      		ld r20,X+
+ 556 0244 5C91      		ld r21,X
+ 557 0246 1597      		sbiw r26,4+1
+ 558 0248 1696      		adiw r26,6
+ 559 024a 8D91      		ld r24,X+
+ 560 024c 9C91      		ld r25,X
+ 561 024e 1797      		sbiw r26,6+1
+ 562 0250 2C91      		ld r18,X
+ 563 0252 820F      		add r24,r18
+ 564 0254 911D      		adc r25,__zero_reg__
+ 565 0256 4817      		cp r20,r24
+ 566 0258 5907      		cpc r21,r25
+ 567 025a 01F0      		breq .L39
+ 568               	.LBE15:
+ 569               	.LBE14:
+ 570               	.LM67:
+ 571               	/* #APP */
+ 572               	 ;  64 "zoBuffer.c" 1
+ 573 025c 0F90      		pop __tmp_reg__ 
+ 574 025e 0FBE      		out __SREG__, __tmp_reg__
+ 575               	 ;  0 "" 2
+ 576               	.LM68:
+ 577               	/* #NOAPP */
+ 578 0260 832F      		mov r24,r19
+ 579               	/* epilogue start */
+ 580 0262 0895      		ret
+ 581               	.L39:
+ 582               	.LBB17:
+ 583               	.LBB16:
+ 584               	.LM69:
+ 585 0264 1696      		adiw r26,6
+ 586 0266 8D91      		ld r24,X+
+ 587 0268 9C91      		ld r25,X
+ 588 026a 1797      		sbiw r26,6+1
+ 589 026c 1596      		adiw r26,4+1
+ 590 026e 9C93      		st X,r25
+ 591 0270 8E93      		st -X,r24
+ 592 0272 1497      		sbiw r26,4
+ 593               	.LBE16:
+ 594               	.LBE17:
+ 595               	.LM70:
+ 596               	/* #APP */
+ 597               	 ;  64 "zoBuffer.c" 1
+ 598 0274 0F90      		pop __tmp_reg__ 
+ 599 0276 0FBE      		out __SREG__, __tmp_reg__
+ 600               	 ;  0 "" 2
+ 601               	.LM71:
+ 602               	/* #NOAPP */
+ 603 0278 832F      		mov r24,r19
+ 604 027a 0895      		ret
+ 605               	.LFE7:
+ 703               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoBuffer.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:18     .text:00000000 zoBufferIsEmpty
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:41     .text:00000010 zoBufferIsFull
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:65     .text:00000022 zoBufferFlush
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:107    .text:00000042 zoBufferGetIsr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:170    .text:00000098 zoBufferPutIsr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:227    .text:000000ea zoBufferReadIsr
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:275    .text:00000124 zoBufferRead
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:342    .text:00000168 zoBufferInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:426    .text:000001b8 zoBufferPut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccd8Oi9g.s:516    .text:00000218 zoBufferGet
+
+UNDEFINED SYMBOLS
+calloc

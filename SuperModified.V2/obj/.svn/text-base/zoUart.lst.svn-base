@@ -1,0 +1,908 @@
+   1               		.file	"zoUart.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoUartSetBaud
+  18               	zoUartSetBaud:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 9B01      		movw r18,r22
+  25 0002 AC01      		movw r20,r24
+  26               	.LM2:
+  27 0004 60EA      		ldi r22,lo8(2500000)
+  28 0006 75E2      		ldi r23,hi8(2500000)
+  29 0008 86E2      		ldi r24,hlo8(2500000)
+  30 000a 90E0      		ldi r25,hhi8(2500000)
+  31               	.LVL1:
+  32 000c 0E94 0000 		call __udivmodsi4
+  33               	.LVL2:
+  34 0010 2150      		subi r18,lo8(-(-1))
+  35 0012 3040      		sbci r19,hi8(-(-1))
+  36 0014 4040      		sbci r20,hlo8(-(-1))
+  37 0016 5040      		sbci r21,hhi8(-(-1))
+  38               	.LVL3:
+  39               	.LM3:
+  40 0018 DA01      		movw r26,r20
+  41 001a C901      		movw r24,r18
+  42 001c 0197      		sbiw r24,1
+  43 001e A109      		sbc r26,__zero_reg__
+  44 0020 B109      		sbc r27,__zero_reg__
+  45 0022 8F5F      		subi r24,lo8(65535)
+  46 0024 9F4F      		sbci r25,hi8(65535)
+  47 0026 A040      		sbci r26,hlo8(65535)
+  48 0028 B040      		sbci r27,hhi8(65535)
+  49 002a 00F0      		brlo .L2
+  50 002c 80E0      		ldi r24,lo8(0)
+  51 002e 0895      		ret
+  52               	.L2:
+  53               	.LM4:
+  54 0030 BB27      		clr r27
+  55 0032 A52F      		mov r26,r21
+  56 0034 942F      		mov r25,r20
+  57 0036 832F      		mov r24,r19
+  58 0038 8093 C500 		sts 197,r24
+  59               	.LM5:
+  60 003c 2093 C400 		sts 196,r18
+  61 0040 8FEF      		ldi r24,lo8(-1)
+  62               	.LM6:
+  63 0042 0895      		ret
+  64               	.LFE3:
+  66               	.global	zoUartSetDataBits
+  68               	zoUartSetDataBits:
+  69               	.LFB4:
+  70               	.LM7:
+  71               	.LVL4:
+  72               	/* prologue: function */
+  73               	/* frame size = 0 */
+  74               	.LM8:
+  75 0044 E2EC      		ldi r30,lo8(194)
+  76 0046 F0E0      		ldi r31,hi8(194)
+  77 0048 9081      		ld r25,Z
+  78 004a 282F      		mov r18,r24
+  79 004c 2670      		andi r18,lo8(6)
+  80 004e 997F      		andi r25,lo8(-7)
+  81 0050 292B      		or r18,r25
+  82 0052 2083      		st Z,r18
+  83               	.LM9:
+  84 0054 E1EC      		ldi r30,lo8(193)
+  85 0056 F0E0      		ldi r31,hi8(193)
+  86 0058 9081      		ld r25,Z
+  87 005a 8695      		lsr r24
+  88               	.LVL5:
+  89 005c 8470      		andi r24,lo8(4)
+  90 005e 9B7F      		andi r25,lo8(-5)
+  91 0060 982B      		or r25,r24
+  92 0062 9083      		st Z,r25
+  93               	/* epilogue start */
+  94               	.LM10:
+  95 0064 0895      		ret
+  96               	.LFE4:
+  98               	.global	zoUartSetParity
+ 100               	zoUartSetParity:
+ 101               	.LFB5:
+ 102               	.LM11:
+ 103               	.LVL6:
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	.LM12:
+ 107 0066 E2EC      		ldi r30,lo8(194)
+ 108 0068 F0E0      		ldi r31,hi8(194)
+ 109 006a 9081      		ld r25,Z
+ 110 006c 9F7C      		andi r25,lo8(-49)
+ 111 006e 982B      		or r25,r24
+ 112 0070 9083      		st Z,r25
+ 113               	/* epilogue start */
+ 114               	.LM13:
+ 115 0072 0895      		ret
+ 116               	.LFE5:
+ 118               	.global	zoUartSetStopBits
+ 120               	zoUartSetStopBits:
+ 121               	.LFB6:
+ 122               	.LM14:
+ 123               	.LVL7:
+ 124               	/* prologue: function */
+ 125               	/* frame size = 0 */
+ 126               	.LM15:
+ 127 0074 E2EC      		ldi r30,lo8(194)
+ 128 0076 F0E0      		ldi r31,hi8(194)
+ 129 0078 9081      		ld r25,Z
+ 130 007a 9F77      		andi r25,lo8(127)
+ 131 007c 982B      		or r25,r24
+ 132 007e 9083      		st Z,r25
+ 133               	/* epilogue start */
+ 134               	.LM16:
+ 135 0080 0895      		ret
+ 136               	.LFE6:
+ 138               	.global	zoUartInitRs485
+ 140               	zoUartInitRs485:
+ 141               	.LFB7:
+ 142               	.LM17:
+ 143               	.LVL8:
+ 144               	/* prologue: function */
+ 145               	/* frame size = 0 */
+ 146 0082 DC01      		movw r26,r24
+ 147               	.LM18:
+ 148 0084 8FEF      		ldi r24,lo8(-1)
+ 149               	.LVL9:
+ 150 0086 8093 0000 		sts Rs485Used,r24
+ 151               	.LM19:
+ 152 008a B093 0000 		sts (Rs485ReDePort)+1,r27
+ 153 008e A093 0000 		sts Rs485ReDePort,r26
+ 154               	.LM20:
+ 155 0092 6093 0000 		sts Rs485ReDePin,r22
+ 156               	.LM21:
+ 157 0096 FD01      		movw r30,r26
+ 158 0098 2291      		ld r18,-Z
+ 159 009a 81E0      		ldi r24,lo8(1)
+ 160 009c 90E0      		ldi r25,hi8(1)
+ 161 009e 00C0      		rjmp 2f
+ 162 00a0 880F      	1:	lsl r24
+ 163 00a2 991F      		rol r25
+ 164 00a4 6A95      	2:	dec r22
+ 165 00a6 02F4      		brpl 1b
+ 166 00a8 282B      		or r18,r24
+ 167 00aa 2083      		st Z,r18
+ 168               	.LM22:
+ 169 00ac 2C91      		ld r18,X
+ 170 00ae 8095      		com r24
+ 171 00b0 8223      		and r24,r18
+ 172 00b2 8C93      		st X,r24
+ 173               	.LM23:
+ 174 00b4 E1EC      		ldi r30,lo8(193)
+ 175 00b6 F0E0      		ldi r31,hi8(193)
+ 176 00b8 8081      		ld r24,Z
+ 177 00ba 8064      		ori r24,lo8(64)
+ 178 00bc 8083      		st Z,r24
+ 179               	/* epilogue start */
+ 180               	.LM24:
+ 181 00be 0895      		ret
+ 182               	.LFE7:
+ 184               	.global	zoUartSetTransmitTimeOut
+ 186               	zoUartSetTransmitTimeOut:
+ 187               	.LFB9:
+ 188               	.LM25:
+ 189               	.LVL10:
+ 190               	/* prologue: function */
+ 191               	/* frame size = 0 */
+ 192               	.LM26:
+ 193 00c0 9093 0000 		sts (TransmitTimeOut)+1,r25
+ 194 00c4 8093 0000 		sts TransmitTimeOut,r24
+ 195               	/* epilogue start */
+ 196               	.LM27:
+ 197 00c8 0895      		ret
+ 198               	.LFE9:
+ 200               	.global	__vector_20
+ 202               	__vector_20:
+ 203               	.LFB19:
+ 204               	.LM28:
+ 205 00ca 1F92      		push __zero_reg__
+ 206 00cc 0F92      		push r0
+ 207 00ce 0FB6      		in r0,__SREG__
+ 208 00d0 0F92      		push r0
+ 209 00d2 1124      		clr __zero_reg__
+ 210 00d4 2F93      		push r18
+ 211 00d6 3F93      		push r19
+ 212 00d8 8F93      		push r24
+ 213 00da 9F93      		push r25
+ 214 00dc EF93      		push r30
+ 215 00de FF93      		push r31
+ 216               	/* prologue: Signal */
+ 217               	/* frame size = 0 */
+ 218               	.LM29:
+ 219 00e0 E091 0000 		lds r30,Rs485ReDePort
+ 220 00e4 F091 0000 		lds r31,(Rs485ReDePort)+1
+ 221 00e8 3081      		ld r19,Z
+ 222 00ea 2091 0000 		lds r18,Rs485ReDePin
+ 223 00ee 81E0      		ldi r24,lo8(1)
+ 224 00f0 90E0      		ldi r25,hi8(1)
+ 225 00f2 00C0      		rjmp 2f
+ 226 00f4 880F      	1:	lsl r24
+ 227 00f6 991F      		rol r25
+ 228 00f8 2A95      	2:	dec r18
+ 229 00fa 02F4      		brpl 1b
+ 230 00fc 8095      		com r24
+ 231 00fe 8323      		and r24,r19
+ 232 0100 8083      		st Z,r24
+ 233               	/* epilogue start */
+ 234               	.LM30:
+ 235 0102 FF91      		pop r31
+ 236 0104 EF91      		pop r30
+ 237 0106 9F91      		pop r25
+ 238 0108 8F91      		pop r24
+ 239 010a 3F91      		pop r19
+ 240 010c 2F91      		pop r18
+ 241 010e 0F90      		pop r0
+ 242 0110 0FBE      		out __SREG__,r0
+ 243 0112 0F90      		pop r0
+ 244 0114 1F90      		pop __zero_reg__
+ 245 0116 1895      		reti
+ 246               	.LFE19:
+ 248               	.global	zoUartRxBufferIsEmpty
+ 250               	zoUartRxBufferIsEmpty:
+ 251               	.LFB11:
+ 252               	.LM31:
+ 253               	/* prologue: function */
+ 254               	/* frame size = 0 */
+ 255               	.LM32:
+ 256 0118 80E0      		ldi r24,lo8(RxBuffer)
+ 257 011a 90E0      		ldi r25,hi8(RxBuffer)
+ 258 011c 0E94 0000 		call zoBufferIsEmpty
+ 259               	/* epilogue start */
+ 260               	.LM33:
+ 261 0120 0895      		ret
+ 262               	.LFE11:
+ 264               	.global	__vector_19
+ 266               	__vector_19:
+ 267               	.LFB18:
+ 268               	.LM34:
+ 269 0122 1F92      		push __zero_reg__
+ 270 0124 0F92      		push r0
+ 271 0126 0FB6      		in r0,__SREG__
+ 272 0128 0F92      		push r0
+ 273 012a 1124      		clr __zero_reg__
+ 274 012c 2F93      		push r18
+ 275 012e 3F93      		push r19
+ 276 0130 4F93      		push r20
+ 277 0132 5F93      		push r21
+ 278 0134 6F93      		push r22
+ 279 0136 7F93      		push r23
+ 280 0138 8F93      		push r24
+ 281 013a 9F93      		push r25
+ 282 013c AF93      		push r26
+ 283 013e BF93      		push r27
+ 284 0140 EF93      		push r30
+ 285 0142 FF93      		push r31
+ 286               	/* prologue: Signal */
+ 287               	/* frame size = 0 */
+ 288               	.LM35:
+ 289 0144 80E0      		ldi r24,lo8(TxBuffer)
+ 290 0146 90E0      		ldi r25,hi8(TxBuffer)
+ 291 0148 0E94 0000 		call zoBufferIsEmpty
+ 292 014c 8823      		tst r24
+ 293 014e 01F4      		brne .L21
+ 294               	.LM36:
+ 295 0150 8091 0000 		lds r24,Rs485Used
+ 296 0154 8823      		tst r24
+ 297 0156 01F0      		breq .L22
+ 298               	.LM37:
+ 299 0158 E091 0000 		lds r30,Rs485ReDePort
+ 300 015c F091 0000 		lds r31,(Rs485ReDePort)+1
+ 301 0160 2081      		ld r18,Z
+ 302 0162 3091 0000 		lds r19,Rs485ReDePin
+ 303 0166 81E0      		ldi r24,lo8(1)
+ 304 0168 90E0      		ldi r25,hi8(1)
+ 305 016a 00C0      		rjmp 2f
+ 306 016c 880F      	1:	lsl r24
+ 307 016e 991F      		rol r25
+ 308 0170 3A95      	2:	dec r19
+ 309 0172 02F4      		brpl 1b
+ 310 0174 282B      		or r18,r24
+ 311 0176 2083      		st Z,r18
+ 312               	.L22:
+ 313               	.LM38:
+ 314 0178 80E0      		ldi r24,lo8(TxBuffer)
+ 315 017a 90E0      		ldi r25,hi8(TxBuffer)
+ 316 017c 0E94 0000 		call zoBufferGetIsr
+ 317 0180 8093 C600 		sts 198,r24
+ 318               	.L24:
+ 319               	/* epilogue start */
+ 320               	.LM39:
+ 321 0184 FF91      		pop r31
+ 322 0186 EF91      		pop r30
+ 323 0188 BF91      		pop r27
+ 324 018a AF91      		pop r26
+ 325 018c 9F91      		pop r25
+ 326 018e 8F91      		pop r24
+ 327 0190 7F91      		pop r23
+ 328 0192 6F91      		pop r22
+ 329 0194 5F91      		pop r21
+ 330 0196 4F91      		pop r20
+ 331 0198 3F91      		pop r19
+ 332 019a 2F91      		pop r18
+ 333 019c 0F90      		pop r0
+ 334 019e 0FBE      		out __SREG__,r0
+ 335 01a0 0F90      		pop r0
+ 336 01a2 1F90      		pop __zero_reg__
+ 337 01a4 1895      		reti
+ 338               	.L21:
+ 339               	.LM40:
+ 340 01a6 8091 C100 		lds r24,193
+ 341 01aa 8F7D      		andi r24,lo8(-33)
+ 342 01ac 8093 C100 		sts 193,r24
+ 343 01b0 00C0      		rjmp .L24
+ 344               	.LFE18:
+ 346               	.global	zoUartTxBufferIsFull
+ 348               	zoUartTxBufferIsFull:
+ 349               	.LFB10:
+ 350               	.LM41:
+ 351               	/* prologue: function */
+ 352               	/* frame size = 0 */
+ 353               	.LM42:
+ 354 01b2 80E0      		ldi r24,lo8(TxBuffer)
+ 355 01b4 90E0      		ldi r25,hi8(TxBuffer)
+ 356 01b6 0E94 0000 		call zoBufferIsFull
+ 357               	/* epilogue start */
+ 358               	.LM43:
+ 359 01ba 0895      		ret
+ 360               	.LFE10:
+ 362               	.global	__vector_18
+ 364               	__vector_18:
+ 365               	.LFB17:
+ 366               	.LM44:
+ 367 01bc 1F92      		push __zero_reg__
+ 368 01be 0F92      		push r0
+ 369 01c0 0FB6      		in r0,__SREG__
+ 370 01c2 0F92      		push r0
+ 371 01c4 1124      		clr __zero_reg__
+ 372 01c6 1F93      		push r17
+ 373 01c8 2F93      		push r18
+ 374 01ca 3F93      		push r19
+ 375 01cc 4F93      		push r20
+ 376 01ce 5F93      		push r21
+ 377 01d0 6F93      		push r22
+ 378 01d2 7F93      		push r23
+ 379 01d4 8F93      		push r24
+ 380 01d6 9F93      		push r25
+ 381 01d8 AF93      		push r26
+ 382 01da BF93      		push r27
+ 383 01dc EF93      		push r30
+ 384 01de FF93      		push r31
+ 385               	/* prologue: Signal */
+ 386               	/* frame size = 0 */
+ 387               	.LM45:
+ 388 01e0 8091 C000 		lds r24,192
+ 389 01e4 84FD      		sbrc r24,4
+ 390 01e6 00C0      		rjmp .L34
+ 391               	.L28:
+ 392               	.LM46:
+ 393 01e8 8091 C000 		lds r24,192
+ 394 01ec 82FD      		sbrc r24,2
+ 395 01ee 00C0      		rjmp .L35
+ 396               	.L29:
+ 397               	.LM47:
+ 398 01f0 8091 C000 		lds r24,192
+ 399 01f4 83FD      		sbrc r24,3
+ 400 01f6 00C0      		rjmp .L36
+ 401               	.L30:
+ 402               	.LM48:
+ 403 01f8 1091 C600 		lds r17,198
+ 404               	.LVL11:
+ 405               	.LM49:
+ 406 01fc 80E0      		ldi r24,lo8(RxBuffer)
+ 407 01fe 90E0      		ldi r25,hi8(RxBuffer)
+ 408 0200 0E94 0000 		call zoBufferIsFull
+ 409 0204 8823      		tst r24
+ 410 0206 01F0      		breq .L37
+ 411               	.LM50:
+ 412 0208 80E0      		ldi r24,lo8(zoUartError)
+ 413 020a 90E0      		ldi r25,hi8(zoUartError)
+ 414 020c 65E0      		ldi r22,lo8(5)
+ 415 020e 0E94 0000 		call zoErrorPutIsr
+ 416               	.L33:
+ 417               	/* epilogue start */
+ 418               	.LM51:
+ 419 0212 FF91      		pop r31
+ 420 0214 EF91      		pop r30
+ 421 0216 BF91      		pop r27
+ 422 0218 AF91      		pop r26
+ 423 021a 9F91      		pop r25
+ 424 021c 8F91      		pop r24
+ 425 021e 7F91      		pop r23
+ 426 0220 6F91      		pop r22
+ 427 0222 5F91      		pop r21
+ 428 0224 4F91      		pop r20
+ 429 0226 3F91      		pop r19
+ 430 0228 2F91      		pop r18
+ 431 022a 1F91      		pop r17
+ 432               	.LVL12:
+ 433 022c 0F90      		pop r0
+ 434 022e 0FBE      		out __SREG__,r0
+ 435 0230 0F90      		pop r0
+ 436 0232 1F90      		pop __zero_reg__
+ 437 0234 1895      		reti
+ 438               	.LVL13:
+ 439               	.L37:
+ 440               	.LM52:
+ 441 0236 80E0      		ldi r24,lo8(RxBuffer)
+ 442 0238 90E0      		ldi r25,hi8(RxBuffer)
+ 443 023a 612F      		mov r22,r17
+ 444 023c 0E94 0000 		call zoBufferPutIsr
+ 445 0240 00C0      		rjmp .L33
+ 446               	.LVL14:
+ 447               	.L36:
+ 448               	.LM53:
+ 449 0242 80E0      		ldi r24,lo8(zoUartError)
+ 450 0244 90E0      		ldi r25,hi8(zoUartError)
+ 451 0246 66E0      		ldi r22,lo8(6)
+ 452 0248 0E94 0000 		call zoErrorPutIsr
+ 453 024c 00C0      		rjmp .L30
+ 454               	.L35:
+ 455               	.LM54:
+ 456 024e 80E0      		ldi r24,lo8(zoUartError)
+ 457 0250 90E0      		ldi r25,hi8(zoUartError)
+ 458 0252 64E0      		ldi r22,lo8(4)
+ 459 0254 0E94 0000 		call zoErrorPutIsr
+ 460 0258 00C0      		rjmp .L29
+ 461               	.L34:
+ 462               	.LM55:
+ 463 025a 80E0      		ldi r24,lo8(zoUartError)
+ 464 025c 90E0      		ldi r25,hi8(zoUartError)
+ 465 025e 63E0      		ldi r22,lo8(3)
+ 466 0260 0E94 0000 		call zoErrorPutIsr
+ 467 0264 00C0      		rjmp .L28
+ 468               	.LFE17:
+ 470               	.global	zoUartGetChar
+ 472               	zoUartGetChar:
+ 473               	.LFB14:
+ 474               	.LM56:
+ 475               	.LVL15:
+ 476 0266 CF93      		push r28
+ 477 0268 DF93      		push r29
+ 478               	/* prologue: function */
+ 479               	/* frame size = 0 */
+ 480 026a EC01      		movw r28,r24
+ 481               	.LM57:
+ 482 026c 80E0      		ldi r24,lo8(zoUartError)
+ 483 026e 90E0      		ldi r25,hi8(zoUartError)
+ 484               	.LVL16:
+ 485 0270 0E94 0000 		call zoErrorIsEmpty
+ 486 0274 8823      		tst r24
+ 487 0276 01F4      		brne .L42
+ 488               	.L39:
+ 489               	.LM58:
+ 490 0278 80E0      		ldi r24,lo8(0)
+ 491               	.L40:
+ 492               	/* epilogue start */
+ 493               	.LM59:
+ 494 027a DF91      		pop r29
+ 495 027c CF91      		pop r28
+ 496               	.LVL17:
+ 497 027e 0895      		ret
+ 498               	.LVL18:
+ 499               	.L42:
+ 500               	.LBB8:
+ 501               	.LM60:
+ 502 0280 80E0      		ldi r24,lo8(RxBuffer)
+ 503 0282 90E0      		ldi r25,hi8(RxBuffer)
+ 504 0284 0E94 0000 		call zoBufferIsEmpty
+ 505               	.LBE8:
+ 506               	.LM61:
+ 507 0288 8823      		tst r24
+ 508 028a 01F4      		brne .L39
+ 509               	.LM62:
+ 510 028c 80E0      		ldi r24,lo8(RxBuffer)
+ 511 028e 90E0      		ldi r25,hi8(RxBuffer)
+ 512 0290 0E94 0000 		call zoBufferGet
+ 513 0294 8883      		st Y,r24
+ 514 0296 8FEF      		ldi r24,lo8(-1)
+ 515 0298 00C0      		rjmp .L40
+ 516               	.LFE14:
+ 518               	.global	zoUartPutChar
+ 520               	zoUartPutChar:
+ 521               	.LFB13:
+ 522               	.LM63:
+ 523               	.LVL19:
+ 524 029a FF92      		push r15
+ 525 029c 0F93      		push r16
+ 526 029e 1F93      		push r17
+ 527 02a0 DF93      		push r29
+ 528 02a2 CF93      		push r28
+ 529 02a4 00D0      		rcall .
+ 530 02a6 CDB7      		in r28,__SP_L__
+ 531 02a8 DEB7      		in r29,__SP_H__
+ 532               	/* prologue: function */
+ 533               	/* frame size = 2 */
+ 534 02aa F82E      		mov r15,r24
+ 535               	.LM64:
+ 536 02ac 8E01      		movw r16,r28
+ 537 02ae 0F5F      		subi r16,lo8(-(1))
+ 538 02b0 1F4F      		sbci r17,hi8(-(1))
+ 539 02b2 C801      		movw r24,r16
+ 540               	.LVL20:
+ 541 02b4 0E94 0000 		call zoSystemTimerTimeOutInit
+ 542               	.L44:
+ 543               	.LM65:
+ 544 02b8 80E0      		ldi r24,lo8(TxBuffer)
+ 545 02ba 90E0      		ldi r25,hi8(TxBuffer)
+ 546 02bc 0E94 0000 		call zoBufferIsFull
+ 547 02c0 8823      		tst r24
+ 548 02c2 01F0      		breq .L51
+ 549               	.LM66:
+ 550 02c4 6091 0000 		lds r22,TransmitTimeOut
+ 551 02c8 7091 0000 		lds r23,(TransmitTimeOut)+1
+ 552 02cc C801      		movw r24,r16
+ 553 02ce 0E94 0000 		call zoSystemTimerTimeOutExpired
+ 554 02d2 8823      		tst r24
+ 555 02d4 01F0      		breq .L44
+ 556               	.LM67:
+ 557 02d6 80E0      		ldi r24,lo8(zoUartError)
+ 558 02d8 90E0      		ldi r25,hi8(zoUartError)
+ 559 02da 67E0      		ldi r22,lo8(7)
+ 560 02dc 0E94 0000 		call zoErrorPut
+ 561 02e0 80E0      		ldi r24,lo8(0)
+ 562               	/* epilogue start */
+ 563               	.LM68:
+ 564 02e2 0F90      		pop __tmp_reg__
+ 565 02e4 0F90      		pop __tmp_reg__
+ 566 02e6 CF91      		pop r28
+ 567 02e8 DF91      		pop r29
+ 568 02ea 1F91      		pop r17
+ 569 02ec 0F91      		pop r16
+ 570 02ee FF90      		pop r15
+ 571               	.LVL21:
+ 572 02f0 0895      		ret
+ 573               	.LVL22:
+ 574               	.L51:
+ 575               	.LM69:
+ 576 02f2 80E0      		ldi r24,lo8(TxBuffer)
+ 577 02f4 90E0      		ldi r25,hi8(TxBuffer)
+ 578 02f6 6F2D      		mov r22,r15
+ 579 02f8 0E94 0000 		call zoBufferPut
+ 580               	.LM70:
+ 581 02fc 8091 0000 		lds r24,TxBuffer+1
+ 582 0300 8130      		cpi r24,lo8(1)
+ 583 0302 01F0      		breq .L47
+ 584               	.LM71:
+ 585 0304 8FEF      		ldi r24,lo8(-1)
+ 586               	.L52:
+ 587               	.LM72:
+ 588 0306 0F90      		pop __tmp_reg__
+ 589 0308 0F90      		pop __tmp_reg__
+ 590 030a CF91      		pop r28
+ 591 030c DF91      		pop r29
+ 592 030e 1F91      		pop r17
+ 593 0310 0F91      		pop r16
+ 594 0312 FF90      		pop r15
+ 595               	.LVL23:
+ 596 0314 0895      		ret
+ 597               	.LVL24:
+ 598               	.L47:
+ 599               	.LM73:
+ 600 0316 8091 C100 		lds r24,193
+ 601 031a 8062      		ori r24,lo8(32)
+ 602 031c 8093 C100 		sts 193,r24
+ 603 0320 8FEF      		ldi r24,lo8(-1)
+ 604 0322 00C0      		rjmp .L52
+ 605               	.LFE13:
+ 607               	.global	zoUartPutData
+ 609               	zoUartPutData:
+ 610               	.LFB16:
+ 611               	.LM74:
+ 612               	.LVL25:
+ 613 0324 0F93      		push r16
+ 614 0326 1F93      		push r17
+ 615 0328 CF93      		push r28
+ 616 032a DF93      		push r29
+ 617               	/* prologue: function */
+ 618               	/* frame size = 0 */
+ 619 032c 082F      		mov r16,r24
+ 620 032e 162F      		mov r17,r22
+ 621               	.LM75:
+ 622 0330 6623      		tst r22
+ 623 0332 01F0      		breq .L54
+ 624               	.LVL26:
+ 625 0334 9C01      		movw r18,r24
+ 626 0336 E901      		movw r28,r18
+ 627 0338 00C0      		rjmp .L57
+ 628               	.LVL27:
+ 629               	.L60:
+ 630               	.LM76:
+ 631 033a 2196      		adiw r28,1
+ 632               	.LM77:
+ 633 033c 9E01      		movw r18,r28
+ 634 033e 201B      		sub r18,r16
+ 635 0340 2117      		cp r18,r17
+ 636 0342 00F4      		brsh .L54
+ 637               	.LVL28:
+ 638               	.L57:
+ 639               	.LM78:
+ 640 0344 8881      		ld r24,Y
+ 641 0346 0E94 0000 		call zoUartPutChar
+ 642 034a 8823      		tst r24
+ 643 034c 01F4      		brne .L60
+ 644               	/* epilogue start */
+ 645               	.LM79:
+ 646 034e DF91      		pop r29
+ 647 0350 CF91      		pop r28
+ 648 0352 1F91      		pop r17
+ 649               	.LVL29:
+ 650 0354 0F91      		pop r16
+ 651               	.LVL30:
+ 652 0356 0895      		ret
+ 653               	.LVL31:
+ 654               	.L54:
+ 655               	.LM80:
+ 656 0358 8FEF      		ldi r24,lo8(-1)
+ 657               	.LM81:
+ 658 035a DF91      		pop r29
+ 659 035c CF91      		pop r28
+ 660 035e 1F91      		pop r17
+ 661               	.LVL32:
+ 662 0360 0F91      		pop r16
+ 663               	.LVL33:
+ 664 0362 0895      		ret
+ 665               	.LFE16:
+ 667               	.global	zoUartPutString
+ 669               	zoUartPutString:
+ 670               	.LFB15:
+ 671               	.LM82:
+ 672               	.LVL34:
+ 673 0364 CF93      		push r28
+ 674 0366 DF93      		push r29
+ 675               	/* prologue: function */
+ 676               	/* frame size = 0 */
+ 677 0368 EC01      		movw r28,r24
+ 678 036a 00C0      		rjmp .L62
+ 679               	.LVL35:
+ 680               	.L68:
+ 681               	.LM83:
+ 682 036c 2196      		adiw r28,1
+ 683               	.LVL36:
+ 684               	.L62:
+ 685               	.LM84:
+ 686 036e 8881      		ld r24,Y
+ 687 0370 8823      		tst r24
+ 688 0372 01F0      		breq .L67
+ 689               	.LM85:
+ 690 0374 0E94 0000 		call zoUartPutChar
+ 691 0378 8823      		tst r24
+ 692 037a 01F4      		brne .L68
+ 693               	/* epilogue start */
+ 694               	.LM86:
+ 695 037c DF91      		pop r29
+ 696 037e CF91      		pop r28
+ 697               	.LVL37:
+ 698 0380 0895      		ret
+ 699               	.LVL38:
+ 700               	.L67:
+ 701               	.LM87:
+ 702 0382 8FEF      		ldi r24,lo8(-1)
+ 703               	.LM88:
+ 704 0384 DF91      		pop r29
+ 705 0386 CF91      		pop r28
+ 706               	.LVL39:
+ 707 0388 0895      		ret
+ 708               	.LFE15:
+ 710               	.global	zoUartRxFlush
+ 712               	zoUartRxFlush:
+ 713               	.LFB12:
+ 714               	.LM89:
+ 715               	/* prologue: function */
+ 716               	/* frame size = 0 */
+ 717               	.LM90:
+ 718 038a 8091 C000 		lds r24,192
+ 719 038e 87FF      		sbrs r24,7
+ 720 0390 00C0      		rjmp .L70
+ 721               	.L73:
+ 722               	.LM91:
+ 723 0392 8091 C600 		lds r24,198
+ 724               	.LVL40:
+ 725               	.LM92:
+ 726 0396 8091 C000 		lds r24,192
+ 727               	.LVL41:
+ 728 039a 87FD      		sbrc r24,7
+ 729 039c 00C0      		rjmp .L73
+ 730               	.L70:
+ 731               	.LM93:
+ 732 039e 80E0      		ldi r24,lo8(RxBuffer)
+ 733 03a0 90E0      		ldi r25,hi8(RxBuffer)
+ 734 03a2 0E94 0000 		call zoBufferFlush
+ 735               	/* epilogue start */
+ 736               	.LM94:
+ 737 03a6 0895      		ret
+ 738               	.LFE12:
+ 740               	.global	zoUartSetBuffersSize
+ 742               	zoUartSetBuffersSize:
+ 743               	.LFB8:
+ 744               	.LM95:
+ 745               	.LVL42:
+ 746 03a8 1F93      		push r17
+ 747               	/* prologue: function */
+ 748               	/* frame size = 0 */
+ 749 03aa 182F      		mov r17,r24
+ 750               	.LM96:
+ 751 03ac 80E0      		ldi r24,lo8(RxBuffer)
+ 752 03ae 90E0      		ldi r25,hi8(RxBuffer)
+ 753               	.LVL43:
+ 754 03b0 612F      		mov r22,r17
+ 755 03b2 0E94 0000 		call zoBufferInit
+ 756 03b6 8823      		tst r24
+ 757 03b8 01F4      		brne .L79
+ 758               	.L76:
+ 759               	.LM97:
+ 760 03ba 80E0      		ldi r24,lo8(zoUartError)
+ 761 03bc 90E0      		ldi r25,hi8(zoUartError)
+ 762 03be 61E0      		ldi r22,lo8(1)
+ 763 03c0 0E94 0000 		call zoErrorPut
+ 764 03c4 80E0      		ldi r24,lo8(0)
+ 765               	.L77:
+ 766               	/* epilogue start */
+ 767               	.LM98:
+ 768 03c6 1F91      		pop r17
+ 769               	.LVL44:
+ 770 03c8 0895      		ret
+ 771               	.LVL45:
+ 772               	.L79:
+ 773               	.LM99:
+ 774 03ca 80E0      		ldi r24,lo8(TxBuffer)
+ 775 03cc 90E0      		ldi r25,hi8(TxBuffer)
+ 776 03ce 612F      		mov r22,r17
+ 777 03d0 0E94 0000 		call zoBufferInit
+ 778 03d4 8823      		tst r24
+ 779 03d6 01F0      		breq .L76
+ 780 03d8 8FEF      		ldi r24,lo8(-1)
+ 781 03da 00C0      		rjmp .L77
+ 782               	.LFE8:
+ 784               	.global	zoUartInit
+ 786               	zoUartInit:
+ 787               	.LFB2:
+ 788               	.LM100:
+ 789               	/* prologue: function */
+ 790               	/* frame size = 0 */
+ 791               	.LM101:
+ 792 03dc 1092 C200 		sts 194,__zero_reg__
+ 793               	.LBB15:
+ 794               	.LM102:
+ 795 03e0 80E0      		ldi r24,lo8(RxBuffer)
+ 796 03e2 90E0      		ldi r25,hi8(RxBuffer)
+ 797 03e4 60E2      		ldi r22,lo8(32)
+ 798 03e6 0E94 0000 		call zoBufferInit
+ 799               	.LBB16:
+ 800 03ea 8823      		tst r24
+ 801 03ec 01F4      		brne .L85
+ 802               	.L81:
+ 803               	.LM103:
+ 804 03ee 80E0      		ldi r24,lo8(zoUartError)
+ 805 03f0 90E0      		ldi r25,hi8(zoUartError)
+ 806 03f2 61E0      		ldi r22,lo8(1)
+ 807 03f4 0E94 0000 		call zoErrorPut
+ 808 03f8 80E0      		ldi r24,lo8(0)
+ 809 03fa 0895      		ret
+ 810               	.L85:
+ 811               	.LBE16:
+ 812               	.LM104:
+ 813 03fc 80E0      		ldi r24,lo8(TxBuffer)
+ 814 03fe 90E0      		ldi r25,hi8(TxBuffer)
+ 815 0400 60E2      		ldi r22,lo8(32)
+ 816 0402 0E94 0000 		call zoBufferInit
+ 817               	.LBB17:
+ 818 0406 8823      		tst r24
+ 819 0408 01F0      		breq .L81
+ 820               	.LBE17:
+ 821               	.LBE15:
+ 822               	.LM105:
+ 823 040a 80E0      		ldi r24,lo8(zoUartError)
+ 824 040c 90E0      		ldi r25,hi8(zoUartError)
+ 825 040e 0E94 0000 		call zoErrorInit
+ 826               	.LM106:
+ 827 0412 0E94 0000 		call zoSystemTimerInit
+ 828               	.LM107:
+ 829 0416 8091 C000 		lds r24,192
+ 830 041a 8260      		ori r24,lo8(2)
+ 831 041c 8093 C000 		sts 192,r24
+ 832               	.LM108:
+ 833 0420 8091 C000 		lds r24,192
+ 834 0424 8E7F      		andi r24,lo8(-2)
+ 835 0426 8093 C000 		sts 192,r24
+ 836               	.LM109:
+ 837 042a 8091 C200 		lds r24,194
+ 838 042e 8F73      		andi r24,lo8(63)
+ 839 0430 8093 C200 		sts 194,r24
+ 840               	.LM110:
+ 841 0434 60E0      		ldi r22,lo8(115200)
+ 842 0436 72EC      		ldi r23,hi8(115200)
+ 843 0438 81E0      		ldi r24,hlo8(115200)
+ 844 043a 90E0      		ldi r25,hhi8(115200)
+ 845 043c 0E94 0000 		call zoUartSetBaud
+ 846               	.LM111:
+ 847 0440 86E0      		ldi r24,lo8(6)
+ 848 0442 0E94 0000 		call zoUartSetDataBits
+ 849               	.LBB18:
+ 850               	.LBB19:
+ 851               	.LM112:
+ 852 0446 8091 C200 		lds r24,194
+ 853 044a 8F7C      		andi r24,lo8(-49)
+ 854 044c 8093 C200 		sts 194,r24
+ 855               	.LBE19:
+ 856               	.LBE18:
+ 857               	.LBB20:
+ 858               	.LBB21:
+ 859               	.LM113:
+ 860 0450 8091 C200 		lds r24,194
+ 861 0454 8F77      		andi r24,lo8(127)
+ 862 0456 8093 C200 		sts 194,r24
+ 863               	.LBE21:
+ 864               	.LBE20:
+ 865               	.LM114:
+ 866 045a 8091 C100 		lds r24,193
+ 867 045e 8869      		ori r24,lo8(-104)
+ 868 0460 8093 C100 		sts 193,r24
+ 869               	.LM115:
+ 870 0464 0E94 0000 		call zoUartRxFlush
+ 871               	.LM116:
+ 872               	/* #APP */
+ 873               	 ;  49 "zoUart.c" 1
+ 874 0468 7894      		sei
+ 875               	 ;  0 "" 2
+ 876               	/* #NOAPP */
+ 877 046a 8FEF      		ldi r24,lo8(-1)
+ 878               	.LM117:
+ 879 046c 0895      		ret
+ 880               	.LFE2:
+ 882               	.global	zoUartError
+ 883               	.global	zoUartError
+ 884               		.section .bss
+ 887               	zoUartError:
+ 888 0000 0000 0000 		.skip 13,0
+ 888      0000 0000 
+ 888      0000 0000 
+ 888      00
+ 889               		.lcomm TxBuffer,8
+ 890               		.lcomm Rs485Used,1
+ 891               		.lcomm RxBuffer,8
+ 892               		.data
+ 895               	TransmitTimeOut:
+ 896 0000 E803      		.word	1000
+ 897               		.lcomm Rs485ReDePort,2
+ 898               		.lcomm Rs485ReDePin,1
+ 1059               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoUart.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:18     .text:00000000 zoUartSetBaud
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:68     .text:00000044 zoUartSetDataBits
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:100    .text:00000066 zoUartSetParity
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:120    .text:00000074 zoUartSetStopBits
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:140    .text:00000082 zoUartInitRs485
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:889    .bss:00000015 Rs485Used
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:891    .bss:0000001e Rs485ReDePort
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:897    .bss:00000020 Rs485ReDePin
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:186    .text:000000c0 zoUartSetTransmitTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:895    .data:00000000 TransmitTimeOut
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:202    .text:000000ca __vector_20
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:250    .text:00000118 zoUartRxBufferIsEmpty
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:890    .bss:00000016 RxBuffer
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:266    .text:00000122 __vector_19
+                             .bss:0000000d TxBuffer
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:348    .text:000001b2 zoUartTxBufferIsFull
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:364    .text:000001bc __vector_18
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:887    .bss:00000000 zoUartError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:472    .text:00000266 zoUartGetChar
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:520    .text:0000029a zoUartPutChar
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:609    .text:00000324 zoUartPutData
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:669    .text:00000364 zoUartPutString
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:712    .text:0000038a zoUartRxFlush
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:742    .text:000003a8 zoUartSetBuffersSize
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccu75pXV.s:786    .text:000003dc zoUartInit
+
+UNDEFINED SYMBOLS
+__udivmodsi4
+zoBufferIsEmpty
+zoBufferGetIsr
+zoBufferIsFull
+zoErrorPutIsr
+zoBufferPutIsr
+zoErrorIsEmpty
+zoBufferGet
+zoSystemTimerTimeOutInit
+zoSystemTimerTimeOutExpired
+zoErrorPut
+zoBufferPut
+zoBufferFlush
+zoBufferInit
+zoErrorInit
+zoSystemTimerInit
+__do_copy_data
+__do_clear_bss

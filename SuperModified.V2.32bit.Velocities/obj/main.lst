@@ -1,0 +1,231 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB8:
+  20               	.LM1:
+  21 0000 AF92      		push r10
+  22 0002 BF92      		push r11
+  23 0004 CF92      		push r12
+  24 0006 DF92      		push r13
+  25 0008 EF92      		push r14
+  26 000a FF92      		push r15
+  27 000c 0F93      		push r16
+  28 000e 1F93      		push r17
+  29 0010 DF93      		push r29
+  30 0012 CF93      		push r28
+  31 0014 CDB7      		in r28,__SP_L__
+  32 0016 DEB7      		in r29,__SP_H__
+  33 0018 C254      		subi r28,lo8(-(-66))
+  34 001a D040      		sbci r29,hi8(-(-66))
+  35 001c 0FB6      		in __tmp_reg__,__SREG__
+  36 001e F894      		cli
+  37 0020 DEBF      		out __SP_H__,r29
+  38 0022 0FBE      		out __SREG__,__tmp_reg__
+  39 0024 CDBF      		out __SP_L__,r28
+  40               	/* prologue: function */
+  41               	/* frame size = 66 */
+  42               	.LM2:
+  43 0026 0E94 0000 		call zoSmsInit
+  44               	.LM3:
+  45 002a 0E94 0000 		call zoCommandsInit
+  46               	.LM4:
+  47 002e 80E0      		ldi r24,lo8(0)
+  48 0030 5E01      		movw r10,r28
+  49 0032 0894      		sec
+  50 0034 A11C      		adc r10,__zero_reg__
+  51 0036 B11C      		adc r11,__zero_reg__
+  52 0038 B501      		movw r22,r10
+  53 003a 4091 0000 		lds r20,Sms+5
+  54 003e 0E94 0000 		call zoProtocolInit
+  55               	.LBB10:
+  56               	.LBB11:
+  57               	.LM5:
+  58 0042 6091 0000 		lds r22,Sms+15
+  59 0046 7091 0000 		lds r23,(Sms+15)+1
+  60 004a 8091 0000 		lds r24,(Sms+15)+2
+  61 004e 9091 0000 		lds r25,(Sms+15)+3
+  62 0052 EB85      		ldd r30,Y+11
+  63 0054 FC85      		ldd r31,Y+12
+  64 0056 0995      		icall
+  65               	.LBE11:
+  66               	.LBE10:
+  67               	.LBB12:
+  68               	.LBB13:
+  69               	.LM6:
+  70 0058 E985      		ldd r30,Y+9
+  71 005a FA85      		ldd r31,Y+10
+  72 005c 8091 0000 		lds r24,Sms+19
+  73 0060 0995      		icall
+  74               	.LBE13:
+  75               	.LBE12:
+  76               	.LM7:
+  77 0062 9DE0      		ldi r25,lo8(13)
+  78 0064 C92E      		mov r12,r25
+  79 0066 D12C      		mov r13,__zero_reg__
+  80 0068 CC0E      		add r12,r28
+  81 006a DD1E      		adc r13,r29
+  82 006c 82E0      		ldi r24,lo8(2)
+  83 006e B601      		movw r22,r12
+  84 0070 4091 0000 		lds r20,Sms+5
+  85 0074 0E94 0000 		call zoProtocolInit
+  86               	.LBB14:
+  87               	.LBB15:
+  88               	.LM8:
+  89 0078 6091 0000 		lds r22,Sms+11
+  90 007c 7091 0000 		lds r23,(Sms+11)+1
+  91 0080 8091 0000 		lds r24,(Sms+11)+2
+  92 0084 9091 0000 		lds r25,(Sms+11)+3
+  93 0088 EF89      		ldd r30,Y+23
+  94 008a F88D      		ldd r31,Y+24
+  95 008c 0995      		icall
+  96               	.LBE15:
+  97               	.LBE14:
+  98               	.LBB16:
+  99               	.LBB17:
+ 100               	.LM9:
+ 101 008e ED89      		ldd r30,Y+21
+ 102 0090 FE89      		ldd r31,Y+22
+ 103 0092 8091 0000 		lds r24,Sms+19
+ 104 0096 0995      		icall
+ 105               	.LBE17:
+ 106               	.LBE16:
+ 107               	.LM10:
+ 108 0098 0E94 0000 		call zoProtocolRcServoInit
+ 109 009c 8E01      		movw r16,r28
+ 110 009e 075E      		subi r16,lo8(-(25))
+ 111 00a0 1F4F      		sbci r17,hi8(-(25))
+ 112 00a2 8EE2      		ldi r24,lo8(46)
+ 113 00a4 E82E      		mov r14,r24
+ 114 00a6 F12C      		mov r15,__zero_reg__
+ 115 00a8 EC0E      		add r14,r28
+ 116 00aa FD1E      		adc r15,r29
+ 117               	.L11:
+ 118               	.LM11:
+ 119 00ac 0E94 0000 		call zoSmsErrorPoll
+ 120               	.LM12:
+ 121 00b0 0E94 0000 		call zoProtocolRcServoParse
+ 122               	.LM13:
+ 123 00b4 C501      		movw r24,r10
+ 124 00b6 B801      		movw r22,r16
+ 125 00b8 0E94 0000 		call zoProtocolParse
+ 126 00bc 8823      		tst r24
+ 127 00be 01F0      		breq .L2
+ 128               	.LM14:
+ 129 00c0 80E0      		ldi r24,lo8(zoSmsError)
+ 130 00c2 90E0      		ldi r25,hi8(zoSmsError)
+ 131 00c4 0E94 0000 		call zoErrorIsEmpty
+ 132 00c8 8823      		tst r24
+ 133 00ca 01F4      		brne .L13
+ 134               	.L3:
+ 135               	.LM15:
+ 136 00cc C501      		movw r24,r10
+ 137 00ce B801      		movw r22,r16
+ 138 00d0 40E0      		ldi r20,lo8(zoSmsError)
+ 139 00d2 50E0      		ldi r21,hi8(zoSmsError)
+ 140 00d4 0E94 0000 		call zoProtocolCommandResponse
+ 141 00d8 8823      		tst r24
+ 142 00da 01F0      		breq .L14
+ 143               	.L4:
+ 144               	.LM16:
+ 145 00dc C601      		movw r24,r12
+ 146 00de B701      		movw r22,r14
+ 147 00e0 0E94 0000 		call zoProtocolParse
+ 148 00e4 8823      		tst r24
+ 149 00e6 01F4      		brne .L15
+ 150               	.L5:
+ 151               	.LM17:
+ 152 00e8 C601      		movw r24,r12
+ 153 00ea B701      		movw r22,r14
+ 154 00ec 0E94 0000 		call zoSmsErrorHandleParseFailure
+ 155 00f0 00C0      		rjmp .L11
+ 156               	.L2:
+ 157               	.LM18:
+ 158 00f2 C501      		movw r24,r10
+ 159 00f4 B801      		movw r22,r16
+ 160 00f6 0E94 0000 		call zoSmsErrorHandleParseFailure
+ 161               	.LM19:
+ 162 00fa C601      		movw r24,r12
+ 163 00fc B701      		movw r22,r14
+ 164 00fe 0E94 0000 		call zoProtocolParse
+ 165 0102 8823      		tst r24
+ 166 0104 01F0      		breq .L5
+ 167               	.L15:
+ 168               	.LM20:
+ 169 0106 80E0      		ldi r24,lo8(zoSmsError)
+ 170 0108 90E0      		ldi r25,hi8(zoSmsError)
+ 171 010a 0E94 0000 		call zoErrorIsEmpty
+ 172 010e 8823      		tst r24
+ 173 0110 01F4      		brne .L16
+ 174               	.L6:
+ 175               	.LM21:
+ 176 0112 C601      		movw r24,r12
+ 177 0114 B701      		movw r22,r14
+ 178 0116 40E0      		ldi r20,lo8(zoSmsError)
+ 179 0118 50E0      		ldi r21,hi8(zoSmsError)
+ 180 011a 0E94 0000 		call zoProtocolCommandResponse
+ 181 011e 8823      		tst r24
+ 182 0120 01F4      		brne .L11
+ 183               	.LM22:
+ 184 0122 C601      		movw r24,r12
+ 185 0124 B701      		movw r22,r14
+ 186 0126 0E94 0000 		call zoSmsErrorHandleCommandResponseFailure
+ 187 012a 00C0      		rjmp .L11
+ 188               	.L14:
+ 189               	.LM23:
+ 190 012c C501      		movw r24,r10
+ 191 012e B801      		movw r22,r16
+ 192 0130 0E94 0000 		call zoSmsErrorHandleCommandResponseFailure
+ 193 0134 00C0      		rjmp .L4
+ 194               	.L13:
+ 195               	.LM24:
+ 196 0136 C801      		movw r24,r16
+ 197 0138 0E94 0000 		call zoCommandsServiceCommand
+ 198 013c 8823      		tst r24
+ 199 013e 01F4      		brne .L3
+ 200               	.LM25:
+ 201 0140 0E94 0000 		call zoSmsErrorHandleServiceCommandFailure
+ 202 0144 00C0      		rjmp .L3
+ 203               	.L16:
+ 204               	.LM26:
+ 205 0146 C701      		movw r24,r14
+ 206 0148 0E94 0000 		call zoCommandsServiceCommand
+ 207 014c 8823      		tst r24
+ 208 014e 01F4      		brne .L6
+ 209               	.LM27:
+ 210 0150 0E94 0000 		call zoSmsErrorHandleServiceCommandFailure
+ 211 0154 00C0      		rjmp .L6
+ 212               	.LFE8:
+ 238               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cckCbrkL.s:18     .text:00000000 main
+
+UNDEFINED SYMBOLS
+zoSmsInit
+zoCommandsInit
+Sms
+zoProtocolInit
+zoProtocolRcServoInit
+zoSmsErrorPoll
+zoProtocolRcServoParse
+zoProtocolParse
+zoSmsError
+zoErrorIsEmpty
+zoProtocolCommandResponse
+zoSmsErrorHandleParseFailure
+zoSmsErrorHandleCommandResponseFailure
+zoCommandsServiceCommand
+zoSmsErrorHandleServiceCommandFailure

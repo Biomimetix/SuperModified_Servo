@@ -1,0 +1,419 @@
+   1               		.file	"zoProtocolUart.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoProtocolUartSetLAM
+  18               	zoProtocolUartSetLAM:
+  19               	.LFB7:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25 0000 8093 0000 		sts zoProtocolUartLAM,r24
+  26               	/* epilogue start */
+  27               	.LM3:
+  28 0004 0895      		ret
+  29               	.LFE7:
+  31               	.global	zoProtocolUartSetBitrate
+  33               	zoProtocolUartSetBitrate:
+  34               	.LFB8:
+  35               	.LM4:
+  36               	.LVL1:
+  37               	/* prologue: function */
+  38               	/* frame size = 0 */
+  39               	.LM5:
+  40 0006 0E94 0000 		call zoUartSetBaud
+  41               	.LVL2:
+  42               	/* epilogue start */
+  43               	.LM6:
+  44 000a 0895      		ret
+  45               	.LFE8:
+  47               	.global	zoProtocolUartGetPacket
+  49               	zoProtocolUartGetPacket:
+  50               	.LFB6:
+  51               	.LM7:
+  52               	.LVL3:
+  53 000c 0F93      		push r16
+  54 000e 1F93      		push r17
+  55 0010 DF93      		push r29
+  56 0012 CF93      		push r28
+  57 0014 0F92      		push __tmp_reg__
+  58 0016 CDB7      		in r28,__SP_L__
+  59 0018 DEB7      		in r29,__SP_H__
+  60               	/* prologue: function */
+  61               	/* frame size = 1 */
+  62 001a 8C01      		movw r16,r24
+  63               	.LM8:
+  64 001c CE01      		movw r24,r28
+  65               	.LVL4:
+  66 001e 0196      		adiw r24,1
+  67 0020 0E94 0000 		call zoUartGetChar
+  68 0024 8823      		tst r24
+  69 0026 01F0      		breq .L6
+  70               	.LM9:
+  71 0028 8091 0000 		lds r24,DecoderState
+  72 002c 8330      		cpi r24,lo8(3)
+  73 002e 01F0      		breq .L10
+  74 0030 8430      		cpi r24,lo8(4)
+  75 0032 00F0      		brlo .L28
+  76 0034 8530      		cpi r24,lo8(5)
+  77 0036 01F4      		brne .+2
+  78 0038 00C0      		rjmp .L12
+  79 003a 8530      		cpi r24,lo8(5)
+  80 003c 00F4      		brsh .L29
+  81               	.LM10:
+  82 003e 8981      		ldd r24,Y+1
+  83               	.LVL5:
+  84 0040 D801      		movw r26,r16
+  85 0042 1296      		adiw r26,2
+  86 0044 8C93      		st X,r24
+  87               	.LM11:
+  88 0046 85E0      		ldi r24,lo8(5)
+  89               	.L26:
+  90 0048 8093 0000 		sts DecoderState,r24
+  91 004c 80E0      		ldi r24,lo8(0)
+  92               	.LVL6:
+  93               	.LVL7:
+  94               	.LM12:
+  95 004e 0F90      		pop __tmp_reg__
+  96 0050 CF91      		pop r28
+  97 0052 DF91      		pop r29
+  98 0054 1F91      		pop r17
+  99 0056 0F91      		pop r16
+ 100               	.LVL8:
+ 101 0058 0895      		ret
+ 102               	.LVL9:
+ 103               	.L30:
+ 104               	.LM13:
+ 105 005a 1092 0000 		sts DecoderState,__zero_reg__
+ 106 005e 8981      		ldd r24,Y+1
+ 107               	.LVL10:
+ 108 0060 8535      		cpi r24,lo8(85)
+ 109 0062 01F4      		brne .L6
+ 110               	.LVL11:
+ 111 0064 81E0      		ldi r24,lo8(1)
+ 112               	.LVL12:
+ 113 0066 8093 0000 		sts DecoderState,r24
+ 114               	.LVL13:
+ 115               	.L6:
+ 116               	.LM14:
+ 117 006a 80E0      		ldi r24,lo8(0)
+ 118               	.LVL14:
+ 119               	.L17:
+ 120               	.LVL15:
+ 121               	/* epilogue start */
+ 122               	.LM15:
+ 123 006c 0F90      		pop __tmp_reg__
+ 124 006e CF91      		pop r28
+ 125 0070 DF91      		pop r29
+ 126 0072 1F91      		pop r17
+ 127 0074 0F91      		pop r16
+ 128               	.LVL16:
+ 129 0076 0895      		ret
+ 130               	.LVL17:
+ 131               	.L28:
+ 132               	.LM16:
+ 133 0078 8130      		cpi r24,lo8(1)
+ 134 007a 01F4      		brne .+2
+ 135 007c 00C0      		rjmp .L8
+ 136 007e 8230      		cpi r24,lo8(2)
+ 137 0080 00F0      		brlo .L30
+ 138               	.LM17:
+ 139 0082 2981      		ldd r18,Y+1
+ 140               	.LVL18:
+ 141 0084 8091 0000 		lds r24,OwnNodeID
+ 142 0088 8227      		eor r24,r18
+ 143 008a 9091 0000 		lds r25,zoProtocolUartLAM
+ 144 008e 8923      		and r24,r25
+ 145 0090 01F4      		brne .+2
+ 146 0092 00C0      		rjmp .L20
+ 147 0094 2223      		tst r18
+ 148 0096 01F4      		brne .+2
+ 149 0098 00C0      		rjmp .L20
+ 150               	.LM18:
+ 151 009a 1092 0000 		sts DecoderState,__zero_reg__
+ 152 009e 80E0      		ldi r24,lo8(0)
+ 153               	.LVL19:
+ 154 00a0 00C0      		rjmp .L17
+ 155               	.LVL20:
+ 156               	.L10:
+ 157               	.LM19:
+ 158 00a2 8981      		ldd r24,Y+1
+ 159               	.LVL21:
+ 160 00a4 F801      		movw r30,r16
+ 161 00a6 8183      		std Z+1,r24
+ 162               	.LM20:
+ 163 00a8 84E0      		ldi r24,lo8(4)
+ 164 00aa 8093 0000 		sts DecoderState,r24
+ 165 00ae 80E0      		ldi r24,lo8(0)
+ 166               	.LVL22:
+ 167 00b0 00C0      		rjmp .L17
+ 168               	.LVL23:
+ 169               	.L29:
+ 170               	.LM21:
+ 171 00b2 8630      		cpi r24,lo8(6)
+ 172 00b4 01F0      		breq .L13
+ 173 00b6 8730      		cpi r24,lo8(7)
+ 174 00b8 01F4      		brne .L6
+ 175               	.LM22:
+ 176 00ba 8981      		ldd r24,Y+1
+ 177               	.LVL24:
+ 178 00bc F801      		movw r30,r16
+ 179 00be 848B      		std Z+20,r24
+ 180               	.LM23:
+ 181 00c0 1092 0000 		sts DecoderState,__zero_reg__
+ 182 00c4 8FEF      		ldi r24,lo8(-1)
+ 183               	.LVL25:
+ 184 00c6 00C0      		rjmp .L17
+ 185               	.LVL26:
+ 186               	.L13:
+ 187               	.LM24:
+ 188 00c8 8091 0000 		lds r24,byteCount.1427
+ 189 00cc D801      		movw r26,r16
+ 190 00ce 1396      		adiw r26,3
+ 191 00d0 EC91      		ld r30,X
+ 192 00d2 F0E0      		ldi r31,lo8(0)
+ 193 00d4 E81B      		sub r30,r24
+ 194 00d6 F109      		sbc r31,__zero_reg__
+ 195 00d8 E00F      		add r30,r16
+ 196 00da F11F      		adc r31,r17
+ 197 00dc 9981      		ldd r25,Y+1
+ 198               	.LVL27:
+ 199 00de 9483      		std Z+4,r25
+ 200 00e0 8150      		subi r24,lo8(-(-1))
+ 201 00e2 8093 0000 		sts byteCount.1427,r24
+ 202               	.LM25:
+ 203 00e6 8823      		tst r24
+ 204 00e8 01F0      		breq .+2
+ 205 00ea 00C0      		rjmp .L6
+ 206               	.L25:
+ 207               	.LM26:
+ 208 00ec 87E0      		ldi r24,lo8(7)
+ 209 00ee 8093 0000 		sts DecoderState,r24
+ 210 00f2 80E0      		ldi r24,lo8(0)
+ 211               	.LVL28:
+ 212 00f4 00C0      		rjmp .L17
+ 213               	.LVL29:
+ 214               	.L12:
+ 215               	.LM27:
+ 216 00f6 8981      		ldd r24,Y+1
+ 217               	.LVL30:
+ 218 00f8 F801      		movw r30,r16
+ 219 00fa 8383      		std Z+3,r24
+ 220               	.LM28:
+ 221 00fc 8093 0000 		sts byteCount.1427,r24
+ 222               	.LM29:
+ 223 0100 8823      		tst r24
+ 224 0102 01F0      		breq .L25
+ 225               	.LM30:
+ 226 0104 86E0      		ldi r24,lo8(6)
+ 227 0106 8093 0000 		sts DecoderState,r24
+ 228 010a 80E0      		ldi r24,lo8(0)
+ 229               	.LVL31:
+ 230 010c 00C0      		rjmp .L17
+ 231               	.LVL32:
+ 232               	.L8:
+ 233               	.LM31:
+ 234 010e 8981      		ldd r24,Y+1
+ 235               	.LVL33:
+ 236 0110 8A3A      		cpi r24,lo8(-86)
+ 237 0112 01F0      		breq .L18
+ 238               	.LVL34:
+ 239 0114 80E0      		ldi r24,lo8(0)
+ 240               	.LVL35:
+ 241 0116 00C0      		rjmp .L26
+ 242               	.L20:
+ 243               	.LM32:
+ 244 0118 83E0      		ldi r24,lo8(3)
+ 245 011a 8093 0000 		sts DecoderState,r24
+ 246               	.LM33:
+ 247 011e D801      		movw r26,r16
+ 248 0120 2C93      		st X,r18
+ 249 0122 80E0      		ldi r24,lo8(0)
+ 250               	.LVL36:
+ 251 0124 00C0      		rjmp .L17
+ 252               	.LVL37:
+ 253               	.L18:
+ 254               	.LM34:
+ 255 0126 82E0      		ldi r24,lo8(2)
+ 256               	.LVL38:
+ 257 0128 00C0      		rjmp .L26
+ 258               	.LFE6:
+ 260               	.global	zoProtocolUartPutPacket
+ 262               	zoProtocolUartPutPacket:
+ 263               	.LFB5:
+ 264               	.LM35:
+ 265               	.LVL39:
+ 266 012a CF93      		push r28
+ 267 012c DF93      		push r29
+ 268               	/* prologue: function */
+ 269               	/* frame size = 0 */
+ 270 012e EC01      		movw r28,r24
+ 271               	.LM36:
+ 272 0130 85E5      		ldi r24,lo8(85)
+ 273               	.LVL40:
+ 274 0132 0E94 0000 		call zoUartPutChar
+ 275 0136 8823      		tst r24
+ 276 0138 01F4      		brne .L35
+ 277               	.L32:
+ 278               	.LM37:
+ 279 013a 80E0      		ldi r24,lo8(0)
+ 280               	.L33:
+ 281               	/* epilogue start */
+ 282               	.LM38:
+ 283 013c DF91      		pop r29
+ 284 013e CF91      		pop r28
+ 285               	.LVL41:
+ 286 0140 0895      		ret
+ 287               	.LVL42:
+ 288               	.L35:
+ 289               	.LM39:
+ 290 0142 8AEA      		ldi r24,lo8(-86)
+ 291 0144 0E94 0000 		call zoUartPutChar
+ 292 0148 8823      		tst r24
+ 293 014a 01F0      		breq .L32
+ 294               	.LM40:
+ 295 014c 8881      		ld r24,Y
+ 296 014e 0E94 0000 		call zoUartPutChar
+ 297 0152 8823      		tst r24
+ 298 0154 01F0      		breq .L32
+ 299               	.LM41:
+ 300 0156 8981      		ldd r24,Y+1
+ 301 0158 0E94 0000 		call zoUartPutChar
+ 302 015c 8823      		tst r24
+ 303 015e 01F0      		breq .L32
+ 304               	.LM42:
+ 305 0160 8A81      		ldd r24,Y+2
+ 306 0162 0E94 0000 		call zoUartPutChar
+ 307 0166 8823      		tst r24
+ 308 0168 01F0      		breq .L32
+ 309               	.LM43:
+ 310 016a 8B81      		ldd r24,Y+3
+ 311 016c 0E94 0000 		call zoUartPutChar
+ 312 0170 8823      		tst r24
+ 313 0172 01F0      		breq .L32
+ 314               	.LM44:
+ 315 0174 CE01      		movw r24,r28
+ 316 0176 0496      		adiw r24,4
+ 317 0178 6B81      		ldd r22,Y+3
+ 318 017a 0E94 0000 		call zoUartPutData
+ 319 017e 8823      		tst r24
+ 320 0180 01F0      		breq .L32
+ 321               	.LM45:
+ 322 0182 8C89      		ldd r24,Y+20
+ 323 0184 0E94 0000 		call zoUartPutChar
+ 324 0188 8823      		tst r24
+ 325 018a 01F0      		breq .L32
+ 326 018c 8FEF      		ldi r24,lo8(-1)
+ 327 018e 00C0      		rjmp .L33
+ 328               	.LFE5:
+ 330               	.global	zoProtocolUartInit
+ 332               	zoProtocolUartInit:
+ 333               	.LFB4:
+ 334               	.LM46:
+ 335               	.LVL43:
+ 336 0190 DF92      		push r13
+ 337 0192 EF92      		push r14
+ 338 0194 FF92      		push r15
+ 339 0196 0F93      		push r16
+ 340 0198 1F93      		push r17
+ 341               	/* prologue: function */
+ 342               	/* frame size = 0 */
+ 343 019a D62E      		mov r13,r22
+ 344 019c 7901      		movw r14,r18
+ 345 019e 8A01      		movw r16,r20
+ 346               	.LM47:
+ 347 01a0 8230      		cpi r24,lo8(2)
+ 348 01a2 01F0      		breq .L42
+ 349               	.LVL44:
+ 350               	.L37:
+ 351               	.LM48:
+ 352 01a4 D092 0000 		sts OwnNodeID,r13
+ 353               	.LM49:
+ 354 01a8 0E94 0000 		call zoUartInit
+ 355               	.LVL45:
+ 356 01ac 8823      		tst r24
+ 357 01ae 01F4      		brne .L38
+ 358 01b0 DD24      		clr r13
+ 359               	.LVL46:
+ 360               	.L39:
+ 361               	.LM50:
+ 362 01b2 C801      		movw r24,r16
+ 363 01b4 B701      		movw r22,r14
+ 364 01b6 0E94 0000 		call zoUartSetBaud
+ 365 01ba 8823      		tst r24
+ 366 01bc 01F4      		brne .L40
+ 367 01be DD24      		clr r13
+ 368               	.L40:
+ 369               	.LM51:
+ 370 01c0 8D2D      		mov r24,r13
+ 371               	/* epilogue start */
+ 372 01c2 1F91      		pop r17
+ 373 01c4 0F91      		pop r16
+ 374 01c6 FF90      		pop r15
+ 375 01c8 EF90      		pop r14
+ 376               	.LVL47:
+ 377 01ca DF90      		pop r13
+ 378               	.LVL48:
+ 379 01cc 0895      		ret
+ 380               	.LVL49:
+ 381               	.L38:
+ 382               	.LM52:
+ 383 01ce DD24      		clr r13
+ 384 01d0 DA94      		dec r13
+ 385               	.LVL50:
+ 386 01d2 00C0      		rjmp .L39
+ 387               	.LVL51:
+ 388               	.L42:
+ 389               	.LM53:
+ 390 01d4 8BE2      		ldi r24,lo8(43)
+ 391 01d6 90E0      		ldi r25,hi8(43)
+ 392               	.LVL52:
+ 393 01d8 62E0      		ldi r22,lo8(2)
+ 394 01da 0E94 0000 		call zoUartInitRs485
+ 395 01de 00C0      		rjmp .L37
+ 396               	.LFE4:
+ 398               	.global	zoProtocolUartError
+ 399               		.data
+ 402               	zoProtocolUartError:
+ 403 0000 0000      		.word	zoUartError
+ 406               	zoProtocolUartLAM:
+ 407 0002 FF        		.byte	-1
+ 408               		.lcomm DecoderState,1
+ 409               		.lcomm OwnNodeID,1
+ 410               		.lcomm byteCount.1427,1
+ 467               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoProtocolUart.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:18     .text:00000000 zoProtocolUartSetLAM
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:406    .data:00000002 zoProtocolUartLAM
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:33     .text:00000006 zoProtocolUartSetBitrate
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:49     .text:0000000c zoProtocolUartGetPacket
+                             .bss:00000000 DecoderState
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:408    .bss:00000001 OwnNodeID
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:409    .bss:00000002 byteCount.1427
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:262    .text:0000012a zoProtocolUartPutPacket
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:332    .text:00000190 zoProtocolUartInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cch5YsAa.s:402    .data:00000000 zoProtocolUartError
+
+UNDEFINED SYMBOLS
+zoUartSetBaud
+zoUartGetChar
+zoUartPutChar
+zoUartPutData
+zoUartInit
+zoUartInitRs485
+zoUartError
+__do_copy_data
+__do_clear_bss

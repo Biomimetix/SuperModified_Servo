@@ -1,0 +1,36 @@
+#ifndef ZO_PROTOCOL_RC_SERVO
+#define ZO_PROTOCOL_RC_SERVO
+
+//****************************************************************************************
+//	File Name	: zoProtocolRcServo.h 
+//	Description	: SuperModified rc servo compatibilty mode protocol. Implented utilizing 
+//				  the AVR Input Capture Mode 	
+//	Created		: 08/06/2010 
+//	Target MCU	: ATMega328p
+//	Author		: Sissakis Giannis
+//  email		: info@01mech.com
+//
+//  Copyright (C) 2010 Zero One Mechatronics LP
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+//****************************************************************************************
+
+#include "zoTypes.h"
+
+void zoProtocolRcServoInit(void);
+void zoProtocolRcServoParse(void);
+
+
+#endif //ZO_PROTOCOL_RC_SERVO

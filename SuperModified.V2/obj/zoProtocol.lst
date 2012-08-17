@@ -1,0 +1,697 @@
+   1               		.file	"zoProtocol.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoProtocolLRC
+  18               	zoProtocolLRC:
+  19               	.LFB9:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 482F      		mov r20,r24
+  25               	.LM2:
+  26 0002 6623      		tst r22
+  27 0004 01F0      		breq .L8
+  28               	.LVL1:
+  29 0006 9C01      		movw r18,r24
+  30 0008 F901      		movw r30,r18
+  31 000a 90E0      		ldi r25,lo8(0)
+  32               	.LVL2:
+  33               	.L4:
+  34               	.LM3:
+  35 000c 8191      		ld r24,Z+
+  36 000e 9827      		eor r25,r24
+  37               	.LM4:
+  38 0010 8E2F      		mov r24,r30
+  39 0012 841B      		sub r24,r20
+  40 0014 8617      		cp r24,r22
+  41 0016 00F0      		brlo .L4
+  42               	.LVL3:
+  43               	.L3:
+  44               	.LM5:
+  45 0018 892F      		mov r24,r25
+  46               	/* epilogue start */
+  47 001a 0895      		ret
+  48               	.LVL4:
+  49               	.L8:
+  50               	.LM6:
+  51 001c 90E0      		ldi r25,lo8(0)
+  52               	.LVL5:
+  53 001e 00C0      		rjmp .L3
+  54               	.LFE9:
+  56               	.global	zoProtocolCommandResponse
+  58               	zoProtocolCommandResponse:
+  59               	.LFB8:
+  60               	.LM7:
+  61               	.LVL6:
+  62 0020 CF92      		push r12
+  63 0022 DF92      		push r13
+  64 0024 EF92      		push r14
+  65 0026 FF92      		push r15
+  66 0028 0F93      		push r16
+  67 002a 1F93      		push r17
+  68 002c CF93      		push r28
+  69 002e DF93      		push r29
+  70               	/* prologue: function */
+  71               	/* frame size = 0 */
+  72 0030 6C01      		movw r12,r24
+  73 0032 8B01      		movw r16,r22
+  74 0034 7A01      		movw r14,r20
+  75               	.LM8:
+  76 0036 DB01      		movw r26,r22
+  77 0038 9C91      		ld r25,X
+  78 003a F601      		movw r30,r12
+  79 003c 8081      		ld r24,Z
+  80               	.LVL7:
+  81 003e 9817      		cp r25,r24
+  82 0040 01F0      		breq .L10
+  83               	.LVL8:
+  84 0042 8FEF      		ldi r24,lo8(-1)
+  85               	.LVL9:
+  86               	.L11:
+  87               	/* epilogue start */
+  88               	.LM9:
+  89 0044 DF91      		pop r29
+  90 0046 CF91      		pop r28
+  91 0048 1F91      		pop r17
+  92 004a 0F91      		pop r16
+  93               	.LVL10:
+  94 004c FF90      		pop r15
+  95 004e EF90      		pop r14
+  96               	.LVL11:
+  97 0050 DF90      		pop r13
+  98 0052 CF90      		pop r12
+  99               	.LVL12:
+ 100 0054 0895      		ret
+ 101               	.LVL13:
+ 102               	.L10:
+ 103               	.LM10:
+ 104 0056 DB01      		movw r26,r22
+ 105 0058 1196      		adiw r26,1
+ 106 005a 8C91      		ld r24,X
+ 107 005c 1197      		sbiw r26,1
+ 108 005e 8C93      		st X,r24
+ 109               	.LM11:
+ 110 0060 F601      		movw r30,r12
+ 111 0062 8081      		ld r24,Z
+ 112 0064 1196      		adiw r26,1
+ 113 0066 8C93      		st X,r24
+ 114 0068 1197      		sbiw r26,1
+ 115               	.LM12:
+ 116 006a 1296      		adiw r26,2
+ 117 006c 8C91      		ld r24,X
+ 118 006e 1297      		sbiw r26,2
+ 119 0070 8436      		cpi r24,lo8(100)
+ 120 0072 00F0      		brlo .L21
+ 121               	.L12:
+ 122               	.LM13:
+ 123 0074 E114      		cp r14,__zero_reg__
+ 124 0076 F104      		cpc r15,__zero_reg__
+ 125 0078 01F0      		breq .L13
+ 126               	.LM14:
+ 127 007a C701      		movw r24,r14
+ 128 007c 0E94 0000 		call zoErrorIsEmpty
+ 129               	.LVL14:
+ 130 0080 8823      		tst r24
+ 131 0082 01F0      		breq .L22
+ 132               	.LVL15:
+ 133               	.L13:
+ 134               	.LM15:
+ 135 0084 9801      		movw r18,r16
+ 136 0086 2E5F      		subi r18,lo8(-(2))
+ 137 0088 3F4F      		sbci r19,hi8(-(2))
+ 138 008a F801      		movw r30,r16
+ 139 008c 4381      		ldd r20,Z+3
+ 140 008e 4E5F      		subi r20,lo8(-(2))
+ 141               	.LBB16:
+ 142               	.LBB17:
+ 143               	.LM16:
+ 144 0090 01F0      		breq .L23
+ 145 0092 522F      		mov r21,r18
+ 146 0094 F901      		movw r30,r18
+ 147 0096 90E0      		ldi r25,lo8(0)
+ 148               	.LVL16:
+ 149               	.L17:
+ 150               	.LM17:
+ 151 0098 8191      		ld r24,Z+
+ 152 009a 9827      		eor r25,r24
+ 153               	.LM18:
+ 154 009c 8E2F      		mov r24,r30
+ 155 009e 851B      		sub r24,r21
+ 156 00a0 8417      		cp r24,r20
+ 157 00a2 00F0      		brlo .L17
+ 158               	.L16:
+ 159               	.LBE17:
+ 160               	.LBE16:
+ 161               	.LM19:
+ 162 00a4 D801      		movw r26,r16
+ 163 00a6 5496      		adiw r26,20
+ 164 00a8 9C93      		st X,r25
+ 165               	.LM20:
+ 166 00aa D601      		movw r26,r12
+ 167 00ac 1496      		adiw r26,4
+ 168 00ae ED91      		ld r30,X+
+ 169 00b0 FC91      		ld r31,X
+ 170 00b2 1597      		sbiw r26,4+1
+ 171 00b4 C801      		movw r24,r16
+ 172 00b6 0995      		icall
+ 173               	.LVL17:
+ 174 00b8 00C0      		rjmp .L11
+ 175               	.LVL18:
+ 176               	.L21:
+ 177               	.LM21:
+ 178 00ba 1396      		adiw r26,3
+ 179 00bc 1C92      		st X,__zero_reg__
+ 180 00be 00C0      		rjmp .L12
+ 181               	.LVL19:
+ 182               	.L22:
+ 183               	.LM22:
+ 184 00c0 8AEF      		ldi r24,lo8(-6)
+ 185 00c2 D801      		movw r26,r16
+ 186 00c4 1296      		adiw r26,2
+ 187 00c6 8C93      		st X,r24
+ 188 00c8 1297      		sbiw r26,2
+ 189               	.LM23:
+ 190 00ca 1396      		adiw r26,3
+ 191 00cc 1C92      		st X,__zero_reg__
+ 192               	.L14:
+ 193               	.LM24:
+ 194 00ce F801      		movw r30,r16
+ 195 00d0 8381      		ldd r24,Z+3
+ 196 00d2 C82F      		mov r28,r24
+ 197 00d4 D0E0      		ldi r29,lo8(0)
+ 198 00d6 C701      		movw r24,r14
+ 199 00d8 0E94 0000 		call zoErrorGet
+ 200 00dc C00F      		add r28,r16
+ 201 00de D11F      		adc r29,r17
+ 202 00e0 8C83      		std Y+4,r24
+ 203               	.LM25:
+ 204 00e2 D801      		movw r26,r16
+ 205 00e4 1396      		adiw r26,3
+ 206 00e6 8C91      		ld r24,X
+ 207 00e8 1397      		sbiw r26,3
+ 208 00ea 8F5F      		subi r24,lo8(-(1))
+ 209 00ec 1396      		adiw r26,3
+ 210 00ee 8C93      		st X,r24
+ 211               	.LM26:
+ 212 00f0 C701      		movw r24,r14
+ 213 00f2 0E94 0000 		call zoErrorIsEmpty
+ 214 00f6 8823      		tst r24
+ 215 00f8 01F0      		breq .L14
+ 216 00fa 00C0      		rjmp .L13
+ 217               	.LVL20:
+ 218               	.L23:
+ 219               	.LBB19:
+ 220               	.LBB18:
+ 221               	.LM27:
+ 222 00fc 90E0      		ldi r25,lo8(0)
+ 223               	.LVL21:
+ 224 00fe 00C0      		rjmp .L16
+ 225               	.LBE18:
+ 226               	.LBE19:
+ 227               	.LFE8:
+ 229               	.global	zoProtocolParse
+ 231               	zoProtocolParse:
+ 232               	.LFB7:
+ 233               	.LM28:
+ 234               	.LVL22:
+ 235 0100 0F93      		push r16
+ 236 0102 1F93      		push r17
+ 237 0104 CF93      		push r28
+ 238 0106 DF93      		push r29
+ 239               	/* prologue: function */
+ 240               	/* frame size = 0 */
+ 241 0108 8C01      		movw r16,r24
+ 242 010a EB01      		movw r28,r22
+ 243               	.LM29:
+ 244 010c DC01      		movw r26,r24
+ 245 010e 1696      		adiw r26,6
+ 246 0110 ED91      		ld r30,X+
+ 247 0112 FC91      		ld r31,X
+ 248 0114 1797      		sbiw r26,6+1
+ 249 0116 CB01      		movw r24,r22
+ 250               	.LVL23:
+ 251 0118 0995      		icall
+ 252               	.LVL24:
+ 253 011a 8823      		tst r24
+ 254 011c 01F4      		brne .L33
+ 255               	.LVL25:
+ 256               	.L26:
+ 257               	/* epilogue start */
+ 258               	.LM30:
+ 259 011e DF91      		pop r29
+ 260 0120 CF91      		pop r28
+ 261               	.LVL26:
+ 262 0122 1F91      		pop r17
+ 263 0124 0F91      		pop r16
+ 264               	.LVL27:
+ 265 0126 0895      		ret
+ 266               	.LVL28:
+ 267               	.L33:
+ 268               	.LBB20:
+ 269               	.LBB21:
+ 270               	.LM31:
+ 271 0128 5C89      		ldd r21,Y+20
+ 272 012a 9E01      		movw r18,r28
+ 273 012c 2E5F      		subi r18,lo8(-(2))
+ 274 012e 3F4F      		sbci r19,hi8(-(2))
+ 275 0130 6B81      		ldd r22,Y+3
+ 276 0132 6E5F      		subi r22,lo8(-(2))
+ 277               	.LBB22:
+ 278               	.LBB23:
+ 279               	.LM32:
+ 280 0134 01F0      		breq .L34
+ 281 0136 422F      		mov r20,r18
+ 282 0138 F901      		movw r30,r18
+ 283 013a 90E0      		ldi r25,lo8(0)
+ 284               	.LVL29:
+ 285               	.L29:
+ 286               	.LM33:
+ 287 013c 8191      		ld r24,Z+
+ 288 013e 9827      		eor r25,r24
+ 289               	.LM34:
+ 290 0140 8E2F      		mov r24,r30
+ 291 0142 841B      		sub r24,r20
+ 292 0144 8617      		cp r24,r22
+ 293 0146 00F0      		brlo .L29
+ 294               	.L28:
+ 295               	.LBE23:
+ 296               	.LBE22:
+ 297               	.LM35:
+ 298 0148 5917      		cp r21,r25
+ 299 014a 01F0      		breq .L35
+ 300               	.LBE21:
+ 301               	.LBE20:
+ 302               	.LM36:
+ 303 014c F801      		movw r30,r16
+ 304 014e 8281      		ldd r24,Z+2
+ 305 0150 9381      		ldd r25,Z+3
+ 306 0152 62E2      		ldi r22,lo8(34)
+ 307 0154 0E94 0000 		call zoErrorPut
+ 308               	.LVL30:
+ 309 0158 80E0      		ldi r24,lo8(0)
+ 310 015a 00C0      		rjmp .L26
+ 311               	.LVL31:
+ 312               	.L35:
+ 313               	.LBB27:
+ 314               	.LBB26:
+ 315               	.LM37:
+ 316 015c 8FEF      		ldi r24,lo8(-1)
+ 317 015e 00C0      		rjmp .L26
+ 318               	.LVL32:
+ 319               	.L34:
+ 320               	.LBB25:
+ 321               	.LBB24:
+ 322               	.LM38:
+ 323 0160 90E0      		ldi r25,lo8(0)
+ 324               	.LVL33:
+ 325 0162 00C0      		rjmp .L28
+ 326               	.LBE24:
+ 327               	.LBE25:
+ 328               	.LBE26:
+ 329               	.LBE27:
+ 330               	.LFE7:
+ 332               	.global	zoProtocolCommand
+ 334               	zoProtocolCommand:
+ 335               	.LFB6:
+ 336               	.LM39:
+ 337               	.LVL34:
+ 338 0164 AF92      		push r10
+ 339 0166 BF92      		push r11
+ 340 0168 CF92      		push r12
+ 341 016a DF92      		push r13
+ 342 016c EF92      		push r14
+ 343 016e FF92      		push r15
+ 344 0170 0F93      		push r16
+ 345 0172 1F93      		push r17
+ 346 0174 DF93      		push r29
+ 347 0176 CF93      		push r28
+ 348 0178 00D0      		rcall .
+ 349 017a CDB7      		in r28,__SP_L__
+ 350 017c DEB7      		in r29,__SP_H__
+ 351               	/* prologue: function */
+ 352               	/* frame size = 2 */
+ 353 017e 6C01      		movw r12,r24
+ 354 0180 8B01      		movw r16,r22
+ 355               	.LM40:
+ 356 0182 82E0      		ldi r24,lo8(2)
+ 357 0184 E82E      		mov r14,r24
+ 358 0186 F12C      		mov r15,__zero_reg__
+ 359               	.LVL35:
+ 360 0188 E60E      		add r14,r22
+ 361 018a F71E      		adc r15,r23
+ 362 018c DB01      		movw r26,r22
+ 363 018e 1396      		adiw r26,3
+ 364 0190 4C91      		ld r20,X
+ 365 0192 4E5F      		subi r20,lo8(-(2))
+ 366               	.LBB28:
+ 367               	.LBB29:
+ 368               	.LM41:
+ 369 0194 01F4      		brne .+2
+ 370 0196 00C0      		rjmp .L55
+ 371 0198 5E2D      		mov r21,r14
+ 372 019a F701      		movw r30,r14
+ 373 019c 90E0      		ldi r25,lo8(0)
+ 374               	.LVL36:
+ 375               	.L39:
+ 376               	.LM42:
+ 377 019e 8191      		ld r24,Z+
+ 378 01a0 9827      		eor r25,r24
+ 379               	.LM43:
+ 380 01a2 8E2F      		mov r24,r30
+ 381 01a4 851B      		sub r24,r21
+ 382 01a6 8417      		cp r24,r20
+ 383 01a8 00F0      		brlo .L39
+ 384               	.L38:
+ 385               	.LBE29:
+ 386               	.LBE28:
+ 387               	.LM44:
+ 388 01aa F801      		movw r30,r16
+ 389 01ac 948B      		std Z+20,r25
+ 390               	.LM45:
+ 391 01ae 8281      		ldd r24,Z+2
+ 392 01b0 883C      		cpi r24,lo8(-56)
+ 393 01b2 00F4      		brsh .L56
+ 394               	.LVL37:
+ 395               	.LM46:
+ 396 01b4 D601      		movw r26,r12
+ 397 01b6 1496      		adiw r26,4
+ 398 01b8 ED91      		ld r30,X+
+ 399 01ba FC91      		ld r31,X
+ 400 01bc 1597      		sbiw r26,4+1
+ 401 01be C801      		movw r24,r16
+ 402 01c0 0995      		icall
+ 403               	.LVL38:
+ 404 01c2 8823      		tst r24
+ 405 01c4 01F4      		brne .L57
+ 406               	.LVL39:
+ 407               	.L41:
+ 408               	.LVL40:
+ 409               	/* epilogue start */
+ 410               	.LM47:
+ 411 01c6 0F90      		pop __tmp_reg__
+ 412 01c8 0F90      		pop __tmp_reg__
+ 413 01ca CF91      		pop r28
+ 414 01cc DF91      		pop r29
+ 415 01ce 1F91      		pop r17
+ 416 01d0 0F91      		pop r16
+ 417               	.LVL41:
+ 418 01d2 FF90      		pop r15
+ 419 01d4 EF90      		pop r14
+ 420 01d6 DF90      		pop r13
+ 421 01d8 CF90      		pop r12
+ 422               	.LVL42:
+ 423 01da BF90      		pop r11
+ 424 01dc AF90      		pop r10
+ 425 01de 0895      		ret
+ 426               	.LVL43:
+ 427               	.L56:
+ 428               	.LM48:
+ 429 01e0 D601      		movw r26,r12
+ 430 01e2 1496      		adiw r26,4
+ 431 01e4 ED91      		ld r30,X+
+ 432 01e6 FC91      		ld r31,X
+ 433 01e8 1597      		sbiw r26,4+1
+ 434 01ea C801      		movw r24,r16
+ 435 01ec 0995      		icall
+ 436               	.LVL44:
+ 437 01ee 00C0      		rjmp .L41
+ 438               	.L57:
+ 439               	.LM49:
+ 440 01f0 5E01      		movw r10,r28
+ 441 01f2 0894      		sec
+ 442 01f4 A11C      		adc r10,__zero_reg__
+ 443 01f6 B11C      		adc r11,__zero_reg__
+ 444 01f8 C501      		movw r24,r10
+ 445 01fa 0E94 0000 		call zoSystemTimerTimeOutInit
+ 446               	.L43:
+ 447               	.LM50:
+ 448 01fe D601      		movw r26,r12
+ 449 0200 1696      		adiw r26,6
+ 450 0202 ED91      		ld r30,X+
+ 451 0204 FC91      		ld r31,X
+ 452 0206 1797      		sbiw r26,6+1
+ 453 0208 C801      		movw r24,r16
+ 454 020a 0995      		icall
+ 455 020c 8823      		tst r24
+ 456 020e 01F4      		brne .L58
+ 457               	.LM51:
+ 458 0210 C501      		movw r24,r10
+ 459 0212 68EC      		ldi r22,lo8(200)
+ 460 0214 70E0      		ldi r23,hi8(200)
+ 461 0216 0E94 0000 		call zoSystemTimerTimeOutExpired
+ 462 021a 8823      		tst r24
+ 463 021c 01F0      		breq .L43
+ 464               	.LM52:
+ 465 021e F601      		movw r30,r12
+ 466 0220 8281      		ldd r24,Z+2
+ 467 0222 9381      		ldd r25,Z+3
+ 468 0224 61E2      		ldi r22,lo8(33)
+ 469 0226 0E94 0000 		call zoErrorPut
+ 470 022a 80E0      		ldi r24,lo8(0)
+ 471               	.LVL45:
+ 472 022c 00C0      		rjmp .L41
+ 473               	.LVL46:
+ 474               	.L55:
+ 475               	.LBB31:
+ 476               	.LBB30:
+ 477               	.LM53:
+ 478 022e 90E0      		ldi r25,lo8(0)
+ 479               	.LVL47:
+ 480 0230 00C0      		rjmp .L38
+ 481               	.LVL48:
+ 482               	.L58:
+ 483               	.LBE30:
+ 484               	.LBE31:
+ 485               	.LBB32:
+ 486               	.LBB33:
+ 487               	.LM54:
+ 488 0232 F801      		movw r30,r16
+ 489 0234 5489      		ldd r21,Z+20
+ 490 0236 6381      		ldd r22,Z+3
+ 491 0238 6E5F      		subi r22,lo8(-(2))
+ 492               	.LBB34:
+ 493               	.LBB35:
+ 494               	.LM55:
+ 495 023a 01F0      		breq .L59
+ 496 023c 4E2D      		mov r20,r14
+ 497 023e C701      		movw r24,r14
+ 498 0240 FC01      		movw r30,r24
+ 499 0242 90E0      		ldi r25,lo8(0)
+ 500               	.LVL49:
+ 501               	.L46:
+ 502               	.LM56:
+ 503 0244 8191      		ld r24,Z+
+ 504 0246 9827      		eor r25,r24
+ 505               	.LM57:
+ 506 0248 8E2F      		mov r24,r30
+ 507 024a 841B      		sub r24,r20
+ 508 024c 8617      		cp r24,r22
+ 509 024e 00F0      		brlo .L46
+ 510               	.L49:
+ 511               	.LBE35:
+ 512               	.LBE34:
+ 513               	.LM58:
+ 514 0250 5917      		cp r21,r25
+ 515 0252 01F0      		breq .L60
+ 516               	.LBE33:
+ 517               	.LBE32:
+ 518               	.LM59:
+ 519 0254 D601      		movw r26,r12
+ 520 0256 1296      		adiw r26,2
+ 521 0258 8D91      		ld r24,X+
+ 522 025a 9C91      		ld r25,X
+ 523 025c 1397      		sbiw r26,2+1
+ 524 025e 62E2      		ldi r22,lo8(34)
+ 525 0260 0E94 0000 		call zoErrorPut
+ 526               	.LVL50:
+ 527 0264 80E0      		ldi r24,lo8(0)
+ 528               	.LVL51:
+ 529 0266 00C0      		rjmp .L41
+ 530               	.LVL52:
+ 531               	.L60:
+ 532               	.LBB39:
+ 533               	.LBB38:
+ 534               	.LM60:
+ 535 0268 8FEF      		ldi r24,lo8(-1)
+ 536               	.LVL53:
+ 537 026a 00C0      		rjmp .L41
+ 538               	.LVL54:
+ 539               	.L59:
+ 540               	.LBB37:
+ 541               	.LBB36:
+ 542               	.LM61:
+ 543 026c 90E0      		ldi r25,lo8(0)
+ 544               	.LVL55:
+ 545 026e 00C0      		rjmp .L49
+ 546               	.LBE36:
+ 547               	.LBE37:
+ 548               	.LBE38:
+ 549               	.LBE39:
+ 550               	.LFE6:
+ 552               	.global	zoProtocolInit
+ 554               	zoProtocolInit:
+ 555               	.LFB5:
+ 556               	.LM62:
+ 557               	.LVL56:
+ 558 0270 FF92      		push r15
+ 559 0272 0F93      		push r16
+ 560 0274 1F93      		push r17
+ 561 0276 CF93      		push r28
+ 562 0278 DF93      		push r29
+ 563               	/* prologue: function */
+ 564               	/* frame size = 0 */
+ 565 027a 082F      		mov r16,r24
+ 566 027c EB01      		movw r28,r22
+ 567 027e F42E      		mov r15,r20
+ 568               	.LM63:
+ 569 0280 8823      		tst r24
+ 570 0282 01F4      		brne .L68
+ 571               	.LVL57:
+ 572               	.LM64:
+ 573 0284 80E0      		ldi r24,lo8(gs(zoProtocolI2cPutPacket))
+ 574 0286 90E0      		ldi r25,hi8(gs(zoProtocolI2cPutPacket))
+ 575               	.LVL58:
+ 576 0288 9D83      		std Y+5,r25
+ 577 028a 8C83      		std Y+4,r24
+ 578               	.LM65:
+ 579 028c 80E0      		ldi r24,lo8(gs(zoProtocolI2cGetPacket))
+ 580 028e 90E0      		ldi r25,hi8(gs(zoProtocolI2cGetPacket))
+ 581 0290 9F83      		std Y+7,r25
+ 582 0292 8E83      		std Y+6,r24
+ 583               	.LM66:
+ 584 0294 80E0      		ldi r24,lo8(gs(zoProtocolI2cSetLAM))
+ 585 0296 90E0      		ldi r25,hi8(gs(zoProtocolI2cSetLAM))
+ 586 0298 9987      		std Y+9,r25
+ 587 029a 8887      		std Y+8,r24
+ 588               	.LM67:
+ 589 029c 80E0      		ldi r24,lo8(gs(zoProtocolI2cSetBitrate))
+ 590 029e 90E0      		ldi r25,hi8(gs(zoProtocolI2cSetBitrate))
+ 591 02a0 9B87      		std Y+11,r25
+ 592 02a2 8A87      		std Y+10,r24
+ 593               	.LM68:
+ 594 02a4 8091 0000 		lds r24,zoProtocolI2cError
+ 595 02a8 9091 0000 		lds r25,(zoProtocolI2cError)+1
+ 596 02ac 9B83      		std Y+3,r25
+ 597 02ae 8A83      		std Y+2,r24
+ 598               	.LM69:
+ 599 02b0 842F      		mov r24,r20
+ 600 02b2 64E6      		ldi r22,lo8(100)
+ 601 02b4 70E0      		ldi r23,hi8(100)
+ 602 02b6 0E94 0000 		call zoProtocolI2cInit
+ 603 02ba 1FEF      		ldi r17,lo8(-1)
+ 604               	.LVL59:
+ 605               	.L65:
+ 606               	.LM70:
+ 607 02bc 0983      		std Y+1,r16
+ 608               	.LM71:
+ 609 02be F882      		st Y,r15
+ 610               	.LM72:
+ 611 02c0 E885      		ldd r30,Y+8
+ 612 02c2 F985      		ldd r31,Y+9
+ 613 02c4 8FEF      		ldi r24,lo8(-1)
+ 614 02c6 0995      		icall
+ 615               	.LM73:
+ 616 02c8 812F      		mov r24,r17
+ 617               	/* epilogue start */
+ 618 02ca DF91      		pop r29
+ 619 02cc CF91      		pop r28
+ 620               	.LVL60:
+ 621 02ce 1F91      		pop r17
+ 622               	.LVL61:
+ 623 02d0 0F91      		pop r16
+ 624               	.LVL62:
+ 625 02d2 FF90      		pop r15
+ 626               	.LVL63:
+ 627 02d4 0895      		ret
+ 628               	.LVL64:
+ 629               	.L68:
+ 630               	.LM74:
+ 631 02d6 8430      		cpi r24,lo8(4)
+ 632 02d8 00F0      		brlo .L69
+ 633               	.LVL65:
+ 634               	.L62:
+ 635               	.LM75:
+ 636 02da 1FEF      		ldi r17,lo8(-1)
+ 637               	.LVL66:
+ 638 02dc 00C0      		rjmp .L65
+ 639               	.LVL67:
+ 640               	.L69:
+ 641               	.LM76:
+ 642 02de 80E0      		ldi r24,lo8(gs(zoProtocolUartPutPacket))
+ 643 02e0 90E0      		ldi r25,hi8(gs(zoProtocolUartPutPacket))
+ 644               	.LVL68:
+ 645 02e2 9D83      		std Y+5,r25
+ 646 02e4 8C83      		std Y+4,r24
+ 647               	.LM77:
+ 648 02e6 80E0      		ldi r24,lo8(gs(zoProtocolUartGetPacket))
+ 649 02e8 90E0      		ldi r25,hi8(gs(zoProtocolUartGetPacket))
+ 650 02ea 9F83      		std Y+7,r25
+ 651 02ec 8E83      		std Y+6,r24
+ 652               	.LM78:
+ 653 02ee 80E0      		ldi r24,lo8(gs(zoProtocolUartSetLAM))
+ 654 02f0 90E0      		ldi r25,hi8(gs(zoProtocolUartSetLAM))
+ 655 02f2 9987      		std Y+9,r25
+ 656 02f4 8887      		std Y+8,r24
+ 657               	.LM79:
+ 658 02f6 80E0      		ldi r24,lo8(gs(zoProtocolUartSetBitrate))
+ 659 02f8 90E0      		ldi r25,hi8(gs(zoProtocolUartSetBitrate))
+ 660 02fa 9B87      		std Y+11,r25
+ 661 02fc 8A87      		std Y+10,r24
+ 662               	.LM80:
+ 663 02fe 8091 0000 		lds r24,zoProtocolUartError
+ 664 0302 9091 0000 		lds r25,(zoProtocolUartError)+1
+ 665 0306 9B83      		std Y+3,r25
+ 666 0308 8A83      		std Y+2,r24
+ 667               	.LM81:
+ 668 030a 8981      		ldd r24,Y+1
+ 669 030c 642F      		mov r22,r20
+ 670 030e 20E8      		ldi r18,lo8(9600)
+ 671 0310 35E2      		ldi r19,hi8(9600)
+ 672 0312 40E0      		ldi r20,hlo8(9600)
+ 673 0314 50E0      		ldi r21,hhi8(9600)
+ 674 0316 0E94 0000 		call zoProtocolUartInit
+ 675 031a 8823      		tst r24
+ 676 031c 01F4      		brne .L62
+ 677 031e 10E0      		ldi r17,lo8(0)
+ 678               	.LVL69:
+ 679 0320 00C0      		rjmp .L65
+ 680               	.LFE5:
+ 738               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoProtocol.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:18     .text:00000000 zoProtocolLRC
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:58     .text:00000020 zoProtocolCommandResponse
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:231    .text:00000100 zoProtocolParse
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:334    .text:00000164 zoProtocolCommand
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cck7yHWI.s:554    .text:00000270 zoProtocolInit
+
+UNDEFINED SYMBOLS
+zoErrorIsEmpty
+zoErrorGet
+zoErrorPut
+zoSystemTimerTimeOutInit
+zoSystemTimerTimeOutExpired
+zoProtocolI2cPutPacket
+zoProtocolI2cGetPacket
+zoProtocolI2cSetLAM
+zoProtocolI2cSetBitrate
+zoProtocolI2cError
+zoProtocolI2cInit
+zoProtocolUartPutPacket
+zoProtocolUartGetPacket
+zoProtocolUartSetLAM
+zoProtocolUartSetBitrate
+zoProtocolUartError
+zoProtocolUartInit

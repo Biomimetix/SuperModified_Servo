@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/14/trunk/SuperModified.V2.32bit.Velocities/bootloader
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/14/trunk/SuperModified.V2.32bit.Velocities/bootloader/Makefile
+END
+avrdude.conf
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/SuperModified.V2.32bit.Velocities/bootloader/avrdude.conf
+END
+ATmegaBOOT_168.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/14/trunk/SuperModified.V2.32bit.Velocities/bootloader/ATmegaBOOT_168.c
+END

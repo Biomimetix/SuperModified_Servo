@@ -1,0 +1,637 @@
+   1               		.file	"zoIcp.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoIcpSetPrescaler
+  18               	zoIcpSetPrescaler:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25               	/* #APP */
+  26               	 ;  56 "zoIcp.c" 1
+  27 0000 0FB6      		in __tmp_reg__, __SREG__
+  28 0002 0F92      		 push __tmp_reg__
+  29 0004 F894      		cli
+  30               	 ;  0 "" 2
+  31               	.LM3:
+  32               	/* #NOAPP */
+  33 0006 E1E8      		ldi r30,lo8(129)
+  34 0008 F0E0      		ldi r31,hi8(129)
+  35 000a 9081      		ld r25,Z
+  36 000c 987F      		andi r25,lo8(-8)
+  37 000e 982B      		or r25,r24
+  38 0010 9083      		st Z,r25
+  39               	.LM4:
+  40               	/* #APP */
+  41               	 ;  58 "zoIcp.c" 1
+  42 0012 0F90      		pop __tmp_reg__ 
+  43 0014 0FBE      		out __SREG__, __tmp_reg__
+  44               	 ;  0 "" 2
+  45               	/* epilogue start */
+  46               	.LM5:
+  47               	/* #NOAPP */
+  48 0016 0895      		ret
+  49               	.LFE3:
+  51               	.global	zoIcpSetMode
+  53               	zoIcpSetMode:
+  54               	.LFB4:
+  55               	.LM6:
+  56               	.LVL1:
+  57               	/* prologue: function */
+  58               	/* frame size = 0 */
+  59               	.LM7:
+  60               	/* #APP */
+  61               	 ;  63 "zoIcp.c" 1
+  62 0018 0FB6      		in __tmp_reg__, __SREG__
+  63 001a 0F92      		 push __tmp_reg__
+  64 001c F894      		cli
+  65               	 ;  0 "" 2
+  66               	.LM8:
+  67               	/* #NOAPP */
+  68 001e 8093 0000 		sts IcpMode,r24
+  69               	.LM9:
+  70 0022 2098      		cbi 36-32,0
+  71               	.LM10:
+  72 0024 289A      		sbi 37-32,0
+  73               	.LM11:
+  74 0026 8130      		cpi r24,lo8(1)
+  75 0028 01F0      		breq .L8
+  76               	.LM12:
+  77 002a 8091 8100 		lds r24,129
+  78               	.LVL2:
+  79 002e 8F7B      		andi r24,lo8(-65)
+  80 0030 8093 8100 		sts 129,r24
+  81               	.LM13:
+  82               	/* #APP */
+  83               	 ;  75 "zoIcp.c" 1
+  84 0034 0F90      		pop __tmp_reg__ 
+  85 0036 0FBE      		out __SREG__, __tmp_reg__
+  86               	 ;  0 "" 2
+  87               	/* epilogue start */
+  88               	.LM14:
+  89               	/* #NOAPP */
+  90 0038 0895      		ret
+  91               	.LVL3:
+  92               	.L8:
+  93               	.LM15:
+  94 003a 8091 8100 		lds r24,129
+  95               	.LVL4:
+  96 003e 8064      		ori r24,lo8(64)
+  97 0040 8093 8100 		sts 129,r24
+  98               	.LM16:
+  99               	/* #APP */
+ 100               	 ;  75 "zoIcp.c" 1
+ 101 0044 0F90      		pop __tmp_reg__ 
+ 102 0046 0FBE      		out __SREG__, __tmp_reg__
+ 103               	 ;  0 "" 2
+ 104               	.LM17:
+ 105               	/* #NOAPP */
+ 106 0048 0895      		ret
+ 107               	.LFE4:
+ 109               	.global	zoIcpAttachUserFunctionOnCapture
+ 111               	zoIcpAttachUserFunctionOnCapture:
+ 112               	.LFB5:
+ 113               	.LM18:
+ 114               	.LVL5:
+ 115               	/* prologue: function */
+ 116               	/* frame size = 0 */
+ 117               	.LM19:
+ 118               	/* #APP */
+ 119               	 ;  80 "zoIcp.c" 1
+ 120 004a 0FB6      		in __tmp_reg__, __SREG__
+ 121 004c 0F92      		 push __tmp_reg__
+ 122 004e F894      		cli
+ 123               	 ;  0 "" 2
+ 124               	.LM20:
+ 125               	/* #NOAPP */
+ 126 0050 9093 0000 		sts (IcpUserFunction)+1,r25
+ 127 0054 8093 0000 		sts IcpUserFunction,r24
+ 128               	.LM21:
+ 129               	/* #APP */
+ 130               	 ;  82 "zoIcp.c" 1
+ 131 0058 0F90      		pop __tmp_reg__ 
+ 132 005a 0FBE      		out __SREG__, __tmp_reg__
+ 133               	 ;  0 "" 2
+ 134               	/* epilogue start */
+ 135               	.LM22:
+ 136               	/* #NOAPP */
+ 137 005c 0895      		ret
+ 138               	.LFE5:
+ 140               	.global	zoIcpAttachUserFunctionOnOverFlow
+ 142               	zoIcpAttachUserFunctionOnOverFlow:
+ 143               	.LFB6:
+ 144               	.LM23:
+ 145               	.LVL6:
+ 146               	/* prologue: function */
+ 147               	/* frame size = 0 */
+ 148               	.LM24:
+ 149               	/* #APP */
+ 150               	 ;  87 "zoIcp.c" 1
+ 151 005e 0FB6      		in __tmp_reg__, __SREG__
+ 152 0060 0F92      		 push __tmp_reg__
+ 153 0062 F894      		cli
+ 154               	 ;  0 "" 2
+ 155               	.LM25:
+ 156               	/* #NOAPP */
+ 157 0064 9093 0000 		sts (OvflUserFunction)+1,r25
+ 158 0068 8093 0000 		sts OvflUserFunction,r24
+ 159               	.LM26:
+ 160               	/* #APP */
+ 161               	 ;  89 "zoIcp.c" 1
+ 162 006c 0F90      		pop __tmp_reg__ 
+ 163 006e 0FBE      		out __SREG__, __tmp_reg__
+ 164               	 ;  0 "" 2
+ 165               	/* epilogue start */
+ 166               	.LM27:
+ 167               	/* #NOAPP */
+ 168 0070 0895      		ret
+ 169               	.LFE6:
+ 171               	.global	zoIcpAttachUserFunctionOnCaptureFailure
+ 173               	zoIcpAttachUserFunctionOnCaptureFailure:
+ 174               	.LFB7:
+ 175               	.LM28:
+ 176               	.LVL7:
+ 177               	/* prologue: function */
+ 178               	/* frame size = 0 */
+ 179               	.LM29:
+ 180               	/* #APP */
+ 181               	 ;  94 "zoIcp.c" 1
+ 182 0072 0FB6      		in __tmp_reg__, __SREG__
+ 183 0074 0F92      		 push __tmp_reg__
+ 184 0076 F894      		cli
+ 185               	 ;  0 "" 2
+ 186               	.LM30:
+ 187               	/* #NOAPP */
+ 188 0078 9093 0000 		sts (IcpFailedUserFunction)+1,r25
+ 189 007c 8093 0000 		sts IcpFailedUserFunction,r24
+ 190               	.LM31:
+ 191               	/* #APP */
+ 192               	 ;  96 "zoIcp.c" 1
+ 193 0080 0F90      		pop __tmp_reg__ 
+ 194 0082 0FBE      		out __SREG__, __tmp_reg__
+ 195               	 ;  0 "" 2
+ 196               	/* epilogue start */
+ 197               	.LM32:
+ 198               	/* #NOAPP */
+ 199 0084 0895      		ret
+ 200               	.LFE7:
+ 202               	.global	zoIcpIsrEnable
+ 204               	zoIcpIsrEnable:
+ 205               	.LFB8:
+ 206               	.LM33:
+ 207               	/* prologue: function */
+ 208               	/* frame size = 0 */
+ 209               	.LM34:
+ 210               	/* #APP */
+ 211               	 ;  101 "zoIcp.c" 1
+ 212 0086 0FB6      		in __tmp_reg__, __SREG__
+ 213 0088 0F92      		 push __tmp_reg__
+ 214 008a F894      		cli
+ 215               	 ;  0 "" 2
+ 216               	.LM35:
+ 217               	/* #NOAPP */
+ 218 008c 1092 8500 		sts (132)+1,__zero_reg__
+ 219 0090 1092 8400 		sts 132,__zero_reg__
+ 220               	.LM36:
+ 221 0094 1092 8700 		sts (134)+1,__zero_reg__
+ 222 0098 1092 8600 		sts 134,__zero_reg__
+ 223               	.LM37:
+ 224               	/* #APP */
+ 225               	 ;  104 "zoIcp.c" 1
+ 226 009c 0F90      		pop __tmp_reg__ 
+ 227 009e 0FBE      		out __SREG__, __tmp_reg__
+ 228               	 ;  0 "" 2
+ 229               	.LM38:
+ 230               	/* #NOAPP */
+ 231 00a0 B59A      		sbi 54-32,5
+ 232               	.LM39:
+ 233 00a2 EFE6      		ldi r30,lo8(111)
+ 234 00a4 F0E0      		ldi r31,hi8(111)
+ 235 00a6 8081      		ld r24,Z
+ 236 00a8 8062      		ori r24,lo8(32)
+ 237 00aa 8083      		st Z,r24
+ 238               	/* epilogue start */
+ 239               	.LM40:
+ 240 00ac 0895      		ret
+ 241               	.LFE8:
+ 243               	.global	zoIcpInit
+ 245               	zoIcpInit:
+ 246               	.LFB2:
+ 247               	.LM41:
+ 248               	/* prologue: function */
+ 249               	/* frame size = 0 */
+ 250               	.LM42:
+ 251 00ae 81E0      		ldi r24,lo8(1)
+ 252 00b0 0E94 0000 		call zoIcpSetMode
+ 253               	.LBB4:
+ 254               	.LBB5:
+ 255               	.LM43:
+ 256               	/* #APP */
+ 257               	 ;  56 "zoIcp.c" 1
+ 258 00b4 0FB6      		in __tmp_reg__, __SREG__
+ 259 00b6 0F92      		 push __tmp_reg__
+ 260 00b8 F894      		cli
+ 261               	 ;  0 "" 2
+ 262               	.LM44:
+ 263               	/* #NOAPP */
+ 264 00ba E1E8      		ldi r30,lo8(129)
+ 265 00bc F0E0      		ldi r31,hi8(129)
+ 266 00be 8081      		ld r24,Z
+ 267 00c0 887F      		andi r24,lo8(-8)
+ 268 00c2 8160      		ori r24,lo8(1)
+ 269 00c4 8083      		st Z,r24
+ 270               	.LM45:
+ 271               	/* #APP */
+ 272               	 ;  58 "zoIcp.c" 1
+ 273 00c6 0F90      		pop __tmp_reg__ 
+ 274 00c8 0FBE      		out __SREG__, __tmp_reg__
+ 275               	 ;  0 "" 2
+ 276               	/* #NOAPP */
+ 277               	.LBE5:
+ 278               	.LBE4:
+ 279               	.LM46:
+ 280 00ca 1092 8000 		sts 128,__zero_reg__
+ 281               	.LM47:
+ 282 00ce E1E8      		ldi r30,lo8(129)
+ 283 00d0 F0E0      		ldi r31,hi8(129)
+ 284 00d2 8081      		ld r24,Z
+ 285 00d4 8068      		ori r24,lo8(-128)
+ 286 00d6 8083      		st Z,r24
+ 287               	.LM48:
+ 288 00d8 0E94 0000 		call zoIcpIsrEnable
+ 289               	.LM49:
+ 290               	/* #APP */
+ 291               	 ;  51 "zoIcp.c" 1
+ 292 00dc 7894      		sei
+ 293               	 ;  0 "" 2
+ 294               	/* epilogue start */
+ 295               	.LM50:
+ 296               	/* #NOAPP */
+ 297 00de 0895      		ret
+ 298               	.LFE2:
+ 300               	.global	zoIcpIsrDisable
+ 302               	zoIcpIsrDisable:
+ 303               	.LFB9:
+ 304               	.LM51:
+ 305               	/* prologue: function */
+ 306               	/* frame size = 0 */
+ 307               	.LM52:
+ 308 00e0 EFE6      		ldi r30,lo8(111)
+ 309 00e2 F0E0      		ldi r31,hi8(111)
+ 310 00e4 8081      		ld r24,Z
+ 311 00e6 8F7D      		andi r24,lo8(-33)
+ 312 00e8 8083      		st Z,r24
+ 313               	.LM53:
+ 314 00ea B59A      		sbi 54-32,5
+ 315               	.LM54:
+ 316               	/* #APP */
+ 317               	 ;  115 "zoIcp.c" 1
+ 318 00ec 0FB6      		in __tmp_reg__, __SREG__
+ 319 00ee 0F92      		 push __tmp_reg__
+ 320 00f0 F894      		cli
+ 321               	 ;  0 "" 2
+ 322               	.LM55:
+ 323               	/* #NOAPP */
+ 324 00f2 1092 8500 		sts (132)+1,__zero_reg__
+ 325 00f6 1092 8400 		sts 132,__zero_reg__
+ 326               	.LM56:
+ 327 00fa 1092 8700 		sts (134)+1,__zero_reg__
+ 328 00fe 1092 8600 		sts 134,__zero_reg__
+ 329               	.LM57:
+ 330               	/* #APP */
+ 331               	 ;  118 "zoIcp.c" 1
+ 332 0102 0F90      		pop __tmp_reg__ 
+ 333 0104 0FBE      		out __SREG__, __tmp_reg__
+ 334               	 ;  0 "" 2
+ 335               	/* epilogue start */
+ 336               	.LM58:
+ 337               	/* #NOAPP */
+ 338 0106 0895      		ret
+ 339               	.LFE9:
+ 341               	.global	zoIcpOverFlowIsrEnable
+ 343               	zoIcpOverFlowIsrEnable:
+ 344               	.LFB10:
+ 345               	.LM59:
+ 346               	/* prologue: function */
+ 347               	/* frame size = 0 */
+ 348               	.LM60:
+ 349 0108 EFE6      		ldi r30,lo8(111)
+ 350 010a F0E0      		ldi r31,hi8(111)
+ 351 010c 8081      		ld r24,Z
+ 352 010e 8160      		ori r24,lo8(1)
+ 353 0110 8083      		st Z,r24
+ 354               	/* epilogue start */
+ 355               	.LM61:
+ 356 0112 0895      		ret
+ 357               	.LFE10:
+ 359               	.global	zoIcpOverFlowIsrDisable
+ 361               	zoIcpOverFlowIsrDisable:
+ 362               	.LFB11:
+ 363               	.LM62:
+ 364               	/* prologue: function */
+ 365               	/* frame size = 0 */
+ 366               	.LM63:
+ 367 0114 EFE6      		ldi r30,lo8(111)
+ 368 0116 F0E0      		ldi r31,hi8(111)
+ 369 0118 8081      		ld r24,Z
+ 370 011a 8E7F      		andi r24,lo8(-2)
+ 371 011c 8083      		st Z,r24
+ 372               	/* epilogue start */
+ 373               	.LM64:
+ 374 011e 0895      		ret
+ 375               	.LFE11:
+ 377               	.global	zoIcpGetPulseWidh
+ 379               	zoIcpGetPulseWidh:
+ 380               	.LFB12:
+ 381               	.LM65:
+ 382               	.LVL8:
+ 383               	/* prologue: function */
+ 384               	/* frame size = 0 */
+ 385 0120 FC01      		movw r30,r24
+ 386               	.LM66:
+ 387               	/* #APP */
+ 388               	 ;  133 "zoIcp.c" 1
+ 389 0122 0FB6      		in __tmp_reg__, __SREG__
+ 390 0124 0F92      		 push __tmp_reg__
+ 391 0126 F894      		cli
+ 392               	 ;  0 "" 2
+ 393               	.LM67:
+ 394               	/* #NOAPP */
+ 395 0128 8091 0000 		lds r24,IcpTimerTicks
+ 396 012c 9091 0000 		lds r25,(IcpTimerTicks)+1
+ 397               	.LVL9:
+ 398 0130 9183      		std Z+1,r25
+ 399 0132 8083      		st Z,r24
+ 400               	.LM68:
+ 401               	/* #APP */
+ 402               	 ;  135 "zoIcp.c" 1
+ 403 0134 0F90      		pop __tmp_reg__ 
+ 404 0136 0FBE      		out __SREG__, __tmp_reg__
+ 405               	 ;  0 "" 2
+ 406               	.LM69:
+ 407               	/* #NOAPP */
+ 408 0138 892B      		or r24,r25
+ 409 013a 01F4      		brne .L26
+ 410 013c 80E0      		ldi r24,lo8(0)
+ 411 013e 0895      		ret
+ 412               	.L26:
+ 413 0140 8FEF      		ldi r24,lo8(-1)
+ 414               	.LM70:
+ 415 0142 0895      		ret
+ 416               	.LFE12:
+ 418               	.global	__vector_10
+ 420               	__vector_10:
+ 421               	.LFB13:
+ 422               	.LM71:
+ 423 0144 1F92      		push __zero_reg__
+ 424 0146 0F92      		push r0
+ 425 0148 0FB6      		in r0,__SREG__
+ 426 014a 0F92      		push r0
+ 427 014c 1124      		clr __zero_reg__
+ 428 014e 2F93      		push r18
+ 429 0150 3F93      		push r19
+ 430 0152 4F93      		push r20
+ 431 0154 5F93      		push r21
+ 432 0156 6F93      		push r22
+ 433 0158 7F93      		push r23
+ 434 015a 8F93      		push r24
+ 435 015c 9F93      		push r25
+ 436 015e AF93      		push r26
+ 437 0160 BF93      		push r27
+ 438 0162 EF93      		push r30
+ 439 0164 FF93      		push r31
+ 440               	/* prologue: Signal */
+ 441               	/* frame size = 0 */
+ 442               	.LM72:
+ 443 0166 4091 8600 		lds r20,134
+ 444 016a 5091 8700 		lds r21,(134)+1
+ 445               	.LVL10:
+ 446               	.LM73:
+ 447 016e 83B1      		in r24,35-32
+ 448 0170 2091 0000 		lds r18,IcpMode
+ 449 0174 90E0      		ldi r25,lo8(0)
+ 450 0176 8170      		andi r24,lo8(1)
+ 451 0178 9070      		andi r25,hi8(1)
+ 452 017a 30E0      		ldi r19,lo8(0)
+ 453 017c 8217      		cp r24,r18
+ 454 017e 9307      		cpc r25,r19
+ 455 0180 01F4      		brne .+2
+ 456 0182 00C0      		rjmp .L39
+ 457               	.LM74:
+ 458 0184 5093 0000 		sts (PulseOffTicks)+1,r21
+ 459 0188 4093 0000 		sts PulseOffTicks,r20
+ 460               	.LM75:
+ 461 018c 8091 0000 		lds r24,PulseOffTicks
+ 462 0190 9091 0000 		lds r25,(PulseOffTicks)+1
+ 463 0194 2091 0000 		lds r18,PulseOnTicks
+ 464 0198 3091 0000 		lds r19,(PulseOnTicks)+1
+ 465 019c 821B      		sub r24,r18
+ 466 019e 930B      		sbc r25,r19
+ 467 01a0 9093 0000 		sts (IcpTimerTicks)+1,r25
+ 468 01a4 8093 0000 		sts IcpTimerTicks,r24
+ 469               	.LM76:
+ 470 01a8 8091 0000 		lds r24,HighLow
+ 471 01ac 8150      		subi r24,lo8(-(-1))
+ 472 01ae 8093 0000 		sts HighLow,r24
+ 473               	.LM77:
+ 474 01b2 8091 0000 		lds r24,IcpMode
+ 475 01b6 8130      		cpi r24,lo8(1)
+ 476 01b8 01F0      		breq .L40
+ 477               	.LM78:
+ 478 01ba 8091 8100 		lds r24,129
+ 479 01be 8F7B      		andi r24,lo8(-65)
+ 480 01c0 8093 8100 		sts 129,r24
+ 481               	.L35:
+ 482               	.LM79:
+ 483 01c4 1092 8500 		sts (132)+1,__zero_reg__
+ 484 01c8 1092 8400 		sts 132,__zero_reg__
+ 485               	.LM80:
+ 486 01cc 8091 0000 		lds r24,HighLow
+ 487 01d0 8823      		tst r24
+ 488 01d2 01F4      		brne .L36
+ 489 01d4 2091 0000 		lds r18,PulseOnTicks
+ 490 01d8 3091 0000 		lds r19,(PulseOnTicks)+1
+ 491 01dc 8091 0000 		lds r24,PulseOffTicks
+ 492 01e0 9091 0000 		lds r25,(PulseOffTicks)+1
+ 493 01e4 8217      		cp r24,r18
+ 494 01e6 9307      		cpc r25,r19
+ 495 01e8 00F4      		brsh .L37
+ 496               	.L36:
+ 497               	.LM81:
+ 498 01ea 1092 0000 		sts HighLow,__zero_reg__
+ 499               	.LM82:
+ 500 01ee 1092 0000 		sts (IcpTimerTicks)+1,__zero_reg__
+ 501 01f2 1092 0000 		sts IcpTimerTicks,__zero_reg__
+ 502               	.LM83:
+ 503 01f6 E091 0000 		lds r30,IcpFailedUserFunction
+ 504 01fa F091 0000 		lds r31,(IcpFailedUserFunction)+1
+ 505 01fe 3097      		sbiw r30,0
+ 506 0200 01F0      		breq .L38
+ 507               	.LM84:
+ 508 0202 0995      		icall
+ 509               	.LVL11:
+ 510               	.L38:
+ 511               	/* epilogue start */
+ 512               	.LM85:
+ 513 0204 FF91      		pop r31
+ 514 0206 EF91      		pop r30
+ 515 0208 BF91      		pop r27
+ 516 020a AF91      		pop r26
+ 517 020c 9F91      		pop r25
+ 518 020e 8F91      		pop r24
+ 519 0210 7F91      		pop r23
+ 520 0212 6F91      		pop r22
+ 521 0214 5F91      		pop r21
+ 522 0216 4F91      		pop r20
+ 523               	.LVL12:
+ 524 0218 3F91      		pop r19
+ 525 021a 2F91      		pop r18
+ 526 021c 0F90      		pop r0
+ 527 021e 0FBE      		out __SREG__,r0
+ 528 0220 0F90      		pop r0
+ 529 0222 1F90      		pop __zero_reg__
+ 530 0224 1895      		reti
+ 531               	.LVL13:
+ 532               	.L40:
+ 533               	.LM86:
+ 534 0226 8091 8100 		lds r24,129
+ 535 022a 8064      		ori r24,lo8(64)
+ 536 022c 8093 8100 		sts 129,r24
+ 537 0230 00C0      		rjmp .L35
+ 538               	.L39:
+ 539               	.LM87:
+ 540 0232 5093 0000 		sts (PulseOnTicks)+1,r21
+ 541 0236 4093 0000 		sts PulseOnTicks,r20
+ 542               	.LM88:
+ 543 023a 8091 0000 		lds r24,IcpMode
+ 544 023e 8130      		cpi r24,lo8(1)
+ 545 0240 01F0      		breq .L41
+ 546               	.LM89:
+ 547 0242 8091 8100 		lds r24,129
+ 548 0246 8064      		ori r24,lo8(64)
+ 549 0248 8093 8100 		sts 129,r24
+ 550               	.L32:
+ 551               	.LM90:
+ 552 024c 8091 0000 		lds r24,HighLow
+ 553 0250 8F5F      		subi r24,lo8(-(1))
+ 554 0252 8093 0000 		sts HighLow,r24
+ 555 0256 00C0      		rjmp .L38
+ 556               	.L37:
+ 557               	.LM91:
+ 558 0258 E091 0000 		lds r30,IcpUserFunction
+ 559 025c F091 0000 		lds r31,(IcpUserFunction)+1
+ 560 0260 3097      		sbiw r30,0
+ 561 0262 01F0      		breq .L38
+ 562               	.LM92:
+ 563 0264 8091 0000 		lds r24,IcpTimerTicks
+ 564 0268 9091 0000 		lds r25,(IcpTimerTicks)+1
+ 565 026c 0995      		icall
+ 566               	.LVL14:
+ 567 026e 00C0      		rjmp .L38
+ 568               	.LVL15:
+ 569               	.L41:
+ 570               	.LM93:
+ 571 0270 8091 8100 		lds r24,129
+ 572 0274 8F7B      		andi r24,lo8(-65)
+ 573 0276 8093 8100 		sts 129,r24
+ 574 027a 00C0      		rjmp .L32
+ 575               	.LFE13:
+ 577               	.global	__vector_13
+ 579               	__vector_13:
+ 580               	.LFB14:
+ 581               	.LM94:
+ 582 027c 1F92      		push __zero_reg__
+ 583 027e 0F92      		push r0
+ 584 0280 0FB6      		in r0,__SREG__
+ 585 0282 0F92      		push r0
+ 586 0284 1124      		clr __zero_reg__
+ 587 0286 2F93      		push r18
+ 588 0288 3F93      		push r19
+ 589 028a 4F93      		push r20
+ 590 028c 5F93      		push r21
+ 591 028e 6F93      		push r22
+ 592 0290 7F93      		push r23
+ 593 0292 8F93      		push r24
+ 594 0294 9F93      		push r25
+ 595 0296 AF93      		push r26
+ 596 0298 BF93      		push r27
+ 597 029a EF93      		push r30
+ 598 029c FF93      		push r31
+ 599               	/* prologue: Signal */
+ 600               	/* frame size = 0 */
+ 601               	.LM95:
+ 602 029e E091 0000 		lds r30,OvflUserFunction
+ 603 02a2 F091 0000 		lds r31,(OvflUserFunction)+1
+ 604 02a6 3097      		sbiw r30,0
+ 605 02a8 01F0      		breq .L44
+ 606               	.LM96:
+ 607 02aa 0995      		icall
+ 608               	.L44:
+ 609               	/* epilogue start */
+ 610               	.LM97:
+ 611 02ac FF91      		pop r31
+ 612 02ae EF91      		pop r30
+ 613 02b0 BF91      		pop r27
+ 614 02b2 AF91      		pop r26
+ 615 02b4 9F91      		pop r25
+ 616 02b6 8F91      		pop r24
+ 617 02b8 7F91      		pop r23
+ 618 02ba 6F91      		pop r22
+ 619 02bc 5F91      		pop r21
+ 620 02be 4F91      		pop r20
+ 621 02c0 3F91      		pop r19
+ 622 02c2 2F91      		pop r18
+ 623 02c4 0F90      		pop r0
+ 624 02c6 0FBE      		out __SREG__,r0
+ 625 02c8 0F90      		pop r0
+ 626 02ca 1F90      		pop __zero_reg__
+ 627 02cc 1895      		reti
+ 628               	.LFE14:
+ 630               		.lcomm OvflUserFunction,2
+ 631               		.lcomm PulseOnTicks,2
+ 632               		.lcomm HighLow,1
+ 633               		.lcomm PulseOffTicks,2
+ 634               		.lcomm IcpTimerTicks,2
+ 635               		.lcomm IcpFailedUserFunction,2
+ 636               		.lcomm IcpUserFunction,2
+ 637               		.lcomm IcpMode,1
+ 758               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoIcp.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:18     .text:00000000 zoIcpSetPrescaler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:53     .text:00000018 zoIcpSetMode
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:636    .bss:0000000d IcpMode
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:111    .text:0000004a zoIcpAttachUserFunctionOnCapture
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:635    .bss:0000000b IcpUserFunction
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:142    .text:0000005e zoIcpAttachUserFunctionOnOverFlow
+                             .bss:00000000 OvflUserFunction
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:173    .text:00000072 zoIcpAttachUserFunctionOnCaptureFailure
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:634    .bss:00000009 IcpFailedUserFunction
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:204    .text:00000086 zoIcpIsrEnable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:245    .text:000000ae zoIcpInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:302    .text:000000e0 zoIcpIsrDisable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:343    .text:00000108 zoIcpOverFlowIsrEnable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:361    .text:00000114 zoIcpOverFlowIsrDisable
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:379    .text:00000120 zoIcpGetPulseWidh
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:633    .bss:00000007 IcpTimerTicks
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:420    .text:00000144 __vector_10
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:632    .bss:00000005 PulseOffTicks
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:630    .bss:00000002 PulseOnTicks
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:631    .bss:00000004 HighLow
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccsYgPMp.s:579    .text:0000027c __vector_13
+
+UNDEFINED SYMBOLS
+__do_clear_bss

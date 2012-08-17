@@ -1,0 +1,86 @@
+   1               		.file	"zoSpi.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoSpiInit
+  18               	zoSpiInit:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 229A      		sbi 36-32,2
+  25               	.LM3:
+  26 0002 239A      		sbi 36-32,3
+  27               	.LM4:
+  28 0004 2498      		cbi 36-32,4
+  29               	.LM5:
+  30 0006 259A      		sbi 36-32,5
+  31               	.LM6:
+  32 0008 2D9A      		sbi 37-32,5
+  33               	.LM7:
+  34 000a 2A9A      		sbi 37-32,2
+  35               	.LM8:
+  36 000c 1CBC      		out 76-32,__zero_reg__
+  37               	.LM9:
+  38 000e 8CB5      		in r24,76-32
+  39 0010 8061      		ori r24,lo8(16)
+  40 0012 8CBD      		out 76-32,r24
+  41               	.LM10:
+  42 0014 8CB5      		in r24,76-32
+  43 0016 8260      		ori r24,lo8(2)
+  44 0018 8CBD      		out 76-32,r24
+  45               	.LM11:
+  46 001a 8CB5      		in r24,76-32
+  47 001c 8460      		ori r24,lo8(4)
+  48 001e 8CBD      		out 76-32,r24
+  49               	.LM12:
+  50 0020 8DB5      		in r24,77-32
+  51 0022 8160      		ori r24,lo8(1)
+  52 0024 8DBD      		out 77-32,r24
+  53               	.LM13:
+  54 0026 8CB5      		in r24,76-32
+  55 0028 8064      		ori r24,lo8(64)
+  56 002a 8CBD      		out 76-32,r24
+  57               	/* epilogue start */
+  58               	.LM14:
+  59 002c 0895      		ret
+  60               	.LFE2:
+  62               	.global	zoSpiTransferByte
+  64               	zoSpiTransferByte:
+  65               	.LFB3:
+  66               	.LM15:
+  67               	.LVL0:
+  68               	/* prologue: function */
+  69               	/* frame size = 0 */
+  70               	.LM16:
+  71 002e 8EBD      		out 78-32,r24
+  72               	.L4:
+  73               	.LM17:
+  74 0030 0DB4      		in __tmp_reg__,77-32
+  75 0032 07FE      		sbrs __tmp_reg__,7
+  76 0034 00C0      		rjmp .L4
+  77               	.LM18:
+  78 0036 8EB5      		in r24,78-32
+  79               	.LVL1:
+  80               	/* epilogue start */
+  81               	.LM19:
+  82 0038 0895      		ret
+  83               	.LFE3:
+ 117               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoSpi.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:18     .text:00000000 zoSpiInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccKbQipn.s:64     .text:0000002e zoSpiTransferByte
+
+NO UNDEFINED SYMBOLS

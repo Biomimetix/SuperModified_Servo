@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep
+END
+zoI2c.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoI2c.o.d
+END
+zoEncoder.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoEncoder.o.d
+END
+zoSystemTimer.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoSystemTimer.o.d
+END
+zoAdc.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoAdc.o.d
+END
+zoError.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoError.o.d
+END
+zoSpi.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoSpi.o.d
+END
+zoProtocolUart.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoProtocolUart.o.d
+END
+zoProtocolI2c.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoProtocolI2c.o.d
+END
+zoMotor.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoMotor.o.d
+END
+zoProtocol.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoProtocol.o.d
+END
+zoCommands.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoCommands.o.d
+END
+zoSms.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoSms.o.d
+END
+zoProtocolRcServo.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoProtocolRcServo.o.d
+END
+zoBuffer.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoBuffer.o.d
+END
+main.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/main.o.d
+END
+zoUart.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoUart.o.d
+END
+zoIcp.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoIcp.o.d
+END
+zoPid.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoPid.o.d
+END
+zoSmsError.o.d
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/13/trunk/SuperModified.V2/.dep/zoSmsError.o.d
+END

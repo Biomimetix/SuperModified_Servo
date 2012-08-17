@@ -1,0 +1,341 @@
+   1               		.file	"zoMotor.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoMotorSetTimedEventHandler
+  18               	zoMotorSetTimedEventHandler:
+  19               	.LFB4:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LM2:
+  25 0000 9093 0000 		sts (timedEventHandler)+1,r25
+  26 0004 8093 0000 		sts timedEventHandler,r24
+  27               	/* epilogue start */
+  28               	.LM3:
+  29 0008 0895      		ret
+  30               	.LFE4:
+  32               	.global	zoMotorInit
+  34               	zoMotorInit:
+  35               	.LFB5:
+  36               	.LM4:
+  37               	/* prologue: function */
+  38               	/* frame size = 0 */
+  39               	.LM5:
+  40 000a 84E6      		ldi r24,lo8(0x44882a64)
+  41 000c 9AE2      		ldi r25,hi8(0x44882a64)
+  42 000e A8E8      		ldi r26,hlo8(0x44882a64)
+  43 0010 B4E4      		ldi r27,hhi8(0x44882a64)
+  44 0012 8093 0000 		sts Sms+1,r24
+  45 0016 9093 0000 		sts (Sms+1)+1,r25
+  46 001a A093 0000 		sts (Sms+1)+2,r26
+  47 001e B093 0000 		sts (Sms+1)+3,r27
+  48               	.LM6:
+  49 0022 82E0      		ldi r24,lo8(2)
+  50 0024 85BD      		out 69-32,r24
+  51               	.LM7:
+  52 0026 E1EB      		ldi r30,lo8(177)
+  53 0028 F0E0      		ldi r31,hi8(177)
+  54 002a 8083      		st Z,r24
+  55               	.LM8:
+  56 002c 85B5      		in r24,69-32
+  57 002e 877F      		andi r24,lo8(-9)
+  58 0030 85BD      		out 69-32,r24
+  59               	.LM9:
+  60 0032 84B5      		in r24,68-32
+  61 0034 8D7F      		andi r24,lo8(-3)
+  62 0036 84BD      		out 68-32,r24
+  63               	.LM10:
+  64 0038 84B5      		in r24,68-32
+  65 003a 8360      		ori r24,lo8(3)
+  66 003c 84BD      		out 68-32,r24
+  67               	.LM11:
+  68 003e 84B5      		in r24,68-32
+  69 0040 8061      		ori r24,lo8(16)
+  70 0042 84BD      		out 68-32,r24
+  71               	.LM12:
+  72 0044 84B5      		in r24,68-32
+  73 0046 8062      		ori r24,lo8(32)
+  74 0048 84BD      		out 68-32,r24
+  75               	.LM13:
+  76 004a 84B5      		in r24,68-32
+  77 004c 8F73      		andi r24,lo8(63)
+  78 004e 84BD      		out 68-32,r24
+  79               	.LM14:
+  80 0050 8081      		ld r24,Z
+  81 0052 877F      		andi r24,lo8(-9)
+  82 0054 8083      		st Z,r24
+  83               	.LM15:
+  84 0056 E0EB      		ldi r30,lo8(176)
+  85 0058 F0E0      		ldi r31,hi8(176)
+  86 005a 8081      		ld r24,Z
+  87 005c 8D7F      		andi r24,lo8(-3)
+  88 005e 8083      		st Z,r24
+  89               	.LM16:
+  90 0060 8081      		ld r24,Z
+  91 0062 8360      		ori r24,lo8(3)
+  92 0064 8083      		st Z,r24
+  93               	.LM17:
+  94 0066 8081      		ld r24,Z
+  95 0068 8061      		ori r24,lo8(16)
+  96 006a 8083      		st Z,r24
+  97               	.LM18:
+  98 006c 8081      		ld r24,Z
+  99 006e 8062      		ori r24,lo8(32)
+ 100 0070 8083      		st Z,r24
+ 101               	.LM19:
+ 102 0072 8081      		ld r24,Z
+ 103 0074 8F73      		andi r24,lo8(63)
+ 104 0076 8083      		st Z,r24
+ 105               	.LM20:
+ 106 0078 18BC      		out 72-32,__zero_reg__
+ 107               	.LM21:
+ 108 007a 1092 B400 		sts 180,__zero_reg__
+ 109               	.LM22:
+ 110 007e EEE6      		ldi r30,lo8(110)
+ 111 0080 F0E0      		ldi r31,hi8(110)
+ 112 0082 8081      		ld r24,Z
+ 113 0084 8160      		ori r24,lo8(1)
+ 114 0086 8083      		st Z,r24
+ 115               	.LM23:
+ 116               	/* #APP */
+ 117               	 ;  47 "zoMotor.c" 1
+ 118 0088 7894      		sei
+ 119               	 ;  0 "" 2
+ 120               	.LM24:
+ 121               	/* #NOAPP */
+ 122 008a E4E6      		ldi r30,lo8(100)
+ 123 008c F0E0      		ldi r31,hi8(100)
+ 124 008e 8081      		ld r24,Z
+ 125 0090 8F79      		andi r24,lo8(-97)
+ 126 0092 8083      		st Z,r24
+ 127               	/* epilogue start */
+ 128               	.LM25:
+ 129 0094 0895      		ret
+ 130               	.LFE5:
+ 132               	.global	zoMotorSet
+ 134               	zoMotorSet:
+ 135               	.LFB6:
+ 136               	.LM26:
+ 137               	.LVL1:
+ 138               	/* prologue: function */
+ 139               	/* frame size = 0 */
+ 140               	.LM27:
+ 141 0096 9B01      		movw r18,r22
+ 142 0098 AC01      		movw r20,r24
+ 143               	.LVL2:
+ 144 009a 97FD      		sbrc r25,7
+ 145 009c 00C0      		rjmp .L12
+ 146               	.L6:
+ 147               	.LM28:
+ 148 009e 232F      		mov r18,r19
+ 149 00a0 342F      		mov r19,r20
+ 150 00a2 452F      		mov r20,r21
+ 151 00a4 5527      		clr r21
+ 152               	.LVL3:
+ 153               	.LM29:
+ 154 00a6 2F3F      		cpi r18,lo8(255)
+ 155 00a8 3105      		cpc r19,__zero_reg__
+ 156 00aa 4105      		cpc r20,__zero_reg__
+ 157 00ac 5105      		cpc r21,__zero_reg__
+ 158 00ae 01F0      		breq .L7
+ 159 00b0 00F0      		brlo .L7
+ 160 00b2 2FEF      		ldi r18,lo8(255)
+ 161 00b4 30E0      		ldi r19,hi8(255)
+ 162 00b6 40E0      		ldi r20,hlo8(255)
+ 163 00b8 50E0      		ldi r21,hhi8(255)
+ 164               	.L7:
+ 165               	.LM30:
+ 166 00ba 97FD      		sbrc r25,7
+ 167 00bc 00C0      		rjmp .L8
+ 168               	.LM31:
+ 169 00be 28BD      		out 72-32,r18
+ 170               	.LM32:
+ 171 00c0 1092 B400 		sts 180,__zero_reg__
+ 172 00c4 0895      		ret
+ 173               	.L8:
+ 174               	.LM33:
+ 175 00c6 18BC      		out 72-32,__zero_reg__
+ 176               	.LM34:
+ 177 00c8 2093 B400 		sts 180,r18
+ 178 00cc 0895      		ret
+ 179               	.L12:
+ 180               	.LM35:
+ 181 00ce 2227      		clr r18
+ 182 00d0 3327      		clr r19
+ 183 00d2 A901      		movw r20,r18
+ 184 00d4 261B      		sub r18,r22
+ 185 00d6 370B      		sbc r19,r23
+ 186 00d8 480B      		sbc r20,r24
+ 187 00da 590B      		sbc r21,r25
+ 188 00dc 00C0      		rjmp .L6
+ 189               	.LFE6:
+ 191               	.global	zoMotorSetState
+ 193               	zoMotorSetState:
+ 194               	.LFB7:
+ 195               	.LM36:
+ 196               	.LVL4:
+ 197 00de 1F93      		push r17
+ 198               	/* prologue: function */
+ 199               	/* frame size = 0 */
+ 200 00e0 182F      		mov r17,r24
+ 201               	.LM37:
+ 202 00e2 8823      		tst r24
+ 203 00e4 01F4      		brne .L17
+ 204               	.LM38:
+ 205 00e6 5C98      		cbi 43-32,4
+ 206               	.L15:
+ 207               	.LM39:
+ 208 00e8 60E0      		ldi r22,lo8(0)
+ 209 00ea 70E0      		ldi r23,hi8(0)
+ 210 00ec 80E0      		ldi r24,hlo8(0)
+ 211 00ee 90E0      		ldi r25,hhi8(0)
+ 212 00f0 0E94 0000 		call zoMotorSet
+ 213               	.LVL5:
+ 214               	.LM40:
+ 215               	/* #APP */
+ 216               	 ;  86 "zoMotor.c" 1
+ 217 00f4 0FB6      		in __tmp_reg__, __SREG__
+ 218 00f6 0F92      		 push __tmp_reg__
+ 219 00f8 F894      		cli
+ 220               	 ;  0 "" 2
+ 221               	.LM41:
+ 222               	/* #NOAPP */
+ 223 00fa 1093 0000 		sts MotorState,r17
+ 224               	.LM42:
+ 225               	/* #APP */
+ 226               	 ;  88 "zoMotor.c" 1
+ 227 00fe 0F90      		pop __tmp_reg__ 
+ 228 0100 0FBE      		out __SREG__, __tmp_reg__
+ 229               	 ;  0 "" 2
+ 230               	/* epilogue start */
+ 231               	.LM43:
+ 232               	/* #NOAPP */
+ 233 0102 1F91      		pop r17
+ 234               	.LVL6:
+ 235 0104 0895      		ret
+ 236               	.LVL7:
+ 237               	.L17:
+ 238               	.LM44:
+ 239 0106 5C9A      		sbi 43-32,4
+ 240 0108 00C0      		rjmp .L15
+ 241               	.LFE7:
+ 243               	.global	zoMotorGetState
+ 245               	zoMotorGetState:
+ 246               	.LFB8:
+ 247               	.LM45:
+ 248               	/* prologue: function */
+ 249               	/* frame size = 0 */
+ 250               	.LM46:
+ 251               	/* #APP */
+ 252               	 ;  95 "zoMotor.c" 1
+ 253 010a 0FB6      		in __tmp_reg__, __SREG__
+ 254 010c 0F92      		 push __tmp_reg__
+ 255 010e F894      		cli
+ 256               	 ;  0 "" 2
+ 257               	.LM47:
+ 258               	/* #NOAPP */
+ 259 0110 8091 0000 		lds r24,MotorState
+ 260               	.LVL8:
+ 261               	.LM48:
+ 262               	/* #APP */
+ 263               	 ;  97 "zoMotor.c" 1
+ 264 0114 0F90      		pop __tmp_reg__ 
+ 265 0116 0FBE      		out __SREG__, __tmp_reg__
+ 266               	 ;  0 "" 2
+ 267               	.LVL9:
+ 268               	/* epilogue start */
+ 269               	.LM49:
+ 270               	/* #NOAPP */
+ 271 0118 0895      		ret
+ 272               	.LFE8:
+ 274               	.global	__vector_16
+ 276               	__vector_16:
+ 277               	.LFB9:
+ 278               	.LM50:
+ 279 011a 1F92      		push __zero_reg__
+ 280 011c 0F92      		push r0
+ 281 011e 0FB6      		in r0,__SREG__
+ 282 0120 0F92      		push r0
+ 283 0122 1124      		clr __zero_reg__
+ 284 0124 2F93      		push r18
+ 285 0126 3F93      		push r19
+ 286 0128 4F93      		push r20
+ 287 012a 5F93      		push r21
+ 288 012c 6F93      		push r22
+ 289 012e 7F93      		push r23
+ 290 0130 8F93      		push r24
+ 291 0132 9F93      		push r25
+ 292 0134 AF93      		push r26
+ 293 0136 BF93      		push r27
+ 294 0138 EF93      		push r30
+ 295 013a FF93      		push r31
+ 296               	/* prologue: Signal */
+ 297               	/* frame size = 0 */
+ 298               	.LM51:
+ 299 013c 8091 0000 		lds r24,NoOfTimer0OverFlowIsrEntries
+ 300 0140 9091 0000 		lds r25,(NoOfTimer0OverFlowIsrEntries)+1
+ 301 0144 0196      		adiw r24,1
+ 302 0146 9093 0000 		sts (NoOfTimer0OverFlowIsrEntries)+1,r25
+ 303 014a 8093 0000 		sts NoOfTimer0OverFlowIsrEntries,r24
+ 304 014e 0197      		sbiw r24,1
+ 305 0150 0997      		sbiw r24,9
+ 306 0152 00F0      		brlo .L22
+ 307               	.LM52:
+ 308 0154 E091 0000 		lds r30,timedEventHandler
+ 309 0158 F091 0000 		lds r31,(timedEventHandler)+1
+ 310 015c 0995      		icall
+ 311               	.LM53:
+ 312 015e 1092 0000 		sts (NoOfTimer0OverFlowIsrEntries)+1,__zero_reg__
+ 313 0162 1092 0000 		sts NoOfTimer0OverFlowIsrEntries,__zero_reg__
+ 314               	.L22:
+ 315               	/* epilogue start */
+ 316               	.LM54:
+ 317 0166 FF91      		pop r31
+ 318 0168 EF91      		pop r30
+ 319 016a BF91      		pop r27
+ 320 016c AF91      		pop r26
+ 321 016e 9F91      		pop r25
+ 322 0170 8F91      		pop r24
+ 323 0172 7F91      		pop r23
+ 324 0174 6F91      		pop r22
+ 325 0176 5F91      		pop r21
+ 326 0178 4F91      		pop r20
+ 327 017a 3F91      		pop r19
+ 328 017c 2F91      		pop r18
+ 329 017e 0F90      		pop r0
+ 330 0180 0FBE      		out __SREG__,r0
+ 331 0182 0F90      		pop r0
+ 332 0184 1F90      		pop __zero_reg__
+ 333 0186 1895      		reti
+ 334               	.LFE9:
+ 336               		.lcomm NoOfTimer0OverFlowIsrEntries,2
+ 337               		.lcomm timedEventHandler,2
+ 338               		.lcomm MotorState,1
+ 403               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoMotor.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:18     .text:00000000 zoMotorSetTimedEventHandler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:336    .bss:00000002 timedEventHandler
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:34     .text:0000000a zoMotorInit
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:134    .text:00000096 zoMotorSet
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:193    .text:000000de zoMotorSetState
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:337    .bss:00000004 MotorState
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:245    .text:0000010a zoMotorGetState
+C:\DOCUME~1\giannis\LOCALS~1\Temp/cc0uehb5.s:276    .text:0000011a __vector_16
+                             .bss:00000000 NoOfTimer0OverFlowIsrEntries
+
+UNDEFINED SYMBOLS
+Sms
+__do_clear_bss

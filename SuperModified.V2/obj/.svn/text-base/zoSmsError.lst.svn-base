@@ -1,0 +1,587 @@
+   1               		.file	"zoSmsError.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	zoSmsMotorStalled
+  18               	zoSmsMotorStalled:
+  19               	.LFB9:
+  20               	.LM1:
+  21 0000 AF92      		push r10
+  22 0002 BF92      		push r11
+  23 0004 CF92      		push r12
+  24 0006 DF92      		push r13
+  25 0008 EF92      		push r14
+  26 000a FF92      		push r15
+  27 000c 0F93      		push r16
+  28 000e 1F93      		push r17
+  29               	/* prologue: function */
+  30               	/* frame size = 0 */
+  31               	.LM2:
+  32               	/* #APP */
+  33               	 ;  183 "zoSmsError.c" 1
+  34 0010 0FB6      		in __tmp_reg__, __SREG__
+  35 0012 0F92      		 push __tmp_reg__
+  36 0014 F894      		cli
+  37               	 ;  0 "" 2
+  38               	.LM3:
+  39               	/* #NOAPP */
+  40 0016 A090 0000 		lds r10,StalledLastPosition
+  41 001a B090 0000 		lds r11,(StalledLastPosition)+1
+  42 001e C090 0000 		lds r12,(StalledLastPosition)+2
+  43 0022 D090 0000 		lds r13,(StalledLastPosition)+3
+  44               	.LVL0:
+  45               	.LM4:
+  46 0026 0E94 0000 		call zoEncoderGetPos
+  47               	.LM5:
+  48 002a 6093 0000 		sts StalledLastPosition,r22
+  49 002e 7093 0000 		sts (StalledLastPosition)+1,r23
+  50 0032 8093 0000 		sts (StalledLastPosition)+2,r24
+  51 0036 9093 0000 		sts (StalledLastPosition)+3,r25
+  52               	.LVL1:
+  53               	.LM6:
+  54 003a E090 0000 		lds r14,Sms+80
+  55 003e F090 0000 		lds r15,(Sms+80)+1
+  56 0042 0091 0000 		lds r16,(Sms+80)+2
+  57 0046 1091 0000 		lds r17,(Sms+80)+3
+  58               	.LVL2:
+  59               	.LM7:
+  60               	/* #APP */
+  61               	 ;  188 "zoSmsError.c" 1
+  62 004a 0F90      		pop __tmp_reg__ 
+  63 004c 0FBE      		out __SREG__, __tmp_reg__
+  64               	 ;  0 "" 2
+  65               	.LM8:
+  66               	/* #NOAPP */
+  67 004e 9B01      		movw r18,r22
+  68 0050 AC01      		movw r20,r24
+  69 0052 2E19      		sub r18,r14
+  70 0054 3F09      		sbc r19,r15
+  71 0056 400B      		sbc r20,r16
+  72 0058 510B      		sbc r21,r17
+  73 005a DA01      		movw r26,r20
+  74 005c C901      		movw r24,r18
+  75 005e 8953      		subi r24,lo8(-(199))
+  76 0060 9F4F      		sbci r25,hi8(-(199))
+  77 0062 AF4F      		sbci r26,hlo8(-(199))
+  78 0064 BF4F      		sbci r27,hhi8(-(199))
+  79 0066 8F58      		subi r24,lo8(399)
+  80 0068 9140      		sbci r25,hi8(399)
+  81 006a A040      		sbci r26,hlo8(399)
+  82 006c B040      		sbci r27,hhi8(399)
+  83               	.LVL3:
+  84 006e 00F0      		brlo .L9
+  85               	.LM9:
+  86 0070 CA01      		movw r24,r20
+  87 0072 B901      		movw r22,r18
+  88 0074 57FD      		sbrc r21,7
+  89 0076 00C0      		rjmp .L10
+  90 0078 A601      		movw r20,r12
+  91 007a 9501      		movw r18,r10
+  92 007c 2E19      		sub r18,r14
+  93 007e 3F09      		sbc r19,r15
+  94 0080 400B      		sbc r20,r16
+  95 0082 510B      		sbc r21,r17
+  96 0084 57FD      		sbrc r21,7
+  97 0086 00C0      		rjmp .L11
+  98               	.L6:
+  99 0088 6217      		cp r22,r18
+ 100 008a 7307      		cpc r23,r19
+ 101 008c 8407      		cpc r24,r20
+ 102 008e 9507      		cpc r25,r21
+ 103 0090 04F0      		brlt .L4
+ 104               	.LM10:
+ 105 0092 80E0      		ldi r24,lo8(StalledTimeOutTimer)
+ 106 0094 90E0      		ldi r25,hi8(StalledTimeOutTimer)
+ 107 0096 60ED      		ldi r22,lo8(2000)
+ 108 0098 77E0      		ldi r23,hi8(2000)
+ 109 009a 0E94 0000 		call zoSystemTimerTimeOutExpired
+ 110 009e 8823      		tst r24
+ 111 00a0 01F0      		breq .L4
+ 112 00a2 8FEF      		ldi r24,lo8(-1)
+ 113 00a4 00C0      		rjmp .L3
+ 114               	.L4:
+ 115 00a6 80E0      		ldi r24,lo8(0)
+ 116               	.L3:
+ 117               	/* epilogue start */
+ 118               	.LM11:
+ 119 00a8 1F91      		pop r17
+ 120 00aa 0F91      		pop r16
+ 121 00ac FF90      		pop r15
+ 122 00ae EF90      		pop r14
+ 123               	.LVL4:
+ 124 00b0 DF90      		pop r13
+ 125 00b2 CF90      		pop r12
+ 126 00b4 BF90      		pop r11
+ 127 00b6 AF90      		pop r10
+ 128               	.LVL5:
+ 129 00b8 0895      		ret
+ 130               	.LVL6:
+ 131               	.L9:
+ 132               	.LM12:
+ 133 00ba 80E0      		ldi r24,lo8(StalledTimeOutTimer)
+ 134 00bc 90E0      		ldi r25,hi8(StalledTimeOutTimer)
+ 135 00be 0E94 0000 		call zoSystemTimerTimeOutInit
+ 136 00c2 80E0      		ldi r24,lo8(0)
+ 137 00c4 00C0      		rjmp .L3
+ 138               	.L10:
+ 139               	.LM13:
+ 140 00c6 9095      		com r25
+ 141 00c8 8095      		com r24
+ 142 00ca 7095      		com r23
+ 143 00cc 6195      		neg r22
+ 144 00ce 7F4F      		sbci r23,lo8(-1)
+ 145 00d0 8F4F      		sbci r24,lo8(-1)
+ 146 00d2 9F4F      		sbci r25,lo8(-1)
+ 147 00d4 A601      		movw r20,r12
+ 148 00d6 9501      		movw r18,r10
+ 149 00d8 2E19      		sub r18,r14
+ 150 00da 3F09      		sbc r19,r15
+ 151 00dc 400B      		sbc r20,r16
+ 152 00de 510B      		sbc r21,r17
+ 153 00e0 57FF      		sbrs r21,7
+ 154 00e2 00C0      		rjmp .L6
+ 155               	.L11:
+ 156 00e4 5095      		com r21
+ 157 00e6 4095      		com r20
+ 158 00e8 3095      		com r19
+ 159 00ea 2195      		neg r18
+ 160 00ec 3F4F      		sbci r19,lo8(-1)
+ 161 00ee 4F4F      		sbci r20,lo8(-1)
+ 162 00f0 5F4F      		sbci r21,lo8(-1)
+ 163 00f2 00C0      		rjmp .L6
+ 164               	.LFE9:
+ 166               	.global	zoSmsErrorHandleServiceCommandFailure
+ 168               	zoSmsErrorHandleServiceCommandFailure:
+ 169               	.LFB7:
+ 170               	.LM14:
+ 171               	/* prologue: function */
+ 172               	/* frame size = 0 */
+ 173               	.L18:
+ 174               	.LM15:
+ 175 00f4 80E0      		ldi r24,lo8(zoCommandsError)
+ 176 00f6 90E0      		ldi r25,hi8(zoCommandsError)
+ 177 00f8 0E94 0000 		call zoErrorIsEmpty
+ 178 00fc 8823      		tst r24
+ 179 00fe 01F4      		brne .L19
+ 180               	.L16:
+ 181               	.LM16:
+ 182 0100 80E0      		ldi r24,lo8(zoCommandsError)
+ 183 0102 90E0      		ldi r25,hi8(zoCommandsError)
+ 184 0104 0E94 0000 		call zoErrorGet
+ 185 0108 682F      		mov r22,r24
+ 186               	.LVL7:
+ 187               	.LM17:
+ 188 010a 8530      		cpi r24,lo8(5)
+ 189 010c 00F0      		brlo .L15
+ 190               	.LVL8:
+ 191               	.LM18:
+ 192 010e 8091 0000 		lds r24,Sms+20
+ 193               	.LVL9:
+ 194 0112 8823      		tst r24
+ 195 0114 01F4      		brne .L15
+ 196               	.LM19:
+ 197 0116 605F      		subi r22,lo8(-(16))
+ 198 0118 80E0      		ldi r24,lo8(zoSmsWarning)
+ 199 011a 90E0      		ldi r25,hi8(zoSmsWarning)
+ 200 011c 0E94 0000 		call zoErrorPut
+ 201               	.LVL10:
+ 202               	.LM20:
+ 203 0120 80E0      		ldi r24,lo8(zoCommandsError)
+ 204 0122 90E0      		ldi r25,hi8(zoCommandsError)
+ 205 0124 0E94 0000 		call zoErrorIsEmpty
+ 206 0128 8823      		tst r24
+ 207 012a 01F0      		breq .L16
+ 208               	.L19:
+ 209               	/* epilogue start */
+ 210               	.LM21:
+ 211 012c 0895      		ret
+ 212               	.LVL11:
+ 213               	.L15:
+ 214               	.LM22:
+ 215 012e 605F      		subi r22,lo8(-(16))
+ 216 0130 80E0      		ldi r24,lo8(zoSmsError)
+ 217 0132 90E0      		ldi r25,hi8(zoSmsError)
+ 218 0134 0E94 0000 		call zoErrorPut
+ 219               	.LVL12:
+ 220 0138 00C0      		rjmp .L18
+ 221               	.LFE7:
+ 223               	.global	zoSmsErrorHandleCommandResponseFailure
+ 225               	zoSmsErrorHandleCommandResponseFailure:
+ 226               	.LFB8:
+ 227               	.LM23:
+ 228               	.LVL13:
+ 229 013a EF92      		push r14
+ 230 013c FF92      		push r15
+ 231 013e 1F93      		push r17
+ 232 0140 CF93      		push r28
+ 233 0142 DF93      		push r29
+ 234               	/* prologue: function */
+ 235               	/* frame size = 0 */
+ 236 0144 EC01      		movw r28,r24
+ 237 0146 7B01      		movw r14,r22
+ 238               	.LM24:
+ 239 0148 10E0      		ldi r17,lo8(0)
+ 240               	.LVL14:
+ 241               	.L31:
+ 242               	.LM25:
+ 243 014a 8A81      		ldd r24,Y+2
+ 244 014c 9B81      		ldd r25,Y+3
+ 245 014e 0E94 0000 		call zoErrorIsEmpty
+ 246               	.LVL15:
+ 247 0152 8823      		tst r24
+ 248 0154 01F4      		brne .L33
+ 249               	.L26:
+ 250               	.LM26:
+ 251 0156 8A81      		ldd r24,Y+2
+ 252 0158 9B81      		ldd r25,Y+3
+ 253 015a 0E94 0000 		call zoErrorGet
+ 254 015e 682F      		mov r22,r24
+ 255               	.LVL16:
+ 256               	.LM27:
+ 257 0160 8981      		ldd r24,Y+1
+ 258 0162 8823      		tst r24
+ 259 0164 01F4      		brne .L34
+ 260               	.LM28:
+ 261 0166 6330      		cpi r22,lo8(3)
+ 262 0168 01F4      		brne .L24
+ 263               	.LM29:
+ 264 016a 8091 0000 		lds r24,Sms+20
+ 265 016e 8823      		tst r24
+ 266 0170 01F4      		brne .L25
+ 267               	.LM30:
+ 268 0172 80E0      		ldi r24,lo8(zoSmsWarning)
+ 269 0174 90E0      		ldi r25,hi8(zoSmsWarning)
+ 270 0176 63E2      		ldi r22,lo8(35)
+ 271               	.LVL17:
+ 272 0178 0E94 0000 		call zoErrorPut
+ 273               	.LM31:
+ 274 017c 8A81      		ldd r24,Y+2
+ 275 017e 9B81      		ldd r25,Y+3
+ 276 0180 0E94 0000 		call zoErrorIsEmpty
+ 277 0184 8823      		tst r24
+ 278 0186 01F0      		breq .L26
+ 279               	.L33:
+ 280               	.LM32:
+ 281 0188 CE01      		movw r24,r28
+ 282 018a B701      		movw r22,r14
+ 283 018c 40E0      		ldi r20,lo8(zoSmsError)
+ 284 018e 50E0      		ldi r21,hi8(zoSmsError)
+ 285 0190 0E94 0000 		call zoProtocolCommandResponse
+ 286 0194 8823      		tst r24
+ 287 0196 01F4      		brne .L28
+ 288               	.LM33:
+ 289 0198 1F5F      		subi r17,lo8(-(1))
+ 290 019a 1530      		cpi r17,lo8(5)
+ 291 019c 01F4      		brne .L31
+ 292               	.L28:
+ 293               	/* epilogue start */
+ 294               	.LM34:
+ 295 019e DF91      		pop r29
+ 296 01a0 CF91      		pop r28
+ 297               	.LVL18:
+ 298 01a2 1F91      		pop r17
+ 299               	.LVL19:
+ 300 01a4 FF90      		pop r15
+ 301 01a6 EF90      		pop r14
+ 302               	.LVL20:
+ 303 01a8 0895      		ret
+ 304               	.LVL21:
+ 305               	.L34:
+ 306               	.LM35:
+ 307 01aa 8430      		cpi r24,lo8(4)
+ 308 01ac 00F4      		brsh .L31
+ 309               	.LM36:
+ 310 01ae 605C      		subi r22,lo8(-(64))
+ 311 01b0 80E0      		ldi r24,lo8(zoSmsError)
+ 312 01b2 90E0      		ldi r25,hi8(zoSmsError)
+ 313 01b4 0E94 0000 		call zoErrorPut
+ 314               	.LVL22:
+ 315 01b8 00C0      		rjmp .L31
+ 316               	.LVL23:
+ 317               	.L24:
+ 318               	.LM37:
+ 319 01ba 605E      		subi r22,lo8(-(32))
+ 320 01bc 80E0      		ldi r24,lo8(zoSmsError)
+ 321 01be 90E0      		ldi r25,hi8(zoSmsError)
+ 322 01c0 0E94 0000 		call zoErrorPut
+ 323               	.LVL24:
+ 324 01c4 00C0      		rjmp .L31
+ 325               	.LVL25:
+ 326               	.L25:
+ 327               	.LM38:
+ 328 01c6 80E0      		ldi r24,lo8(zoSmsError)
+ 329 01c8 90E0      		ldi r25,hi8(zoSmsError)
+ 330 01ca 63E2      		ldi r22,lo8(35)
+ 331               	.LVL26:
+ 332 01cc 0E94 0000 		call zoErrorPut
+ 333 01d0 00C0      		rjmp .L31
+ 334               	.LFE8:
+ 336               	.global	zoSmsErrorHandleParseFailure
+ 338               	zoSmsErrorHandleParseFailure:
+ 339               	.LFB6:
+ 340               	.LM39:
+ 341               	.LVL27:
+ 342 01d2 EF92      		push r14
+ 343 01d4 FF92      		push r15
+ 344 01d6 0F93      		push r16
+ 345 01d8 1F93      		push r17
+ 346 01da CF93      		push r28
+ 347 01dc DF93      		push r29
+ 348               	/* prologue: function */
+ 349               	/* frame size = 0 */
+ 350 01de EC01      		movw r28,r24
+ 351 01e0 7B01      		movw r14,r22
+ 352               	.LM40:
+ 353 01e2 00E0      		ldi r16,lo8(0)
+ 354               	.LVL28:
+ 355               	.L46:
+ 356               	.LM41:
+ 357 01e4 8A81      		ldd r24,Y+2
+ 358 01e6 9B81      		ldd r25,Y+3
+ 359 01e8 0E94 0000 		call zoErrorIsEmpty
+ 360 01ec 8823      		tst r24
+ 361 01ee 01F4      		brne .L48
+ 362               	.L41:
+ 363               	.LM42:
+ 364 01f0 8A81      		ldd r24,Y+2
+ 365 01f2 9B81      		ldd r25,Y+3
+ 366 01f4 0E94 0000 		call zoErrorGet
+ 367 01f8 182F      		mov r17,r24
+ 368               	.LM43:
+ 369 01fa 8132      		cpi r24,lo8(33)
+ 370 01fc 00F4      		brsh .L49
+ 371               	.LVL29:
+ 372               	.LM44:
+ 373 01fe 8981      		ldd r24,Y+1
+ 374               	.LVL30:
+ 375 0200 8823      		tst r24
+ 376 0202 01F4      		brne .L50
+ 377               	.LM45:
+ 378 0204 612F      		mov r22,r17
+ 379 0206 605E      		subi r22,lo8(-(32))
+ 380 0208 80E0      		ldi r24,lo8(zoSmsError)
+ 381 020a 90E0      		ldi r25,hi8(zoSmsError)
+ 382 020c 0E94 0000 		call zoErrorPut
+ 383               	.LM46:
+ 384 0210 1131      		cpi r17,lo8(17)
+ 385 0212 01F0      		breq .L38
+ 386               	.LM47:
+ 387 0214 1231      		cpi r17,lo8(18)
+ 388 0216 01F4      		brne .L46
+ 389               	.L38:
+ 390               	.LM48:
+ 391 0218 0FEF      		ldi r16,lo8(-1)
+ 392               	.L51:
+ 393               	.LM49:
+ 394 021a 8A81      		ldd r24,Y+2
+ 395 021c 9B81      		ldd r25,Y+3
+ 396 021e 0E94 0000 		call zoErrorIsEmpty
+ 397 0222 8823      		tst r24
+ 398 0224 01F0      		breq .L41
+ 399               	.L48:
+ 400               	.LM50:
+ 401 0226 0023      		tst r16
+ 402 0228 01F0      		breq .L43
+ 403               	.LM51:
+ 404 022a CE01      		movw r24,r28
+ 405 022c B701      		movw r22,r14
+ 406 022e 40E0      		ldi r20,lo8(zoSmsError)
+ 407 0230 50E0      		ldi r21,hi8(zoSmsError)
+ 408 0232 0E94 0000 		call zoProtocolCommandResponse
+ 409               	.L43:
+ 410               	/* epilogue start */
+ 411               	.LM52:
+ 412 0236 DF91      		pop r29
+ 413 0238 CF91      		pop r28
+ 414               	.LVL31:
+ 415 023a 1F91      		pop r17
+ 416               	.LVL32:
+ 417 023c 0F91      		pop r16
+ 418               	.LVL33:
+ 419 023e FF90      		pop r15
+ 420 0240 EF90      		pop r14
+ 421               	.LVL34:
+ 422 0242 0895      		ret
+ 423               	.LVL35:
+ 424               	.L50:
+ 425               	.LM53:
+ 426 0244 8430      		cpi r24,lo8(4)
+ 427 0246 00F4      		brsh .L46
+ 428               	.LM54:
+ 429 0248 105C      		subi r17,lo8(-(64))
+ 430 024a 80E0      		ldi r24,lo8(zoSmsError)
+ 431 024c 90E0      		ldi r25,hi8(zoSmsError)
+ 432 024e 612F      		mov r22,r17
+ 433 0250 0E94 0000 		call zoErrorPut
+ 434 0254 00C0      		rjmp .L46
+ 435               	.LVL36:
+ 436               	.L49:
+ 437               	.LM55:
+ 438 0256 682F      		mov r22,r24
+ 439 0258 605D      		subi r22,lo8(-(48))
+ 440 025a 80E0      		ldi r24,lo8(zoSmsError)
+ 441 025c 90E0      		ldi r25,hi8(zoSmsError)
+ 442               	.LVL37:
+ 443 025e 0E94 0000 		call zoErrorPut
+ 444               	.LM56:
+ 445 0262 1232      		cpi r17,lo8(34)
+ 446 0264 01F0      		breq .+2
+ 447 0266 00C0      		rjmp .L46
+ 448               	.LM57:
+ 449 0268 0FEF      		ldi r16,lo8(-1)
+ 450 026a 00C0      		rjmp .L51
+ 451               	.LFE6:
+ 453               	.global	zoSmsErrorPoll
+ 455               	zoSmsErrorPoll:
+ 456               	.LFB5:
+ 457               	.LM58:
+ 458               	/* prologue: function */
+ 459               	/* frame size = 0 */
+ 460               	.LM59:
+ 461               	/* #APP */
+ 462               	 ;  38 "zoSmsError.c" 1
+ 463 026c 0FB6      		in __tmp_reg__, __SREG__
+ 464 026e 0F92      		 push __tmp_reg__
+ 465 0270 F894      		cli
+ 466               	 ;  0 "" 2
+ 467               	.LM60:
+ 468               	 ;  40 "zoSmsError.c" 1
+ 469 0272 0F90      		pop __tmp_reg__ 
+ 470 0274 0FBE      		out __SREG__, __tmp_reg__
+ 471               	 ;  0 "" 2
+ 472               	.LM61:
+ 473               	/* #NOAPP */
+ 474 0276 8091 0000 		lds r24,Sms
+ 475 027a 8823      		tst r24
+ 476 027c 01F4      		brne .L57
+ 477               	.L56:
+ 478 027e 0895      		ret
+ 479               	.L57:
+ 480               	.LM62:
+ 481 0280 0E94 0000 		call zoSmsMotorStalled
+ 482 0284 8823      		tst r24
+ 483 0286 01F4      		brne .L58
+ 484               	.L54:
+ 485               	.LM63:
+ 486 0288 0E94 0000 		call zoEncoderPollOverFlowError
+ 487 028c 8823      		tst r24
+ 488 028e 01F4      		brne .L59
+ 489               	.L55:
+ 490               	.LM64:
+ 491 0290 0E94 0000 		call zoEncoderPollUnderFlowError
+ 492 0294 8823      		tst r24
+ 493 0296 01F0      		breq .L56
+ 494               	.LM65:
+ 495 0298 80E0      		ldi r24,lo8(0)
+ 496 029a 90E0      		ldi r25,hi8(0)
+ 497 029c 0E94 0000 		call zoCommandStop
+ 498               	.LM66:
+ 499 02a0 80E0      		ldi r24,lo8(zoSmsError)
+ 500 02a2 90E0      		ldi r25,hi8(zoSmsError)
+ 501 02a4 63E0      		ldi r22,lo8(3)
+ 502 02a6 0E94 0000 		call zoErrorPut
+ 503 02aa 0895      		ret
+ 504               	.L59:
+ 505               	.LM67:
+ 506 02ac 80E0      		ldi r24,lo8(0)
+ 507 02ae 90E0      		ldi r25,hi8(0)
+ 508 02b0 0E94 0000 		call zoCommandStop
+ 509               	.LM68:
+ 510 02b4 80E0      		ldi r24,lo8(zoSmsError)
+ 511 02b6 90E0      		ldi r25,hi8(zoSmsError)
+ 512 02b8 62E0      		ldi r22,lo8(2)
+ 513 02ba 0E94 0000 		call zoErrorPut
+ 514 02be 00C0      		rjmp .L55
+ 515               	.L58:
+ 516               	.LM69:
+ 517 02c0 80E0      		ldi r24,lo8(0)
+ 518 02c2 90E0      		ldi r25,hi8(0)
+ 519 02c4 0E94 0000 		call zoCommandStop
+ 520               	.LM70:
+ 521 02c8 80E0      		ldi r24,lo8(zoSmsError)
+ 522 02ca 90E0      		ldi r25,hi8(zoSmsError)
+ 523 02cc 61E0      		ldi r22,lo8(1)
+ 524 02ce 0E94 0000 		call zoErrorPut
+ 525 02d2 00C0      		rjmp .L54
+ 526               	.LFE5:
+ 528               	.global	zoSmsErrorInit
+ 530               	zoSmsErrorInit:
+ 531               	.LFB4:
+ 532               	.LM71:
+ 533               	/* prologue: function */
+ 534               	/* frame size = 0 */
+ 535               	.LM72:
+ 536 02d4 80E0      		ldi r24,lo8(zoSmsError)
+ 537 02d6 90E0      		ldi r25,hi8(zoSmsError)
+ 538 02d8 0E94 0000 		call zoErrorInit
+ 539               	.LM73:
+ 540 02dc 80E0      		ldi r24,lo8(zoSmsWarning)
+ 541 02de 90E0      		ldi r25,hi8(zoSmsWarning)
+ 542 02e0 0E94 0000 		call zoErrorInit
+ 543               	.LM74:
+ 544 02e4 0E94 0000 		call zoSystemTimerInit
+ 545               	.LM75:
+ 546 02e8 80E0      		ldi r24,lo8(StalledTimeOutTimer)
+ 547 02ea 90E0      		ldi r25,hi8(StalledTimeOutTimer)
+ 548 02ec 0E94 0000 		call zoSystemTimerTimeOutInit
+ 549               	/* epilogue start */
+ 550               	.LM76:
+ 551 02f0 0895      		ret
+ 552               	.LFE4:
+ 554               	.global	zoSmsError
+ 555               	.global	zoSmsError
+ 556               		.section .bss
+ 559               	zoSmsError:
+ 560 0000 0000 0000 		.skip 13,0
+ 560      0000 0000 
+ 560      0000 0000 
+ 560      00
+ 561               	.global	zoSmsWarning
+ 562               	.global	zoSmsWarning
+ 565               	zoSmsWarning:
+ 566 000d 0000 0000 		.skip 13,0
+ 566      0000 0000 
+ 566      0000 0000 
+ 566      00
+ 567               		.lcomm StalledLastPosition,4
+ 568               		.lcomm StalledTimeOutTimer,2
+ 633               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 zoSmsError.c
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:18     .text:00000000 zoSmsMotorStalled
+                             .bss:0000001a StalledLastPosition
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:567    .bss:0000001e StalledTimeOutTimer
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:168    .text:000000f4 zoSmsErrorHandleServiceCommandFailure
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:565    .bss:0000000d zoSmsWarning
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:559    .bss:00000000 zoSmsError
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:225    .text:0000013a zoSmsErrorHandleCommandResponseFailure
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:338    .text:000001d2 zoSmsErrorHandleParseFailure
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:455    .text:0000026c zoSmsErrorPoll
+C:\DOCUME~1\giannis\LOCALS~1\Temp/ccNXca6q.s:530    .text:000002d4 zoSmsErrorInit
+
+UNDEFINED SYMBOLS
+zoEncoderGetPos
+Sms
+zoSystemTimerTimeOutExpired
+zoSystemTimerTimeOutInit
+zoCommandsError
+zoErrorIsEmpty
+zoErrorGet
+zoErrorPut
+zoProtocolCommandResponse
+zoEncoderPollOverFlowError
+zoEncoderPollUnderFlowError
+zoCommandStop
+zoErrorInit
+zoSystemTimerInit
+__do_clear_bss
